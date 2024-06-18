@@ -1,6 +1,7 @@
 {
     "name": "motherbrain/payline-web-payment-api-sdk",
     "description": "Package generated from https://homologation.payline.com/V4/services/WebPaymentAPI?wsdl using wsdltophp/packagegenerator",
+    "license": "MIT",
     "require": {
         "php": ">=7.4",
         "ext-dom": "*",
