@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -102,7 +102,7 @@ class DoWebPaymentResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -125,7 +125,7 @@ class DoWebPaymentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
     /**
@@ -148,7 +148,7 @@ class DoWebPaymentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($redirectURL, true), gettype($redirectURL)), __LINE__);
         }
         $this->redirectURL = $redirectURL;
-        
+
         return $this;
     }
     /**
@@ -180,7 +180,7 @@ class DoWebPaymentResponse extends AbstractStructBase
         } else {
             $this->stepCode = $stepCode;
         }
-        
+
         return $this;
     }
     /**
@@ -212,7 +212,7 @@ class DoWebPaymentResponse extends AbstractStructBase
         } else {
             $this->reqCode = $reqCode;
         }
-        
+
         return $this;
     }
     /**
@@ -244,7 +244,7 @@ class DoWebPaymentResponse extends AbstractStructBase
         } else {
             $this->method = $method;
         }
-        
+
         return $this;
     }
 }

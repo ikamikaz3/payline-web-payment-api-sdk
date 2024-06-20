@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -66,7 +66,7 @@ class BillingRecordList extends AbstractStructBase
             $message = sprintf('The billingRecord property can only contain items of type \StructType\BillingRecord, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
     /**
@@ -86,7 +86,7 @@ class BillingRecordList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 100', count($billingRecord)), __LINE__);
         }
         $this->billingRecord = $billingRecord;
-        
+
         return $this;
     }
     /**
@@ -106,7 +106,7 @@ class BillingRecordList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 100', count($this->billingRecord)), __LINE__);
         }
         $this->billingRecord[] = $item;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -94,7 +94,7 @@ class Authorization extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
         $this->number = $number;
-        
+
         return $this;
     }
     /**
@@ -117,7 +117,7 @@ class Authorization extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -140,7 +140,7 @@ class Authorization extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizedAmount, true), gettype($authorizedAmount)), __LINE__);
         }
         $this->authorizedAmount = $authorizedAmount;
-        
+
         return $this;
     }
     /**
@@ -163,7 +163,7 @@ class Authorization extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizedCurrency, true), gettype($authorizedCurrency)), __LINE__);
         }
         $this->authorizedCurrency = $authorizedCurrency;
-        
+
         return $this;
     }
     /**
@@ -191,7 +191,7 @@ class Authorization extends AbstractStructBase
         } else {
             $this->reattempt = $reattempt;
         }
-        
+
         return $this;
     }
 }

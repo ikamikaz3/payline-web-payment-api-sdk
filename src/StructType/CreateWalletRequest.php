@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -143,7 +143,7 @@ class CreateWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -166,7 +166,7 @@ class CreateWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -185,7 +185,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setWallet(?\StructType\Wallet $wallet = null): self
     {
         $this->wallet = $wallet;
-        
+
         return $this;
     }
     /**
@@ -204,7 +204,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -223,7 +223,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setOwner(?\StructType\Owner $owner = null): self
     {
         $this->owner = $owner;
-        
+
         return $this;
     }
     /**
@@ -242,7 +242,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -261,7 +261,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
     /**
@@ -284,7 +284,7 @@ class CreateWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
     /**
@@ -303,7 +303,7 @@ class CreateWalletRequest extends AbstractStructBase
     public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
-        
+
         return $this;
     }
     /**
@@ -326,7 +326,7 @@ class CreateWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
 }

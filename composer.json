@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Motherbrain\\PaylineWebPayment": "./src/"
+            "PaylineWebPayment\\": "./src/"
         }
     }
 }

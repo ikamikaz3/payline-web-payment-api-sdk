@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -282,7 +282,7 @@ class Transaction extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
-        
+
         return $this;
     }
     /**
@@ -305,7 +305,7 @@ class Transaction extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -328,7 +328,7 @@ class Transaction extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
     /**
@@ -360,7 +360,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->isDuplicated = $isDuplicated;
         }
-        
+
         return $this;
     }
     /**
@@ -383,7 +383,7 @@ class Transaction extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isPossibleFraud, true), gettype($isPossibleFraud)), __LINE__);
         }
         $this->isPossibleFraud = $isPossibleFraud;
-        
+
         return $this;
     }
     /**
@@ -415,7 +415,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->fraudResult = $fraudResult;
         }
-        
+
         return $this;
     }
     /**
@@ -443,7 +443,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->fraudResultDetails = $fraudResultDetails;
         }
-        
+
         return $this;
     }
     /**
@@ -475,7 +475,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->explanation = $explanation;
         }
-        
+
         return $this;
     }
     /**
@@ -507,7 +507,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->threeDSecure = $threeDSecure;
         }
-        
+
         return $this;
     }
     /**
@@ -539,7 +539,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->softDescriptor = $softDescriptor;
         }
-        
+
         return $this;
     }
     /**
@@ -571,7 +571,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->score = $score;
         }
-        
+
         return $this;
     }
     /**
@@ -599,7 +599,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->scoring = $scoring;
         }
-        
+
         return $this;
     }
     /**
@@ -631,7 +631,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->externalWalletType = $externalWalletType;
         }
-        
+
         return $this;
     }
     /**
@@ -663,7 +663,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->externalWalletContractNumber = $externalWalletContractNumber;
         }
-        
+
         return $this;
     }
     /**
@@ -695,7 +695,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->partnerAdditionalData = $partnerAdditionalData;
         }
-        
+
         return $this;
     }
     /**
@@ -723,7 +723,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->avs = $avs;
         }
-        
+
         return $this;
     }
     /**
@@ -755,7 +755,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->customerId = $customerId;
         }
-        
+
         return $this;
     }
     /**
@@ -787,7 +787,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->orderReference = $orderReference;
         }
-        
+
         return $this;
     }
     /**
@@ -815,7 +815,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->payment = $payment;
         }
-        
+
         return $this;
     }
     /**
@@ -843,7 +843,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->pointOfSell = $pointOfSell;
         }
-        
+
         return $this;
     }
     /**
@@ -871,7 +871,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->card = $card;
         }
-        
+
         return $this;
     }
     /**
@@ -899,7 +899,7 @@ class Transaction extends AbstractStructBase
         } else {
             $this->extendedCard = $extendedCard;
         }
-        
+
         return $this;
     }
 }

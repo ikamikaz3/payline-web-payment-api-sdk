@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -83,7 +83,7 @@ class Owner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->lastName = $lastName;
-        
+
         return $this;
     }
     /**
@@ -106,7 +106,7 @@ class Owner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
     /**
@@ -125,7 +125,7 @@ class Owner extends AbstractStructBase
     public function setBillingAddress(?\StructType\AddressOwner $billingAddress = null): self
     {
         $this->billingAddress = $billingAddress;
-        
+
         return $this;
     }
     /**
@@ -148,7 +148,7 @@ class Owner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueCardDate, true), gettype($issueCardDate)), __LINE__);
         }
         $this->issueCardDate = $issueCardDate;
-        
+
         return $this;
     }
 }

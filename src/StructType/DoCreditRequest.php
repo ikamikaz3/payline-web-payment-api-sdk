@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -153,7 +153,7 @@ class DoCreditRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -172,7 +172,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -191,7 +191,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setCard(?\StructType\Card $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
     /**
@@ -214,7 +214,7 @@ class DoCreditRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
         }
         $this->comment = $comment;
-        
+
         return $this;
     }
     /**
@@ -233,7 +233,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -252,7 +252,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -271,7 +271,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setOwner(?\StructType\Owner $owner = null): self
     {
         $this->owner = $owner;
-        
+
         return $this;
     }
     /**
@@ -290,7 +290,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -313,7 +313,7 @@ class DoCreditRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($miscData, true), gettype($miscData)), __LINE__);
         }
         $this->miscData = $miscData;
-        
+
         return $this;
     }
     /**
@@ -336,7 +336,7 @@ class DoCreditRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
     /**
@@ -355,7 +355,7 @@ class DoCreditRequest extends AbstractStructBase
     public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
 }

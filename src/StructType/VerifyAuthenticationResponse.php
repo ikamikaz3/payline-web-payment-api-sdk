@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -89,7 +89,7 @@ class VerifyAuthenticationResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -112,7 +112,7 @@ class VerifyAuthenticationResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transient, true), gettype($transient)), __LINE__);
         }
         $this->transient = $transient;
-        
+
         return $this;
     }
     /**
@@ -131,7 +131,7 @@ class VerifyAuthenticationResponse extends AbstractStructBase
     public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
     /**
@@ -154,7 +154,7 @@ class VerifyAuthenticationResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpiResult, true), gettype($mpiResult)), __LINE__);
         }
         $this->mpiResult = $mpiResult;
-        
+
         return $this;
     }
     /**
@@ -173,7 +173,7 @@ class VerifyAuthenticationResponse extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
 }

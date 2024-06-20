@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -107,7 +107,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -126,7 +126,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
     public function setRecurring(?\StructType\Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
-        
+
         return $this;
     }
     /**
@@ -149,7 +149,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isDisabled, true), gettype($isDisabled)), __LINE__);
         }
         $this->isDisabled = $isDisabled;
-        
+
         return $this;
     }
     /**
@@ -172,7 +172,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($disableDate, true), gettype($disableDate)), __LINE__);
         }
         $this->disableDate = $disableDate;
-        
+
         return $this;
     }
     /**
@@ -191,7 +191,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -210,7 +210,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -233,7 +233,7 @@ class UpdatePaymentRecordResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
 }

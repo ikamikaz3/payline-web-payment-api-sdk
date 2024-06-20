@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -213,7 +213,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -236,7 +236,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -259,7 +259,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
     /**
@@ -282,7 +282,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->returnURL = $returnURL;
-        
+
         return $this;
     }
     /**
@@ -305,7 +305,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->cancelURL = $cancelURL;
-        
+
         return $this;
     }
     /**
@@ -328,7 +328,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardInd, true), gettype($cardInd)), __LINE__);
         }
         $this->cardInd = $cardInd;
-        
+
         return $this;
     }
     /**
@@ -351,7 +351,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($updatePersonalDetails, true), gettype($updatePersonalDetails)), __LINE__);
         }
         $this->updatePersonalDetails = $updatePersonalDetails;
-        
+
         return $this;
     }
     /**
@@ -374,7 +374,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($updateOwnerDetails, true), gettype($updateOwnerDetails)), __LINE__);
         }
         $this->updateOwnerDetails = $updateOwnerDetails;
-        
+
         return $this;
     }
     /**
@@ -397,7 +397,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($updatePaymentDetails, true), gettype($updatePaymentDetails)), __LINE__);
         }
         $this->updatePaymentDetails = $updatePaymentDetails;
-        
+
         return $this;
     }
     /**
@@ -416,7 +416,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -439,7 +439,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($languageCode, true), gettype($languageCode)), __LINE__);
         }
         $this->languageCode = $languageCode;
-        
+
         return $this;
     }
     /**
@@ -462,7 +462,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customPaymentPageCode, true), gettype($customPaymentPageCode)), __LINE__);
         }
         $this->customPaymentPageCode = $customPaymentPageCode;
-        
+
         return $this;
     }
     /**
@@ -485,7 +485,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($securityMode, true), gettype($securityMode)), __LINE__);
         }
         $this->securityMode = $securityMode;
-        
+
         return $this;
     }
     /**
@@ -508,7 +508,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notificationURL, true), gettype($notificationURL)), __LINE__);
         }
         $this->notificationURL = $notificationURL;
-        
+
         return $this;
     }
     /**
@@ -527,7 +527,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -550,7 +550,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customPaymentTemplateURL, true), gettype($customPaymentTemplateURL)), __LINE__);
         }
         $this->customPaymentTemplateURL = $customPaymentTemplateURL;
-        
+
         return $this;
     }
     /**
@@ -569,7 +569,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
     public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
-        
+
         return $this;
     }
 }

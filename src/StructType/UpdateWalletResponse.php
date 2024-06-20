@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -76,7 +76,7 @@ class UpdateWalletResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -95,7 +95,7 @@ class UpdateWalletResponse extends AbstractStructBase
     public function setCard(?\StructType\CardOut $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
     /**
@@ -114,7 +114,7 @@ class UpdateWalletResponse extends AbstractStructBase
     public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
-        
+
         return $this;
     }
     /**
@@ -142,7 +142,7 @@ class UpdateWalletResponse extends AbstractStructBase
         } else {
             $this->contractNumberWalletList = $contractNumberWalletList;
         }
-        
+
         return $this;
     }
 }

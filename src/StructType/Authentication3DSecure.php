@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -184,7 +184,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->md = $md;
         }
-        
+
         return $this;
     }
     /**
@@ -216,7 +216,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->pares = $pares;
         }
-        
+
         return $this;
     }
     /**
@@ -248,7 +248,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->xid = $xid;
         }
-        
+
         return $this;
     }
     /**
@@ -280,7 +280,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->eci = $eci;
         }
-        
+
         return $this;
     }
     /**
@@ -312,7 +312,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->cavv = $cavv;
         }
-        
+
         return $this;
     }
     /**
@@ -344,7 +344,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->cavvAlgorithm = $cavvAlgorithm;
         }
-        
+
         return $this;
     }
     /**
@@ -376,7 +376,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->vadsResult = $vadsResult;
         }
-        
+
         return $this;
     }
     /**
@@ -408,7 +408,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->typeSecurisation = $typeSecurisation;
         }
-        
+
         return $this;
     }
     /**
@@ -440,7 +440,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->PaResStatus = $paResStatus;
         }
-        
+
         return $this;
     }
     /**
@@ -472,7 +472,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->VeResStatus = $veResStatus;
         }
-        
+
         return $this;
     }
     /**
@@ -504,7 +504,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->resultContainer = $resultContainer;
         }
-        
+
         return $this;
     }
     /**
@@ -536,7 +536,7 @@ class Authentication3DSecure extends AbstractStructBase
         } else {
             $this->authenticationResult = $authenticationResult;
         }
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -137,7 +137,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isLCLFAlerted, true), gettype($isLCLFAlerted)), __LINE__);
         }
         $this->IsLCLFAlerted = $isLCLFAlerted;
-        
+
         return $this;
     }
     /**
@@ -160,7 +160,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalTransactionId, true), gettype($externalTransactionId)), __LINE__);
         }
         $this->ExternalTransactionId = $externalTransactionId;
-        
+
         return $this;
     }
     /**
@@ -183,7 +183,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referenceOrder, true), gettype($referenceOrder)), __LINE__);
         }
         $this->ReferenceOrder = $referenceOrder;
-        
+
         return $this;
     }
     /**
@@ -206,7 +206,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardCode, true), gettype($cardCode)), __LINE__);
         }
         $this->CardCode = $cardCode;
-        
+
         return $this;
     }
     /**
@@ -229,7 +229,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionDate, true), gettype($transactionDate)), __LINE__);
         }
         $this->TransactionDate = $transactionDate;
-        
+
         return $this;
     }
     /**
@@ -252,7 +252,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->Amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -275,7 +275,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->Status = $status;
-        
+
         return $this;
     }
     /**
@@ -298,7 +298,7 @@ class CustomerTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($posLabel, true), gettype($posLabel)), __LINE__);
         }
         $this->PosLabel = $posLabel;
-        
+
         return $this;
     }
 }

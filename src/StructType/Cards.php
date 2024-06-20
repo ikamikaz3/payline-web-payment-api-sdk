@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -163,7 +163,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
     /**
@@ -182,7 +182,7 @@ class Cards extends AbstractStructBase
     public function setCard(?\StructType\Card $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
     /**
@@ -205,7 +205,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->lastName = $lastName;
-        
+
         return $this;
     }
     /**
@@ -228,7 +228,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
     /**
@@ -251,7 +251,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
     /**
@@ -270,7 +270,7 @@ class Cards extends AbstractStructBase
     public function setShippingAddress(?\StructType\Address $shippingAddress = null): self
     {
         $this->shippingAddress = $shippingAddress;
-        
+
         return $this;
     }
     /**
@@ -293,7 +293,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardInd, true), gettype($cardInd)), __LINE__);
         }
         $this->cardInd = $cardInd;
-        
+
         return $this;
     }
     /**
@@ -316,7 +316,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
         }
         $this->comment = $comment;
-        
+
         return $this;
     }
     /**
@@ -339,7 +339,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isDisabled, true), gettype($isDisabled)), __LINE__);
         }
         $this->isDisabled = $isDisabled;
-        
+
         return $this;
     }
     /**
@@ -362,7 +362,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($disableDate, true), gettype($disableDate)), __LINE__);
         }
         $this->disableDate = $disableDate;
-        
+
         return $this;
     }
     /**
@@ -381,7 +381,7 @@ class Cards extends AbstractStructBase
     public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
-        
+
         return $this;
     }
     /**
@@ -404,7 +404,7 @@ class Cards extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($default, true), gettype($default)), __LINE__);
         }
         $this->default = $default;
-        
+
         return $this;
     }
 }

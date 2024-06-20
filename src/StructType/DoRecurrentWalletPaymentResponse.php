@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -69,7 +69,7 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -92,7 +92,7 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRecordId, true), gettype($paymentRecordId)), __LINE__);
         }
         $this->paymentRecordId = $paymentRecordId;
-        
+
         return $this;
     }
     /**
@@ -111,7 +111,7 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
     public function setBillingRecordList(?\StructType\BillingRecordList $billingRecordList = null): self
     {
         $this->billingRecordList = $billingRecordList;
-        
+
         return $this;
     }
 }

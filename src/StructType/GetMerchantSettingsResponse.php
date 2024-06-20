@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -59,7 +59,7 @@ class GetMerchantSettingsResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -78,7 +78,7 @@ class GetMerchantSettingsResponse extends AbstractStructBase
     public function setListPointOfSell(?\StructType\ListPointOfSell $listPointOfSell = null): self
     {
         $this->listPointOfSell = $listPointOfSell;
-        
+
         return $this;
     }
 }

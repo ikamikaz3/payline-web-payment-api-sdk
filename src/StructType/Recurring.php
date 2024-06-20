@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -143,7 +143,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -166,7 +166,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingCycle, true), gettype($billingCycle)), __LINE__);
         }
         $this->billingCycle = $billingCycle;
-        
+
         return $this;
     }
     /**
@@ -189,7 +189,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingLeft, true), gettype($billingLeft)), __LINE__);
         }
         $this->billingLeft = $billingLeft;
-        
+
         return $this;
     }
     /**
@@ -212,7 +212,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstAmount, true), gettype($firstAmount)), __LINE__);
         }
         $this->firstAmount = $firstAmount;
-        
+
         return $this;
     }
     /**
@@ -235,7 +235,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingDay, true), gettype($billingDay)), __LINE__);
         }
         $this->billingDay = $billingDay;
-        
+
         return $this;
     }
     /**
@@ -258,7 +258,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->startDate = $startDate;
-        
+
         return $this;
     }
     /**
@@ -281,7 +281,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->endDate = $endDate;
-        
+
         return $this;
     }
     /**
@@ -304,7 +304,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($newAmount, true), gettype($newAmount)), __LINE__);
         }
         $this->newAmount = $newAmount;
-        
+
         return $this;
     }
     /**
@@ -327,7 +327,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountModificationDate, true), gettype($amountModificationDate)), __LINE__);
         }
         $this->amountModificationDate = $amountModificationDate;
-        
+
         return $this;
     }
     /**
@@ -350,7 +350,7 @@ class Recurring extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingRank, true), gettype($billingRank)), __LINE__);
         }
         $this->billingRank = $billingRank;
-        
+
         return $this;
     }
 }

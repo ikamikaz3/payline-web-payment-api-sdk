@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\StructType;
+namespace PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -258,7 +258,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -277,7 +277,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setCard(?\StructType\CardOut $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
     /**
@@ -296,7 +296,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
-        
+
         return $this;
     }
     /**
@@ -315,7 +315,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setCustomerMedia(?\StructType\Media $customerMedia = null): self
     {
         $this->customerMedia = $customerMedia;
-        
+
         return $this;
     }
     /**
@@ -338,7 +338,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -357,7 +357,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setPointOfSell(?\StructType\PointOfSell $pointOfSell = null): self
     {
         $this->pointOfSell = $pointOfSell;
-        
+
         return $this;
     }
     /**
@@ -376,7 +376,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setRoutingRule(?\StructType\RoutingRule $routingRule = null): self
     {
         $this->routingRule = $routingRule;
-        
+
         return $this;
     }
     /**
@@ -395,7 +395,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setTransaction(?\StructType\Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
     /**
@@ -414,7 +414,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -433,7 +433,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setAuthorization(?\StructType\Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
-        
+
         return $this;
     }
     /**
@@ -452,7 +452,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -471,7 +471,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -490,7 +490,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -509,7 +509,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setAssociatedTransactionsList(?\StructType\AssociatedTransactionsList $associatedTransactionsList = null): self
     {
         $this->associatedTransactionsList = $associatedTransactionsList;
-        
+
         return $this;
     }
     /**
@@ -528,7 +528,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setStatusHistoryList(?\StructType\StatusHistoryList $statusHistoryList = null): self
     {
         $this->statusHistoryList = $statusHistoryList;
-        
+
         return $this;
     }
     /**
@@ -551,7 +551,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
     /**
@@ -579,7 +579,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
         } else {
             $this->paymentAdditionalList = $paymentAdditionalList;
         }
-        
+
         return $this;
     }
     /**
@@ -598,7 +598,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setBankAccountData(?\StructType\BankAccountData $bankAccountData = null): self
     {
         $this->bankAccountData = $bankAccountData;
-        
+
         return $this;
     }
     /**
@@ -617,7 +617,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
     /**
@@ -645,7 +645,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
         }
-        
+
         return $this;
     }
     /**
@@ -668,7 +668,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedTransactionId, true), gettype($linkedTransactionId)), __LINE__);
         }
         $this->linkedTransactionId = $linkedTransactionId;
-        
+
         return $this;
     }
     /**
@@ -700,7 +700,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
         } else {
             $this->travelFileNumber = $travelFileNumber;
         }
-        
+
         return $this;
     }
 }
