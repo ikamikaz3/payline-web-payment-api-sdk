@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -283,7 +283,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -302,7 +302,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -325,7 +325,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->returnURL = $returnURL;
-        
+
         return $this;
     }
     /**
@@ -348,7 +348,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->cancelURL = $cancelURL;
-        
+
         return $this;
     }
     /**
@@ -367,7 +367,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -386,7 +386,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -409,7 +409,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notificationURL, true), gettype($notificationURL)), __LINE__);
         }
         $this->notificationURL = $notificationURL;
-        
+
         return $this;
     }
     /**
@@ -428,7 +428,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setSelectedContractList(?\StructType\SelectedContractList $selectedContractList = null): self
     {
         $this->selectedContractList = $selectedContractList;
-        
+
         return $this;
     }
     /**
@@ -447,7 +447,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setSecondSelectedContractList(?\StructType\SelectedContractList $secondSelectedContractList = null): self
     {
         $this->secondSelectedContractList = $secondSelectedContractList;
-        
+
         return $this;
     }
     /**
@@ -466,7 +466,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -489,7 +489,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($languageCode, true), gettype($languageCode)), __LINE__);
         }
         $this->languageCode = $languageCode;
-        
+
         return $this;
     }
     /**
@@ -512,7 +512,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customPaymentPageCode, true), gettype($customPaymentPageCode)), __LINE__);
         }
         $this->customPaymentPageCode = $customPaymentPageCode;
-        
+
         return $this;
     }
     /**
@@ -531,7 +531,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setOwner(?\StructType\Owner $owner = null): self
     {
         $this->owner = $owner;
-        
+
         return $this;
     }
     /**
@@ -554,7 +554,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($securityMode, true), gettype($securityMode)), __LINE__);
         }
         $this->securityMode = $securityMode;
-        
+
         return $this;
     }
     /**
@@ -573,7 +573,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setRecurring(?\StructType\Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
-        
+
         return $this;
     }
     /**
@@ -596,7 +596,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customPaymentTemplateURL, true), gettype($customPaymentTemplateURL)), __LINE__);
         }
         $this->customPaymentTemplateURL = $customPaymentTemplateURL;
-        
+
         return $this;
     }
     /**
@@ -615,7 +615,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
-        
+
         return $this;
     }
     /**
@@ -638,7 +638,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantName, true), gettype($merchantName)), __LINE__);
         }
         $this->merchantName = $merchantName;
-        
+
         return $this;
     }
     /**
@@ -657,7 +657,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
     /**
@@ -680,7 +680,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($miscData, true), gettype($miscData)), __LINE__);
         }
         $this->miscData = $miscData;
-        
+
         return $this;
     }
     /**
@@ -703,7 +703,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($asynchronousRetryTimeout, true), gettype($asynchronousRetryTimeout)), __LINE__);
         }
         $this->asynchronousRetryTimeout = $asynchronousRetryTimeout;
-        
+
         return $this;
     }
     /**
@@ -722,7 +722,7 @@ class DoWebPaymentRequest extends AbstractStructBase
     public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
-        
+
         return $this;
     }
     /**
@@ -745,7 +745,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantScore, true), gettype($merchantScore)), __LINE__);
         }
         $this->merchantScore = $merchantScore;
-        
+
         return $this;
     }
     /**
@@ -768,7 +768,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($skipSmartDisplay, true), gettype($skipSmartDisplay)), __LINE__);
         }
         $this->skipSmartDisplay = $skipSmartDisplay;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -71,7 +71,7 @@ class GetBillingRecordRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -94,7 +94,7 @@ class GetBillingRecordRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRecordId, true), gettype($paymentRecordId)), __LINE__);
         }
         $this->paymentRecordId = $paymentRecordId;
-        
+
         return $this;
     }
     /**
@@ -117,7 +117,7 @@ class GetBillingRecordRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingRecordId, true), gettype($billingRecordId)), __LINE__);
         }
         $this->billingRecordId = $billingRecordId;
-        
+
         return $this;
     }
 }

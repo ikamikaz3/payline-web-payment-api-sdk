@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -147,7 +147,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
     /**
@@ -170,7 +170,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maskedCardNumber, true), gettype($maskedCardNumber)), __LINE__);
         }
         $this->maskedCardNumber = $maskedCardNumber;
-        
+
         return $this;
     }
     /**
@@ -193,7 +193,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expirationDate, true), gettype($expirationDate)), __LINE__);
         }
         $this->expirationDate = $expirationDate;
-        
+
         return $this;
     }
     /**
@@ -216,7 +216,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($virtualCard, true), gettype($virtualCard)), __LINE__);
         }
         $this->virtualCard = $virtualCard;
-        
+
         return $this;
     }
     /**
@@ -239,7 +239,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardType, true), gettype($cardType)), __LINE__);
         }
         $this->cardType = $cardType;
-        
+
         return $this;
     }
     /**
@@ -262,7 +262,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardProduct, true), gettype($cardProduct)), __LINE__);
         }
         $this->cardProduct = $cardProduct;
-        
+
         return $this;
     }
     /**
@@ -285,7 +285,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acceptanceNetwork, true), gettype($acceptanceNetwork)), __LINE__);
         }
         $this->acceptanceNetwork = $acceptanceNetwork;
-        
+
         return $this;
     }
     /**
@@ -308,7 +308,7 @@ class GetTokenResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bank, true), gettype($bank)), __LINE__);
         }
         $this->bank = $bank;
-        
+
         return $this;
     }
     /**
@@ -327,7 +327,7 @@ class GetTokenResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
 }

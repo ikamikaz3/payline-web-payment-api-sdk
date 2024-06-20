@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -89,7 +89,7 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -108,7 +108,7 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
     public function setTransaction(?\StructType\Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
     /**
@@ -127,7 +127,7 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
     public function setAuthorization(?\StructType\Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
-        
+
         return $this;
     }
     /**
@@ -146,7 +146,7 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
     public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
     /**
@@ -169,7 +169,7 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedTransactionId, true), gettype($linkedTransactionId)), __LINE__);
         }
         $this->linkedTransactionId = $linkedTransactionId;
-        
+
         return $this;
     }
 }

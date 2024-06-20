@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -89,7 +89,7 @@ class GetBalanceResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -108,7 +108,7 @@ class GetBalanceResponse extends AbstractStructBase
     public function setBalance(?\StructType\Balance $balance = null): self
     {
         $this->balance = $balance;
-        
+
         return $this;
     }
     /**
@@ -131,7 +131,7 @@ class GetBalanceResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($crdproduct, true), gettype($crdproduct)), __LINE__);
         }
         $this->crdproduct = $crdproduct;
-        
+
         return $this;
     }
     /**
@@ -154,7 +154,7 @@ class GetBalanceResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($crdprogram, true), gettype($crdprogram)), __LINE__);
         }
         $this->crdprogram = $crdprogram;
-        
+
         return $this;
     }
     /**
@@ -177,7 +177,7 @@ class GetBalanceResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($crddesign, true), gettype($crddesign)), __LINE__);
         }
         $this->crddesign = $crddesign;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -76,7 +76,7 @@ class PaymentData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
     /**
@@ -99,7 +99,7 @@ class PaymentData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($network, true), gettype($network)), __LINE__);
         }
         $this->network = $network;
-        
+
         return $this;
     }
     /**
@@ -122,7 +122,7 @@ class PaymentData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tokenData, true), gettype($tokenData)), __LINE__);
         }
         $this->tokenData = $tokenData;
-        
+
         return $this;
     }
 }

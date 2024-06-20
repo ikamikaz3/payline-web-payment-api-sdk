@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -85,7 +85,7 @@ class RoutingRule extends AbstractStructBase
         } else {
             $this->id = $id;
         }
-        
+
         return $this;
     }
     /**
@@ -117,7 +117,7 @@ class RoutingRule extends AbstractStructBase
         } else {
             $this->sourceContractNumber = $sourceContractNumber;
         }
-        
+
         return $this;
     }
     /**
@@ -149,7 +149,7 @@ class RoutingRule extends AbstractStructBase
         } else {
             $this->targetContractNumber = $targetContractNumber;
         }
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -184,7 +184,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->ref = $ref;
         }
-        
+
         return $this;
     }
     /**
@@ -216,7 +216,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->price = $price;
         }
-        
+
         return $this;
     }
     /**
@@ -248,7 +248,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->quantity = $quantity;
         }
-        
+
         return $this;
     }
     /**
@@ -280,7 +280,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->comment = $comment;
         }
-        
+
         return $this;
     }
     /**
@@ -312,7 +312,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->category = $category;
         }
-        
+
         return $this;
     }
     /**
@@ -344,7 +344,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->brand = $brand;
         }
-        
+
         return $this;
     }
     /**
@@ -376,7 +376,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->subcategory1 = $subcategory1;
         }
-        
+
         return $this;
     }
     /**
@@ -408,7 +408,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->subcategory2 = $subcategory2;
         }
-        
+
         return $this;
     }
     /**
@@ -440,7 +440,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->additionalData = $additionalData;
         }
-        
+
         return $this;
     }
     /**
@@ -472,7 +472,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->taxRate = $taxRate;
         }
-        
+
         return $this;
     }
     /**
@@ -504,7 +504,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->seller = $seller;
         }
-        
+
         return $this;
     }
     /**
@@ -536,7 +536,7 @@ class OrderDetail extends AbstractStructBase
         } else {
             $this->sellerType = $sellerType;
         }
-        
+
         return $this;
     }
 }

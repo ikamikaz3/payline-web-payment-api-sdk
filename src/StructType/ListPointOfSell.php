@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -64,7 +64,7 @@ class ListPointOfSell extends AbstractStructBase
             $message = sprintf('The pointOfSell property can only contain items of type \StructType\PointOfSell, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
     /**
@@ -80,7 +80,7 @@ class ListPointOfSell extends AbstractStructBase
             throw new InvalidArgumentException($pointOfSellArrayErrorMessage, __LINE__);
         }
         $this->pointOfSell = $pointOfSell;
-        
+
         return $this;
     }
     /**
@@ -96,7 +96,7 @@ class ListPointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The pointOfSell property can only contain items of type \StructType\PointOfSell, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->pointOfSell[] = $item;
-        
+
         return $this;
     }
 }

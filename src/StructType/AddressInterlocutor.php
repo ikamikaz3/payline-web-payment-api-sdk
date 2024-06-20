@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -103,7 +103,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
         }
         $this->street1 = $street1;
-        
+
         return $this;
     }
     /**
@@ -126,7 +126,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
         }
         $this->street2 = $street2;
-        
+
         return $this;
     }
     /**
@@ -149,7 +149,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city, true), gettype($city)), __LINE__);
         }
         $this->city = $city;
-        
+
         return $this;
     }
     /**
@@ -172,7 +172,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
         }
         $this->zipCode = $zipCode;
-        
+
         return $this;
     }
     /**
@@ -195,7 +195,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($state, true), gettype($state)), __LINE__);
         }
         $this->state = $state;
-        
+
         return $this;
     }
     /**
@@ -218,7 +218,7 @@ class AddressInterlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
         }
         $this->country = $country;
-        
+
         return $this;
     }
 }

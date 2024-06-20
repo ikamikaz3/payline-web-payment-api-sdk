@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -71,7 +71,7 @@ class UnBlockRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
     /**
@@ -94,7 +94,7 @@ class UnBlockRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionDate, true), gettype($transactionDate)), __LINE__);
         }
         $this->transactionDate = $transactionDate;
-        
+
         return $this;
     }
     /**
@@ -117,7 +117,7 @@ class UnBlockRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
 }

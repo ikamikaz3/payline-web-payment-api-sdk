@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -259,7 +259,7 @@ class Order extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ref, true), gettype($ref)), __LINE__);
         }
         $this->ref = $ref;
-        
+
         return $this;
     }
     /**
@@ -282,7 +282,7 @@ class Order extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -305,7 +305,7 @@ class Order extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
         $this->currency = $currency;
-        
+
         return $this;
     }
     /**
@@ -328,7 +328,7 @@ class Order extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -360,7 +360,7 @@ class Order extends AbstractStructBase
         } else {
             $this->origin = $origin;
         }
-        
+
         return $this;
     }
     /**
@@ -392,7 +392,7 @@ class Order extends AbstractStructBase
         } else {
             $this->country = $country;
         }
-        
+
         return $this;
     }
     /**
@@ -424,7 +424,7 @@ class Order extends AbstractStructBase
         } else {
             $this->taxes = $taxes;
         }
-        
+
         return $this;
     }
     /**
@@ -452,7 +452,7 @@ class Order extends AbstractStructBase
         } else {
             $this->details = $details;
         }
-        
+
         return $this;
     }
     /**
@@ -484,7 +484,7 @@ class Order extends AbstractStructBase
         } else {
             $this->deliveryTime = $deliveryTime;
         }
-        
+
         return $this;
     }
     /**
@@ -516,7 +516,7 @@ class Order extends AbstractStructBase
         } else {
             $this->deliveryMode = $deliveryMode;
         }
-        
+
         return $this;
     }
     /**
@@ -548,7 +548,7 @@ class Order extends AbstractStructBase
         } else {
             $this->deliveryExpectedDate = $deliveryExpectedDate;
         }
-        
+
         return $this;
     }
     /**
@@ -580,7 +580,7 @@ class Order extends AbstractStructBase
         } else {
             $this->deliveryExpectedDelay = $deliveryExpectedDelay;
         }
-        
+
         return $this;
     }
     /**
@@ -612,7 +612,7 @@ class Order extends AbstractStructBase
         } else {
             $this->deliveryCharge = $deliveryCharge;
         }
-        
+
         return $this;
     }
     /**
@@ -644,7 +644,7 @@ class Order extends AbstractStructBase
         } else {
             $this->discountAmount = $discountAmount;
         }
-        
+
         return $this;
     }
     /**
@@ -676,7 +676,7 @@ class Order extends AbstractStructBase
         } else {
             $this->otaPackageType = $otaPackageType;
         }
-        
+
         return $this;
     }
     /**
@@ -708,7 +708,7 @@ class Order extends AbstractStructBase
         } else {
             $this->otaDestinationCountry = $otaDestinationCountry;
         }
-        
+
         return $this;
     }
     /**
@@ -740,7 +740,7 @@ class Order extends AbstractStructBase
         } else {
             $this->bookingReference = $bookingReference;
         }
-        
+
         return $this;
     }
     /**
@@ -772,7 +772,7 @@ class Order extends AbstractStructBase
         } else {
             $this->orderDetail = $orderDetail;
         }
-        
+
         return $this;
     }
     /**
@@ -804,7 +804,7 @@ class Order extends AbstractStructBase
         } else {
             $this->orderExtended = $orderExtended;
         }
-        
+
         return $this;
     }
     /**
@@ -836,7 +836,7 @@ class Order extends AbstractStructBase
         } else {
             $this->orderOTA = $orderOTA;
         }
-        
+
         return $this;
     }
 }

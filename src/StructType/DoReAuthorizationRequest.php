@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -103,7 +103,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -126,7 +126,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
     /**
@@ -145,7 +145,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -164,7 +164,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -183,7 +183,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -206,7 +206,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
 }

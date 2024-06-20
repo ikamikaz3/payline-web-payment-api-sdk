@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -69,7 +69,7 @@ class IsRegisteredResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -92,7 +92,7 @@ class IsRegisteredResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
     /**
@@ -115,7 +115,7 @@ class IsRegisteredResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
         }
         $this->data = $data;
-        
+
         return $this;
     }
 }

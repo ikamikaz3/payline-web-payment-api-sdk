@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ServiceType;
+namespace Motherbrain\PaylineWebPayment\ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -27,11 +27,11 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetWebPaymentDetails = $this->getSoapClient()->__soapCall('getWebPaymentDetails', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetWebPaymentDetails;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }
@@ -49,11 +49,11 @@ class Get extends AbstractSoapClientBase
             $this->setResult($resultGetWebWallet = $this->getSoapClient()->__soapCall('getWebWallet', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultGetWebWallet;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }

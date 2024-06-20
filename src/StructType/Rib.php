@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -73,7 +73,7 @@ class Rib extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tellerCode, true), gettype($tellerCode)), __LINE__);
         }
         $this->tellerCode = $tellerCode;
-        
+
         return $this;
     }
     /**
@@ -96,7 +96,7 @@ class Rib extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->accountNumber = $accountNumber;
-        
+
         return $this;
     }
     /**
@@ -119,7 +119,7 @@ class Rib extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
-        
+
         return $this;
     }
 }

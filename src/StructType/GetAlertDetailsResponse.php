@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -303,7 +303,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alertId, true), gettype($alertId)), __LINE__);
         }
         $this->AlertId = $alertId;
-        
+
         return $this;
     }
     /**
@@ -326,7 +326,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionStatus, true), gettype($transactionStatus)), __LINE__);
         }
         $this->TransactionStatus = $transactionStatus;
-        
+
         return $this;
     }
     /**
@@ -349,7 +349,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantLabel, true), gettype($merchantLabel)), __LINE__);
         }
         $this->MerchantLabel = $merchantLabel;
-        
+
         return $this;
     }
     /**
@@ -372,7 +372,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($posLabel, true), gettype($posLabel)), __LINE__);
         }
         $this->PosLabel = $posLabel;
-        
+
         return $this;
     }
     /**
@@ -395,7 +395,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->TransactionId = $transactionId;
-        
+
         return $this;
     }
     /**
@@ -418,7 +418,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($securityLevel, true), gettype($securityLevel)), __LINE__);
         }
         $this->SecurityLevel = $securityLevel;
-        
+
         return $this;
     }
     /**
@@ -441,7 +441,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionDate, true), gettype($transactionDate)), __LINE__);
         }
         $this->TransactionDate = $transactionDate;
-        
+
         return $this;
     }
     /**
@@ -464,7 +464,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionAmount, true), gettype($transactionAmount)), __LINE__);
         }
         $this->TransactionAmount = $transactionAmount;
-        
+
         return $this;
     }
     /**
@@ -487,7 +487,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionCurrency, true), gettype($transactionCurrency)), __LINE__);
         }
         $this->TransactionCurrency = $transactionCurrency;
-        
+
         return $this;
     }
     /**
@@ -510,7 +510,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentType, true), gettype($paymentType)), __LINE__);
         }
         $this->PaymentType = $paymentType;
-        
+
         return $this;
     }
     /**
@@ -533,7 +533,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentData, true), gettype($paymentData)), __LINE__);
         }
         $this->PaymentData = $paymentData;
-        
+
         return $this;
     }
     /**
@@ -556,7 +556,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referenceData, true), gettype($referenceData)), __LINE__);
         }
         $this->ReferenceData = $referenceData;
-        
+
         return $this;
     }
     /**
@@ -575,7 +575,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
     public function setCustomerTransHist(\StructType\CustomerTransHist $customerTransHist): self
     {
         $this->CustomerTransHist = $customerTransHist;
-        
+
         return $this;
     }
     /**
@@ -594,7 +594,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
     public function setPaymentMeansTransHist(\StructType\PaymentMeansTransHist $paymentMeansTransHist): self
     {
         $this->PaymentMeansTransHist = $paymentMeansTransHist;
-        
+
         return $this;
     }
     /**
@@ -613,7 +613,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
     public function setAlertsTransHist(\StructType\AlertsTransHist $alertsTransHist): self
     {
         $this->AlertsTransHist = $alertsTransHist;
-        
+
         return $this;
     }
     /**
@@ -632,7 +632,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -664,7 +664,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->ExplanationCode = $explanationCode;
         }
-        
+
         return $this;
     }
     /**
@@ -696,7 +696,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->ExplanationLabel = $explanationLabel;
         }
-        
+
         return $this;
     }
     /**
@@ -728,7 +728,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->HolderName = $holderName;
         }
-        
+
         return $this;
     }
     /**
@@ -760,7 +760,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->CustomerId = $customerId;
         }
-        
+
         return $this;
     }
     /**
@@ -792,7 +792,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->BuyerFirstName = $buyerFirstName;
         }
-        
+
         return $this;
     }
     /**
@@ -824,7 +824,7 @@ class GetAlertDetailsResponse extends AbstractStructBase
         } else {
             $this->BuyerLastName = $buyerLastName;
         }
-        
+
         return $this;
     }
 }

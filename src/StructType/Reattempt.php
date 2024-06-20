@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -83,7 +83,7 @@ class Reattempt extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($indicator, true), gettype($indicator)), __LINE__);
         }
         $this->indicator = $indicator;
-        
+
         return $this;
     }
     /**
@@ -106,7 +106,7 @@ class Reattempt extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($frozenPeriod, true), gettype($frozenPeriod)), __LINE__);
         }
         $this->frozenPeriod = $frozenPeriod;
-        
+
         return $this;
     }
     /**
@@ -129,7 +129,7 @@ class Reattempt extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowedDuration, true), gettype($allowedDuration)), __LINE__);
         }
         $this->allowedDuration = $allowedDuration;
-        
+
         return $this;
     }
     /**
@@ -152,7 +152,7 @@ class Reattempt extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maxAllowed, true), gettype($maxAllowed)), __LINE__);
         }
         $this->maxAllowed = $maxAllowed;
-        
+
         return $this;
     }
 }

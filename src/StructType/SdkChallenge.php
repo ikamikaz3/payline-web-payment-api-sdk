@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -147,7 +147,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardType, true), gettype($cardType)), __LINE__);
         }
         $this->cardType = $cardType;
-        
+
         return $this;
     }
     /**
@@ -170,7 +170,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSServerTransID, true), gettype($threeDSServerTransID)), __LINE__);
         }
         $this->threeDSServerTransID = $threeDSServerTransID;
-        
+
         return $this;
     }
     /**
@@ -193,7 +193,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSVersion, true), gettype($threeDSVersion)), __LINE__);
         }
         $this->threeDSVersion = $threeDSVersion;
-        
+
         return $this;
     }
     /**
@@ -216,7 +216,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authenticationType, true), gettype($authenticationType)), __LINE__);
         }
         $this->authenticationType = $authenticationType;
-        
+
         return $this;
     }
     /**
@@ -239,7 +239,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transStatus, true), gettype($transStatus)), __LINE__);
         }
         $this->transStatus = $transStatus;
-        
+
         return $this;
     }
     /**
@@ -262,7 +262,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sdkTransID, true), gettype($sdkTransID)), __LINE__);
         }
         $this->sdkTransID = $sdkTransID;
-        
+
         return $this;
     }
     /**
@@ -285,7 +285,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dsTransID, true), gettype($dsTransID)), __LINE__);
         }
         $this->dsTransID = $dsTransID;
-        
+
         return $this;
     }
     /**
@@ -308,7 +308,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsTransID, true), gettype($acsTransID)), __LINE__);
         }
         $this->acsTransID = $acsTransID;
-        
+
         return $this;
     }
     /**
@@ -331,7 +331,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsRenderingType, true), gettype($acsRenderingType)), __LINE__);
         }
         $this->acsRenderingType = $acsRenderingType;
-        
+
         return $this;
     }
     /**
@@ -354,7 +354,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsReferenceNumber, true), gettype($acsReferenceNumber)), __LINE__);
         }
         $this->acsReferenceNumber = $acsReferenceNumber;
-        
+
         return $this;
     }
     /**
@@ -377,7 +377,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsSignedContent, true), gettype($acsSignedContent)), __LINE__);
         }
         $this->acsSignedContent = $acsSignedContent;
-        
+
         return $this;
     }
     /**
@@ -400,7 +400,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsOperatorID, true), gettype($acsOperatorID)), __LINE__);
         }
         $this->acsOperatorID = $acsOperatorID;
-        
+
         return $this;
     }
     /**
@@ -423,7 +423,7 @@ class SdkChallenge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acsChallengeMandated, true), gettype($acsChallengeMandated)), __LINE__);
         }
         $this->acsChallengeMandated = $acsChallengeMandated;
-        
+
         return $this;
     }
 }

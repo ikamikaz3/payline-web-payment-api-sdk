@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -229,7 +229,7 @@ class Card extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
     /**
@@ -248,7 +248,7 @@ class Card extends AbstractStructBase
     public function setPaymentData(?\StructType\PaymentData $paymentData = null): self
     {
         $this->paymentData = $paymentData;
-        
+
         return $this;
     }
     /**
@@ -280,7 +280,7 @@ class Card extends AbstractStructBase
         } else {
             $this->encryptionKeyId = $encryptionKeyId;
         }
-        
+
         return $this;
     }
     /**
@@ -312,7 +312,7 @@ class Card extends AbstractStructBase
         } else {
             $this->encryptedData = $encryptedData;
         }
-        
+
         return $this;
     }
     /**
@@ -344,7 +344,7 @@ class Card extends AbstractStructBase
         } else {
             $this->number = $number;
         }
-        
+
         return $this;
     }
     /**
@@ -376,7 +376,7 @@ class Card extends AbstractStructBase
         } else {
             $this->expirationDate = $expirationDate;
         }
-        
+
         return $this;
     }
     /**
@@ -408,7 +408,7 @@ class Card extends AbstractStructBase
         } else {
             $this->cvx = $cvx;
         }
-        
+
         return $this;
     }
     /**
@@ -440,7 +440,7 @@ class Card extends AbstractStructBase
         } else {
             $this->ownerBirthdayDate = $ownerBirthdayDate;
         }
-        
+
         return $this;
     }
     /**
@@ -472,7 +472,7 @@ class Card extends AbstractStructBase
         } else {
             $this->password = $password;
         }
-        
+
         return $this;
     }
     /**
@@ -504,7 +504,7 @@ class Card extends AbstractStructBase
         } else {
             $this->cardPresent = $cardPresent;
         }
-        
+
         return $this;
     }
     /**
@@ -536,7 +536,7 @@ class Card extends AbstractStructBase
         } else {
             $this->cardholder = $cardholder;
         }
-        
+
         return $this;
     }
     /**
@@ -568,7 +568,7 @@ class Card extends AbstractStructBase
         } else {
             $this->token = $token;
         }
-        
+
         return $this;
     }
     /**
@@ -600,7 +600,7 @@ class Card extends AbstractStructBase
         } else {
             $this->par = $par;
         }
-        
+
         return $this;
     }
     /**
@@ -632,7 +632,7 @@ class Card extends AbstractStructBase
         } else {
             $this->tokenRequestorCryptogram = $tokenRequestorCryptogram;
         }
-        
+
         return $this;
     }
     /**
@@ -664,7 +664,7 @@ class Card extends AbstractStructBase
         } else {
             $this->tokenRequestorId = $tokenRequestorId;
         }
-        
+
         return $this;
     }
     /**
@@ -696,7 +696,7 @@ class Card extends AbstractStructBase
         } else {
             $this->last4 = $last4;
         }
-        
+
         return $this;
     }
     /**
@@ -728,7 +728,7 @@ class Card extends AbstractStructBase
         } else {
             $this->panType = $panType;
         }
-        
+
         return $this;
     }
 }

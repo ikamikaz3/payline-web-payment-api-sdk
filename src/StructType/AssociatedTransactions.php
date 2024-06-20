@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -114,7 +114,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->transactionId = $transactionId;
-        
+
         return $this;
     }
     /**
@@ -137,7 +137,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
     /**
@@ -160,7 +160,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -183,7 +183,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -206,7 +206,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
     /**
@@ -229,7 +229,7 @@ class AssociatedTransactions extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originTransactionId, true), gettype($originTransactionId)), __LINE__);
         }
         $this->originTransactionId = $originTransactionId;
-        
+
         return $this;
     }
     /**
@@ -261,7 +261,7 @@ class AssociatedTransactions extends AbstractStructBase
         } else {
             $this->currency = $currency;
         }
-        
+
         return $this;
     }
 }

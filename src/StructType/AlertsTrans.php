@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -113,7 +113,7 @@ class AlertsTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alertId, true), gettype($alertId)), __LINE__);
         }
         $this->AlertId = $alertId;
-        
+
         return $this;
     }
     /**
@@ -136,7 +136,7 @@ class AlertsTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($explanationLabel, true), gettype($explanationLabel)), __LINE__);
         }
         $this->ExplanationLabel = $explanationLabel;
-        
+
         return $this;
     }
     /**
@@ -159,7 +159,7 @@ class AlertsTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($explanationCode, true), gettype($explanationCode)), __LINE__);
         }
         $this->ExplanationCode = $explanationCode;
-        
+
         return $this;
     }
     /**
@@ -182,7 +182,7 @@ class AlertsTrans extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ruleName, true), gettype($ruleName)), __LINE__);
         }
         $this->RuleName = $ruleName;
-        
+
         return $this;
     }
     /**
@@ -214,7 +214,7 @@ class AlertsTrans extends AbstractStructBase
         } else {
             $this->RuleAction = $ruleAction;
         }
-        
+
         return $this;
     }
     /**
@@ -246,7 +246,7 @@ class AlertsTrans extends AbstractStructBase
         } else {
             $this->RuleCriteria = $ruleCriteria;
         }
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -147,7 +147,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->transactionId = $transactionId;
-        
+
         return $this;
     }
     /**
@@ -170,7 +170,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -193,7 +193,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -216,7 +216,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fees, true), gettype($fees)), __LINE__);
         }
         $this->fees = $fees;
-        
+
         return $this;
     }
     /**
@@ -239,7 +239,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
     /**
@@ -262,7 +262,7 @@ class StatusHistory extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originTransactionId, true), gettype($originTransactionId)), __LINE__);
         }
         $this->originTransactionId = $originTransactionId;
-        
+
         return $this;
     }
     /**
@@ -294,7 +294,7 @@ class StatusHistory extends AbstractStructBase
         } else {
             $this->amountValue = $amountValue;
         }
-        
+
         return $this;
     }
     /**
@@ -326,7 +326,7 @@ class StatusHistory extends AbstractStructBase
         } else {
             $this->amountCurrency = $amountCurrency;
         }
-        
+
         return $this;
     }
     /**
@@ -358,7 +358,7 @@ class StatusHistory extends AbstractStructBase
         } else {
             $this->feesValue = $feesValue;
         }
-        
+
         return $this;
     }
     /**
@@ -390,7 +390,7 @@ class StatusHistory extends AbstractStructBase
         } else {
             $this->feesCurrency = $feesCurrency;
         }
-        
+
         return $this;
     }
 }

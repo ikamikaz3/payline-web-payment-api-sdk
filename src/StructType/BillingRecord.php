@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -128,7 +128,7 @@ class BillingRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
     /**
@@ -151,7 +151,7 @@ class BillingRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
     /**
@@ -174,7 +174,7 @@ class BillingRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->status = $status;
-        
+
         return $this;
     }
     /**
@@ -202,7 +202,7 @@ class BillingRecord extends AbstractStructBase
         } else {
             $this->result = $result;
         }
-        
+
         return $this;
     }
     /**
@@ -230,7 +230,7 @@ class BillingRecord extends AbstractStructBase
         } else {
             $this->transaction = $transaction;
         }
-        
+
         return $this;
     }
     /**
@@ -258,7 +258,7 @@ class BillingRecord extends AbstractStructBase
         } else {
             $this->authorization = $authorization;
         }
-        
+
         return $this;
     }
     /**
@@ -290,7 +290,7 @@ class BillingRecord extends AbstractStructBase
         } else {
             $this->nbTry = $nbTry;
         }
-        
+
         return $this;
     }
     /**
@@ -322,7 +322,7 @@ class BillingRecord extends AbstractStructBase
         } else {
             $this->rank = $rank;
         }
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -83,7 +83,7 @@ class BankAccount extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bankCode, true), gettype($bankCode)), __LINE__);
         }
         $this->bankCode = $bankCode;
-        
+
         return $this;
     }
     /**
@@ -106,7 +106,7 @@ class BankAccount extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bankNumber, true), gettype($bankNumber)), __LINE__);
         }
         $this->bankNumber = $bankNumber;
-        
+
         return $this;
     }
     /**
@@ -125,7 +125,7 @@ class BankAccount extends AbstractStructBase
     public function setIban(?\StructType\Iban $iban = null): self
     {
         $this->iban = $iban;
-        
+
         return $this;
     }
     /**
@@ -144,7 +144,7 @@ class BankAccount extends AbstractStructBase
     public function setRib(?\StructType\Rib $rib = null): self
     {
         $this->rib = $rib;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -123,7 +123,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deviceRenderingOptionsIF, true), gettype($deviceRenderingOptionsIF)), __LINE__);
         }
         $this->deviceRenderingOptionsIF = $deviceRenderingOptionsIF;
-        
+
         return $this;
     }
     /**
@@ -146,7 +146,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deviceRenderOptionsUI, true), gettype($deviceRenderOptionsUI)), __LINE__);
         }
         $this->deviceRenderOptionsUI = $deviceRenderOptionsUI;
-        
+
         return $this;
     }
     /**
@@ -169,7 +169,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appID, true), gettype($appID)), __LINE__);
         }
         $this->appID = $appID;
-        
+
         return $this;
     }
     /**
@@ -192,7 +192,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ephemPubKey, true), gettype($ephemPubKey)), __LINE__);
         }
         $this->ephemPubKey = $ephemPubKey;
-        
+
         return $this;
     }
     /**
@@ -215,7 +215,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maxTimeout, true), gettype($maxTimeout)), __LINE__);
         }
         $this->maxTimeout = $maxTimeout;
-        
+
         return $this;
     }
     /**
@@ -238,7 +238,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referenceNumber, true), gettype($referenceNumber)), __LINE__);
         }
         $this->referenceNumber = $referenceNumber;
-        
+
         return $this;
     }
     /**
@@ -261,7 +261,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transID, true), gettype($transID)), __LINE__);
         }
         $this->transID = $transID;
-        
+
         return $this;
     }
     /**
@@ -284,7 +284,7 @@ class Sdk extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($encData, true), gettype($encData)), __LINE__);
         }
         $this->encData = $encData;
-        
+
         return $this;
     }
 }

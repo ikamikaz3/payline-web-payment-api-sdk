@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -123,7 +123,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($keyId, true), gettype($keyId)), __LINE__);
         }
         $this->keyId = $keyId;
-        
+
         return $this;
     }
     /**
@@ -146,7 +146,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modulus, true), gettype($modulus)), __LINE__);
         }
         $this->modulus = $modulus;
-        
+
         return $this;
     }
     /**
@@ -169,7 +169,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantKeyName, true), gettype($merchantKeyName)), __LINE__);
         }
         $this->merchantKeyName = $merchantKeyName;
-        
+
         return $this;
     }
     /**
@@ -192,7 +192,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($publicExponent, true), gettype($publicExponent)), __LINE__);
         }
         $this->publicExponent = $publicExponent;
-        
+
         return $this;
     }
     /**
@@ -215,7 +215,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expirationDate, true), gettype($expirationDate)), __LINE__);
         }
         $this->expirationDate = $expirationDate;
-        
+
         return $this;
     }
     /**
@@ -238,7 +238,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cipher, true), gettype($cipher)), __LINE__);
         }
         $this->cipher = $cipher;
-        
+
         return $this;
     }
     /**
@@ -261,7 +261,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($algo, true), gettype($algo)), __LINE__);
         }
         $this->algo = $algo;
-        
+
         return $this;
     }
     /**
@@ -284,7 +284,7 @@ class Key extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($size, true), gettype($size)), __LINE__);
         }
         $this->size = $size;
-        
+
         return $this;
     }
 }

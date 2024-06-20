@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -279,7 +279,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -302,7 +302,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->startDate = $startDate;
-        
+
         return $this;
     }
     /**
@@ -325,7 +325,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->endDate = $endDate;
-        
+
         return $this;
     }
     /**
@@ -348,7 +348,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->transactionId = $transactionId;
-        
+
         return $this;
     }
     /**
@@ -371,7 +371,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderRef, true), gettype($orderRef)), __LINE__);
         }
         $this->orderRef = $orderRef;
-        
+
         return $this;
     }
     /**
@@ -394,7 +394,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -417,7 +417,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationNumber, true), gettype($authorizationNumber)), __LINE__);
         }
         $this->authorizationNumber = $authorizationNumber;
-        
+
         return $this;
     }
     /**
@@ -440,7 +440,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnCode, true), gettype($returnCode)), __LINE__);
         }
         $this->returnCode = $returnCode;
-        
+
         return $this;
     }
     /**
@@ -463,7 +463,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentMean, true), gettype($paymentMean)), __LINE__);
         }
         $this->paymentMean = $paymentMean;
-        
+
         return $this;
     }
     /**
@@ -486,7 +486,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionType, true), gettype($transactionType)), __LINE__);
         }
         $this->transactionType = $transactionType;
-        
+
         return $this;
     }
     /**
@@ -509,7 +509,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->name = $name;
-        
+
         return $this;
     }
     /**
@@ -532,7 +532,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
     /**
@@ -555,7 +555,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
     /**
@@ -578,7 +578,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNumber, true), gettype($cardNumber)), __LINE__);
         }
         $this->cardNumber = $cardNumber;
-        
+
         return $this;
     }
     /**
@@ -601,7 +601,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
         $this->currency = $currency;
-        
+
         return $this;
     }
     /**
@@ -624,7 +624,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($minAmount, true), gettype($minAmount)), __LINE__);
         }
         $this->minAmount = $minAmount;
-        
+
         return $this;
     }
     /**
@@ -647,7 +647,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maxAmount, true), gettype($maxAmount)), __LINE__);
         }
         $this->maxAmount = $maxAmount;
-        
+
         return $this;
     }
     /**
@@ -670,7 +670,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
     /**
@@ -693,7 +693,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sequenceNumber, true), gettype($sequenceNumber)), __LINE__);
         }
         $this->sequenceNumber = $sequenceNumber;
-        
+
         return $this;
     }
     /**
@@ -716,7 +716,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
     /**
@@ -739,7 +739,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pointOfSellId, true), gettype($pointOfSellId)), __LINE__);
         }
         $this->pointOfSellId = $pointOfSellId;
-        
+
         return $this;
     }
     /**
@@ -762,7 +762,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNetwork, true), gettype($cardNetwork)), __LINE__);
         }
         $this->cardNetwork = $cardNetwork;
-        
+
         return $this;
     }
     /**
@@ -785,7 +785,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSecured, true), gettype($threeDSecured)), __LINE__);
         }
         $this->threeDSecured = $threeDSecured;
-        
+
         return $this;
     }
     /**
@@ -808,7 +808,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerMediaId, true), gettype($customerMediaId)), __LINE__);
         }
         $this->customerMediaId = $customerMediaId;
-        
+
         return $this;
     }
 }

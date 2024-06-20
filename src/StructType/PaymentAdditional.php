@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -102,7 +102,7 @@ class PaymentAdditional extends AbstractStructBase
     public function setTransaction(?\StructType\Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
     /**
@@ -121,7 +121,7 @@ class PaymentAdditional extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -140,7 +140,7 @@ class PaymentAdditional extends AbstractStructBase
     public function setAuthorization(?\StructType\Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
-        
+
         return $this;
     }
     /**
@@ -168,7 +168,7 @@ class PaymentAdditional extends AbstractStructBase
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
         }
-        
+
         return $this;
     }
     /**
@@ -196,7 +196,7 @@ class PaymentAdditional extends AbstractStructBase
         } else {
             $this->card = $card;
         }
-        
+
         return $this;
     }
     /**
@@ -224,7 +224,7 @@ class PaymentAdditional extends AbstractStructBase
         } else {
             $this->extendedCard = $extendedCard;
         }
-        
+
         return $this;
     }
 }

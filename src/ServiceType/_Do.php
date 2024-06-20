@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ServiceType;
+namespace Motherbrain\PaylineWebPayment\ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -27,11 +27,11 @@ class _Do extends AbstractSoapClientBase
             $this->setResult($resultDoWebPayment = $this->getSoapClient()->__soapCall('doWebPayment', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultDoWebPayment;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }

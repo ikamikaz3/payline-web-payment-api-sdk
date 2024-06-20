@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -134,7 +134,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -157,7 +157,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
     /**
@@ -176,7 +176,7 @@ class DoRefundRequest extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -199,7 +199,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
         }
         $this->comment = $comment;
-        
+
         return $this;
     }
     /**
@@ -218,7 +218,7 @@ class DoRefundRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -241,7 +241,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sequenceNumber, true), gettype($sequenceNumber)), __LINE__);
         }
         $this->sequenceNumber = $sequenceNumber;
-        
+
         return $this;
     }
     /**
@@ -264,7 +264,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
     /**
@@ -292,7 +292,7 @@ class DoRefundRequest extends AbstractStructBase
         } else {
             $this->details = $details;
         }
-        
+
         return $this;
     }
     /**
@@ -315,7 +315,7 @@ class DoRefundRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($miscData, true), gettype($miscData)), __LINE__);
         }
         $this->miscData = $miscData;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -93,7 +93,7 @@ class ConnectionData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantId, true), gettype($merchantId)), __LINE__);
         }
         $this->merchantId = $merchantId;
-        
+
         return $this;
     }
     /**
@@ -116,7 +116,7 @@ class ConnectionData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userId, true), gettype($userId)), __LINE__);
         }
         $this->userId = $userId;
-        
+
         return $this;
     }
     /**
@@ -139,7 +139,7 @@ class ConnectionData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->password = $password;
-        
+
         return $this;
     }
     /**
@@ -162,7 +162,7 @@ class ConnectionData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secretQuestion, true), gettype($secretQuestion)), __LINE__);
         }
         $this->secretQuestion = $secretQuestion;
-        
+
         return $this;
     }
     /**
@@ -185,7 +185,7 @@ class ConnectionData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secretAnswer, true), gettype($secretAnswer)), __LINE__);
         }
         $this->secretAnswer = $secretAnswer;
-        
+
         return $this;
     }
 }

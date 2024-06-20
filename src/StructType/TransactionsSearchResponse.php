@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -59,7 +59,7 @@ class TransactionsSearchResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -78,7 +78,7 @@ class TransactionsSearchResponse extends AbstractStructBase
     public function setTransactionList(?\StructType\TransactionList $transactionList = null): self
     {
         $this->transactionList = $transactionList;
-        
+
         return $this;
     }
 }

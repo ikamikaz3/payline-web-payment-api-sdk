@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -266,7 +266,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setResult(?\StructType\Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
     /**
@@ -285,7 +285,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setTransaction(?\StructType\Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
     /**
@@ -304,7 +304,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -323,7 +323,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setAuthorization(?\StructType\Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
-        
+
         return $this;
     }
     /**
@@ -342,7 +342,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setCard(?\StructType\CardOut $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
     /**
@@ -361,7 +361,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
-        
+
         return $this;
     }
     /**
@@ -380,7 +380,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -403,7 +403,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -431,7 +431,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->privateDataList = $privateDataList;
         }
-        
+
         return $this;
     }
     /**
@@ -463,7 +463,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->paymentRecordId = $paymentRecordId;
         }
-        
+
         return $this;
     }
     /**
@@ -491,7 +491,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->billingRecordList = $billingRecordList;
         }
-        
+
         return $this;
     }
     /**
@@ -519,7 +519,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
         }
-        
+
         return $this;
     }
     /**
@@ -547,7 +547,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->paymentAdditionalList = $paymentAdditionalList;
         }
-        
+
         return $this;
     }
     /**
@@ -579,7 +579,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->media = $media;
         }
-        
+
         return $this;
     }
     /**
@@ -611,7 +611,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->numberOfAttempt = $numberOfAttempt;
         }
-        
+
         return $this;
     }
     /**
@@ -639,7 +639,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->wallet = $wallet;
         }
-        
+
         return $this;
     }
     /**
@@ -667,7 +667,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->contractNumberWalletList = $contractNumberWalletList;
         }
-        
+
         return $this;
     }
     /**
@@ -686,7 +686,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setBankAccountData(?\StructType\BankAccountData $bankAccountData = null): self
     {
         $this->bankAccountData = $bankAccountData;
-        
+
         return $this;
     }
     /**
@@ -705,7 +705,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
     /**
@@ -724,7 +724,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -747,7 +747,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedTransactionId, true), gettype($linkedTransactionId)), __LINE__);
         }
         $this->linkedTransactionId = $linkedTransactionId;
-        
+
         return $this;
     }
     /**
@@ -779,7 +779,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         } else {
             $this->travelFileNumber = $travelFileNumber;
         }
-        
+
         return $this;
     }
 }

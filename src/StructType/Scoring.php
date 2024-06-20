@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -107,7 +107,7 @@ class Scoring extends AbstractStructBase
         } else {
             $this->partnerId = $partnerId;
         }
-        
+
         return $this;
     }
     /**
@@ -139,7 +139,7 @@ class Scoring extends AbstractStructBase
         } else {
             $this->orderId = $orderId;
         }
-        
+
         return $this;
     }
     /**
@@ -171,7 +171,7 @@ class Scoring extends AbstractStructBase
         } else {
             $this->value = $value;
         }
-        
+
         return $this;
     }
     /**
@@ -203,7 +203,7 @@ class Scoring extends AbstractStructBase
         } else {
             $this->response = $response;
         }
-        
+
         return $this;
     }
     /**
@@ -235,7 +235,7 @@ class Scoring extends AbstractStructBase
         } else {
             $this->errorMessage = $errorMessage;
         }
-        
+
         return $this;
     }
 }

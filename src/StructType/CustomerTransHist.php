@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -66,7 +66,7 @@ class CustomerTransHist extends AbstractStructBase
             $message = sprintf('The CustomerTrans property can only contain items of type \StructType\CustomerTrans, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
     /**
@@ -82,7 +82,7 @@ class CustomerTransHist extends AbstractStructBase
             throw new InvalidArgumentException($customerTransArrayErrorMessage, __LINE__);
         }
         $this->CustomerTrans = $customerTrans;
-        
+
         return $this;
     }
     /**
@@ -98,7 +98,7 @@ class CustomerTransHist extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The CustomerTrans property can only contain items of type \StructType\CustomerTrans, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->CustomerTrans[] = $item;
-        
+
         return $this;
     }
 }

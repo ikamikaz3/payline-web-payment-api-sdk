@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -63,7 +63,7 @@ class TicketSend extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($toBuyer, true), gettype($toBuyer)), __LINE__);
         }
         $this->toBuyer = $toBuyer;
-        
+
         return $this;
     }
     /**
@@ -86,7 +86,7 @@ class TicketSend extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($toMerchant, true), gettype($toMerchant)), __LINE__);
         }
         $this->toMerchant = $toMerchant;
-        
+
         return $this;
     }
 }

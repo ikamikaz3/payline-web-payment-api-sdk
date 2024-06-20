@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -195,7 +195,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
     /**
@@ -214,7 +214,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setPayment(?\StructType\Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
     /**
@@ -233,7 +233,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setOrder(?\StructType\Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
     /**
@@ -256,7 +256,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
     /**
@@ -275,7 +275,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setBuyer(?\StructType\Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
     /**
@@ -298,7 +298,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardInd, true), gettype($cardInd)), __LINE__);
         }
         $this->cardInd = $cardInd;
-        
+
         return $this;
     }
     /**
@@ -321,7 +321,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cvx, true), gettype($cvx)), __LINE__);
         }
         $this->cvx = $cvx;
-        
+
         return $this;
     }
     /**
@@ -349,7 +349,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
         } else {
             $this->recurring = $recurring;
         }
-        
+
         return $this;
     }
     /**
@@ -368,7 +368,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
     /**
@@ -391,7 +391,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
     /**
@@ -410,7 +410,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
     /**
@@ -429,7 +429,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
     /**
@@ -452,7 +452,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedTransactionId, true), gettype($linkedTransactionId)), __LINE__);
         }
         $this->linkedTransactionId = $linkedTransactionId;
-        
+
         return $this;
     }
     /**
@@ -471,7 +471,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
-        
+
         return $this;
     }
     /**
@@ -503,7 +503,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
         } else {
             $this->travelFileNumber = $travelFileNumber;
         }
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EnumType;
+namespace Motherbrain\PaylineWebPayment\EnumType;
 
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 

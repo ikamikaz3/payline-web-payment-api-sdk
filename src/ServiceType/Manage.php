@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ServiceType;
+namespace Motherbrain\PaylineWebPayment\ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -27,11 +27,11 @@ class Manage extends AbstractSoapClientBase
             $this->setResult($resultManageWebWallet = $this->getSoapClient()->__soapCall('manageWebWallet', [
                 $parameters,
             ], [], [], $this->outputHeaders));
-        
+
             return $resultManageWebWallet;
         } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-        
+
             return false;
         }
     }

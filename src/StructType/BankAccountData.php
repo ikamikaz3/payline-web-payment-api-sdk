@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -83,7 +83,7 @@ class BankAccountData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
         }
         $this->countryCode = $countryCode;
-        
+
         return $this;
     }
     /**
@@ -106,7 +106,7 @@ class BankAccountData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bankCode, true), gettype($bankCode)), __LINE__);
         }
         $this->bankCode = $bankCode;
-        
+
         return $this;
     }
     /**
@@ -129,7 +129,7 @@ class BankAccountData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->accountNumber = $accountNumber;
-        
+
         return $this;
     }
     /**
@@ -152,7 +152,7 @@ class BankAccountData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
-        
+
         return $this;
     }
 }

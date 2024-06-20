@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -113,7 +113,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
     /**
@@ -136,7 +136,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->lastName = $lastName;
-        
+
         return $this;
     }
     /**
@@ -159,7 +159,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
     /**
@@ -182,7 +182,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phone, true), gettype($phone)), __LINE__);
         }
         $this->phone = $phone;
-        
+
         return $this;
     }
     /**
@@ -205,7 +205,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobile, true), gettype($mobile)), __LINE__);
         }
         $this->mobile = $mobile;
-        
+
         return $this;
     }
     /**
@@ -228,7 +228,7 @@ class Interlocutor extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fax, true), gettype($fax)), __LINE__);
         }
         $this->fax = $fax;
-        
+
         return $this;
     }
     /**
@@ -247,7 +247,7 @@ class Interlocutor extends AbstractStructBase
     public function setAddressInterlocutor(?\StructType\AddressInterlocutor $addressInterlocutor = null): self
     {
         $this->addressInterlocutor = $addressInterlocutor;
-        
+
         return $this;
     }
 }

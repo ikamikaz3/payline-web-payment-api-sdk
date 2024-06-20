@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -223,7 +223,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\SettlementType', is_array($settlementType) ? implode(', ', $settlementType) : var_export($settlementType, true), implode(', ', \EnumType\SettlementType::getValidValues())), __LINE__);
         }
         $this->settlementType = $settlementType;
-        
+
         return $this;
     }
     /**
@@ -246,7 +246,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($logoEnable, true), gettype($logoEnable)), __LINE__);
         }
         $this->logoEnable = $logoEnable;
-        
+
         return $this;
     }
     /**
@@ -269,7 +269,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($smallLogoMime, true), gettype($smallLogoMime)), __LINE__);
         }
         $this->smallLogoMime = $smallLogoMime;
-        
+
         return $this;
     }
     /**
@@ -292,7 +292,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($smallLogo, true), gettype($smallLogo)), __LINE__);
         }
         $this->smallLogo = $smallLogo;
-        
+
         return $this;
     }
     /**
@@ -315,7 +315,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($normalLogoMime, true), gettype($normalLogoMime)), __LINE__);
         }
         $this->normalLogoMime = $normalLogoMime;
-        
+
         return $this;
     }
     /**
@@ -338,7 +338,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($normalLogo, true), gettype($normalLogo)), __LINE__);
         }
         $this->normalLogo = $normalLogo;
-        
+
         return $this;
     }
     /**
@@ -357,7 +357,7 @@ class Contract extends AbstractStructBase
     public function setContribution(?\StructType\Contribution $contribution = null): self
     {
         $this->contribution = $contribution;
-        
+
         return $this;
     }
     /**
@@ -380,7 +380,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($enrolment3DS, true), gettype($enrolment3DS)), __LINE__);
         }
         $this->enrolment3DS = $enrolment3DS;
-        
+
         return $this;
     }
     /**
@@ -403,7 +403,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardType, true), gettype($cardType)), __LINE__);
         }
         $this->cardType = $cardType;
-        
+
         return $this;
     }
     /**
@@ -435,7 +435,7 @@ class Contract extends AbstractStructBase
         } else {
             $this->label = $label;
         }
-        
+
         return $this;
     }
     /**
@@ -458,7 +458,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
     /**
@@ -481,7 +481,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
         $this->currency = $currency;
-        
+
         return $this;
     }
     /**
@@ -504,7 +504,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxAmountPerTransaction, true), gettype($maxAmountPerTransaction)), __LINE__);
         }
         $this->maxAmountPerTransaction = $maxAmountPerTransaction;
-        
+
         return $this;
     }
     /**
@@ -523,7 +523,7 @@ class Contract extends AbstractStructBase
     public function setTechnicalData(?\StructType\TechnicalData $technicalData = null): self
     {
         $this->technicalData = $technicalData;
-        
+
         return $this;
     }
     /**
@@ -542,7 +542,7 @@ class Contract extends AbstractStructBase
     public function setBankAccount(?\StructType\BankAccount $bankAccount = null): self
     {
         $this->bankAccount = $bankAccount;
-        
+
         return $this;
     }
     /**
@@ -561,7 +561,7 @@ class Contract extends AbstractStructBase
     public function setAcquirerInterlocutor(?\StructType\Interlocutor $acquirerInterlocutor = null): self
     {
         $this->acquirerInterlocutor = $acquirerInterlocutor;
-        
+
         return $this;
     }
     /**
@@ -584,7 +584,7 @@ class Contract extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->description = $description;
-        
+
         return $this;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -133,7 +133,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acceptHeader, true), gettype($acceptHeader)), __LINE__);
         }
         $this->acceptHeader = $acceptHeader;
-        
+
         return $this;
     }
     /**
@@ -156,7 +156,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($javaEnabled, true), gettype($javaEnabled)), __LINE__);
         }
         $this->javaEnabled = $javaEnabled;
-        
+
         return $this;
     }
     /**
@@ -179,7 +179,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($javascriptEnabled, true), gettype($javascriptEnabled)), __LINE__);
         }
         $this->javascriptEnabled = $javascriptEnabled;
-        
+
         return $this;
     }
     /**
@@ -202,7 +202,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($language, true), gettype($language)), __LINE__);
         }
         $this->language = $language;
-        
+
         return $this;
     }
     /**
@@ -225,7 +225,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($colorDepth, true), gettype($colorDepth)), __LINE__);
         }
         $this->colorDepth = $colorDepth;
-        
+
         return $this;
     }
     /**
@@ -248,7 +248,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($screenHeight, true), gettype($screenHeight)), __LINE__);
         }
         $this->screenHeight = $screenHeight;
-        
+
         return $this;
     }
     /**
@@ -271,7 +271,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($screenWidth, true), gettype($screenWidth)), __LINE__);
         }
         $this->screenWidth = $screenWidth;
-        
+
         return $this;
     }
     /**
@@ -294,7 +294,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($timeZoneOffset, true), gettype($timeZoneOffset)), __LINE__);
         }
         $this->timeZoneOffset = $timeZoneOffset;
-        
+
         return $this;
     }
     /**
@@ -317,7 +317,7 @@ class Browser extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userAgent, true), gettype($userAgent)), __LINE__);
         }
         $this->userAgent = $userAgent;
-        
+
         return $this;
     }
 }

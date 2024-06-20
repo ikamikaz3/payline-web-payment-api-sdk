@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StructType;
+namespace Motherbrain\PaylineWebPayment\StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -116,7 +116,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->country = $country;
         }
-        
+
         return $this;
     }
     /**
@@ -148,7 +148,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->isCvd = $isCvd;
         }
-        
+
         return $this;
     }
     /**
@@ -180,7 +180,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->bank = $bank;
         }
-        
+
         return $this;
     }
     /**
@@ -212,7 +212,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->type = $type;
         }
-        
+
         return $this;
     }
     /**
@@ -244,7 +244,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->network = $network;
         }
-        
+
         return $this;
     }
     /**
@@ -276,7 +276,7 @@ class ExtendedCardType extends AbstractStructBase
         } else {
             $this->product = $product;
         }
-        
+
         return $this;
     }
 }
