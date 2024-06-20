@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doAuthorizationRedirect method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoAuthorizationRedirectResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The redirectURL
      * Meta information extracted from the WSDL
@@ -30,38 +32,42 @@ class DoAuthorizationRedirectResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $redirectURL = null;
+
     /**
      * Constructor method for doAuthorizationRedirectResponse
+     * @param Result|null $result
+     * @param string|null $redirectURL
      * @uses DoAuthorizationRedirectResponse::setResult()
      * @uses DoAuthorizationRedirectResponse::setRedirectURL()
-     * @param \StructType\Result $result
-     * @param string $redirectURL
      */
-    public function __construct(?\StructType\Result $result = null, ?string $redirectURL = null)
+    public function __construct(?Result $result = null, ?string $redirectURL = null)
     {
         $this
             ->setResult($result)
             ->setRedirectURL($redirectURL);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoAuthorizationRedirectResponse
+     * @param Result|null $result
+     * @return DoAuthorizationRedirectResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get redirectURL value
      * @return string|null
@@ -70,10 +76,11 @@ class DoAuthorizationRedirectResponse extends AbstractStructBase
     {
         return $this->redirectURL;
     }
+
     /**
      * Set redirectURL value
-     * @param string $redirectURL
-     * @return \StructType\DoAuthorizationRedirectResponse
+     * @param string|null $redirectURL
+     * @return DoAuthorizationRedirectResponse
      */
     public function setRedirectURL(?string $redirectURL = null): self
     {
@@ -82,7 +89,7 @@ class DoAuthorizationRedirectResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($redirectURL, true), gettype($redirectURL)), __LINE__);
         }
         $this->redirectURL = $redirectURL;
-        
+
         return $this;
     }
 }

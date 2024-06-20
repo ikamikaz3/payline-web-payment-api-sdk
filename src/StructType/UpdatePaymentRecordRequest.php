@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for updatePaymentRecordRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class UpdatePaymentRecordRequest extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -28,13 +30,15 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\RecurringForUpdate|null
+     * @var RecurringForUpdate|null
      */
-    protected ?\StructType\RecurringForUpdate $recurring = null;
+    protected ?RecurringForUpdate $recurring = null;
+
     /**
      * The version
      * Meta information extracted from the WSDL
@@ -42,18 +46,19 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * Constructor method for updatePaymentRecordRequest
+     * @param string|null $contractNumber
+     * @param string|null $paymentRecordId
+     * @param RecurringForUpdate|null $recurring
+     * @param string|null $version
      * @uses UpdatePaymentRecordRequest::setContractNumber()
      * @uses UpdatePaymentRecordRequest::setPaymentRecordId()
      * @uses UpdatePaymentRecordRequest::setRecurring()
      * @uses UpdatePaymentRecordRequest::setVersion()
-     * @param string $contractNumber
-     * @param string $paymentRecordId
-     * @param \StructType\RecurringForUpdate $recurring
-     * @param string $version
      */
-    public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null, ?\StructType\RecurringForUpdate $recurring = null, ?string $version = null)
+    public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null, ?RecurringForUpdate $recurring = null, ?string $version = null)
     {
         $this
             ->setContractNumber($contractNumber)
@@ -61,6 +66,7 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
             ->setRecurring($recurring)
             ->setVersion($version);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -69,10 +75,11 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\UpdatePaymentRecordRequest
+     * @param string|null $contractNumber
+     * @return UpdatePaymentRecordRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -84,6 +91,7 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -92,10 +100,11 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\UpdatePaymentRecordRequest
+     * @param string|null $paymentRecordId
+     * @return UpdatePaymentRecordRequest
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {
@@ -107,25 +116,28 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\RecurringForUpdate|null
+     * @return RecurringForUpdate|null
      */
-    public function getRecurring(): ?\StructType\RecurringForUpdate
+    public function getRecurring(): ?RecurringForUpdate
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\RecurringForUpdate $recurring
-     * @return \StructType\UpdatePaymentRecordRequest
+     * @param RecurringForUpdate|null $recurring
+     * @return UpdatePaymentRecordRequest
      */
-    public function setRecurring(?\StructType\RecurringForUpdate $recurring = null): self
+    public function setRecurring(?RecurringForUpdate $recurring = null): self
     {
         $this->recurring = $recurring;
 
         return $this;
     }
+
     /**
      * Get version value
      * @return string|null
@@ -134,10 +146,11 @@ class UpdatePaymentRecordRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\UpdatePaymentRecordRequest
+     * @param string|null $version
+     * @return UpdatePaymentRecordRequest
      */
     public function setVersion(?string $version = null): self
     {

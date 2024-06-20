@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,69 +14,75 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the response for the transactionsSearch method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class TransactionsSearchResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transactionList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\TransactionList|null
+     * @var TransactionList|null
      */
-    protected ?\StructType\TransactionList $transactionList = null;
+    protected ?TransactionList $transactionList = null;
+
     /**
      * Constructor method for transactionsSearchResponse
+     * @param Result|null $result
+     * @param TransactionList|null $transactionList
      * @uses TransactionsSearchResponse::setResult()
      * @uses TransactionsSearchResponse::setTransactionList()
-     * @param \StructType\Result $result
-     * @param \StructType\TransactionList $transactionList
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\TransactionList $transactionList = null)
+    public function __construct(?Result $result = null, ?TransactionList $transactionList = null)
     {
         $this
             ->setResult($result)
             ->setTransactionList($transactionList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\TransactionsSearchResponse
+     * @param Result|null $result
+     * @return TransactionsSearchResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transactionList value
-     * @return \StructType\TransactionList|null
+     * @return TransactionList|null
      */
-    public function getTransactionList(): ?\StructType\TransactionList
+    public function getTransactionList(): ?TransactionList
     {
         return $this->transactionList;
     }
+
     /**
      * Set transactionList value
-     * @param \StructType\TransactionList $transactionList
-     * @return \StructType\TransactionsSearchResponse
+     * @param TransactionList|null $transactionList
+     * @return TransactionsSearchResponse
      */
-    public function setTransactionList(?\StructType\TransactionList $transactionList = null): self
+    public function setTransactionList(?TransactionList $transactionList = null): self
     {
         $this->transactionList = $transactionList;
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doScoringCheque method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoScoringChequeRequest extends AbstractStructBase
 {
     /**
@@ -23,34 +24,39 @@ class DoScoringChequeRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The cheque
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Cheque|null
+     * @var Cheque|null
      */
-    protected ?\StructType\Cheque $cheque = null;
+    protected ?Cheque $cheque = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -58,22 +64,23 @@ class DoScoringChequeRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * Constructor method for doScoringChequeRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Cheque|null $cheque
+     * @param Order|null $order
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $media
      * @uses DoScoringChequeRequest::setVersion()
      * @uses DoScoringChequeRequest::setPayment()
      * @uses DoScoringChequeRequest::setCheque()
      * @uses DoScoringChequeRequest::setOrder()
      * @uses DoScoringChequeRequest::setPrivateDataList()
      * @uses DoScoringChequeRequest::setMedia()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Cheque $cheque
-     * @param \StructType\Order $order
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $media
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Cheque $cheque = null, ?\StructType\Order $order = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $media = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Cheque $cheque = null, ?Order $order = null, ?PrivateDataList $privateDataList = null, ?string $media = null)
     {
         $this
             ->setVersion($version)
@@ -83,6 +90,7 @@ class DoScoringChequeRequest extends AbstractStructBase
             ->setPrivateDataList($privateDataList)
             ->setMedia($media);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -91,10 +99,11 @@ class DoScoringChequeRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoScoringChequeRequest
+     * @param string|null $version
+     * @return DoScoringChequeRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -106,82 +115,91 @@ class DoScoringChequeRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoScoringChequeRequest
+     * @param Payment|null $payment
+     * @return DoScoringChequeRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get cheque value
-     * @return \StructType\Cheque|null
+     * @return Cheque|null
      */
-    public function getCheque(): ?\StructType\Cheque
+    public function getCheque(): ?Cheque
     {
         return $this->cheque;
     }
+
     /**
      * Set cheque value
-     * @param \StructType\Cheque $cheque
-     * @return \StructType\DoScoringChequeRequest
+     * @param Cheque|null $cheque
+     * @return DoScoringChequeRequest
      */
-    public function setCheque(?\StructType\Cheque $cheque = null): self
+    public function setCheque(?Cheque $cheque = null): self
     {
         $this->cheque = $cheque;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoScoringChequeRequest
+     * @param Order|null $order
+     * @return DoScoringChequeRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoScoringChequeRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoScoringChequeRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -190,10 +208,11 @@ class DoScoringChequeRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoScoringChequeRequest
+     * @param string|null $media
+     * @return DoScoringChequeRequest
      */
     public function setMedia(?string $media = null): self
     {

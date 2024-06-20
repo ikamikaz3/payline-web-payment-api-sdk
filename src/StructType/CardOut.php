@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for cardOut StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class CardOut extends AbstractStructBase
 {
     /**
@@ -22,6 +23,7 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $number = null;
+
     /**
      * The type
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $type = null;
+
     /**
      * The expirationDate
      * Meta information extracted from the WSDL
@@ -38,6 +41,7 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $expirationDate = null;
+
     /**
      * The cardholder
      * Meta information extracted from the WSDL
@@ -46,6 +50,7 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardholder = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -54,6 +59,7 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The panType
      * Meta information extracted from the WSDL
@@ -62,20 +68,21 @@ class CardOut extends AbstractStructBase
      * @var string|null
      */
     protected ?string $panType = null;
+
     /**
      * Constructor method for cardOut
+     * @param string|null $number
+     * @param string|null $type
+     * @param string|null $expirationDate
+     * @param string|null $cardholder
+     * @param string|null $token
+     * @param string|null $panType
      * @uses CardOut::setNumber()
      * @uses CardOut::setType()
      * @uses CardOut::setExpirationDate()
      * @uses CardOut::setCardholder()
      * @uses CardOut::setToken()
      * @uses CardOut::setPanType()
-     * @param string $number
-     * @param string $type
-     * @param string $expirationDate
-     * @param string $cardholder
-     * @param string $token
-     * @param string $panType
      */
     public function __construct(?string $number = null, ?string $type = null, ?string $expirationDate = null, ?string $cardholder = null, ?string $token = null, ?string $panType = null)
     {
@@ -87,6 +94,7 @@ class CardOut extends AbstractStructBase
             ->setToken($token)
             ->setPanType($panType);
     }
+
     /**
      * Get number value
      * An additional test has been added (isset) before returning the property value as
@@ -98,12 +106,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->number ?? null;
     }
+
     /**
      * Set number value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $number
-     * @return \StructType\CardOut
+     * @param string|null $number
+     * @return CardOut
      */
     public function setNumber(?string $number = null): self
     {
@@ -111,14 +120,15 @@ class CardOut extends AbstractStructBase
         if (!is_null($number) && !is_string($number)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
-        if (is_null($number) || (is_array($number) && empty($number))) {
+        if (is_null($number)) {
             unset($this->number);
         } else {
             $this->number = $number;
         }
-        
+
         return $this;
     }
+
     /**
      * Get type value
      * An additional test has been added (isset) before returning the property value as
@@ -130,12 +140,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->type ?? null;
     }
+
     /**
      * Set type value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $type
-     * @return \StructType\CardOut
+     * @param string|null $type
+     * @return CardOut
      */
     public function setType(?string $type = null): self
     {
@@ -143,14 +154,15 @@ class CardOut extends AbstractStructBase
         if (!is_null($type) && !is_string($type)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
-        if (is_null($type) || (is_array($type) && empty($type))) {
+        if (is_null($type)) {
             unset($this->type);
         } else {
             $this->type = $type;
         }
-        
+
         return $this;
     }
+
     /**
      * Get expirationDate value
      * An additional test has been added (isset) before returning the property value as
@@ -162,12 +174,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->expirationDate ?? null;
     }
+
     /**
      * Set expirationDate value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $expirationDate
-     * @return \StructType\CardOut
+     * @param string|null $expirationDate
+     * @return CardOut
      */
     public function setExpirationDate(?string $expirationDate = null): self
     {
@@ -175,14 +188,15 @@ class CardOut extends AbstractStructBase
         if (!is_null($expirationDate) && !is_string($expirationDate)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expirationDate, true), gettype($expirationDate)), __LINE__);
         }
-        if (is_null($expirationDate) || (is_array($expirationDate) && empty($expirationDate))) {
+        if (is_null($expirationDate)) {
             unset($this->expirationDate);
         } else {
             $this->expirationDate = $expirationDate;
         }
-        
+
         return $this;
     }
+
     /**
      * Get cardholder value
      * An additional test has been added (isset) before returning the property value as
@@ -194,12 +208,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->cardholder ?? null;
     }
+
     /**
      * Set cardholder value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $cardholder
-     * @return \StructType\CardOut
+     * @param string|null $cardholder
+     * @return CardOut
      */
     public function setCardholder(?string $cardholder = null): self
     {
@@ -207,14 +222,15 @@ class CardOut extends AbstractStructBase
         if (!is_null($cardholder) && !is_string($cardholder)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardholder, true), gettype($cardholder)), __LINE__);
         }
-        if (is_null($cardholder) || (is_array($cardholder) && empty($cardholder))) {
+        if (is_null($cardholder)) {
             unset($this->cardholder);
         } else {
             $this->cardholder = $cardholder;
         }
-        
+
         return $this;
     }
+
     /**
      * Get token value
      * An additional test has been added (isset) before returning the property value as
@@ -226,12 +242,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->token ?? null;
     }
+
     /**
      * Set token value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $token
-     * @return \StructType\CardOut
+     * @param string|null $token
+     * @return CardOut
      */
     public function setToken(?string $token = null): self
     {
@@ -239,14 +256,15 @@ class CardOut extends AbstractStructBase
         if (!is_null($token) && !is_string($token)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
-        if (is_null($token) || (is_array($token) && empty($token))) {
+        if (is_null($token)) {
             unset($this->token);
         } else {
             $this->token = $token;
         }
-        
+
         return $this;
     }
+
     /**
      * Get panType value
      * An additional test has been added (isset) before returning the property value as
@@ -258,12 +276,13 @@ class CardOut extends AbstractStructBase
     {
         return $this->panType ?? null;
     }
+
     /**
      * Set panType value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $panType
-     * @return \StructType\CardOut
+     * @param string|null $panType
+     * @return CardOut
      */
     public function setPanType(?string $panType = null): self
     {
@@ -271,12 +290,12 @@ class CardOut extends AbstractStructBase
         if (!is_null($panType) && !is_string($panType)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($panType, true), gettype($panType)), __LINE__);
         }
-        if (is_null($panType) || (is_array($panType) && empty($panType))) {
+        if (is_null($panType)) {
             unset($this->panType);
         } else {
             $this->panType = $panType;
         }
-        
+
         return $this;
     }
 }

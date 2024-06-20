@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getTransactionDetails method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetTransactionDetailsRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The transactionId
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionId = null;
+
     /**
      * The orderRef
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderRef = null;
+
     /**
      * The startDate
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $startDate = null;
+
     /**
      * The endDate
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * The transactionHistory
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionHistory = null;
+
     /**
      * The archiveSearch
      * Meta information extracted from the WSDL
@@ -65,8 +72,16 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $archiveSearch = null;
+
     /**
      * Constructor method for getTransactionDetailsRequest
+     * @param string|null $version
+     * @param string|null $transactionId
+     * @param string|null $orderRef
+     * @param string|null $startDate
+     * @param string|null $endDate
+     * @param string|null $transactionHistory
+     * @param string|null $archiveSearch
      * @uses GetTransactionDetailsRequest::setVersion()
      * @uses GetTransactionDetailsRequest::setTransactionId()
      * @uses GetTransactionDetailsRequest::setOrderRef()
@@ -74,13 +89,6 @@ class GetTransactionDetailsRequest extends AbstractStructBase
      * @uses GetTransactionDetailsRequest::setEndDate()
      * @uses GetTransactionDetailsRequest::setTransactionHistory()
      * @uses GetTransactionDetailsRequest::setArchiveSearch()
-     * @param string $version
-     * @param string $transactionId
-     * @param string $orderRef
-     * @param string $startDate
-     * @param string $endDate
-     * @param string $transactionHistory
-     * @param string $archiveSearch
      */
     public function __construct(?string $version = null, ?string $transactionId = null, ?string $orderRef = null, ?string $startDate = null, ?string $endDate = null, ?string $transactionHistory = null, ?string $archiveSearch = null)
     {
@@ -93,6 +101,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             ->setTransactionHistory($transactionHistory)
             ->setArchiveSearch($archiveSearch);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -101,10 +110,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $version
+     * @return GetTransactionDetailsRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -113,9 +123,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get transactionId value
      * @return string|null
@@ -124,10 +135,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->transactionId;
     }
+
     /**
      * Set transactionId value
-     * @param string $transactionId
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $transactionId
+     * @return GetTransactionDetailsRequest
      */
     public function setTransactionId(?string $transactionId = null): self
     {
@@ -136,9 +148,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->transactionId = $transactionId;
-        
+
         return $this;
     }
+
     /**
      * Get orderRef value
      * @return string|null
@@ -147,10 +160,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->orderRef;
     }
+
     /**
      * Set orderRef value
-     * @param string $orderRef
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $orderRef
+     * @return GetTransactionDetailsRequest
      */
     public function setOrderRef(?string $orderRef = null): self
     {
@@ -159,9 +173,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderRef, true), gettype($orderRef)), __LINE__);
         }
         $this->orderRef = $orderRef;
-        
+
         return $this;
     }
+
     /**
      * Get startDate value
      * @return string|null
@@ -170,10 +185,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->startDate;
     }
+
     /**
      * Set startDate value
-     * @param string $startDate
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $startDate
+     * @return GetTransactionDetailsRequest
      */
     public function setStartDate(?string $startDate = null): self
     {
@@ -182,9 +198,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->startDate = $startDate;
-        
+
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -193,10 +210,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
-     * @param string $endDate
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $endDate
+     * @return GetTransactionDetailsRequest
      */
     public function setEndDate(?string $endDate = null): self
     {
@@ -205,9 +223,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->endDate = $endDate;
-        
+
         return $this;
     }
+
     /**
      * Get transactionHistory value
      * @return string|null
@@ -216,10 +235,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->transactionHistory;
     }
+
     /**
      * Set transactionHistory value
-     * @param string $transactionHistory
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $transactionHistory
+     * @return GetTransactionDetailsRequest
      */
     public function setTransactionHistory(?string $transactionHistory = null): self
     {
@@ -228,9 +248,10 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionHistory, true), gettype($transactionHistory)), __LINE__);
         }
         $this->transactionHistory = $transactionHistory;
-        
+
         return $this;
     }
+
     /**
      * Get archiveSearch value
      * @return string|null
@@ -239,10 +260,11 @@ class GetTransactionDetailsRequest extends AbstractStructBase
     {
         return $this->archiveSearch;
     }
+
     /**
      * Set archiveSearch value
-     * @param string $archiveSearch
-     * @return \StructType\GetTransactionDetailsRequest
+     * @param string|null $archiveSearch
+     * @return GetTransactionDetailsRequest
      */
     public function setArchiveSearch(?string $archiveSearch = null): self
     {
@@ -251,7 +273,7 @@ class GetTransactionDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($archiveSearch, true), gettype($archiveSearch)), __LINE__);
         }
         $this->archiveSearch = $archiveSearch;
-        
+
         return $this;
     }
 }

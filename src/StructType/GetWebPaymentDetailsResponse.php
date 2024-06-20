@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,54 +14,61 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doWebPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetWebPaymentDetailsResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The card
-     * @var \StructType\CardOut|null
+     * @var CardOut|null
      */
-    protected ?\StructType\CardOut $card = null;
+    protected ?CardOut $card = null;
+
     /**
      * The extendedCard
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * The order
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -69,14 +77,16 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -85,30 +95,34 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * The billingRecordList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\BillingRecordList|null
+     * @var BillingRecordList|null
      */
-    protected ?\StructType\BillingRecordList $billingRecordList = null;
+    protected ?BillingRecordList $billingRecordList = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The paymentAdditionalList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\PaymentAdditionalList|null
+     * @var PaymentAdditionalList|null
      */
-    protected ?\StructType\PaymentAdditionalList $paymentAdditionalList = null;
+    protected ?PaymentAdditionalList $paymentAdditionalList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -117,6 +131,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The numberOfAttempt
      * Meta information extracted from the WSDL
@@ -125,43 +140,49 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $numberOfAttempt = null;
+
     /**
      * The wallet
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Wallet|null
+     * @var Wallet|null
      */
-    protected ?\StructType\Wallet $wallet = null;
+    protected ?Wallet $wallet = null;
+
     /**
      * The contractNumberWalletList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\ContractNumberWalletList|null
+     * @var ContractNumberWalletList|null
      */
-    protected ?\StructType\ContractNumberWalletList $contractNumberWalletList = null;
+    protected ?ContractNumberWalletList $contractNumberWalletList = null;
+
     /**
      * The bankAccountData
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\BankAccountData|null
+     * @var BankAccountData|null
      */
-    protected ?\StructType\BankAccountData $bankAccountData = null;
+    protected ?BankAccountData $bankAccountData = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -169,6 +190,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * The travelFileNumber
      * Meta information extracted from the WSDL
@@ -177,8 +199,31 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $travelFileNumber = null;
+
     /**
      * Constructor method for getWebPaymentDetailsResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param Payment|null $payment
+     * @param Authorization|null $authorization
+     * @param CardOut|null $card
+     * @param ExtendedCardType|null $extendedCard
+     * @param Order|null $order
+     * @param string|null $contractNumber
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $paymentRecordId
+     * @param BillingRecordList|null $billingRecordList
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param PaymentAdditionalList|null $paymentAdditionalList
+     * @param string|null $media
+     * @param string|null $numberOfAttempt
+     * @param Wallet|null $wallet
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @param BankAccountData|null $bankAccountData
+     * @param SubMerchant|null $subMerchant
+     * @param Buyer|null $buyer
+     * @param string|null $linkedTransactionId
+     * @param string|null $travelFileNumber
      * @uses GetWebPaymentDetailsResponse::setResult()
      * @uses GetWebPaymentDetailsResponse::setTransaction()
      * @uses GetWebPaymentDetailsResponse::setPayment()
@@ -201,30 +246,8 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
      * @uses GetWebPaymentDetailsResponse::setBuyer()
      * @uses GetWebPaymentDetailsResponse::setLinkedTransactionId()
      * @uses GetWebPaymentDetailsResponse::setTravelFileNumber()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\Payment $payment
-     * @param \StructType\Authorization $authorization
-     * @param \StructType\CardOut $card
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @param \StructType\Order $order
-     * @param string $contractNumber
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $paymentRecordId
-     * @param \StructType\BillingRecordList $billingRecordList
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param \StructType\PaymentAdditionalList $paymentAdditionalList
-     * @param string $media
-     * @param string $numberOfAttempt
-     * @param \StructType\Wallet $wallet
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @param \StructType\BankAccountData $bankAccountData
-     * @param \StructType\SubMerchant $subMerchant
-     * @param \StructType\Buyer $buyer
-     * @param string $linkedTransactionId
-     * @param string $travelFileNumber
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\Payment $payment = null, ?\StructType\Authorization $authorization = null, ?\StructType\CardOut $card = null, ?\StructType\ExtendedCardType $extendedCard = null, ?\StructType\Order $order = null, ?string $contractNumber = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $paymentRecordId = null, ?\StructType\BillingRecordList $billingRecordList = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?\StructType\PaymentAdditionalList $paymentAdditionalList = null, ?string $media = null, ?string $numberOfAttempt = null, ?\StructType\Wallet $wallet = null, ?\StructType\ContractNumberWalletList $contractNumberWalletList = null, ?\StructType\BankAccountData $bankAccountData = null, ?\StructType\SubMerchant $subMerchant = null, ?\StructType\Buyer $buyer = null, ?string $linkedTransactionId = null, ?string $travelFileNumber = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?Payment $payment = null, ?Authorization $authorization = null, ?CardOut $card = null, ?ExtendedCardType $extendedCard = null, ?Order $order = null, ?string $contractNumber = null, ?PrivateDataList $privateDataList = null, ?string $paymentRecordId = null, ?BillingRecordList $billingRecordList = null, ?Authentication3DSecure $authentication3DSecure = null, ?PaymentAdditionalList $paymentAdditionalList = null, ?string $media = null, ?string $numberOfAttempt = null, ?Wallet $wallet = null, ?ContractNumberWalletList $contractNumberWalletList = null, ?BankAccountData $bankAccountData = null, ?SubMerchant $subMerchant = null, ?Buyer $buyer = null, ?string $linkedTransactionId = null, ?string $travelFileNumber = null)
     {
         $this
             ->setResult($result)
@@ -250,139 +273,154 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
             ->setLinkedTransactionId($linkedTransactionId)
             ->setTravelFileNumber($travelFileNumber);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Result|null $result
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Transaction|null $transaction
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Payment|null $payment
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get authorization value
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization;
     }
+
     /**
      * Set authorization value
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Authorization|null $authorization
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
 
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\CardOut|null
+     * @return CardOut|null
      */
-    public function getCard(): ?\StructType\CardOut
+    public function getCard(): ?CardOut
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\CardOut $card
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param CardOut|null $card
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setCard(?\StructType\CardOut $card = null): self
+    public function setCard(?CardOut $card = null): self
     {
         $this->card = $card;
 
         return $this;
     }
+
     /**
      * Get extendedCard value
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard;
     }
+
     /**
      * Set extendedCard value
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param ExtendedCardType|null $extendedCard
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Order|null $order
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -391,10 +429,11 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $contractNumber
+     * @return GetWebPaymentDetailsResponse
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -406,27 +445,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList ?? null;
     }
+
     /**
      * Set privateDataList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
-        if (is_null($privateDataList) || (is_array($privateDataList) && empty($privateDataList))) {
+        if (is_null($privateDataList)) {
             unset($this->privateDataList);
         } else {
             $this->privateDataList = $privateDataList;
@@ -434,6 +475,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * An additional test has been added (isset) before returning the property value as
@@ -445,12 +487,13 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->paymentRecordId ?? null;
     }
+
     /**
      * Set paymentRecordId value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $paymentRecordId
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $paymentRecordId
+     * @return GetWebPaymentDetailsResponse
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {
@@ -458,7 +501,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         if (!is_null($paymentRecordId) && !is_string($paymentRecordId)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRecordId, true), gettype($paymentRecordId)), __LINE__);
         }
-        if (is_null($paymentRecordId) || (is_array($paymentRecordId) && empty($paymentRecordId))) {
+        if (is_null($paymentRecordId)) {
             unset($this->paymentRecordId);
         } else {
             $this->paymentRecordId = $paymentRecordId;
@@ -466,27 +509,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRecordList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\BillingRecordList|null
+     * @return BillingRecordList|null
      */
-    public function getBillingRecordList(): ?\StructType\BillingRecordList
+    public function getBillingRecordList(): ?BillingRecordList
     {
         return $this->billingRecordList ?? null;
     }
+
     /**
      * Set billingRecordList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\BillingRecordList $billingRecordList
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param BillingRecordList|null $billingRecordList
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setBillingRecordList(?\StructType\BillingRecordList $billingRecordList = null): self
+    public function setBillingRecordList(?BillingRecordList $billingRecordList = null): self
     {
-        if (is_null($billingRecordList) || (is_array($billingRecordList) && empty($billingRecordList))) {
+        if (is_null($billingRecordList)) {
             unset($this->billingRecordList);
         } else {
             $this->billingRecordList = $billingRecordList;
@@ -494,27 +539,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure ?? null;
     }
+
     /**
      * Set authentication3DSecure value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
-        if (is_null($authentication3DSecure) || (is_array($authentication3DSecure) && empty($authentication3DSecure))) {
+        if (is_null($authentication3DSecure)) {
             unset($this->authentication3DSecure);
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
@@ -522,27 +569,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentAdditionalList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\PaymentAdditionalList|null
+     * @return PaymentAdditionalList|null
      */
-    public function getPaymentAdditionalList(): ?\StructType\PaymentAdditionalList
+    public function getPaymentAdditionalList(): ?PaymentAdditionalList
     {
         return $this->paymentAdditionalList ?? null;
     }
+
     /**
      * Set paymentAdditionalList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\PaymentAdditionalList $paymentAdditionalList
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param PaymentAdditionalList|null $paymentAdditionalList
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setPaymentAdditionalList(?\StructType\PaymentAdditionalList $paymentAdditionalList = null): self
+    public function setPaymentAdditionalList(?PaymentAdditionalList $paymentAdditionalList = null): self
     {
-        if (is_null($paymentAdditionalList) || (is_array($paymentAdditionalList) && empty($paymentAdditionalList))) {
+        if (is_null($paymentAdditionalList)) {
             unset($this->paymentAdditionalList);
         } else {
             $this->paymentAdditionalList = $paymentAdditionalList;
@@ -550,6 +599,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get media value
      * An additional test has been added (isset) before returning the property value as
@@ -561,12 +611,13 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->media ?? null;
     }
+
     /**
      * Set media value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $media
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $media
+     * @return GetWebPaymentDetailsResponse
      */
     public function setMedia(?string $media = null): self
     {
@@ -574,7 +625,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         if (!is_null($media) && !is_string($media)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
-        if (is_null($media) || (is_array($media) && empty($media))) {
+        if (is_null($media)) {
             unset($this->media);
         } else {
             $this->media = $media;
@@ -582,6 +633,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get numberOfAttempt value
      * An additional test has been added (isset) before returning the property value as
@@ -593,12 +645,13 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->numberOfAttempt ?? null;
     }
+
     /**
      * Set numberOfAttempt value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $numberOfAttempt
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $numberOfAttempt
+     * @return GetWebPaymentDetailsResponse
      */
     public function setNumberOfAttempt(?string $numberOfAttempt = null): self
     {
@@ -606,7 +659,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         if (!is_null($numberOfAttempt) && !is_string($numberOfAttempt)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numberOfAttempt, true), gettype($numberOfAttempt)), __LINE__);
         }
-        if (is_null($numberOfAttempt) || (is_array($numberOfAttempt) && empty($numberOfAttempt))) {
+        if (is_null($numberOfAttempt)) {
             unset($this->numberOfAttempt);
         } else {
             $this->numberOfAttempt = $numberOfAttempt;
@@ -614,27 +667,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get wallet value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Wallet|null
+     * @return Wallet|null
      */
-    public function getWallet(): ?\StructType\Wallet
+    public function getWallet(): ?Wallet
     {
         return $this->wallet ?? null;
     }
+
     /**
      * Set wallet value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Wallet $wallet
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Wallet|null $wallet
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setWallet(?\StructType\Wallet $wallet = null): self
+    public function setWallet(?Wallet $wallet = null): self
     {
-        if (is_null($wallet) || (is_array($wallet) && empty($wallet))) {
+        if (is_null($wallet)) {
             unset($this->wallet);
         } else {
             $this->wallet = $wallet;
@@ -642,27 +697,29 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumberWalletList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\ContractNumberWalletList|null
+     * @return ContractNumberWalletList|null
      */
-    public function getContractNumberWalletList(): ?\StructType\ContractNumberWalletList
+    public function getContractNumberWalletList(): ?ContractNumberWalletList
     {
         return $this->contractNumberWalletList ?? null;
     }
+
     /**
      * Set contractNumberWalletList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
+    public function setContractNumberWalletList(?ContractNumberWalletList $contractNumberWalletList = null): self
     {
-        if (is_null($contractNumberWalletList) || (is_array($contractNumberWalletList) && empty($contractNumberWalletList))) {
+        if (is_null($contractNumberWalletList)) {
             unset($this->contractNumberWalletList);
         } else {
             $this->contractNumberWalletList = $contractNumberWalletList;
@@ -670,63 +727,70 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get bankAccountData value
-     * @return \StructType\BankAccountData|null
+     * @return BankAccountData|null
      */
-    public function getBankAccountData(): ?\StructType\BankAccountData
+    public function getBankAccountData(): ?BankAccountData
     {
         return $this->bankAccountData;
     }
+
     /**
      * Set bankAccountData value
-     * @param \StructType\BankAccountData $bankAccountData
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param BankAccountData|null $bankAccountData
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setBankAccountData(?\StructType\BankAccountData $bankAccountData = null): self
+    public function setBankAccountData(?BankAccountData $bankAccountData = null): self
     {
         $this->bankAccountData = $bankAccountData;
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param SubMerchant|null $subMerchant
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param Buyer|null $buyer
+     * @return GetWebPaymentDetailsResponse
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -735,10 +799,11 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $linkedTransactionId
+     * @return GetWebPaymentDetailsResponse
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {
@@ -750,6 +815,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get travelFileNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -761,12 +827,13 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
     {
         return $this->travelFileNumber ?? null;
     }
+
     /**
      * Set travelFileNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $travelFileNumber
-     * @return \StructType\GetWebPaymentDetailsResponse
+     * @param string|null $travelFileNumber
+     * @return GetWebPaymentDetailsResponse
      */
     public function setTravelFileNumber(?string $travelFileNumber = null): self
     {
@@ -774,7 +841,7 @@ class GetWebPaymentDetailsResponse extends AbstractStructBase
         if (!is_null($travelFileNumber) && !is_string($travelFileNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelFileNumber, true), gettype($travelFileNumber)), __LINE__);
         }
-        if (is_null($travelFileNumber) || (is_array($travelFileNumber) && empty($travelFileNumber))) {
+        if (is_null($travelFileNumber)) {
             unset($this->travelFileNumber);
         } else {
             $this->travelFileNumber = $travelFileNumber;

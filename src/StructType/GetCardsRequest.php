@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getCards method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetCardsRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetCardsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class GetCardsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class GetCardsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class GetCardsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * Constructor method for getCardsRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param string|null $walletId
+     * @param string|null $cardInd
      * @uses GetCardsRequest::setVersion()
      * @uses GetCardsRequest::setContractNumber()
      * @uses GetCardsRequest::setWalletId()
      * @uses GetCardsRequest::setCardInd()
-     * @param string $version
-     * @param string $contractNumber
-     * @param string $walletId
-     * @param string $cardInd
      */
     public function __construct(?string $version = null, ?string $contractNumber = null, ?string $walletId = null, ?string $cardInd = null)
     {
@@ -63,6 +68,7 @@ class GetCardsRequest extends AbstractStructBase
             ->setWalletId($walletId)
             ->setCardInd($cardInd);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -71,10 +77,11 @@ class GetCardsRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetCardsRequest
+     * @param string|null $version
+     * @return GetCardsRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -86,6 +93,7 @@ class GetCardsRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -94,10 +102,11 @@ class GetCardsRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetCardsRequest
+     * @param string|null $contractNumber
+     * @return GetCardsRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -109,6 +118,7 @@ class GetCardsRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -117,10 +127,11 @@ class GetCardsRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\GetCardsRequest
+     * @param string|null $walletId
+     * @return GetCardsRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -132,6 +143,7 @@ class GetCardsRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -140,10 +152,11 @@ class GetCardsRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\GetCardsRequest
+     * @param string|null $cardInd
+     * @return GetCardsRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {

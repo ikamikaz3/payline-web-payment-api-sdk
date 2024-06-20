@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the buyer
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Buyer extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $title = null;
+
     /**
      * The lastName
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $lastName = null;
+
     /**
      * The firstName
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -44,20 +48,23 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $email = null;
+
     /**
      * The shippingAdress
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Address|null
+     * @var Address|null
      */
-    protected ?\StructType\Address $shippingAdress = null;
+    protected ?Address $shippingAdress = null;
+
     /**
      * The billingAddress
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Address|null
+     * @var Address|null
      */
-    protected ?\StructType\Address $billingAddress = null;
+    protected ?Address $billingAddress = null;
+
     /**
      * The accountCreateDate
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $accountCreateDate = null;
+
     /**
      * The accountAverageAmount
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $accountAverageAmount = null;
+
     /**
      * The accountOrderCount
      * Meta information extracted from the WSDL
@@ -79,6 +88,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $accountOrderCount = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -86,6 +96,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The walletDisplayed
      * Meta information extracted from the WSDL
@@ -93,6 +104,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletDisplayed = null;
+
     /**
      * The walletSecured
      * Meta information extracted from the WSDL
@@ -100,6 +112,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletSecured = null;
+
     /**
      * The walletCardInd
      * Meta information extracted from the WSDL
@@ -107,6 +120,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletCardInd = null;
+
     /**
      * The ip
      * Meta information extracted from the WSDL
@@ -114,6 +128,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $ip = null;
+
     /**
      * The mobilePhone
      * Meta information extracted from the WSDL
@@ -121,6 +136,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mobilePhone = null;
+
     /**
      * The customerId
      * Meta information extracted from the WSDL
@@ -128,6 +144,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customerId = null;
+
     /**
      * The legalStatus
      * Meta information extracted from the WSDL
@@ -135,6 +152,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $legalStatus = null;
+
     /**
      * The legalDocumentType
      * Meta information extracted from the WSDL
@@ -142,6 +160,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $legalDocumentType = null;
+
     /**
      * The legalDocument
      * Meta information extracted from the WSDL
@@ -149,6 +168,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $legalDocument = null;
+
     /**
      * The birthDate
      * Meta information extracted from the WSDL
@@ -156,6 +176,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $birthDate = null;
+
     /**
      * The fingerprintID
      * Meta information extracted from the WSDL
@@ -163,6 +184,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $fingerprintID = null;
+
     /**
      * The deviceFingerprint
      * Meta information extracted from the WSDL
@@ -170,6 +192,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $deviceFingerprint = null;
+
     /**
      * The isBot
      * Meta information extracted from the WSDL
@@ -177,6 +200,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isBot = null;
+
     /**
      * The isIncognito
      * Meta information extracted from the WSDL
@@ -184,6 +208,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isIncognito = null;
+
     /**
      * The isBehindProxy
      * Meta information extracted from the WSDL
@@ -191,6 +216,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isBehindProxy = null;
+
     /**
      * The isFromTor
      * Meta information extracted from the WSDL
@@ -198,6 +224,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isFromTor = null;
+
     /**
      * The isEmulator
      * Meta information extracted from the WSDL
@@ -205,6 +232,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isEmulator = null;
+
     /**
      * The isRooted
      * Meta information extracted from the WSDL
@@ -212,6 +240,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isRooted = null;
+
     /**
      * The hasTimezoneMismatch
      * Meta information extracted from the WSDL
@@ -219,6 +248,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $hasTimezoneMismatch = null;
+
     /**
      * The loyaltyMemberType
      * Meta information extracted from the WSDL
@@ -226,6 +256,7 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $loyaltyMemberType = null;
+
     /**
      * The buyerExtended
      * Meta information extracted from the WSDL
@@ -233,15 +264,49 @@ class Buyer extends AbstractStructBase
      * @var string|null
      */
     protected ?string $buyerExtended = null;
+
     /**
      * The merchantAuthentication
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\MerchantAuthentication|null
+     * @var MerchantAuthentication|null
      */
-    protected ?\StructType\MerchantAuthentication $merchantAuthentication = null;
+    protected ?MerchantAuthentication $merchantAuthentication = null;
+
     /**
      * Constructor method for buyer
+     * @param string|null $title
+     * @param string|null $lastName
+     * @param string|null $firstName
+     * @param string|null $email
+     * @param Address|null $shippingAdress
+     * @param Address|null $billingAddress
+     * @param string|null $accountCreateDate
+     * @param string|null $accountAverageAmount
+     * @param string|null $accountOrderCount
+     * @param string|null $walletId
+     * @param string|null $walletDisplayed
+     * @param string|null $walletSecured
+     * @param string|null $walletCardInd
+     * @param string|null $ip
+     * @param string|null $mobilePhone
+     * @param string|null $customerId
+     * @param string|null $legalStatus
+     * @param string|null $legalDocumentType
+     * @param string|null $legalDocument
+     * @param string|null $birthDate
+     * @param string|null $fingerprintID
+     * @param string|null $deviceFingerprint
+     * @param string|null $isBot
+     * @param string|null $isIncognito
+     * @param string|null $isBehindProxy
+     * @param string|null $isFromTor
+     * @param string|null $isEmulator
+     * @param string|null $isRooted
+     * @param string|null $hasTimezoneMismatch
+     * @param string|null $loyaltyMemberType
+     * @param string|null $buyerExtended
+     * @param MerchantAuthentication|null $merchantAuthentication
      * @uses Buyer::setTitle()
      * @uses Buyer::setLastName()
      * @uses Buyer::setFirstName()
@@ -274,40 +339,8 @@ class Buyer extends AbstractStructBase
      * @uses Buyer::setLoyaltyMemberType()
      * @uses Buyer::setBuyerExtended()
      * @uses Buyer::setMerchantAuthentication()
-     * @param string $title
-     * @param string $lastName
-     * @param string $firstName
-     * @param string $email
-     * @param \StructType\Address $shippingAdress
-     * @param \StructType\Address $billingAddress
-     * @param string $accountCreateDate
-     * @param string $accountAverageAmount
-     * @param string $accountOrderCount
-     * @param string $walletId
-     * @param string $walletDisplayed
-     * @param string $walletSecured
-     * @param string $walletCardInd
-     * @param string $ip
-     * @param string $mobilePhone
-     * @param string $customerId
-     * @param string $legalStatus
-     * @param string $legalDocumentType
-     * @param string $legalDocument
-     * @param string $birthDate
-     * @param string $fingerprintID
-     * @param string $deviceFingerprint
-     * @param string $isBot
-     * @param string $isIncognito
-     * @param string $isBehindProxy
-     * @param string $isFromTor
-     * @param string $isEmulator
-     * @param string $isRooted
-     * @param string $hasTimezoneMismatch
-     * @param string $loyaltyMemberType
-     * @param string $buyerExtended
-     * @param \StructType\MerchantAuthentication $merchantAuthentication
      */
-    public function __construct(?string $title = null, ?string $lastName = null, ?string $firstName = null, ?string $email = null, ?\StructType\Address $shippingAdress = null, ?\StructType\Address $billingAddress = null, ?string $accountCreateDate = null, ?string $accountAverageAmount = null, ?string $accountOrderCount = null, ?string $walletId = null, ?string $walletDisplayed = null, ?string $walletSecured = null, ?string $walletCardInd = null, ?string $ip = null, ?string $mobilePhone = null, ?string $customerId = null, ?string $legalStatus = null, ?string $legalDocumentType = null, ?string $legalDocument = null, ?string $birthDate = null, ?string $fingerprintID = null, ?string $deviceFingerprint = null, ?string $isBot = null, ?string $isIncognito = null, ?string $isBehindProxy = null, ?string $isFromTor = null, ?string $isEmulator = null, ?string $isRooted = null, ?string $hasTimezoneMismatch = null, ?string $loyaltyMemberType = null, ?string $buyerExtended = null, ?\StructType\MerchantAuthentication $merchantAuthentication = null)
+    public function __construct(?string $title = null, ?string $lastName = null, ?string $firstName = null, ?string $email = null, ?Address $shippingAdress = null, ?Address $billingAddress = null, ?string $accountCreateDate = null, ?string $accountAverageAmount = null, ?string $accountOrderCount = null, ?string $walletId = null, ?string $walletDisplayed = null, ?string $walletSecured = null, ?string $walletCardInd = null, ?string $ip = null, ?string $mobilePhone = null, ?string $customerId = null, ?string $legalStatus = null, ?string $legalDocumentType = null, ?string $legalDocument = null, ?string $birthDate = null, ?string $fingerprintID = null, ?string $deviceFingerprint = null, ?string $isBot = null, ?string $isIncognito = null, ?string $isBehindProxy = null, ?string $isFromTor = null, ?string $isEmulator = null, ?string $isRooted = null, ?string $hasTimezoneMismatch = null, ?string $loyaltyMemberType = null, ?string $buyerExtended = null, ?MerchantAuthentication $merchantAuthentication = null)
     {
         $this
             ->setTitle($title)
@@ -343,6 +376,7 @@ class Buyer extends AbstractStructBase
             ->setBuyerExtended($buyerExtended)
             ->setMerchantAuthentication($merchantAuthentication);
     }
+
     /**
      * Get title value
      * @return string|null
@@ -351,10 +385,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->title;
     }
+
     /**
      * Set title value
-     * @param string $title
-     * @return \StructType\Buyer
+     * @param string|null $title
+     * @return Buyer
      */
     public function setTitle(?string $title = null): self
     {
@@ -363,9 +398,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->title = $title;
-        
+
         return $this;
     }
+
     /**
      * Get lastName value
      * @return string|null
@@ -374,10 +410,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->lastName;
     }
+
     /**
      * Set lastName value
-     * @param string $lastName
-     * @return \StructType\Buyer
+     * @param string|null $lastName
+     * @return Buyer
      */
     public function setLastName(?string $lastName = null): self
     {
@@ -386,9 +423,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->lastName = $lastName;
-        
+
         return $this;
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -397,10 +435,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
-     * @param string $firstName
-     * @return \StructType\Buyer
+     * @param string|null $firstName
+     * @return Buyer
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -409,9 +448,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->firstName = $firstName;
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -420,10 +460,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
-     * @param string $email
-     * @return \StructType\Buyer
+     * @param string|null $email
+     * @return Buyer
      */
     public function setEmail(?string $email = null): self
     {
@@ -432,47 +473,52 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
-        
+
         return $this;
     }
+
     /**
      * Get shippingAdress value
-     * @return \StructType\Address|null
+     * @return Address|null
      */
-    public function getShippingAdress(): ?\StructType\Address
+    public function getShippingAdress(): ?Address
     {
         return $this->shippingAdress;
     }
+
     /**
      * Set shippingAdress value
-     * @param \StructType\Address $shippingAdress
-     * @return \StructType\Buyer
+     * @param Address|null $shippingAdress
+     * @return Buyer
      */
-    public function setShippingAdress(?\StructType\Address $shippingAdress = null): self
+    public function setShippingAdress(?Address $shippingAdress = null): self
     {
         $this->shippingAdress = $shippingAdress;
-        
+
         return $this;
     }
+
     /**
      * Get billingAddress value
-     * @return \StructType\Address|null
+     * @return Address|null
      */
-    public function getBillingAddress(): ?\StructType\Address
+    public function getBillingAddress(): ?Address
     {
         return $this->billingAddress;
     }
+
     /**
      * Set billingAddress value
-     * @param \StructType\Address $billingAddress
-     * @return \StructType\Buyer
+     * @param Address|null $billingAddress
+     * @return Buyer
      */
-    public function setBillingAddress(?\StructType\Address $billingAddress = null): self
+    public function setBillingAddress(?Address $billingAddress = null): self
     {
         $this->billingAddress = $billingAddress;
-        
+
         return $this;
     }
+
     /**
      * Get accountCreateDate value
      * @return string|null
@@ -481,10 +527,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->accountCreateDate;
     }
+
     /**
      * Set accountCreateDate value
-     * @param string $accountCreateDate
-     * @return \StructType\Buyer
+     * @param string|null $accountCreateDate
+     * @return Buyer
      */
     public function setAccountCreateDate(?string $accountCreateDate = null): self
     {
@@ -493,9 +540,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCreateDate, true), gettype($accountCreateDate)), __LINE__);
         }
         $this->accountCreateDate = $accountCreateDate;
-        
+
         return $this;
     }
+
     /**
      * Get accountAverageAmount value
      * @return string|null
@@ -504,10 +552,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->accountAverageAmount;
     }
+
     /**
      * Set accountAverageAmount value
-     * @param string $accountAverageAmount
-     * @return \StructType\Buyer
+     * @param string|null $accountAverageAmount
+     * @return Buyer
      */
     public function setAccountAverageAmount(?string $accountAverageAmount = null): self
     {
@@ -516,9 +565,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountAverageAmount, true), gettype($accountAverageAmount)), __LINE__);
         }
         $this->accountAverageAmount = $accountAverageAmount;
-        
+
         return $this;
     }
+
     /**
      * Get accountOrderCount value
      * @return string|null
@@ -527,10 +577,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->accountOrderCount;
     }
+
     /**
      * Set accountOrderCount value
-     * @param string $accountOrderCount
-     * @return \StructType\Buyer
+     * @param string|null $accountOrderCount
+     * @return Buyer
      */
     public function setAccountOrderCount(?string $accountOrderCount = null): self
     {
@@ -539,9 +590,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountOrderCount, true), gettype($accountOrderCount)), __LINE__);
         }
         $this->accountOrderCount = $accountOrderCount;
-        
+
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -550,10 +602,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\Buyer
+     * @param string|null $walletId
+     * @return Buyer
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -562,9 +615,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
+
     /**
      * Get walletDisplayed value
      * @return string|null
@@ -573,10 +627,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->walletDisplayed;
     }
+
     /**
      * Set walletDisplayed value
-     * @param string $walletDisplayed
-     * @return \StructType\Buyer
+     * @param string|null $walletDisplayed
+     * @return Buyer
      */
     public function setWalletDisplayed(?string $walletDisplayed = null): self
     {
@@ -585,9 +640,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletDisplayed, true), gettype($walletDisplayed)), __LINE__);
         }
         $this->walletDisplayed = $walletDisplayed;
-        
+
         return $this;
     }
+
     /**
      * Get walletSecured value
      * @return string|null
@@ -596,10 +652,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->walletSecured;
     }
+
     /**
      * Set walletSecured value
-     * @param string $walletSecured
-     * @return \StructType\Buyer
+     * @param string|null $walletSecured
+     * @return Buyer
      */
     public function setWalletSecured(?string $walletSecured = null): self
     {
@@ -608,9 +665,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletSecured, true), gettype($walletSecured)), __LINE__);
         }
         $this->walletSecured = $walletSecured;
-        
+
         return $this;
     }
+
     /**
      * Get walletCardInd value
      * @return string|null
@@ -619,10 +677,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->walletCardInd;
     }
+
     /**
      * Set walletCardInd value
-     * @param string $walletCardInd
-     * @return \StructType\Buyer
+     * @param string|null $walletCardInd
+     * @return Buyer
      */
     public function setWalletCardInd(?string $walletCardInd = null): self
     {
@@ -631,9 +690,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletCardInd, true), gettype($walletCardInd)), __LINE__);
         }
         $this->walletCardInd = $walletCardInd;
-        
+
         return $this;
     }
+
     /**
      * Get ip value
      * @return string|null
@@ -642,10 +702,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->ip;
     }
+
     /**
      * Set ip value
-     * @param string $ip
-     * @return \StructType\Buyer
+     * @param string|null $ip
+     * @return Buyer
      */
     public function setIp(?string $ip = null): self
     {
@@ -654,9 +715,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ip, true), gettype($ip)), __LINE__);
         }
         $this->ip = $ip;
-        
+
         return $this;
     }
+
     /**
      * Get mobilePhone value
      * @return string|null
@@ -665,10 +727,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->mobilePhone;
     }
+
     /**
      * Set mobilePhone value
-     * @param string $mobilePhone
-     * @return \StructType\Buyer
+     * @param string|null $mobilePhone
+     * @return Buyer
      */
     public function setMobilePhone(?string $mobilePhone = null): self
     {
@@ -677,9 +740,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobilePhone, true), gettype($mobilePhone)), __LINE__);
         }
         $this->mobilePhone = $mobilePhone;
-        
+
         return $this;
     }
+
     /**
      * Get customerId value
      * @return string|null
@@ -688,10 +752,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->customerId;
     }
+
     /**
      * Set customerId value
-     * @param string $customerId
-     * @return \StructType\Buyer
+     * @param string|null $customerId
+     * @return Buyer
      */
     public function setCustomerId(?string $customerId = null): self
     {
@@ -700,9 +765,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerId, true), gettype($customerId)), __LINE__);
         }
         $this->customerId = $customerId;
-        
+
         return $this;
     }
+
     /**
      * Get legalStatus value
      * @return string|null
@@ -711,10 +777,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->legalStatus;
     }
+
     /**
      * Set legalStatus value
-     * @param string $legalStatus
-     * @return \StructType\Buyer
+     * @param string|null $legalStatus
+     * @return Buyer
      */
     public function setLegalStatus(?string $legalStatus = null): self
     {
@@ -723,9 +790,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($legalStatus, true), gettype($legalStatus)), __LINE__);
         }
         $this->legalStatus = $legalStatus;
-        
+
         return $this;
     }
+
     /**
      * Get legalDocumentType value
      * @return string|null
@@ -734,10 +802,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->legalDocumentType;
     }
+
     /**
      * Set legalDocumentType value
-     * @param string $legalDocumentType
-     * @return \StructType\Buyer
+     * @param string|null $legalDocumentType
+     * @return Buyer
      */
     public function setLegalDocumentType(?string $legalDocumentType = null): self
     {
@@ -746,9 +815,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($legalDocumentType, true), gettype($legalDocumentType)), __LINE__);
         }
         $this->legalDocumentType = $legalDocumentType;
-        
+
         return $this;
     }
+
     /**
      * Get legalDocument value
      * @return string|null
@@ -757,10 +827,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->legalDocument;
     }
+
     /**
      * Set legalDocument value
-     * @param string $legalDocument
-     * @return \StructType\Buyer
+     * @param string|null $legalDocument
+     * @return Buyer
      */
     public function setLegalDocument(?string $legalDocument = null): self
     {
@@ -769,9 +840,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($legalDocument, true), gettype($legalDocument)), __LINE__);
         }
         $this->legalDocument = $legalDocument;
-        
+
         return $this;
     }
+
     /**
      * Get birthDate value
      * @return string|null
@@ -780,10 +852,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->birthDate;
     }
+
     /**
      * Set birthDate value
-     * @param string $birthDate
-     * @return \StructType\Buyer
+     * @param string|null $birthDate
+     * @return Buyer
      */
     public function setBirthDate(?string $birthDate = null): self
     {
@@ -792,9 +865,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($birthDate, true), gettype($birthDate)), __LINE__);
         }
         $this->birthDate = $birthDate;
-        
+
         return $this;
     }
+
     /**
      * Get fingerprintID value
      * @return string|null
@@ -803,10 +877,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->fingerprintID;
     }
+
     /**
      * Set fingerprintID value
-     * @param string $fingerprintID
-     * @return \StructType\Buyer
+     * @param string|null $fingerprintID
+     * @return Buyer
      */
     public function setFingerprintID(?string $fingerprintID = null): self
     {
@@ -815,9 +890,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fingerprintID, true), gettype($fingerprintID)), __LINE__);
         }
         $this->fingerprintID = $fingerprintID;
-        
+
         return $this;
     }
+
     /**
      * Get deviceFingerprint value
      * @return string|null
@@ -826,10 +902,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->deviceFingerprint;
     }
+
     /**
      * Set deviceFingerprint value
-     * @param string $deviceFingerprint
-     * @return \StructType\Buyer
+     * @param string|null $deviceFingerprint
+     * @return Buyer
      */
     public function setDeviceFingerprint(?string $deviceFingerprint = null): self
     {
@@ -838,9 +915,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deviceFingerprint, true), gettype($deviceFingerprint)), __LINE__);
         }
         $this->deviceFingerprint = $deviceFingerprint;
-        
+
         return $this;
     }
+
     /**
      * Get isBot value
      * @return string|null
@@ -849,10 +927,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isBot;
     }
+
     /**
      * Set isBot value
-     * @param string $isBot
-     * @return \StructType\Buyer
+     * @param string|null $isBot
+     * @return Buyer
      */
     public function setIsBot(?string $isBot = null): self
     {
@@ -861,9 +940,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isBot, true), gettype($isBot)), __LINE__);
         }
         $this->isBot = $isBot;
-        
+
         return $this;
     }
+
     /**
      * Get isIncognito value
      * @return string|null
@@ -872,10 +952,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isIncognito;
     }
+
     /**
      * Set isIncognito value
-     * @param string $isIncognito
-     * @return \StructType\Buyer
+     * @param string|null $isIncognito
+     * @return Buyer
      */
     public function setIsIncognito(?string $isIncognito = null): self
     {
@@ -884,9 +965,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isIncognito, true), gettype($isIncognito)), __LINE__);
         }
         $this->isIncognito = $isIncognito;
-        
+
         return $this;
     }
+
     /**
      * Get isBehindProxy value
      * @return string|null
@@ -895,10 +977,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isBehindProxy;
     }
+
     /**
      * Set isBehindProxy value
-     * @param string $isBehindProxy
-     * @return \StructType\Buyer
+     * @param string|null $isBehindProxy
+     * @return Buyer
      */
     public function setIsBehindProxy(?string $isBehindProxy = null): self
     {
@@ -907,9 +990,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isBehindProxy, true), gettype($isBehindProxy)), __LINE__);
         }
         $this->isBehindProxy = $isBehindProxy;
-        
+
         return $this;
     }
+
     /**
      * Get isFromTor value
      * @return string|null
@@ -918,10 +1002,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isFromTor;
     }
+
     /**
      * Set isFromTor value
-     * @param string $isFromTor
-     * @return \StructType\Buyer
+     * @param string|null $isFromTor
+     * @return Buyer
      */
     public function setIsFromTor(?string $isFromTor = null): self
     {
@@ -930,9 +1015,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isFromTor, true), gettype($isFromTor)), __LINE__);
         }
         $this->isFromTor = $isFromTor;
-        
+
         return $this;
     }
+
     /**
      * Get isEmulator value
      * @return string|null
@@ -941,10 +1027,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isEmulator;
     }
+
     /**
      * Set isEmulator value
-     * @param string $isEmulator
-     * @return \StructType\Buyer
+     * @param string|null $isEmulator
+     * @return Buyer
      */
     public function setIsEmulator(?string $isEmulator = null): self
     {
@@ -953,9 +1040,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isEmulator, true), gettype($isEmulator)), __LINE__);
         }
         $this->isEmulator = $isEmulator;
-        
+
         return $this;
     }
+
     /**
      * Get isRooted value
      * @return string|null
@@ -964,10 +1052,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->isRooted;
     }
+
     /**
      * Set isRooted value
-     * @param string $isRooted
-     * @return \StructType\Buyer
+     * @param string|null $isRooted
+     * @return Buyer
      */
     public function setIsRooted(?string $isRooted = null): self
     {
@@ -976,9 +1065,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isRooted, true), gettype($isRooted)), __LINE__);
         }
         $this->isRooted = $isRooted;
-        
+
         return $this;
     }
+
     /**
      * Get hasTimezoneMismatch value
      * @return string|null
@@ -987,10 +1077,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->hasTimezoneMismatch;
     }
+
     /**
      * Set hasTimezoneMismatch value
-     * @param string $hasTimezoneMismatch
-     * @return \StructType\Buyer
+     * @param string|null $hasTimezoneMismatch
+     * @return Buyer
      */
     public function setHasTimezoneMismatch(?string $hasTimezoneMismatch = null): self
     {
@@ -999,9 +1090,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hasTimezoneMismatch, true), gettype($hasTimezoneMismatch)), __LINE__);
         }
         $this->hasTimezoneMismatch = $hasTimezoneMismatch;
-        
+
         return $this;
     }
+
     /**
      * Get loyaltyMemberType value
      * @return string|null
@@ -1010,10 +1102,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->loyaltyMemberType;
     }
+
     /**
      * Set loyaltyMemberType value
-     * @param string $loyaltyMemberType
-     * @return \StructType\Buyer
+     * @param string|null $loyaltyMemberType
+     * @return Buyer
      */
     public function setLoyaltyMemberType(?string $loyaltyMemberType = null): self
     {
@@ -1022,9 +1115,10 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($loyaltyMemberType, true), gettype($loyaltyMemberType)), __LINE__);
         }
         $this->loyaltyMemberType = $loyaltyMemberType;
-        
+
         return $this;
     }
+
     /**
      * Get buyerExtended value
      * @return string|null
@@ -1033,10 +1127,11 @@ class Buyer extends AbstractStructBase
     {
         return $this->buyerExtended;
     }
+
     /**
      * Set buyerExtended value
-     * @param string $buyerExtended
-     * @return \StructType\Buyer
+     * @param string|null $buyerExtended
+     * @return Buyer
      */
     public function setBuyerExtended(?string $buyerExtended = null): self
     {
@@ -1045,26 +1140,28 @@ class Buyer extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerExtended, true), gettype($buyerExtended)), __LINE__);
         }
         $this->buyerExtended = $buyerExtended;
-        
+
         return $this;
     }
+
     /**
      * Get merchantAuthentication value
-     * @return \StructType\MerchantAuthentication|null
+     * @return MerchantAuthentication|null
      */
-    public function getMerchantAuthentication(): ?\StructType\MerchantAuthentication
+    public function getMerchantAuthentication(): ?MerchantAuthentication
     {
         return $this->merchantAuthentication;
     }
+
     /**
      * Set merchantAuthentication value
-     * @param \StructType\MerchantAuthentication $merchantAuthentication
-     * @return \StructType\Buyer
+     * @param MerchantAuthentication|null $merchantAuthentication
+     * @return Buyer
      */
-    public function setMerchantAuthentication(?\StructType\MerchantAuthentication $merchantAuthentication = null): self
+    public function setMerchantAuthentication(?MerchantAuthentication $merchantAuthentication = null): self
     {
         $this->merchantAuthentication = $merchantAuthentication;
-        
+
         return $this;
     }
 }

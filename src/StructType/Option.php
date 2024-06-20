@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: An array of subscribed options
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Option extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class Option extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * The subscribed
      * Meta information extracted from the WSDL
@@ -28,6 +30,7 @@ class Option extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $subscribed = null;
+
     /**
      * The endDate
      * Meta information extracted from the WSDL
@@ -35,14 +38,15 @@ class Option extends AbstractStructBase
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * Constructor method for option
+     * @param string|null $id
+     * @param bool $subscribed
+     * @param string|null $endDate
      * @uses Option::setId()
      * @uses Option::setSubscribed()
      * @uses Option::setEndDate()
-     * @param string $id
-     * @param bool $subscribed
-     * @param string $endDate
      */
     public function __construct(?string $id = null, ?bool $subscribed = null, ?string $endDate = null)
     {
@@ -51,6 +55,7 @@ class Option extends AbstractStructBase
             ->setSubscribed($subscribed)
             ->setEndDate($endDate);
     }
+
     /**
      * Get id value
      * @return string|null
@@ -59,10 +64,11 @@ class Option extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
-     * @param string $id
-     * @return \StructType\Option
+     * @param string|null $id
+     * @return Option
      */
     public function setId(?string $id = null): self
     {
@@ -74,6 +80,7 @@ class Option extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get subscribed value
      * @return bool|null
@@ -82,10 +89,11 @@ class Option extends AbstractStructBase
     {
         return $this->subscribed;
     }
+
     /**
      * Set subscribed value
      * @param bool $subscribed
-     * @return \StructType\Option
+     * @return Option
      */
     public function setSubscribed(?bool $subscribed = null): self
     {
@@ -97,6 +105,7 @@ class Option extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -105,10 +114,11 @@ class Option extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
-     * @param string $endDate
-     * @return \StructType\Option
+     * @param string|null $endDate
+     * @return Option
      */
     public function setEndDate(?string $endDate = null): self
     {

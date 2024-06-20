@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the paymentData
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PaymentData extends AbstractStructBase
 {
     /**
@@ -24,6 +25,7 @@ class PaymentData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The network
      * Meta information extracted from the WSDL
@@ -32,6 +34,7 @@ class PaymentData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $network = null;
+
     /**
      * The tokenData
      * Meta information extracted from the WSDL
@@ -40,14 +43,15 @@ class PaymentData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $tokenData = null;
+
     /**
      * Constructor method for paymentData
+     * @param string|null $transactionID
+     * @param string|null $network
+     * @param string|null $tokenData
      * @uses PaymentData::setTransactionID()
      * @uses PaymentData::setNetwork()
      * @uses PaymentData::setTokenData()
-     * @param string $transactionID
-     * @param string $network
-     * @param string $tokenData
      */
     public function __construct(?string $transactionID = null, ?string $network = null, ?string $tokenData = null)
     {
@@ -56,6 +60,7 @@ class PaymentData extends AbstractStructBase
             ->setNetwork($network)
             ->setTokenData($tokenData);
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -64,10 +69,11 @@ class PaymentData extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\PaymentData
+     * @param string|null $transactionID
+     * @return PaymentData
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -79,6 +85,7 @@ class PaymentData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get network value
      * @return string|null
@@ -87,10 +94,11 @@ class PaymentData extends AbstractStructBase
     {
         return $this->network;
     }
+
     /**
      * Set network value
-     * @param string $network
-     * @return \StructType\PaymentData
+     * @param string|null $network
+     * @return PaymentData
      */
     public function setNetwork(?string $network = null): self
     {
@@ -102,6 +110,7 @@ class PaymentData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get tokenData value
      * @return string|null
@@ -110,10 +119,11 @@ class PaymentData extends AbstractStructBase
     {
         return $this->tokenData;
     }
+
     /**
      * Set tokenData value
-     * @param string $tokenData
-     * @return \StructType\PaymentData
+     * @param string|null $tokenData
+     * @return PaymentData
      */
     public function setTokenData(?string $tokenData = null): self
     {

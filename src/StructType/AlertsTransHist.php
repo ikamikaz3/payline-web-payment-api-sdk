@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: An array of AlertsTrans
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class AlertsTransHist extends AbstractStructBase
 {
     /**
@@ -21,32 +22,35 @@ class AlertsTransHist extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \StructType\AlertsTrans[]
+     * @var AlertsTrans[]
      */
     protected ?array $AlertsTrans = null;
+
     /**
      * Constructor method for AlertsTransHist
+     * @param AlertsTrans[] $alertsTrans
      * @uses AlertsTransHist::setAlertsTrans()
-     * @param \StructType\AlertsTrans[] $alertsTrans
      */
     public function __construct(?array $alertsTrans = null)
     {
         $this
             ->setAlertsTrans($alertsTrans);
     }
+
     /**
      * Get AlertsTrans value
-     * @return \StructType\AlertsTrans[]
+     * @return array|null
      */
     public function getAlertsTrans(): ?array
     {
         return $this->AlertsTrans;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setAlertsTrans method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAlertsTrans method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateAlertsTransForArrayConstraintFromSetAlertsTrans(?array $values = []): string
@@ -58,22 +62,23 @@ class AlertsTransHist extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $alertsTransHistAlertsTransItem) {
             // validation for constraint: itemType
-            if (!$alertsTransHistAlertsTransItem instanceof \StructType\AlertsTrans) {
+            if (!$alertsTransHistAlertsTransItem instanceof AlertsTrans) {
                 $invalidValues[] = is_object($alertsTransHistAlertsTransItem) ? get_class($alertsTransHistAlertsTransItem) : sprintf('%s(%s)', gettype($alertsTransHistAlertsTransItem), var_export($alertsTransHistAlertsTransItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The AlertsTrans property can only contain items of type \StructType\AlertsTrans, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The AlertsTrans property can only contain items of type AlertsTrans, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
 
         return $message;
     }
+
     /**
      * Set AlertsTrans value
+     * @param AlertsTrans[] $alertsTrans
+     * @return AlertsTransHist
      * @throws InvalidArgumentException
-     * @param \StructType\AlertsTrans[] $alertsTrans
-     * @return \StructType\AlertsTransHist
      */
     public function setAlertsTrans(?array $alertsTrans = null): self
     {
@@ -85,18 +90,16 @@ class AlertsTransHist extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Add item to AlertsTrans value
+     * @param AlertsTrans $item
+     * @return AlertsTransHist
      * @throws InvalidArgumentException
-     * @param \StructType\AlertsTrans $item
-     * @return \StructType\AlertsTransHist
      */
-    public function addToAlertsTrans(\StructType\AlertsTrans $item): self
+    public function addToAlertsTrans(AlertsTrans $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\AlertsTrans) {
-            throw new InvalidArgumentException(sprintf('The AlertsTrans property can only contain items of type \StructType\AlertsTrans, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         $this->AlertsTrans[] = $item;
 
         return $this;

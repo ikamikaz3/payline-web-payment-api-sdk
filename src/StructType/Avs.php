@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains the result of the address verification service
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Avs extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Avs extends AbstractStructBase
      * @var string|null
      */
     protected ?string $result = null;
+
     /**
      * The resultFromAcquirer
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class Avs extends AbstractStructBase
      * @var string|null
      */
     protected ?string $resultFromAcquirer = null;
+
     /**
      * Constructor method for avs
+     * @param string|null $result
+     * @param string|null $resultFromAcquirer
      * @uses Avs::setResult()
      * @uses Avs::setResultFromAcquirer()
-     * @param string $result
-     * @param string $resultFromAcquirer
      */
     public function __construct(?string $result = null, ?string $resultFromAcquirer = null)
     {
@@ -43,6 +46,7 @@ class Avs extends AbstractStructBase
             ->setResult($result)
             ->setResultFromAcquirer($resultFromAcquirer);
     }
+
     /**
      * Get result value
      * @return string|null
@@ -51,10 +55,11 @@ class Avs extends AbstractStructBase
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param string $result
-     * @return \StructType\Avs
+     * @param string|null $result
+     * @return Avs
      */
     public function setResult(?string $result = null): self
     {
@@ -66,6 +71,7 @@ class Avs extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get resultFromAcquirer value
      * @return string|null
@@ -74,10 +80,11 @@ class Avs extends AbstractStructBase
     {
         return $this->resultFromAcquirer;
     }
+
     /**
      * Set resultFromAcquirer value
-     * @param string $resultFromAcquirer
-     * @return \StructType\Avs
+     * @param string|null $resultFromAcquirer
+     * @return Avs
      */
     public function setResultFromAcquirer(?string $resultFromAcquirer = null): self
     {

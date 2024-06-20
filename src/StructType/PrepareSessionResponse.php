@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the prepareSession method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PrepareSessionResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The data
      * Meta information extracted from the WSDL
@@ -30,38 +32,42 @@ class PrepareSessionResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $data = null;
+
     /**
      * Constructor method for prepareSessionResponse
+     * @param Result|null $result
+     * @param string|null $data
      * @uses PrepareSessionResponse::setResult()
      * @uses PrepareSessionResponse::setData()
-     * @param \StructType\Result $result
-     * @param string $data
      */
-    public function __construct(?\StructType\Result $result = null, ?string $data = null)
+    public function __construct(?Result $result = null, ?string $data = null)
     {
         $this
             ->setResult($result)
             ->setData($data);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\PrepareSessionResponse
+     * @param Result|null $result
+     * @return PrepareSessionResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get data value
      * @return string|null
@@ -70,10 +76,11 @@ class PrepareSessionResponse extends AbstractStructBase
     {
         return $this->data;
     }
+
     /**
      * Set data value
-     * @param string $data
-     * @return \StructType\PrepareSessionResponse
+     * @param string|null $data
+     * @return PrepareSessionResponse
      */
     public function setData(?string $data = null): self
     {
@@ -82,7 +89,7 @@ class PrepareSessionResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
         }
         $this->data = $data;
-        
+
         return $this;
     }
 }

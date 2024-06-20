@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,43 +14,46 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the disablePaymentRecord method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DisablePaymentRecordResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * Constructor method for disablePaymentRecordResponse
+     * @param Result|null $result
      * @uses DisablePaymentRecordResponse::setResult()
-     * @param \StructType\Result $result
      */
-    public function __construct(?\StructType\Result $result = null)
+    public function __construct(?Result $result = null)
     {
         $this
             ->setResult($result);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DisablePaymentRecordResponse
+     * @param Result|null $result
+     * @return DisablePaymentRecordResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
 }

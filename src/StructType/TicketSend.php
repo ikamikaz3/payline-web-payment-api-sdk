@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information e-ticket
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class TicketSend extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class TicketSend extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $toBuyer = null;
+
     /**
      * The toMerchant
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class TicketSend extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $toMerchant = null;
+
     /**
      * Constructor method for ticketSend
-     * @uses TicketSend::setToBuyer()
-     * @uses TicketSend::setToMerchant()
      * @param bool $toBuyer
      * @param bool $toMerchant
+     * @uses TicketSend::setToBuyer()
+     * @uses TicketSend::setToMerchant()
      */
     public function __construct(?bool $toBuyer = null, ?bool $toMerchant = null)
     {
@@ -43,6 +46,7 @@ class TicketSend extends AbstractStructBase
             ->setToBuyer($toBuyer)
             ->setToMerchant($toMerchant);
     }
+
     /**
      * Get toBuyer value
      * @return bool|null
@@ -51,10 +55,11 @@ class TicketSend extends AbstractStructBase
     {
         return $this->toBuyer;
     }
+
     /**
      * Set toBuyer value
      * @param bool $toBuyer
-     * @return \StructType\TicketSend
+     * @return TicketSend
      */
     public function setToBuyer(?bool $toBuyer = null): self
     {
@@ -66,6 +71,7 @@ class TicketSend extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get toMerchant value
      * @return bool|null
@@ -74,10 +80,11 @@ class TicketSend extends AbstractStructBase
     {
         return $this->toMerchant;
     }
+
     /**
      * Set toMerchant value
      * @param bool $toMerchant
-     * @return \StructType\TicketSend
+     * @return TicketSend
      */
     public function setToMerchant(?bool $toMerchant = null): self
     {

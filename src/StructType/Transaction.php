@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the transaction
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Transaction extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * The date
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * The type
      * Meta information extracted from the WSDL
@@ -38,6 +41,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $type = null;
+
     /**
      * The isDuplicated
      * Meta information extracted from the WSDL
@@ -46,6 +50,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isDuplicated = null;
+
     /**
      * The isPossibleFraud
      * Meta information extracted from the WSDL
@@ -53,6 +58,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isPossibleFraud = null;
+
     /**
      * The fraudResult
      * Meta information extracted from the WSDL
@@ -61,14 +67,16 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $fraudResult = null;
+
     /**
      * The fraudResultDetails
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\FraudResultDetails|null
+     * @var FraudResultDetails|null
      */
-    protected ?\StructType\FraudResultDetails $fraudResultDetails = null;
+    protected ?FraudResultDetails $fraudResultDetails = null;
+
     /**
      * The explanation
      * Meta information extracted from the WSDL
@@ -77,6 +85,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $explanation = null;
+
     /**
      * The threeDSecure
      * Meta information extracted from the WSDL
@@ -85,6 +94,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSecure = null;
+
     /**
      * The softDescriptor
      * Meta information extracted from the WSDL
@@ -93,6 +103,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $softDescriptor = null;
+
     /**
      * The score
      * Meta information extracted from the WSDL
@@ -101,14 +112,16 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $score = null;
+
     /**
      * The scoring
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Scoring|null
+     * @var Scoring|null
      */
-    protected ?\StructType\Scoring $scoring = null;
+    protected ?Scoring $scoring = null;
+
     /**
      * The externalWalletType
      * Meta information extracted from the WSDL
@@ -117,6 +130,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $externalWalletType = null;
+
     /**
      * The externalWalletContractNumber
      * Meta information extracted from the WSDL
@@ -125,6 +139,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $externalWalletContractNumber = null;
+
     /**
      * The partnerAdditionalData
      * Meta information extracted from the WSDL
@@ -133,14 +148,16 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $partnerAdditionalData = null;
+
     /**
      * The avs
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Avs|null
+     * @var Avs|null
      */
-    protected ?\StructType\Avs $avs = null;
+    protected ?Avs $avs = null;
+
     /**
      * The customerId
      * Meta information extracted from the WSDL
@@ -149,6 +166,7 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customerId = null;
+
     /**
      * The orderReference
      * Meta information extracted from the WSDL
@@ -157,40 +175,67 @@ class Transaction extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderReference = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The pointOfSell
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\PointOfSell|null
+     * @var PointOfSell|null
      */
-    protected ?\StructType\PointOfSell $pointOfSell = null;
+    protected ?PointOfSell $pointOfSell = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\CardOut|null
+     * @var CardOut|null
      */
-    protected ?\StructType\CardOut $card = null;
+    protected ?CardOut $card = null;
+
     /**
      * The extendedCard
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * Constructor method for transaction
+     * @param string|null $id
+     * @param string|null $date
+     * @param string|null $type
+     * @param string|null $isDuplicated
+     * @param string|null $isPossibleFraud
+     * @param string|null $fraudResult
+     * @param FraudResultDetails|null $fraudResultDetails
+     * @param string|null $explanation
+     * @param string|null $threeDSecure
+     * @param string|null $softDescriptor
+     * @param string|null $score
+     * @param Scoring|null $scoring
+     * @param string|null $externalWalletType
+     * @param string|null $externalWalletContractNumber
+     * @param string|null $partnerAdditionalData
+     * @param Avs|null $avs
+     * @param string|null $customerId
+     * @param string|null $orderReference
+     * @param Payment|null $payment
+     * @param PointOfSell|null $pointOfSell
+     * @param CardOut|null $card
+     * @param ExtendedCardType|null $extendedCard
      * @uses Transaction::setId()
      * @uses Transaction::setDate()
      * @uses Transaction::setType()
@@ -213,30 +258,8 @@ class Transaction extends AbstractStructBase
      * @uses Transaction::setPointOfSell()
      * @uses Transaction::setCard()
      * @uses Transaction::setExtendedCard()
-     * @param string $id
-     * @param string $date
-     * @param string $type
-     * @param string $isDuplicated
-     * @param string $isPossibleFraud
-     * @param string $fraudResult
-     * @param \StructType\FraudResultDetails $fraudResultDetails
-     * @param string $explanation
-     * @param string $threeDSecure
-     * @param string $softDescriptor
-     * @param string $score
-     * @param \StructType\Scoring $scoring
-     * @param string $externalWalletType
-     * @param string $externalWalletContractNumber
-     * @param string $partnerAdditionalData
-     * @param \StructType\Avs $avs
-     * @param string $customerId
-     * @param string $orderReference
-     * @param \StructType\Payment $payment
-     * @param \StructType\PointOfSell $pointOfSell
-     * @param \StructType\CardOut $card
-     * @param \StructType\ExtendedCardType $extendedCard
      */
-    public function __construct(?string $id = null, ?string $date = null, ?string $type = null, ?string $isDuplicated = null, ?string $isPossibleFraud = null, ?string $fraudResult = null, ?\StructType\FraudResultDetails $fraudResultDetails = null, ?string $explanation = null, ?string $threeDSecure = null, ?string $softDescriptor = null, ?string $score = null, ?\StructType\Scoring $scoring = null, ?string $externalWalletType = null, ?string $externalWalletContractNumber = null, ?string $partnerAdditionalData = null, ?\StructType\Avs $avs = null, ?string $customerId = null, ?string $orderReference = null, ?\StructType\Payment $payment = null, ?\StructType\PointOfSell $pointOfSell = null, ?\StructType\CardOut $card = null, ?\StructType\ExtendedCardType $extendedCard = null)
+    public function __construct(?string $id = null, ?string $date = null, ?string $type = null, ?string $isDuplicated = null, ?string $isPossibleFraud = null, ?string $fraudResult = null, ?FraudResultDetails $fraudResultDetails = null, ?string $explanation = null, ?string $threeDSecure = null, ?string $softDescriptor = null, ?string $score = null, ?Scoring $scoring = null, ?string $externalWalletType = null, ?string $externalWalletContractNumber = null, ?string $partnerAdditionalData = null, ?Avs $avs = null, ?string $customerId = null, ?string $orderReference = null, ?Payment $payment = null, ?PointOfSell $pointOfSell = null, ?CardOut $card = null, ?ExtendedCardType $extendedCard = null)
     {
         $this
             ->setId($id)
@@ -262,6 +285,7 @@ class Transaction extends AbstractStructBase
             ->setCard($card)
             ->setExtendedCard($extendedCard);
     }
+
     /**
      * Get id value
      * @return string|null
@@ -270,10 +294,11 @@ class Transaction extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
-     * @param string $id
-     * @return \StructType\Transaction
+     * @param string|null $id
+     * @return Transaction
      */
     public function setId(?string $id = null): self
     {
@@ -285,6 +310,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get date value
      * @return string|null
@@ -293,10 +319,11 @@ class Transaction extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\Transaction
+     * @param string|null $date
+     * @return Transaction
      */
     public function setDate(?string $date = null): self
     {
@@ -308,6 +335,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get type value
      * @return string|null
@@ -316,10 +344,11 @@ class Transaction extends AbstractStructBase
     {
         return $this->type;
     }
+
     /**
      * Set type value
-     * @param string $type
-     * @return \StructType\Transaction
+     * @param string|null $type
+     * @return Transaction
      */
     public function setType(?string $type = null): self
     {
@@ -331,6 +360,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get isDuplicated value
      * An additional test has been added (isset) before returning the property value as
@@ -342,12 +372,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->isDuplicated ?? null;
     }
+
     /**
      * Set isDuplicated value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $isDuplicated
-     * @return \StructType\Transaction
+     * @param string|null $isDuplicated
+     * @return Transaction
      */
     public function setIsDuplicated(?string $isDuplicated = null): self
     {
@@ -355,7 +386,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($isDuplicated) && !is_string($isDuplicated)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isDuplicated, true), gettype($isDuplicated)), __LINE__);
         }
-        if (is_null($isDuplicated) || (is_array($isDuplicated) && empty($isDuplicated))) {
+        if (is_null($isDuplicated)) {
             unset($this->isDuplicated);
         } else {
             $this->isDuplicated = $isDuplicated;
@@ -363,6 +394,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get isPossibleFraud value
      * @return string|null
@@ -371,10 +403,11 @@ class Transaction extends AbstractStructBase
     {
         return $this->isPossibleFraud;
     }
+
     /**
      * Set isPossibleFraud value
-     * @param string $isPossibleFraud
-     * @return \StructType\Transaction
+     * @param string|null $isPossibleFraud
+     * @return Transaction
      */
     public function setIsPossibleFraud(?string $isPossibleFraud = null): self
     {
@@ -386,6 +419,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get fraudResult value
      * An additional test has been added (isset) before returning the property value as
@@ -397,12 +431,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->fraudResult ?? null;
     }
+
     /**
      * Set fraudResult value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $fraudResult
-     * @return \StructType\Transaction
+     * @param string|null $fraudResult
+     * @return Transaction
      */
     public function setFraudResult(?string $fraudResult = null): self
     {
@@ -410,7 +445,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($fraudResult) && !is_string($fraudResult)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fraudResult, true), gettype($fraudResult)), __LINE__);
         }
-        if (is_null($fraudResult) || (is_array($fraudResult) && empty($fraudResult))) {
+        if (is_null($fraudResult)) {
             unset($this->fraudResult);
         } else {
             $this->fraudResult = $fraudResult;
@@ -418,27 +453,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get fraudResultDetails value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\FraudResultDetails|null
+     * @return FraudResultDetails|null
      */
-    public function getFraudResultDetails(): ?\StructType\FraudResultDetails
+    public function getFraudResultDetails(): ?FraudResultDetails
     {
         return $this->fraudResultDetails ?? null;
     }
+
     /**
      * Set fraudResultDetails value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\FraudResultDetails $fraudResultDetails
-     * @return \StructType\Transaction
+     * @param FraudResultDetails|null $fraudResultDetails
+     * @return Transaction
      */
-    public function setFraudResultDetails(?\StructType\FraudResultDetails $fraudResultDetails = null): self
+    public function setFraudResultDetails(?FraudResultDetails $fraudResultDetails = null): self
     {
-        if (is_null($fraudResultDetails) || (is_array($fraudResultDetails) && empty($fraudResultDetails))) {
+        if (is_null($fraudResultDetails)) {
             unset($this->fraudResultDetails);
         } else {
             $this->fraudResultDetails = $fraudResultDetails;
@@ -446,6 +483,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get explanation value
      * An additional test has been added (isset) before returning the property value as
@@ -457,12 +495,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->explanation ?? null;
     }
+
     /**
      * Set explanation value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $explanation
-     * @return \StructType\Transaction
+     * @param string|null $explanation
+     * @return Transaction
      */
     public function setExplanation(?string $explanation = null): self
     {
@@ -470,7 +509,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($explanation) && !is_string($explanation)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($explanation, true), gettype($explanation)), __LINE__);
         }
-        if (is_null($explanation) || (is_array($explanation) && empty($explanation))) {
+        if (is_null($explanation)) {
             unset($this->explanation);
         } else {
             $this->explanation = $explanation;
@@ -478,6 +517,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSecure value
      * An additional test has been added (isset) before returning the property value as
@@ -489,12 +529,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->threeDSecure ?? null;
     }
+
     /**
      * Set threeDSecure value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $threeDSecure
-     * @return \StructType\Transaction
+     * @param string|null $threeDSecure
+     * @return Transaction
      */
     public function setThreeDSecure(?string $threeDSecure = null): self
     {
@@ -502,7 +543,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($threeDSecure) && !is_string($threeDSecure)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSecure, true), gettype($threeDSecure)), __LINE__);
         }
-        if (is_null($threeDSecure) || (is_array($threeDSecure) && empty($threeDSecure))) {
+        if (is_null($threeDSecure)) {
             unset($this->threeDSecure);
         } else {
             $this->threeDSecure = $threeDSecure;
@@ -510,6 +551,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get softDescriptor value
      * An additional test has been added (isset) before returning the property value as
@@ -521,12 +563,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->softDescriptor ?? null;
     }
+
     /**
      * Set softDescriptor value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $softDescriptor
-     * @return \StructType\Transaction
+     * @param string|null $softDescriptor
+     * @return Transaction
      */
     public function setSoftDescriptor(?string $softDescriptor = null): self
     {
@@ -534,7 +577,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
-        if (is_null($softDescriptor) || (is_array($softDescriptor) && empty($softDescriptor))) {
+        if (is_null($softDescriptor)) {
             unset($this->softDescriptor);
         } else {
             $this->softDescriptor = $softDescriptor;
@@ -542,6 +585,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get score value
      * An additional test has been added (isset) before returning the property value as
@@ -553,12 +597,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->score ?? null;
     }
+
     /**
      * Set score value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $score
-     * @return \StructType\Transaction
+     * @param string|null $score
+     * @return Transaction
      */
     public function setScore(?string $score = null): self
     {
@@ -566,7 +611,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($score) && !is_string($score)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($score, true), gettype($score)), __LINE__);
         }
-        if (is_null($score) || (is_array($score) && empty($score))) {
+        if (is_null($score)) {
             unset($this->score);
         } else {
             $this->score = $score;
@@ -574,27 +619,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get scoring value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Scoring|null
+     * @return Scoring|null
      */
-    public function getScoring(): ?\StructType\Scoring
+    public function getScoring(): ?Scoring
     {
         return $this->scoring ?? null;
     }
+
     /**
      * Set scoring value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Scoring $scoring
-     * @return \StructType\Transaction
+     * @param Scoring|null $scoring
+     * @return Transaction
      */
-    public function setScoring(?\StructType\Scoring $scoring = null): self
+    public function setScoring(?Scoring $scoring = null): self
     {
-        if (is_null($scoring) || (is_array($scoring) && empty($scoring))) {
+        if (is_null($scoring)) {
             unset($this->scoring);
         } else {
             $this->scoring = $scoring;
@@ -602,6 +649,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get externalWalletType value
      * An additional test has been added (isset) before returning the property value as
@@ -613,12 +661,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->externalWalletType ?? null;
     }
+
     /**
      * Set externalWalletType value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $externalWalletType
-     * @return \StructType\Transaction
+     * @param string|null $externalWalletType
+     * @return Transaction
      */
     public function setExternalWalletType(?string $externalWalletType = null): self
     {
@@ -626,7 +675,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($externalWalletType) && !is_string($externalWalletType)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalWalletType, true), gettype($externalWalletType)), __LINE__);
         }
-        if (is_null($externalWalletType) || (is_array($externalWalletType) && empty($externalWalletType))) {
+        if (is_null($externalWalletType)) {
             unset($this->externalWalletType);
         } else {
             $this->externalWalletType = $externalWalletType;
@@ -634,6 +683,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get externalWalletContractNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -645,12 +695,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->externalWalletContractNumber ?? null;
     }
+
     /**
      * Set externalWalletContractNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $externalWalletContractNumber
-     * @return \StructType\Transaction
+     * @param string|null $externalWalletContractNumber
+     * @return Transaction
      */
     public function setExternalWalletContractNumber(?string $externalWalletContractNumber = null): self
     {
@@ -658,7 +709,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($externalWalletContractNumber) && !is_string($externalWalletContractNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalWalletContractNumber, true), gettype($externalWalletContractNumber)), __LINE__);
         }
-        if (is_null($externalWalletContractNumber) || (is_array($externalWalletContractNumber) && empty($externalWalletContractNumber))) {
+        if (is_null($externalWalletContractNumber)) {
             unset($this->externalWalletContractNumber);
         } else {
             $this->externalWalletContractNumber = $externalWalletContractNumber;
@@ -666,6 +717,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get partnerAdditionalData value
      * An additional test has been added (isset) before returning the property value as
@@ -677,12 +729,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->partnerAdditionalData ?? null;
     }
+
     /**
      * Set partnerAdditionalData value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $partnerAdditionalData
-     * @return \StructType\Transaction
+     * @param string|null $partnerAdditionalData
+     * @return Transaction
      */
     public function setPartnerAdditionalData(?string $partnerAdditionalData = null): self
     {
@@ -690,7 +743,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($partnerAdditionalData) && !is_string($partnerAdditionalData)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($partnerAdditionalData, true), gettype($partnerAdditionalData)), __LINE__);
         }
-        if (is_null($partnerAdditionalData) || (is_array($partnerAdditionalData) && empty($partnerAdditionalData))) {
+        if (is_null($partnerAdditionalData)) {
             unset($this->partnerAdditionalData);
         } else {
             $this->partnerAdditionalData = $partnerAdditionalData;
@@ -698,27 +751,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get avs value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Avs|null
+     * @return Avs|null
      */
-    public function getAvs(): ?\StructType\Avs
+    public function getAvs(): ?Avs
     {
         return $this->avs ?? null;
     }
+
     /**
      * Set avs value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Avs $avs
-     * @return \StructType\Transaction
+     * @param Avs|null $avs
+     * @return Transaction
      */
-    public function setAvs(?\StructType\Avs $avs = null): self
+    public function setAvs(?Avs $avs = null): self
     {
-        if (is_null($avs) || (is_array($avs) && empty($avs))) {
+        if (is_null($avs)) {
             unset($this->avs);
         } else {
             $this->avs = $avs;
@@ -726,6 +781,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get customerId value
      * An additional test has been added (isset) before returning the property value as
@@ -737,12 +793,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->customerId ?? null;
     }
+
     /**
      * Set customerId value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $customerId
-     * @return \StructType\Transaction
+     * @param string|null $customerId
+     * @return Transaction
      */
     public function setCustomerId(?string $customerId = null): self
     {
@@ -750,7 +807,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($customerId) && !is_string($customerId)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerId, true), gettype($customerId)), __LINE__);
         }
-        if (is_null($customerId) || (is_array($customerId) && empty($customerId))) {
+        if (is_null($customerId)) {
             unset($this->customerId);
         } else {
             $this->customerId = $customerId;
@@ -758,6 +815,7 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get orderReference value
      * An additional test has been added (isset) before returning the property value as
@@ -769,12 +827,13 @@ class Transaction extends AbstractStructBase
     {
         return $this->orderReference ?? null;
     }
+
     /**
      * Set orderReference value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $orderReference
-     * @return \StructType\Transaction
+     * @param string|null $orderReference
+     * @return Transaction
      */
     public function setOrderReference(?string $orderReference = null): self
     {
@@ -782,7 +841,7 @@ class Transaction extends AbstractStructBase
         if (!is_null($orderReference) && !is_string($orderReference)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderReference, true), gettype($orderReference)), __LINE__);
         }
-        if (is_null($orderReference) || (is_array($orderReference) && empty($orderReference))) {
+        if (is_null($orderReference)) {
             unset($this->orderReference);
         } else {
             $this->orderReference = $orderReference;
@@ -790,27 +849,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment ?? null;
     }
+
     /**
      * Set payment value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Payment $payment
-     * @return \StructType\Transaction
+     * @param Payment|null $payment
+     * @return Transaction
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
-        if (is_null($payment) || (is_array($payment) && empty($payment))) {
+        if (is_null($payment)) {
             unset($this->payment);
         } else {
             $this->payment = $payment;
@@ -818,27 +879,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get pointOfSell value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\PointOfSell|null
+     * @return PointOfSell|null
      */
-    public function getPointOfSell(): ?\StructType\PointOfSell
+    public function getPointOfSell(): ?PointOfSell
     {
         return $this->pointOfSell ?? null;
     }
+
     /**
      * Set pointOfSell value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\PointOfSell $pointOfSell
-     * @return \StructType\Transaction
+     * @param PointOfSell|null $pointOfSell
+     * @return Transaction
      */
-    public function setPointOfSell(?\StructType\PointOfSell $pointOfSell = null): self
+    public function setPointOfSell(?PointOfSell $pointOfSell = null): self
     {
-        if (is_null($pointOfSell) || (is_array($pointOfSell) && empty($pointOfSell))) {
+        if (is_null($pointOfSell)) {
             unset($this->pointOfSell);
         } else {
             $this->pointOfSell = $pointOfSell;
@@ -846,27 +909,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get card value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\CardOut|null
+     * @return CardOut|null
      */
-    public function getCard(): ?\StructType\CardOut
+    public function getCard(): ?CardOut
     {
         return $this->card ?? null;
     }
+
     /**
      * Set card value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\CardOut $card
-     * @return \StructType\Transaction
+     * @param CardOut|null $card
+     * @return Transaction
      */
-    public function setCard(?\StructType\CardOut $card = null): self
+    public function setCard(?CardOut $card = null): self
     {
-        if (is_null($card) || (is_array($card) && empty($card))) {
+        if (is_null($card)) {
             unset($this->card);
         } else {
             $this->card = $card;
@@ -874,27 +939,29 @@ class Transaction extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get extendedCard value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard ?? null;
     }
+
     /**
      * Set extendedCard value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\Transaction
+     * @param ExtendedCardType|null $extendedCard
+     * @return Transaction
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
-        if (is_null($extendedCard) || (is_array($extendedCard) && empty($extendedCard))) {
+        if (is_null($extendedCard)) {
             unset($this->extendedCard);
         } else {
             $this->extendedCard = $extendedCard;

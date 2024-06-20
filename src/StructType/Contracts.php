@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: list of contract
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Contracts extends AbstractStructBase
 {
     /**
@@ -21,32 +22,35 @@ class Contracts extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \StructType\Contract[]
+     * @var Contract[]
      */
     protected ?array $contract = null;
+
     /**
      * Constructor method for contracts
+     * @param Contract[] $contract
      * @uses Contracts::setContract()
-     * @param \StructType\Contract[] $contract
      */
     public function __construct(?array $contract = null)
     {
         $this
             ->setContract($contract);
     }
+
     /**
      * Get contract value
-     * @return \StructType\Contract[]
+     * @return array|null
      */
     public function getContract(): ?array
     {
         return $this->contract;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setContract method
      * This method is willingly generated in order to preserve the one-line inline validation within the setContract method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateContractForArrayConstraintFromSetContract(?array $values = []): string
@@ -58,22 +62,23 @@ class Contracts extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $contractsContractItem) {
             // validation for constraint: itemType
-            if (!$contractsContractItem instanceof \StructType\Contract) {
+            if (!$contractsContractItem instanceof Contract) {
                 $invalidValues[] = is_object($contractsContractItem) ? get_class($contractsContractItem) : sprintf('%s(%s)', gettype($contractsContractItem), var_export($contractsContractItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The contract property can only contain items of type \StructType\Contract, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The contract property can only contain items of type Contract, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
 
         return $message;
     }
+
     /**
      * Set contract value
+     * @param Contract[] $contract
+     * @return Contracts
      * @throws InvalidArgumentException
-     * @param \StructType\Contract[] $contract
-     * @return \StructType\Contracts
      */
     public function setContract(?array $contract = null): self
     {
@@ -85,18 +90,16 @@ class Contracts extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Add item to contract value
+     * @param Contract $item
+     * @return Contracts
      * @throws InvalidArgumentException
-     * @param \StructType\Contract $item
-     * @return \StructType\Contracts
      */
-    public function addToContract(\StructType\Contract $item): self
+    public function addToContract(Contract $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\Contract) {
-            throw new InvalidArgumentException(sprintf('The contract property can only contain items of type \StructType\Contract, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         $this->contract[] = $item;
 
         return $this;

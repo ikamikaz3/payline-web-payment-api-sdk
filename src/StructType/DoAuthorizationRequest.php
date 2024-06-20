@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doAuthorization method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoAuthorizationRequest extends AbstractStructBase
 {
     /**
@@ -23,34 +24,39 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The bankAccountData
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\BankAccountData|null
+     * @var BankAccountData|null
      */
-    protected ?\StructType\BankAccountData $bankAccountData = null;
+    protected ?BankAccountData $bankAccountData = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Card|null
+     * @var Card|null
      */
-    protected ?\StructType\Card $card = null;
+    protected ?Card $card = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The transient
      * Meta information extracted from the WSDL
@@ -58,34 +64,39 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transient = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -93,13 +104,15 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The asynchronousRetryTimeout
      * Meta information extracted from the WSDL
@@ -107,6 +120,7 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $asynchronousRetryTimeout = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -114,13 +128,15 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * The threeDSInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ThreeDSInfo|null
+     * @var ThreeDSInfo|null
      */
-    protected ?\StructType\ThreeDSInfo $threeDSInfo = null;
+    protected ?ThreeDSInfo $threeDSInfo = null;
+
     /**
      * The travelFileNumber
      * Meta information extracted from the WSDL
@@ -129,15 +145,34 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $travelFileNumber = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * Constructor method for doAuthorizationRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param BankAccountData|null $bankAccountData
+     * @param Card|null $card
+     * @param Order|null $order
+     * @param string|null $transient
+     * @param Buyer|null $buyer
+     * @param Owner|null $owner
+     * @param PrivateDataList|null $privateDataList
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $media
+     * @param SubMerchant|null $subMerchant
+     * @param string|null $asynchronousRetryTimeout
+     * @param string|null $linkedTransactionId
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @param string|null $travelFileNumber
+     * @param Recurring|null $recurring
      * @uses DoAuthorizationRequest::setVersion()
      * @uses DoAuthorizationRequest::setPayment()
      * @uses DoAuthorizationRequest::setBankAccountData()
@@ -155,25 +190,8 @@ class DoAuthorizationRequest extends AbstractStructBase
      * @uses DoAuthorizationRequest::setThreeDSInfo()
      * @uses DoAuthorizationRequest::setTravelFileNumber()
      * @uses DoAuthorizationRequest::setRecurring()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\BankAccountData $bankAccountData
-     * @param \StructType\Card $card
-     * @param \StructType\Order $order
-     * @param string $transient
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\Owner $owner
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $media
-     * @param \StructType\SubMerchant $subMerchant
-     * @param string $asynchronousRetryTimeout
-     * @param string $linkedTransactionId
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @param string $travelFileNumber
-     * @param \StructType\Recurring $recurring
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\BankAccountData $bankAccountData = null, ?\StructType\Card $card = null, ?\StructType\Order $order = null, ?string $transient = null, ?\StructType\Buyer $buyer = null, ?\StructType\Owner $owner = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?\StructType\SubMerchant $subMerchant = null, ?string $asynchronousRetryTimeout = null, ?string $linkedTransactionId = null, ?\StructType\ThreeDSInfo $threeDSInfo = null, ?string $travelFileNumber = null, ?\StructType\Recurring $recurring = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?BankAccountData $bankAccountData = null, ?Card $card = null, ?Order $order = null, ?string $transient = null, ?Buyer $buyer = null, ?Owner $owner = null, ?PrivateDataList $privateDataList = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?SubMerchant $subMerchant = null, ?string $asynchronousRetryTimeout = null, ?string $linkedTransactionId = null, ?ThreeDSInfo $threeDSInfo = null, ?string $travelFileNumber = null, ?Recurring $recurring = null)
     {
         $this
             ->setVersion($version)
@@ -194,6 +212,7 @@ class DoAuthorizationRequest extends AbstractStructBase
             ->setTravelFileNumber($travelFileNumber)
             ->setRecurring($recurring);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -202,10 +221,11 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $version
+     * @return DoAuthorizationRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -214,85 +234,94 @@ class DoAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoAuthorizationRequest
+     * @param Payment|null $payment
+     * @return DoAuthorizationRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
+
     /**
      * Get bankAccountData value
-     * @return \StructType\BankAccountData|null
+     * @return BankAccountData|null
      */
-    public function getBankAccountData(): ?\StructType\BankAccountData
+    public function getBankAccountData(): ?BankAccountData
     {
         return $this->bankAccountData;
     }
+
     /**
      * Set bankAccountData value
-     * @param \StructType\BankAccountData $bankAccountData
-     * @return \StructType\DoAuthorizationRequest
+     * @param BankAccountData|null $bankAccountData
+     * @return DoAuthorizationRequest
      */
-    public function setBankAccountData(?\StructType\BankAccountData $bankAccountData = null): self
+    public function setBankAccountData(?BankAccountData $bankAccountData = null): self
     {
         $this->bankAccountData = $bankAccountData;
-        
+
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\Card|null
+     * @return Card|null
      */
-    public function getCard(): ?\StructType\Card
+    public function getCard(): ?Card
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\Card $card
-     * @return \StructType\DoAuthorizationRequest
+     * @param Card|null $card
+     * @return DoAuthorizationRequest
      */
-    public function setCard(?\StructType\Card $card = null): self
+    public function setCard(?Card $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoAuthorizationRequest
+     * @param Order|null $order
+     * @return DoAuthorizationRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
+
     /**
      * Get transient value
      * @return string|null
@@ -301,10 +330,11 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->transient;
     }
+
     /**
      * Set transient value
-     * @param string $transient
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $transient
+     * @return DoAuthorizationRequest
      */
     public function setTransient(?string $transient = null): self
     {
@@ -313,85 +343,94 @@ class DoAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transient, true), gettype($transient)), __LINE__);
         }
         $this->transient = $transient;
-        
+
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\DoAuthorizationRequest
+     * @param Buyer|null $buyer
+     * @return DoAuthorizationRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
-        
+
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\DoAuthorizationRequest
+     * @param Owner|null $owner
+     * @return DoAuthorizationRequest
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
-        
+
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoAuthorizationRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoAuthorizationRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\DoAuthorizationRequest
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return DoAuthorizationRequest
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -400,10 +439,11 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $media
+     * @return DoAuthorizationRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -412,28 +452,31 @@ class DoAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoAuthorizationRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoAuthorizationRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
-        
+
         return $this;
     }
+
     /**
      * Get asynchronousRetryTimeout value
      * @return string|null
@@ -442,10 +485,11 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->asynchronousRetryTimeout;
     }
+
     /**
      * Set asynchronousRetryTimeout value
-     * @param string $asynchronousRetryTimeout
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $asynchronousRetryTimeout
+     * @return DoAuthorizationRequest
      */
     public function setAsynchronousRetryTimeout(?string $asynchronousRetryTimeout = null): self
     {
@@ -454,9 +498,10 @@ class DoAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($asynchronousRetryTimeout, true), gettype($asynchronousRetryTimeout)), __LINE__);
         }
         $this->asynchronousRetryTimeout = $asynchronousRetryTimeout;
-        
+
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -465,10 +510,11 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $linkedTransactionId
+     * @return DoAuthorizationRequest
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {
@@ -477,28 +523,31 @@ class DoAuthorizationRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedTransactionId, true), gettype($linkedTransactionId)), __LINE__);
         }
         $this->linkedTransactionId = $linkedTransactionId;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSInfo value
-     * @return \StructType\ThreeDSInfo|null
+     * @return ThreeDSInfo|null
      */
-    public function getThreeDSInfo(): ?\StructType\ThreeDSInfo
+    public function getThreeDSInfo(): ?ThreeDSInfo
     {
         return $this->threeDSInfo;
     }
+
     /**
      * Set threeDSInfo value
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @return \StructType\DoAuthorizationRequest
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @return DoAuthorizationRequest
      */
-    public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
+    public function setThreeDSInfo(?ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
-        
+
         return $this;
     }
+
     /**
      * Get travelFileNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -510,12 +559,13 @@ class DoAuthorizationRequest extends AbstractStructBase
     {
         return $this->travelFileNumber ?? null;
     }
+
     /**
      * Set travelFileNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $travelFileNumber
-     * @return \StructType\DoAuthorizationRequest
+     * @param string|null $travelFileNumber
+     * @return DoAuthorizationRequest
      */
     public function setTravelFileNumber(?string $travelFileNumber = null): self
     {
@@ -523,31 +573,33 @@ class DoAuthorizationRequest extends AbstractStructBase
         if (!is_null($travelFileNumber) && !is_string($travelFileNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelFileNumber, true), gettype($travelFileNumber)), __LINE__);
         }
-        if (is_null($travelFileNumber) || (is_array($travelFileNumber) && empty($travelFileNumber))) {
+        if (is_null($travelFileNumber)) {
             unset($this->travelFileNumber);
         } else {
             $this->travelFileNumber = $travelFileNumber;
         }
-        
+
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\DoAuthorizationRequest
+     * @param Recurring|null $recurring
+     * @return DoAuthorizationRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
-        
+
         return $this;
     }
 }

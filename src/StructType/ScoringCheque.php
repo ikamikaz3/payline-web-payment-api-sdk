@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains the scoring cheque parameters
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class ScoringCheque extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class ScoringCheque extends AbstractStructBase
      * @var string|null
      */
     protected ?string $chequeNumber = null;
+
     /**
      * The additionalDataResponse
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class ScoringCheque extends AbstractStructBase
      * @var string|null
      */
     protected ?string $additionalDataResponse = null;
+
     /**
      * The terminalId
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class ScoringCheque extends AbstractStructBase
      * @var string|null
      */
     protected ?string $terminalId = null;
+
     /**
      * The additionalPrivateData
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class ScoringCheque extends AbstractStructBase
      * @var string|null
      */
     protected ?string $additionalPrivateData = null;
+
     /**
      * Constructor method for scoringCheque
+     * @param string|null $chequeNumber
+     * @param string|null $additionalDataResponse
+     * @param string|null $terminalId
+     * @param string|null $additionalPrivateData
      * @uses ScoringCheque::setChequeNumber()
      * @uses ScoringCheque::setAdditionalDataResponse()
      * @uses ScoringCheque::setTerminalId()
      * @uses ScoringCheque::setAdditionalPrivateData()
-     * @param string $chequeNumber
-     * @param string $additionalDataResponse
-     * @param string $terminalId
-     * @param string $additionalPrivateData
      */
     public function __construct(?string $chequeNumber = null, ?string $additionalDataResponse = null, ?string $terminalId = null, ?string $additionalPrivateData = null)
     {
@@ -63,6 +68,7 @@ class ScoringCheque extends AbstractStructBase
             ->setTerminalId($terminalId)
             ->setAdditionalPrivateData($additionalPrivateData);
     }
+
     /**
      * Get chequeNumber value
      * @return string|null
@@ -71,10 +77,11 @@ class ScoringCheque extends AbstractStructBase
     {
         return $this->chequeNumber;
     }
+
     /**
      * Set chequeNumber value
-     * @param string $chequeNumber
-     * @return \StructType\ScoringCheque
+     * @param string|null $chequeNumber
+     * @return ScoringCheque
      */
     public function setChequeNumber(?string $chequeNumber = null): self
     {
@@ -83,9 +90,10 @@ class ScoringCheque extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($chequeNumber, true), gettype($chequeNumber)), __LINE__);
         }
         $this->chequeNumber = $chequeNumber;
-        
+
         return $this;
     }
+
     /**
      * Get additionalDataResponse value
      * @return string|null
@@ -94,10 +102,11 @@ class ScoringCheque extends AbstractStructBase
     {
         return $this->additionalDataResponse;
     }
+
     /**
      * Set additionalDataResponse value
-     * @param string $additionalDataResponse
-     * @return \StructType\ScoringCheque
+     * @param string|null $additionalDataResponse
+     * @return ScoringCheque
      */
     public function setAdditionalDataResponse(?string $additionalDataResponse = null): self
     {
@@ -106,9 +115,10 @@ class ScoringCheque extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($additionalDataResponse, true), gettype($additionalDataResponse)), __LINE__);
         }
         $this->additionalDataResponse = $additionalDataResponse;
-        
+
         return $this;
     }
+
     /**
      * Get terminalId value
      * @return string|null
@@ -117,10 +127,11 @@ class ScoringCheque extends AbstractStructBase
     {
         return $this->terminalId;
     }
+
     /**
      * Set terminalId value
-     * @param string $terminalId
-     * @return \StructType\ScoringCheque
+     * @param string|null $terminalId
+     * @return ScoringCheque
      */
     public function setTerminalId(?string $terminalId = null): self
     {
@@ -129,9 +140,10 @@ class ScoringCheque extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminalId, true), gettype($terminalId)), __LINE__);
         }
         $this->terminalId = $terminalId;
-        
+
         return $this;
     }
+
     /**
      * Get additionalPrivateData value
      * @return string|null
@@ -140,10 +152,11 @@ class ScoringCheque extends AbstractStructBase
     {
         return $this->additionalPrivateData;
     }
+
     /**
      * Set additionalPrivateData value
-     * @param string $additionalPrivateData
-     * @return \StructType\ScoringCheque
+     * @param string|null $additionalPrivateData
+     * @return ScoringCheque
      */
     public function setAdditionalPrivateData(?string $additionalPrivateData = null): self
     {
@@ -152,7 +165,7 @@ class ScoringCheque extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($additionalPrivateData, true), gettype($additionalPrivateData)), __LINE__);
         }
         $this->additionalPrivateData = $additionalPrivateData;
-        
+
         return $this;
     }
 }

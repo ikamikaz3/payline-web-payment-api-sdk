@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains all information about customPaymentPageCode
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class CustomPaymentPageCode extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class CustomPaymentPageCode extends AbstractStructBase
      * @var string|null
      */
     protected ?string $code = null;
+
     /**
      * The label
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class CustomPaymentPageCode extends AbstractStructBase
      * @var string|null
      */
     protected ?string $label = null;
+
     /**
      * The type
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class CustomPaymentPageCode extends AbstractStructBase
      * @var string|null
      */
     protected ?string $type = null;
+
     /**
      * Constructor method for customPaymentPageCode
+     * @param string|null $code
+     * @param string|null $label
+     * @param string|null $type
      * @uses CustomPaymentPageCode::setCode()
      * @uses CustomPaymentPageCode::setLabel()
      * @uses CustomPaymentPageCode::setType()
-     * @param string $code
-     * @param string $label
-     * @param string $type
      */
     public function __construct(?string $code = null, ?string $label = null, ?string $type = null)
     {
@@ -53,6 +57,7 @@ class CustomPaymentPageCode extends AbstractStructBase
             ->setLabel($label)
             ->setType($type);
     }
+
     /**
      * Get code value
      * @return string|null
@@ -61,10 +66,11 @@ class CustomPaymentPageCode extends AbstractStructBase
     {
         return $this->code;
     }
+
     /**
      * Set code value
-     * @param string $code
-     * @return \StructType\CustomPaymentPageCode
+     * @param string|null $code
+     * @return CustomPaymentPageCode
      */
     public function setCode(?string $code = null): self
     {
@@ -73,9 +79,10 @@ class CustomPaymentPageCode extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         $this->code = $code;
-        
+
         return $this;
     }
+
     /**
      * Get label value
      * @return string|null
@@ -84,10 +91,11 @@ class CustomPaymentPageCode extends AbstractStructBase
     {
         return $this->label;
     }
+
     /**
      * Set label value
-     * @param string $label
-     * @return \StructType\CustomPaymentPageCode
+     * @param string|null $label
+     * @return CustomPaymentPageCode
      */
     public function setLabel(?string $label = null): self
     {
@@ -96,9 +104,10 @@ class CustomPaymentPageCode extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($label, true), gettype($label)), __LINE__);
         }
         $this->label = $label;
-        
+
         return $this;
     }
+
     /**
      * Get type value
      * @return string|null
@@ -107,10 +116,11 @@ class CustomPaymentPageCode extends AbstractStructBase
     {
         return $this->type;
     }
+
     /**
      * Set type value
-     * @param string $type
-     * @return \StructType\CustomPaymentPageCode
+     * @param string|null $type
+     * @return CustomPaymentPageCode
      */
     public function setType(?string $type = null): self
     {
@@ -119,7 +129,7 @@ class CustomPaymentPageCode extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->type = $type;
-        
+
         return $this;
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the fraud result details
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class FraudResultDetails extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class FraudResultDetails extends AbstractStructBase
      * @var string|null
      */
     protected ?string $code = null;
+
     /**
      * The shortMessage
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class FraudResultDetails extends AbstractStructBase
      * @var string|null
      */
     protected ?string $shortMessage = null;
+
     /**
      * The longMessage
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class FraudResultDetails extends AbstractStructBase
      * @var string|null
      */
     protected ?string $longMessage = null;
+
     /**
      * Constructor method for fraudResultDetails
+     * @param string|null $code
+     * @param string|null $shortMessage
+     * @param string|null $longMessage
      * @uses FraudResultDetails::setCode()
      * @uses FraudResultDetails::setShortMessage()
      * @uses FraudResultDetails::setLongMessage()
-     * @param string $code
-     * @param string $shortMessage
-     * @param string $longMessage
      */
     public function __construct(?string $code = null, ?string $shortMessage = null, ?string $longMessage = null)
     {
@@ -53,6 +57,7 @@ class FraudResultDetails extends AbstractStructBase
             ->setShortMessage($shortMessage)
             ->setLongMessage($longMessage);
     }
+
     /**
      * Get code value
      * @return string|null
@@ -61,10 +66,11 @@ class FraudResultDetails extends AbstractStructBase
     {
         return $this->code;
     }
+
     /**
      * Set code value
-     * @param string $code
-     * @return \StructType\FraudResultDetails
+     * @param string|null $code
+     * @return FraudResultDetails
      */
     public function setCode(?string $code = null): self
     {
@@ -73,9 +79,10 @@ class FraudResultDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         $this->code = $code;
-        
+
         return $this;
     }
+
     /**
      * Get shortMessage value
      * @return string|null
@@ -84,10 +91,11 @@ class FraudResultDetails extends AbstractStructBase
     {
         return $this->shortMessage;
     }
+
     /**
      * Set shortMessage value
-     * @param string $shortMessage
-     * @return \StructType\FraudResultDetails
+     * @param string|null $shortMessage
+     * @return FraudResultDetails
      */
     public function setShortMessage(?string $shortMessage = null): self
     {
@@ -96,9 +104,10 @@ class FraudResultDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shortMessage, true), gettype($shortMessage)), __LINE__);
         }
         $this->shortMessage = $shortMessage;
-        
+
         return $this;
     }
+
     /**
      * Get longMessage value
      * @return string|null
@@ -107,10 +116,11 @@ class FraudResultDetails extends AbstractStructBase
     {
         return $this->longMessage;
     }
+
     /**
      * Set longMessage value
-     * @param string $longMessage
-     * @return \StructType\FraudResultDetails
+     * @param string|null $longMessage
+     * @return FraudResultDetails
      */
     public function setLongMessage(?string $longMessage = null): self
     {
@@ -119,7 +129,7 @@ class FraudResultDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($longMessage, true), gettype($longMessage)), __LINE__);
         }
         $this->longMessage = $longMessage;
-        
+
         return $this;
     }
 }

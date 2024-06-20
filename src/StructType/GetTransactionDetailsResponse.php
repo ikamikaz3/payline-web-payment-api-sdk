@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,33 +14,37 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the response for the getTransactionDetails method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetTransactionDetailsResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The card
-     * @var \StructType\CardOut|null
+     * @var CardOut|null
      */
-    protected ?\StructType\CardOut $card = null;
+    protected ?CardOut $card = null;
+
     /**
      * The extendedCard
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * The customerMedia
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Media|null
+     * @var Media|null
      */
-    protected ?\StructType\Media $customerMedia = null;
+    protected ?Media $customerMedia = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -47,76 +52,87 @@ class GetTransactionDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The pointOfSell
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\PointOfSell|null
+     * @var PointOfSell|null
      */
-    protected ?\StructType\PointOfSell $pointOfSell = null;
+    protected ?PointOfSell $pointOfSell = null;
+
     /**
      * The routingRule
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\RoutingRule|null
+     * @var RoutingRule|null
      */
-    protected ?\StructType\RoutingRule $routingRule = null;
+    protected ?RoutingRule $routingRule = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The associatedTransactionsList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\AssociatedTransactionsList|null
+     * @var AssociatedTransactionsList|null
      */
-    protected ?\StructType\AssociatedTransactionsList $associatedTransactionsList = null;
+    protected ?AssociatedTransactionsList $associatedTransactionsList = null;
+
     /**
      * The statusHistoryList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\StatusHistoryList|null
+     * @var StatusHistoryList|null
      */
-    protected ?\StructType\StatusHistoryList $statusHistoryList = null;
+    protected ?StatusHistoryList $statusHistoryList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -124,36 +140,41 @@ class GetTransactionDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The paymentAdditionalList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\PaymentAdditionalList|null
+     * @var PaymentAdditionalList|null
      */
-    protected ?\StructType\PaymentAdditionalList $paymentAdditionalList = null;
+    protected ?PaymentAdditionalList $paymentAdditionalList = null;
+
     /**
      * The bankAccountData
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\BankAccountData|null
+     * @var BankAccountData|null
      */
-    protected ?\StructType\BankAccountData $bankAccountData = null;
+    protected ?BankAccountData $bankAccountData = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -161,6 +182,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * The travelFileNumber
      * Meta information extracted from the WSDL
@@ -169,8 +191,31 @@ class GetTransactionDetailsResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $travelFileNumber = null;
+
     /**
      * Constructor method for getTransactionDetailsResponse
+     * @param Result|null $result
+     * @param CardOut|null $card
+     * @param ExtendedCardType|null $extendedCard
+     * @param Media|null $customerMedia
+     * @param string|null $contractNumber
+     * @param PointOfSell|null $pointOfSell
+     * @param RoutingRule|null $routingRule
+     * @param Transaction|null $transaction
+     * @param Payment|null $payment
+     * @param Authorization|null $authorization
+     * @param Order|null $order
+     * @param Buyer|null $buyer
+     * @param PrivateDataList|null $privateDataList
+     * @param AssociatedTransactionsList|null $associatedTransactionsList
+     * @param StatusHistoryList|null $statusHistoryList
+     * @param string|null $media
+     * @param PaymentAdditionalList|null $paymentAdditionalList
+     * @param BankAccountData|null $bankAccountData
+     * @param SubMerchant|null $subMerchant
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $linkedTransactionId
+     * @param string|null $travelFileNumber
      * @uses GetTransactionDetailsResponse::setResult()
      * @uses GetTransactionDetailsResponse::setCard()
      * @uses GetTransactionDetailsResponse::setExtendedCard()
@@ -193,30 +238,8 @@ class GetTransactionDetailsResponse extends AbstractStructBase
      * @uses GetTransactionDetailsResponse::setAuthentication3DSecure()
      * @uses GetTransactionDetailsResponse::setLinkedTransactionId()
      * @uses GetTransactionDetailsResponse::setTravelFileNumber()
-     * @param \StructType\Result $result
-     * @param \StructType\CardOut $card
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @param \StructType\Media $customerMedia
-     * @param string $contractNumber
-     * @param \StructType\PointOfSell $pointOfSell
-     * @param \StructType\RoutingRule $routingRule
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\Payment $payment
-     * @param \StructType\Authorization $authorization
-     * @param \StructType\Order $order
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\AssociatedTransactionsList $associatedTransactionsList
-     * @param \StructType\StatusHistoryList $statusHistoryList
-     * @param string $media
-     * @param \StructType\PaymentAdditionalList $paymentAdditionalList
-     * @param \StructType\BankAccountData $bankAccountData
-     * @param \StructType\SubMerchant $subMerchant
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $linkedTransactionId
-     * @param string $travelFileNumber
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\CardOut $card = null, ?\StructType\ExtendedCardType $extendedCard = null, ?\StructType\Media $customerMedia = null, ?string $contractNumber = null, ?\StructType\PointOfSell $pointOfSell = null, ?\StructType\RoutingRule $routingRule = null, ?\StructType\Transaction $transaction = null, ?\StructType\Payment $payment = null, ?\StructType\Authorization $authorization = null, ?\StructType\Order $order = null, ?\StructType\Buyer $buyer = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\AssociatedTransactionsList $associatedTransactionsList = null, ?\StructType\StatusHistoryList $statusHistoryList = null, ?string $media = null, ?\StructType\PaymentAdditionalList $paymentAdditionalList = null, ?\StructType\BankAccountData $bankAccountData = null, ?\StructType\SubMerchant $subMerchant = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $linkedTransactionId = null, ?string $travelFileNumber = null)
+    public function __construct(?Result $result = null, ?CardOut $card = null, ?ExtendedCardType $extendedCard = null, ?Media $customerMedia = null, ?string $contractNumber = null, ?PointOfSell $pointOfSell = null, ?RoutingRule $routingRule = null, ?Transaction $transaction = null, ?Payment $payment = null, ?Authorization $authorization = null, ?Order $order = null, ?Buyer $buyer = null, ?PrivateDataList $privateDataList = null, ?AssociatedTransactionsList $associatedTransactionsList = null, ?StatusHistoryList $statusHistoryList = null, ?string $media = null, ?PaymentAdditionalList $paymentAdditionalList = null, ?BankAccountData $bankAccountData = null, ?SubMerchant $subMerchant = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $linkedTransactionId = null, ?string $travelFileNumber = null)
     {
         $this
             ->setResult($result)
@@ -242,82 +265,91 @@ class GetTransactionDetailsResponse extends AbstractStructBase
             ->setLinkedTransactionId($linkedTransactionId)
             ->setTravelFileNumber($travelFileNumber);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Result|null $result
+     * @return GetTransactionDetailsResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\CardOut|null
+     * @return CardOut|null
      */
-    public function getCard(): ?\StructType\CardOut
+    public function getCard(): ?CardOut
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\CardOut $card
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param CardOut|null $card
+     * @return GetTransactionDetailsResponse
      */
-    public function setCard(?\StructType\CardOut $card = null): self
+    public function setCard(?CardOut $card = null): self
     {
         $this->card = $card;
 
         return $this;
     }
+
     /**
      * Get extendedCard value
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard;
     }
+
     /**
      * Set extendedCard value
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param ExtendedCardType|null $extendedCard
+     * @return GetTransactionDetailsResponse
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
 
         return $this;
     }
+
     /**
      * Get customerMedia value
-     * @return \StructType\Media|null
+     * @return Media|null
      */
-    public function getCustomerMedia(): ?\StructType\Media
+    public function getCustomerMedia(): ?Media
     {
         return $this->customerMedia;
     }
+
     /**
      * Set customerMedia value
-     * @param \StructType\Media $customerMedia
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Media|null $customerMedia
+     * @return GetTransactionDetailsResponse
      */
-    public function setCustomerMedia(?\StructType\Media $customerMedia = null): self
+    public function setCustomerMedia(?Media $customerMedia = null): self
     {
         $this->customerMedia = $customerMedia;
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -326,10 +358,11 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param string|null $contractNumber
+     * @return GetTransactionDetailsResponse
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -341,196 +374,217 @@ class GetTransactionDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get pointOfSell value
-     * @return \StructType\PointOfSell|null
+     * @return PointOfSell|null
      */
-    public function getPointOfSell(): ?\StructType\PointOfSell
+    public function getPointOfSell(): ?PointOfSell
     {
         return $this->pointOfSell;
     }
+
     /**
      * Set pointOfSell value
-     * @param \StructType\PointOfSell $pointOfSell
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param PointOfSell|null $pointOfSell
+     * @return GetTransactionDetailsResponse
      */
-    public function setPointOfSell(?\StructType\PointOfSell $pointOfSell = null): self
+    public function setPointOfSell(?PointOfSell $pointOfSell = null): self
     {
         $this->pointOfSell = $pointOfSell;
 
         return $this;
     }
+
     /**
      * Get routingRule value
-     * @return \StructType\RoutingRule|null
+     * @return RoutingRule|null
      */
-    public function getRoutingRule(): ?\StructType\RoutingRule
+    public function getRoutingRule(): ?RoutingRule
     {
         return $this->routingRule;
     }
+
     /**
      * Set routingRule value
-     * @param \StructType\RoutingRule $routingRule
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param RoutingRule|null $routingRule
+     * @return GetTransactionDetailsResponse
      */
-    public function setRoutingRule(?\StructType\RoutingRule $routingRule = null): self
+    public function setRoutingRule(?RoutingRule $routingRule = null): self
     {
         $this->routingRule = $routingRule;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Transaction|null $transaction
+     * @return GetTransactionDetailsResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Payment|null $payment
+     * @return GetTransactionDetailsResponse
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get authorization value
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization;
     }
+
     /**
      * Set authorization value
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Authorization|null $authorization
+     * @return GetTransactionDetailsResponse
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Order|null $order
+     * @return GetTransactionDetailsResponse
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Buyer|null $buyer
+     * @return GetTransactionDetailsResponse
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return GetTransactionDetailsResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get associatedTransactionsList value
-     * @return \StructType\AssociatedTransactionsList|null
+     * @return AssociatedTransactionsList|null
      */
-    public function getAssociatedTransactionsList(): ?\StructType\AssociatedTransactionsList
+    public function getAssociatedTransactionsList(): ?AssociatedTransactionsList
     {
         return $this->associatedTransactionsList;
     }
+
     /**
      * Set associatedTransactionsList value
-     * @param \StructType\AssociatedTransactionsList $associatedTransactionsList
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param AssociatedTransactionsList|null $associatedTransactionsList
+     * @return GetTransactionDetailsResponse
      */
-    public function setAssociatedTransactionsList(?\StructType\AssociatedTransactionsList $associatedTransactionsList = null): self
+    public function setAssociatedTransactionsList(?AssociatedTransactionsList $associatedTransactionsList = null): self
     {
         $this->associatedTransactionsList = $associatedTransactionsList;
 
         return $this;
     }
+
     /**
      * Get statusHistoryList value
-     * @return \StructType\StatusHistoryList|null
+     * @return StatusHistoryList|null
      */
-    public function getStatusHistoryList(): ?\StructType\StatusHistoryList
+    public function getStatusHistoryList(): ?StatusHistoryList
     {
         return $this->statusHistoryList;
     }
+
     /**
      * Set statusHistoryList value
-     * @param \StructType\StatusHistoryList $statusHistoryList
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param StatusHistoryList|null $statusHistoryList
+     * @return GetTransactionDetailsResponse
      */
-    public function setStatusHistoryList(?\StructType\StatusHistoryList $statusHistoryList = null): self
+    public function setStatusHistoryList(?StatusHistoryList $statusHistoryList = null): self
     {
         $this->statusHistoryList = $statusHistoryList;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -539,10 +593,11 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param string|null $media
+     * @return GetTransactionDetailsResponse
      */
     public function setMedia(?string $media = null): self
     {
@@ -554,27 +609,29 @@ class GetTransactionDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentAdditionalList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\PaymentAdditionalList|null
+     * @return PaymentAdditionalList|null
      */
-    public function getPaymentAdditionalList(): ?\StructType\PaymentAdditionalList
+    public function getPaymentAdditionalList(): ?PaymentAdditionalList
     {
         return $this->paymentAdditionalList ?? null;
     }
+
     /**
      * Set paymentAdditionalList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\PaymentAdditionalList $paymentAdditionalList
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param PaymentAdditionalList|null $paymentAdditionalList
+     * @return GetTransactionDetailsResponse
      */
-    public function setPaymentAdditionalList(?\StructType\PaymentAdditionalList $paymentAdditionalList = null): self
+    public function setPaymentAdditionalList(?PaymentAdditionalList $paymentAdditionalList = null): self
     {
-        if (is_null($paymentAdditionalList) || (is_array($paymentAdditionalList) && empty($paymentAdditionalList))) {
+        if (is_null($paymentAdditionalList)) {
             unset($this->paymentAdditionalList);
         } else {
             $this->paymentAdditionalList = $paymentAdditionalList;
@@ -582,65 +639,71 @@ class GetTransactionDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get bankAccountData value
-     * @return \StructType\BankAccountData|null
+     * @return BankAccountData|null
      */
-    public function getBankAccountData(): ?\StructType\BankAccountData
+    public function getBankAccountData(): ?BankAccountData
     {
         return $this->bankAccountData;
     }
+
     /**
      * Set bankAccountData value
-     * @param \StructType\BankAccountData $bankAccountData
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param BankAccountData|null $bankAccountData
+     * @return GetTransactionDetailsResponse
      */
-    public function setBankAccountData(?\StructType\BankAccountData $bankAccountData = null): self
+    public function setBankAccountData(?BankAccountData $bankAccountData = null): self
     {
         $this->bankAccountData = $bankAccountData;
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param SubMerchant|null $subMerchant
+     * @return GetTransactionDetailsResponse
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure ?? null;
     }
+
     /**
      * Set authentication3DSecure value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return GetTransactionDetailsResponse
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
-        if (is_null($authentication3DSecure) || (is_array($authentication3DSecure) && empty($authentication3DSecure))) {
+        if (is_null($authentication3DSecure)) {
             unset($this->authentication3DSecure);
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
@@ -648,6 +711,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -656,10 +720,11 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param string|null $linkedTransactionId
+     * @return GetTransactionDetailsResponse
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {
@@ -671,6 +736,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get travelFileNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -682,12 +748,13 @@ class GetTransactionDetailsResponse extends AbstractStructBase
     {
         return $this->travelFileNumber ?? null;
     }
+
     /**
      * Set travelFileNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $travelFileNumber
-     * @return \StructType\GetTransactionDetailsResponse
+     * @param string|null $travelFileNumber
+     * @return GetTransactionDetailsResponse
      */
     public function setTravelFileNumber(?string $travelFileNumber = null): self
     {
@@ -695,7 +762,7 @@ class GetTransactionDetailsResponse extends AbstractStructBase
         if (!is_null($travelFileNumber) && !is_string($travelFileNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelFileNumber, true), gettype($travelFileNumber)), __LINE__);
         }
-        if (is_null($travelFileNumber) || (is_array($travelFileNumber) && empty($travelFileNumber))) {
+        if (is_null($travelFileNumber)) {
             unset($this->travelFileNumber);
         } else {
             $this->travelFileNumber = $travelFileNumber;

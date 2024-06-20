@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the address
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class AddressOwner extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class AddressOwner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $street = null;
+
     /**
      * The cityName
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class AddressOwner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cityName = null;
+
     /**
      * The zipCode
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class AddressOwner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $zipCode = null;
+
     /**
      * The country
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class AddressOwner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $country = null;
+
     /**
      * The phone
      * Meta information extracted from the WSDL
@@ -51,18 +56,19 @@ class AddressOwner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $phone = null;
+
     /**
      * Constructor method for addressOwner
+     * @param string|null $street
+     * @param string|null $cityName
+     * @param string|null $zipCode
+     * @param string|null $country
+     * @param string|null $phone
      * @uses AddressOwner::setStreet()
      * @uses AddressOwner::setCityName()
      * @uses AddressOwner::setZipCode()
      * @uses AddressOwner::setCountry()
      * @uses AddressOwner::setPhone()
-     * @param string $street
-     * @param string $cityName
-     * @param string $zipCode
-     * @param string $country
-     * @param string $phone
      */
     public function __construct(?string $street = null, ?string $cityName = null, ?string $zipCode = null, ?string $country = null, ?string $phone = null)
     {
@@ -73,6 +79,7 @@ class AddressOwner extends AbstractStructBase
             ->setCountry($country)
             ->setPhone($phone);
     }
+
     /**
      * Get street value
      * @return string|null
@@ -81,10 +88,11 @@ class AddressOwner extends AbstractStructBase
     {
         return $this->street;
     }
+
     /**
      * Set street value
-     * @param string $street
-     * @return \StructType\AddressOwner
+     * @param string|null $street
+     * @return AddressOwner
      */
     public function setStreet(?string $street = null): self
     {
@@ -93,9 +101,10 @@ class AddressOwner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street, true), gettype($street)), __LINE__);
         }
         $this->street = $street;
-        
+
         return $this;
     }
+
     /**
      * Get cityName value
      * @return string|null
@@ -104,10 +113,11 @@ class AddressOwner extends AbstractStructBase
     {
         return $this->cityName;
     }
+
     /**
      * Set cityName value
-     * @param string $cityName
-     * @return \StructType\AddressOwner
+     * @param string|null $cityName
+     * @return AddressOwner
      */
     public function setCityName(?string $cityName = null): self
     {
@@ -116,9 +126,10 @@ class AddressOwner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityName, true), gettype($cityName)), __LINE__);
         }
         $this->cityName = $cityName;
-        
+
         return $this;
     }
+
     /**
      * Get zipCode value
      * @return string|null
@@ -127,10 +138,11 @@ class AddressOwner extends AbstractStructBase
     {
         return $this->zipCode;
     }
+
     /**
      * Set zipCode value
-     * @param string $zipCode
-     * @return \StructType\AddressOwner
+     * @param string|null $zipCode
+     * @return AddressOwner
      */
     public function setZipCode(?string $zipCode = null): self
     {
@@ -139,9 +151,10 @@ class AddressOwner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
         }
         $this->zipCode = $zipCode;
-        
+
         return $this;
     }
+
     /**
      * Get country value
      * @return string|null
@@ -150,10 +163,11 @@ class AddressOwner extends AbstractStructBase
     {
         return $this->country;
     }
+
     /**
      * Set country value
-     * @param string $country
-     * @return \StructType\AddressOwner
+     * @param string|null $country
+     * @return AddressOwner
      */
     public function setCountry(?string $country = null): self
     {
@@ -162,9 +176,10 @@ class AddressOwner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
         }
         $this->country = $country;
-        
+
         return $this;
     }
+
     /**
      * Get phone value
      * @return string|null
@@ -173,10 +188,11 @@ class AddressOwner extends AbstractStructBase
     {
         return $this->phone;
     }
+
     /**
      * Set phone value
-     * @param string $phone
-     * @return \StructType\AddressOwner
+     * @param string|null $phone
+     * @return AddressOwner
      */
     public function setPhone(?string $phone = null): self
     {
@@ -185,7 +201,7 @@ class AddressOwner extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phone, true), gettype($phone)), __LINE__);
         }
         $this->phone = $phone;
-        
+
         return $this;
     }
 }

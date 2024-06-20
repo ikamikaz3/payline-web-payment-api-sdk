@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the createWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class CreateWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class CreateWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,41 +32,47 @@ class CreateWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The wallet
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Wallet|null
+     * @var Wallet|null
      */
-    protected ?\StructType\Wallet $wallet = null;
+    protected ?Wallet $wallet = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -72,13 +80,15 @@ class CreateWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The contractNumberWalletList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ContractNumberWalletList|null
+     * @var ContractNumberWalletList|null
      */
-    protected ?\StructType\ContractNumberWalletList $contractNumberWalletList = null;
+    protected ?ContractNumberWalletList $contractNumberWalletList = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -86,8 +96,19 @@ class CreateWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * Constructor method for createWalletRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param Wallet|null $wallet
+     * @param Buyer|null $buyer
+     * @param Owner|null $owner
+     * @param PrivateDataList|null $privateDataList
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $media
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @param string|null $transactionID
      * @uses CreateWalletRequest::setVersion()
      * @uses CreateWalletRequest::setContractNumber()
      * @uses CreateWalletRequest::setWallet()
@@ -98,18 +119,8 @@ class CreateWalletRequest extends AbstractStructBase
      * @uses CreateWalletRequest::setMedia()
      * @uses CreateWalletRequest::setContractNumberWalletList()
      * @uses CreateWalletRequest::setTransactionID()
-     * @param string $version
-     * @param string $contractNumber
-     * @param \StructType\Wallet $wallet
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\Owner $owner
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $media
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @param string $transactionID
      */
-    public function __construct(?string $version = null, ?string $contractNumber = null, ?\StructType\Wallet $wallet = null, ?\StructType\Buyer $buyer = null, ?\StructType\Owner $owner = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?\StructType\ContractNumberWalletList $contractNumberWalletList = null, ?string $transactionID = null)
+    public function __construct(?string $version = null, ?string $contractNumber = null, ?Wallet $wallet = null, ?Buyer $buyer = null, ?Owner $owner = null, ?PrivateDataList $privateDataList = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?ContractNumberWalletList $contractNumberWalletList = null, ?string $transactionID = null)
     {
         $this
             ->setVersion($version)
@@ -123,6 +134,7 @@ class CreateWalletRequest extends AbstractStructBase
             ->setContractNumberWalletList($contractNumberWalletList)
             ->setTransactionID($transactionID);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -131,10 +143,11 @@ class CreateWalletRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\CreateWalletRequest
+     * @param string|null $version
+     * @return CreateWalletRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -146,6 +159,7 @@ class CreateWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -154,10 +168,11 @@ class CreateWalletRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\CreateWalletRequest
+     * @param string|null $contractNumber
+     * @return CreateWalletRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -169,101 +184,112 @@ class CreateWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get wallet value
-     * @return \StructType\Wallet|null
+     * @return Wallet|null
      */
-    public function getWallet(): ?\StructType\Wallet
+    public function getWallet(): ?Wallet
     {
         return $this->wallet;
     }
+
     /**
      * Set wallet value
-     * @param \StructType\Wallet $wallet
-     * @return \StructType\CreateWalletRequest
+     * @param Wallet|null $wallet
+     * @return CreateWalletRequest
      */
-    public function setWallet(?\StructType\Wallet $wallet = null): self
+    public function setWallet(?Wallet $wallet = null): self
     {
         $this->wallet = $wallet;
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\CreateWalletRequest
+     * @param Buyer|null $buyer
+     * @return CreateWalletRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\CreateWalletRequest
+     * @param Owner|null $owner
+     * @return CreateWalletRequest
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\CreateWalletRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return CreateWalletRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\CreateWalletRequest
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return CreateWalletRequest
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -272,10 +298,11 @@ class CreateWalletRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\CreateWalletRequest
+     * @param string|null $media
+     * @return CreateWalletRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -287,25 +314,28 @@ class CreateWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumberWalletList value
-     * @return \StructType\ContractNumberWalletList|null
+     * @return ContractNumberWalletList|null
      */
-    public function getContractNumberWalletList(): ?\StructType\ContractNumberWalletList
+    public function getContractNumberWalletList(): ?ContractNumberWalletList
     {
         return $this->contractNumberWalletList;
     }
+
     /**
      * Set contractNumberWalletList value
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @return \StructType\CreateWalletRequest
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @return CreateWalletRequest
      */
-    public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
+    public function setContractNumberWalletList(?ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
 
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -314,10 +344,11 @@ class CreateWalletRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\CreateWalletRequest
+     * @param string|null $transactionID
+     * @return CreateWalletRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {

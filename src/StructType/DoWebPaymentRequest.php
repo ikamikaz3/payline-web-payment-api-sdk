@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doWebPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoWebPaymentRequest extends AbstractStructBase
 {
     /**
@@ -23,13 +24,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The returnURL
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $returnURL = null;
+
     /**
      * The cancelURL
      * Meta information extracted from the WSDL
@@ -44,20 +48,23 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cancelURL = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The notificationURL
      * Meta information extracted from the WSDL
@@ -65,27 +72,31 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $notificationURL = null;
+
     /**
      * The selectedContractList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SelectedContractList|null
+     * @var SelectedContractList|null
      */
-    protected ?\StructType\SelectedContractList $selectedContractList = null;
+    protected ?SelectedContractList $selectedContractList = null;
+
     /**
      * The secondSelectedContractList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SelectedContractList|null
+     * @var SelectedContractList|null
      */
-    protected ?\StructType\SelectedContractList $secondSelectedContractList = null;
+    protected ?SelectedContractList $secondSelectedContractList = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The languageCode
      * Meta information extracted from the WSDL
@@ -93,6 +104,7 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $languageCode = null;
+
     /**
      * The customPaymentPageCode
      * Meta information extracted from the WSDL
@@ -100,13 +112,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customPaymentPageCode = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The securityMode
      * Meta information extracted from the WSDL
@@ -114,13 +128,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $securityMode = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The customPaymentTemplateURL
      * Meta information extracted from the WSDL
@@ -128,13 +144,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customPaymentTemplateURL = null;
+
     /**
      * The contractNumberWalletList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ContractNumberWalletList|null
+     * @var ContractNumberWalletList|null
      */
-    protected ?\StructType\ContractNumberWalletList $contractNumberWalletList = null;
+    protected ?ContractNumberWalletList $contractNumberWalletList = null;
+
     /**
      * The merchantName
      * Meta information extracted from the WSDL
@@ -142,13 +160,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantName = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -156,6 +176,7 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * The asynchronousRetryTimeout
      * Meta information extracted from the WSDL
@@ -163,13 +184,15 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $asynchronousRetryTimeout = null;
+
     /**
      * The threeDSInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ThreeDSInfo|null
+     * @var ThreeDSInfo|null
      */
-    protected ?\StructType\ThreeDSInfo $threeDSInfo = null;
+    protected ?ThreeDSInfo $threeDSInfo = null;
+
     /**
      * The merchantScore
      * Meta information extracted from the WSDL
@@ -177,6 +200,7 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantScore = null;
+
     /**
      * The skipSmartDisplay
      * Meta information extracted from the WSDL
@@ -184,8 +208,33 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $skipSmartDisplay = null;
+
     /**
      * Constructor method for doWebPaymentRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param string|null $returnURL
+     * @param string|null $cancelURL
+     * @param Order|null $order
+     * @param Buyer|null $buyer
+     * @param string|null $notificationURL
+     * @param SelectedContractList|null $selectedContractList
+     * @param SelectedContractList|null $secondSelectedContractList
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $languageCode
+     * @param string|null $customPaymentPageCode
+     * @param Owner|null $owner
+     * @param string|null $securityMode
+     * @param Recurring|null $recurring
+     * @param string|null $customPaymentTemplateURL
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @param string|null $merchantName
+     * @param SubMerchant|null $subMerchant
+     * @param string|null $miscData
+     * @param string|null $asynchronousRetryTimeout
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @param string|null $merchantScore
+     * @param bool $skipSmartDisplay
      * @uses DoWebPaymentRequest::setVersion()
      * @uses DoWebPaymentRequest::setPayment()
      * @uses DoWebPaymentRequest::setReturnURL()
@@ -210,32 +259,8 @@ class DoWebPaymentRequest extends AbstractStructBase
      * @uses DoWebPaymentRequest::setThreeDSInfo()
      * @uses DoWebPaymentRequest::setMerchantScore()
      * @uses DoWebPaymentRequest::setSkipSmartDisplay()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param string $returnURL
-     * @param string $cancelURL
-     * @param \StructType\Order $order
-     * @param \StructType\Buyer $buyer
-     * @param string $notificationURL
-     * @param \StructType\SelectedContractList $selectedContractList
-     * @param \StructType\SelectedContractList $secondSelectedContractList
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $languageCode
-     * @param string $customPaymentPageCode
-     * @param \StructType\Owner $owner
-     * @param string $securityMode
-     * @param \StructType\Recurring $recurring
-     * @param string $customPaymentTemplateURL
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @param string $merchantName
-     * @param \StructType\SubMerchant $subMerchant
-     * @param string $miscData
-     * @param string $asynchronousRetryTimeout
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @param string $merchantScore
-     * @param bool $skipSmartDisplay
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?string $returnURL = null, ?string $cancelURL = null, ?\StructType\Order $order = null, ?\StructType\Buyer $buyer = null, ?string $notificationURL = null, ?\StructType\SelectedContractList $selectedContractList = null, ?\StructType\SelectedContractList $secondSelectedContractList = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $languageCode = null, ?string $customPaymentPageCode = null, ?\StructType\Owner $owner = null, ?string $securityMode = null, ?\StructType\Recurring $recurring = null, ?string $customPaymentTemplateURL = null, ?\StructType\ContractNumberWalletList $contractNumberWalletList = null, ?string $merchantName = null, ?\StructType\SubMerchant $subMerchant = null, ?string $miscData = null, ?string $asynchronousRetryTimeout = null, ?\StructType\ThreeDSInfo $threeDSInfo = null, ?string $merchantScore = null, ?bool $skipSmartDisplay = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?string $returnURL = null, ?string $cancelURL = null, ?Order $order = null, ?Buyer $buyer = null, ?string $notificationURL = null, ?SelectedContractList $selectedContractList = null, ?SelectedContractList $secondSelectedContractList = null, ?PrivateDataList $privateDataList = null, ?string $languageCode = null, ?string $customPaymentPageCode = null, ?Owner $owner = null, ?string $securityMode = null, ?Recurring $recurring = null, ?string $customPaymentTemplateURL = null, ?ContractNumberWalletList $contractNumberWalletList = null, ?string $merchantName = null, ?SubMerchant $subMerchant = null, ?string $miscData = null, ?string $asynchronousRetryTimeout = null, ?ThreeDSInfo $threeDSInfo = null, ?string $merchantScore = null, ?bool $skipSmartDisplay = null)
     {
         $this
             ->setVersion($version)
@@ -263,6 +288,7 @@ class DoWebPaymentRequest extends AbstractStructBase
             ->setMerchantScore($merchantScore)
             ->setSkipSmartDisplay($skipSmartDisplay);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -271,10 +297,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $version
+     * @return DoWebPaymentRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -286,25 +313,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoWebPaymentRequest
+     * @param Payment|null $payment
+     * @return DoWebPaymentRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get returnURL value
      * @return string|null
@@ -313,10 +343,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->returnURL;
     }
+
     /**
      * Set returnURL value
-     * @param string $returnURL
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $returnURL
+     * @return DoWebPaymentRequest
      */
     public function setReturnURL(?string $returnURL = null): self
     {
@@ -328,6 +359,7 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cancelURL value
      * @return string|null
@@ -336,10 +368,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->cancelURL;
     }
+
     /**
      * Set cancelURL value
-     * @param string $cancelURL
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $cancelURL
+     * @return DoWebPaymentRequest
      */
     public function setCancelURL(?string $cancelURL = null): self
     {
@@ -351,44 +384,49 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoWebPaymentRequest
+     * @param Order|null $order
+     * @return DoWebPaymentRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\DoWebPaymentRequest
+     * @param Buyer|null $buyer
+     * @return DoWebPaymentRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get notificationURL value
      * @return string|null
@@ -397,10 +435,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->notificationURL;
     }
+
     /**
      * Set notificationURL value
-     * @param string $notificationURL
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $notificationURL
+     * @return DoWebPaymentRequest
      */
     public function setNotificationURL(?string $notificationURL = null): self
     {
@@ -412,63 +451,70 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get selectedContractList value
-     * @return \StructType\SelectedContractList|null
+     * @return SelectedContractList|null
      */
-    public function getSelectedContractList(): ?\StructType\SelectedContractList
+    public function getSelectedContractList(): ?SelectedContractList
     {
         return $this->selectedContractList;
     }
+
     /**
      * Set selectedContractList value
-     * @param \StructType\SelectedContractList $selectedContractList
-     * @return \StructType\DoWebPaymentRequest
+     * @param SelectedContractList|null $selectedContractList
+     * @return DoWebPaymentRequest
      */
-    public function setSelectedContractList(?\StructType\SelectedContractList $selectedContractList = null): self
+    public function setSelectedContractList(?SelectedContractList $selectedContractList = null): self
     {
         $this->selectedContractList = $selectedContractList;
 
         return $this;
     }
+
     /**
      * Get secondSelectedContractList value
-     * @return \StructType\SelectedContractList|null
+     * @return SelectedContractList|null
      */
-    public function getSecondSelectedContractList(): ?\StructType\SelectedContractList
+    public function getSecondSelectedContractList(): ?SelectedContractList
     {
         return $this->secondSelectedContractList;
     }
+
     /**
      * Set secondSelectedContractList value
-     * @param \StructType\SelectedContractList $secondSelectedContractList
-     * @return \StructType\DoWebPaymentRequest
+     * @param SelectedContractList|null $secondSelectedContractList
+     * @return DoWebPaymentRequest
      */
-    public function setSecondSelectedContractList(?\StructType\SelectedContractList $secondSelectedContractList = null): self
+    public function setSecondSelectedContractList(?SelectedContractList $secondSelectedContractList = null): self
     {
         $this->secondSelectedContractList = $secondSelectedContractList;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoWebPaymentRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoWebPaymentRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get languageCode value
      * @return string|null
@@ -477,10 +523,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->languageCode;
     }
+
     /**
      * Set languageCode value
-     * @param string $languageCode
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $languageCode
+     * @return DoWebPaymentRequest
      */
     public function setLanguageCode(?string $languageCode = null): self
     {
@@ -492,6 +539,7 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get customPaymentPageCode value
      * @return string|null
@@ -500,10 +548,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->customPaymentPageCode;
     }
+
     /**
      * Set customPaymentPageCode value
-     * @param string $customPaymentPageCode
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $customPaymentPageCode
+     * @return DoWebPaymentRequest
      */
     public function setCustomPaymentPageCode(?string $customPaymentPageCode = null): self
     {
@@ -515,25 +564,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\DoWebPaymentRequest
+     * @param Owner|null $owner
+     * @return DoWebPaymentRequest
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
 
         return $this;
     }
+
     /**
      * Get securityMode value
      * @return string|null
@@ -542,10 +594,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->securityMode;
     }
+
     /**
      * Set securityMode value
-     * @param string $securityMode
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $securityMode
+     * @return DoWebPaymentRequest
      */
     public function setSecurityMode(?string $securityMode = null): self
     {
@@ -557,25 +610,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\DoWebPaymentRequest
+     * @param Recurring|null $recurring
+     * @return DoWebPaymentRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
 
         return $this;
     }
+
     /**
      * Get customPaymentTemplateURL value
      * @return string|null
@@ -584,10 +640,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->customPaymentTemplateURL;
     }
+
     /**
      * Set customPaymentTemplateURL value
-     * @param string $customPaymentTemplateURL
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $customPaymentTemplateURL
+     * @return DoWebPaymentRequest
      */
     public function setCustomPaymentTemplateURL(?string $customPaymentTemplateURL = null): self
     {
@@ -599,25 +656,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumberWalletList value
-     * @return \StructType\ContractNumberWalletList|null
+     * @return ContractNumberWalletList|null
      */
-    public function getContractNumberWalletList(): ?\StructType\ContractNumberWalletList
+    public function getContractNumberWalletList(): ?ContractNumberWalletList
     {
         return $this->contractNumberWalletList;
     }
+
     /**
      * Set contractNumberWalletList value
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @return \StructType\DoWebPaymentRequest
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @return DoWebPaymentRequest
      */
-    public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
+    public function setContractNumberWalletList(?ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
 
         return $this;
     }
+
     /**
      * Get merchantName value
      * @return string|null
@@ -626,10 +686,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->merchantName;
     }
+
     /**
      * Set merchantName value
-     * @param string $merchantName
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $merchantName
+     * @return DoWebPaymentRequest
      */
     public function setMerchantName(?string $merchantName = null): self
     {
@@ -641,25 +702,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoWebPaymentRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoWebPaymentRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -668,10 +732,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $miscData
+     * @return DoWebPaymentRequest
      */
     public function setMiscData(?string $miscData = null): self
     {
@@ -683,6 +748,7 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get asynchronousRetryTimeout value
      * @return string|null
@@ -691,10 +757,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->asynchronousRetryTimeout;
     }
+
     /**
      * Set asynchronousRetryTimeout value
-     * @param string $asynchronousRetryTimeout
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $asynchronousRetryTimeout
+     * @return DoWebPaymentRequest
      */
     public function setAsynchronousRetryTimeout(?string $asynchronousRetryTimeout = null): self
     {
@@ -706,25 +773,28 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSInfo value
-     * @return \StructType\ThreeDSInfo|null
+     * @return ThreeDSInfo|null
      */
-    public function getThreeDSInfo(): ?\StructType\ThreeDSInfo
+    public function getThreeDSInfo(): ?ThreeDSInfo
     {
         return $this->threeDSInfo;
     }
+
     /**
      * Set threeDSInfo value
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @return \StructType\DoWebPaymentRequest
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @return DoWebPaymentRequest
      */
-    public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
+    public function setThreeDSInfo(?ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
 
         return $this;
     }
+
     /**
      * Get merchantScore value
      * @return string|null
@@ -733,10 +803,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->merchantScore;
     }
+
     /**
      * Set merchantScore value
-     * @param string $merchantScore
-     * @return \StructType\DoWebPaymentRequest
+     * @param string|null $merchantScore
+     * @return DoWebPaymentRequest
      */
     public function setMerchantScore(?string $merchantScore = null): self
     {
@@ -748,6 +819,7 @@ class DoWebPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get skipSmartDisplay value
      * @return bool|null
@@ -756,10 +828,11 @@ class DoWebPaymentRequest extends AbstractStructBase
     {
         return $this->skipSmartDisplay;
     }
+
     /**
      * Set skipSmartDisplay value
      * @param bool $skipSmartDisplay
-     * @return \StructType\DoWebPaymentRequest
+     * @return DoWebPaymentRequest
      */
     public function setSkipSmartDisplay(?bool $skipSmartDisplay = null): self
     {

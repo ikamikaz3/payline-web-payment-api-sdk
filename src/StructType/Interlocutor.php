@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about Interlocutor
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Interlocutor extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The lastName
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $lastName = null;
+
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $email = null;
+
     /**
      * The phone
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $phone = null;
+
     /**
      * The mobile
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mobile = null;
+
     /**
      * The fax
      * Meta information extracted from the WSDL
@@ -58,15 +64,24 @@ class Interlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $fax = null;
+
     /**
      * The addressInterlocutor
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\AddressInterlocutor|null
+     * @var AddressInterlocutor|null
      */
-    protected ?\StructType\AddressInterlocutor $addressInterlocutor = null;
+    protected ?AddressInterlocutor $addressInterlocutor = null;
+
     /**
      * Constructor method for interlocutor
+     * @param string|null $firstName
+     * @param string|null $lastName
+     * @param string|null $email
+     * @param string|null $phone
+     * @param string|null $mobile
+     * @param string|null $fax
+     * @param AddressInterlocutor|null $addressInterlocutor
      * @uses Interlocutor::setFirstName()
      * @uses Interlocutor::setLastName()
      * @uses Interlocutor::setEmail()
@@ -74,15 +89,8 @@ class Interlocutor extends AbstractStructBase
      * @uses Interlocutor::setMobile()
      * @uses Interlocutor::setFax()
      * @uses Interlocutor::setAddressInterlocutor()
-     * @param string $firstName
-     * @param string $lastName
-     * @param string $email
-     * @param string $phone
-     * @param string $mobile
-     * @param string $fax
-     * @param \StructType\AddressInterlocutor $addressInterlocutor
      */
-    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $mobile = null, ?string $fax = null, ?\StructType\AddressInterlocutor $addressInterlocutor = null)
+    public function __construct(?string $firstName = null, ?string $lastName = null, ?string $email = null, ?string $phone = null, ?string $mobile = null, ?string $fax = null, ?AddressInterlocutor $addressInterlocutor = null)
     {
         $this
             ->setFirstName($firstName)
@@ -93,6 +101,7 @@ class Interlocutor extends AbstractStructBase
             ->setFax($fax)
             ->setAddressInterlocutor($addressInterlocutor);
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -101,10 +110,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
-     * @param string $firstName
-     * @return \StructType\Interlocutor
+     * @param string|null $firstName
+     * @return Interlocutor
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -116,6 +126,7 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get lastName value
      * @return string|null
@@ -124,10 +135,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->lastName;
     }
+
     /**
      * Set lastName value
-     * @param string $lastName
-     * @return \StructType\Interlocutor
+     * @param string|null $lastName
+     * @return Interlocutor
      */
     public function setLastName(?string $lastName = null): self
     {
@@ -139,6 +151,7 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -147,10 +160,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
-     * @param string $email
-     * @return \StructType\Interlocutor
+     * @param string|null $email
+     * @return Interlocutor
      */
     public function setEmail(?string $email = null): self
     {
@@ -162,6 +176,7 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get phone value
      * @return string|null
@@ -170,10 +185,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->phone;
     }
+
     /**
      * Set phone value
-     * @param string $phone
-     * @return \StructType\Interlocutor
+     * @param string|null $phone
+     * @return Interlocutor
      */
     public function setPhone(?string $phone = null): self
     {
@@ -185,6 +201,7 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get mobile value
      * @return string|null
@@ -193,10 +210,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->mobile;
     }
+
     /**
      * Set mobile value
-     * @param string $mobile
-     * @return \StructType\Interlocutor
+     * @param string|null $mobile
+     * @return Interlocutor
      */
     public function setMobile(?string $mobile = null): self
     {
@@ -208,6 +226,7 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get fax value
      * @return string|null
@@ -216,10 +235,11 @@ class Interlocutor extends AbstractStructBase
     {
         return $this->fax;
     }
+
     /**
      * Set fax value
-     * @param string $fax
-     * @return \StructType\Interlocutor
+     * @param string|null $fax
+     * @return Interlocutor
      */
     public function setFax(?string $fax = null): self
     {
@@ -231,20 +251,22 @@ class Interlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get addressInterlocutor value
-     * @return \StructType\AddressInterlocutor|null
+     * @return AddressInterlocutor|null
      */
-    public function getAddressInterlocutor(): ?\StructType\AddressInterlocutor
+    public function getAddressInterlocutor(): ?AddressInterlocutor
     {
         return $this->addressInterlocutor;
     }
+
     /**
      * Set addressInterlocutor value
-     * @param \StructType\AddressInterlocutor $addressInterlocutor
-     * @return \StructType\Interlocutor
+     * @param AddressInterlocutor|null $addressInterlocutor
+     * @return Interlocutor
      */
-    public function setAddressInterlocutor(?\StructType\AddressInterlocutor $addressInterlocutor = null): self
+    public function setAddressInterlocutor(?AddressInterlocutor $addressInterlocutor = null): self
     {
         $this->addressInterlocutor = $addressInterlocutor;
 

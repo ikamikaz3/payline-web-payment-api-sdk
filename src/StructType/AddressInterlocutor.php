@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about Interlocutor address
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class AddressInterlocutor extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $street1 = null;
+
     /**
      * The street2
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $street2 = null;
+
     /**
      * The city
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $city = null;
+
     /**
      * The zipCode
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $zipCode = null;
+
     /**
      * The state
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $state = null;
+
     /**
      * The country
      * Meta information extracted from the WSDL
@@ -58,20 +64,21 @@ class AddressInterlocutor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $country = null;
+
     /**
      * Constructor method for addressInterlocutor
+     * @param string|null $street1
+     * @param string|null $street2
+     * @param string|null $city
+     * @param string|null $zipCode
+     * @param string|null $state
+     * @param string|null $country
      * @uses AddressInterlocutor::setStreet1()
      * @uses AddressInterlocutor::setStreet2()
      * @uses AddressInterlocutor::setCity()
      * @uses AddressInterlocutor::setZipCode()
      * @uses AddressInterlocutor::setState()
      * @uses AddressInterlocutor::setCountry()
-     * @param string $street1
-     * @param string $street2
-     * @param string $city
-     * @param string $zipCode
-     * @param string $state
-     * @param string $country
      */
     public function __construct(?string $street1 = null, ?string $street2 = null, ?string $city = null, ?string $zipCode = null, ?string $state = null, ?string $country = null)
     {
@@ -83,6 +90,7 @@ class AddressInterlocutor extends AbstractStructBase
             ->setState($state)
             ->setCountry($country);
     }
+
     /**
      * Get street1 value
      * @return string|null
@@ -91,10 +99,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->street1;
     }
+
     /**
      * Set street1 value
-     * @param string $street1
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $street1
+     * @return AddressInterlocutor
      */
     public function setStreet1(?string $street1 = null): self
     {
@@ -106,6 +115,7 @@ class AddressInterlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get street2 value
      * @return string|null
@@ -114,10 +124,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->street2;
     }
+
     /**
      * Set street2 value
-     * @param string $street2
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $street2
+     * @return AddressInterlocutor
      */
     public function setStreet2(?string $street2 = null): self
     {
@@ -129,6 +140,7 @@ class AddressInterlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get city value
      * @return string|null
@@ -137,10 +149,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->city;
     }
+
     /**
      * Set city value
-     * @param string $city
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $city
+     * @return AddressInterlocutor
      */
     public function setCity(?string $city = null): self
     {
@@ -152,6 +165,7 @@ class AddressInterlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get zipCode value
      * @return string|null
@@ -160,10 +174,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->zipCode;
     }
+
     /**
      * Set zipCode value
-     * @param string $zipCode
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $zipCode
+     * @return AddressInterlocutor
      */
     public function setZipCode(?string $zipCode = null): self
     {
@@ -175,6 +190,7 @@ class AddressInterlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get state value
      * @return string|null
@@ -183,10 +199,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->state;
     }
+
     /**
      * Set state value
-     * @param string $state
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $state
+     * @return AddressInterlocutor
      */
     public function setState(?string $state = null): self
     {
@@ -198,6 +215,7 @@ class AddressInterlocutor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get country value
      * @return string|null
@@ -206,10 +224,11 @@ class AddressInterlocutor extends AbstractStructBase
     {
         return $this->country;
     }
+
     /**
      * Set country value
-     * @param string $country
-     * @return \StructType\AddressInterlocutor
+     * @param string|null $country
+     * @return AddressInterlocutor
      */
     public function setCountry(?string $country = null): self
     {

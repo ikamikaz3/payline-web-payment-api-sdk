@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,72 +14,78 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the disableWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DisableWalletResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The walletIdList
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\WalletIdList|null
+     * @var WalletIdList|null
      */
-    protected ?\StructType\WalletIdList $walletIdList = null;
+    protected ?WalletIdList $walletIdList = null;
+
     /**
      * Constructor method for disableWalletResponse
+     * @param Result|null $result
+     * @param WalletIdList|null $walletIdList
      * @uses DisableWalletResponse::setResult()
      * @uses DisableWalletResponse::setWalletIdList()
-     * @param \StructType\Result $result
-     * @param \StructType\WalletIdList $walletIdList
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\WalletIdList $walletIdList = null)
+    public function __construct(?Result $result = null, ?WalletIdList $walletIdList = null)
     {
         $this
             ->setResult($result)
             ->setWalletIdList($walletIdList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DisableWalletResponse
+     * @param Result|null $result
+     * @return DisableWalletResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get walletIdList value
-     * @return \StructType\WalletIdList|null
+     * @return WalletIdList|null
      */
-    public function getWalletIdList(): ?\StructType\WalletIdList
+    public function getWalletIdList(): ?WalletIdList
     {
         return $this->walletIdList;
     }
+
     /**
      * Set walletIdList value
-     * @param \StructType\WalletIdList $walletIdList
-     * @return \StructType\DisableWalletResponse
+     * @param WalletIdList|null $walletIdList
+     * @return DisableWalletResponse
      */
-    public function setWalletIdList(?\StructType\WalletIdList $walletIdList = null): self
+    public function setWalletIdList(?WalletIdList $walletIdList = null): self
     {
         $this->walletIdList = $walletIdList;
-        
+
         return $this;
     }
 }

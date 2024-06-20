@@ -2,8 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\ServiceType;
+namespace PaylineWebPayment\ServiceType;
 
+use PaylineWebPayment\StructType\GetWebPaymentDetailsRequest;
+use PaylineWebPayment\StructType\GetWebPaymentDetailsResponse;
+use PaylineWebPayment\StructType\GetWebWalletRequest;
+use PaylineWebPayment\StructType\GetWebWalletResponse;
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,13 +19,13 @@ class Get extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named getWebPaymentDetails
+     * @param GetWebPaymentDetailsRequest $parameters
+     * @return GetWebPaymentDetailsResponse|bool
+     * @uses AbstractSoapClientBase::saveLastError()
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\GetWebPaymentDetailsRequest $parameters
-     * @return \StructType\GetWebPaymentDetailsResponse|bool
      */
-    public function getWebPaymentDetails(\StructType\GetWebPaymentDetailsRequest $parameters)
+    public function getWebPaymentDetails(GetWebPaymentDetailsRequest $parameters): bool|GetWebPaymentDetailsResponse
     {
         try {
             $this->setResult($resultGetWebPaymentDetails = $this->getSoapClient()->__soapCall('getWebPaymentDetails', [
@@ -35,15 +39,16 @@ class Get extends AbstractSoapClientBase
             return false;
         }
     }
+
     /**
      * Method to call the operation originally named getWebWallet
+     * @param GetWebWalletRequest $parameters
+     * @return GetWebWalletResponse|bool
+     * @uses AbstractSoapClientBase::saveLastError()
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\GetWebWalletRequest $parameters
-     * @return \StructType\GetWebWalletResponse|bool
      */
-    public function getWebWallet(\StructType\GetWebWalletRequest $parameters)
+    public function getWebWallet(GetWebWalletRequest $parameters): GetWebWalletResponse|bool
     {
         try {
             $this->setResult($resultGetWebWallet = $this->getSoapClient()->__soapCall('getWebWallet', [
@@ -57,12 +62,13 @@ class Get extends AbstractSoapClientBase
             return false;
         }
     }
+
     /**
      * Returns the result
+     * @return GetWebPaymentDetailsResponse|GetWebWalletResponse
      * @see AbstractSoapClientBase::getResult()
-     * @return \StructType\GetWebPaymentDetailsResponse|\StructType\GetWebWalletResponse
      */
-    public function getResult()
+    public function getResult(): GetWebPaymentDetailsResponse|GetWebWalletResponse
     {
         return parent::getResult();
     }

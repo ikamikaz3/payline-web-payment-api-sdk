@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: virtualTerminal
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class VirtualTerminal extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class VirtualTerminal extends AbstractStructBase
      * @var string|null
      */
     protected ?string $label = null;
+
     /**
      * The inactivityDelay
      * Meta information extracted from the WSDL
@@ -29,6 +31,7 @@ class VirtualTerminal extends AbstractStructBase
      * @var int|null
      */
     protected ?int $inactivityDelay = null;
+
     /**
      * The logo
      * Meta information extracted from the WSDL
@@ -37,23 +40,25 @@ class VirtualTerminal extends AbstractStructBase
      * @var string|null
      */
     protected ?string $logo = null;
+
     /**
      * The functions
-     * @var \StructType\Functions|null
+     * @var Functions|null
      */
-    protected ?\StructType\Functions $functions = null;
+    protected ?Functions $functions = null;
+
     /**
      * Constructor method for virtualTerminal
+     * @param string|null $label
+     * @param int|null $inactivityDelay
+     * @param string|null $logo
+     * @param Functions|null $functions
      * @uses VirtualTerminal::setLabel()
      * @uses VirtualTerminal::setInactivityDelay()
      * @uses VirtualTerminal::setLogo()
      * @uses VirtualTerminal::setFunctions()
-     * @param string $label
-     * @param int $inactivityDelay
-     * @param string $logo
-     * @param \StructType\Functions $functions
      */
-    public function __construct(?string $label = null, ?int $inactivityDelay = 10, ?string $logo = null, ?\StructType\Functions $functions = null)
+    public function __construct(?string $label = null, ?int $inactivityDelay = 10, ?string $logo = null, ?Functions $functions = null)
     {
         $this
             ->setLabel($label)
@@ -61,6 +66,7 @@ class VirtualTerminal extends AbstractStructBase
             ->setLogo($logo)
             ->setFunctions($functions);
     }
+
     /**
      * Get label value
      * @return string|null
@@ -69,10 +75,11 @@ class VirtualTerminal extends AbstractStructBase
     {
         return $this->label;
     }
+
     /**
      * Set label value
-     * @param string $label
-     * @return \StructType\VirtualTerminal
+     * @param string|null $label
+     * @return VirtualTerminal
      */
     public function setLabel(?string $label = null): self
     {
@@ -81,9 +88,10 @@ class VirtualTerminal extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($label, true), gettype($label)), __LINE__);
         }
         $this->label = $label;
-        
+
         return $this;
     }
+
     /**
      * Get inactivityDelay value
      * @return int|null
@@ -92,10 +100,11 @@ class VirtualTerminal extends AbstractStructBase
     {
         return $this->inactivityDelay;
     }
+
     /**
      * Set inactivityDelay value
-     * @param int $inactivityDelay
-     * @return \StructType\VirtualTerminal
+     * @param int|null $inactivityDelay
+     * @return VirtualTerminal
      */
     public function setInactivityDelay(?int $inactivityDelay = 10): self
     {
@@ -104,9 +113,10 @@ class VirtualTerminal extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($inactivityDelay, true), gettype($inactivityDelay)), __LINE__);
         }
         $this->inactivityDelay = $inactivityDelay;
-        
+
         return $this;
     }
+
     /**
      * Get logo value
      * @return string|null
@@ -115,10 +125,11 @@ class VirtualTerminal extends AbstractStructBase
     {
         return $this->logo;
     }
+
     /**
      * Set logo value
-     * @param string $logo
-     * @return \StructType\VirtualTerminal
+     * @param string|null $logo
+     * @return VirtualTerminal
      */
     public function setLogo(?string $logo = null): self
     {
@@ -127,26 +138,28 @@ class VirtualTerminal extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($logo, true), gettype($logo)), __LINE__);
         }
         $this->logo = $logo;
-        
+
         return $this;
     }
+
     /**
      * Get functions value
-     * @return \StructType\Functions|null
+     * @return Functions|null
      */
-    public function getFunctions(): ?\StructType\Functions
+    public function getFunctions(): ?Functions
     {
         return $this->functions;
     }
+
     /**
      * Set functions value
-     * @param \StructType\Functions $functions
-     * @return \StructType\VirtualTerminal
+     * @param Functions|null $functions
+     * @return VirtualTerminal
      */
-    public function setFunctions(?\StructType\Functions $functions = null): self
+    public function setFunctions(?Functions $functions = null): self
     {
         $this->functions = $functions;
-        
+
         return $this;
     }
 }

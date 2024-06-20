@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the prepareSession method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PrepareSessionRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class PrepareSessionRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class PrepareSessionRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The orderRef
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class PrepareSessionRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderRef = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class PrepareSessionRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * Constructor method for prepareSessionRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param string|null $orderRef
+     * @param string|null $miscData
      * @uses PrepareSessionRequest::setVersion()
      * @uses PrepareSessionRequest::setContractNumber()
      * @uses PrepareSessionRequest::setOrderRef()
      * @uses PrepareSessionRequest::setMiscData()
-     * @param string $version
-     * @param string $contractNumber
-     * @param string $orderRef
-     * @param string $miscData
      */
     public function __construct(?string $version = null, ?string $contractNumber = null, ?string $orderRef = null, ?string $miscData = null)
     {
@@ -63,6 +68,7 @@ class PrepareSessionRequest extends AbstractStructBase
             ->setOrderRef($orderRef)
             ->setMiscData($miscData);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -71,10 +77,11 @@ class PrepareSessionRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\PrepareSessionRequest
+     * @param string|null $version
+     * @return PrepareSessionRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -86,6 +93,7 @@ class PrepareSessionRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -94,10 +102,11 @@ class PrepareSessionRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\PrepareSessionRequest
+     * @param string|null $contractNumber
+     * @return PrepareSessionRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -109,6 +118,7 @@ class PrepareSessionRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get orderRef value
      * @return string|null
@@ -117,10 +127,11 @@ class PrepareSessionRequest extends AbstractStructBase
     {
         return $this->orderRef;
     }
+
     /**
      * Set orderRef value
-     * @param string $orderRef
-     * @return \StructType\PrepareSessionRequest
+     * @param string|null $orderRef
+     * @return PrepareSessionRequest
      */
     public function setOrderRef(?string $orderRef = null): self
     {
@@ -132,6 +143,7 @@ class PrepareSessionRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -140,10 +152,11 @@ class PrepareSessionRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\PrepareSessionRequest
+     * @param string|null $miscData
+     * @return PrepareSessionRequest
      */
     public function setMiscData(?string $miscData = null): self
     {

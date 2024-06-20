@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the customer media
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Media extends AbstractStructBase
 {
     /**
@@ -24,6 +25,7 @@ class Media extends AbstractStructBase
      * @var string
      */
     protected string $label;
+
     /**
      * The operatingSystem
      * Meta information extracted from the WSDL
@@ -32,6 +34,7 @@ class Media extends AbstractStructBase
      * @var string
      */
     protected string $operatingSystem;
+
     /**
      * The browser
      * Meta information extracted from the WSDL
@@ -40,6 +43,7 @@ class Media extends AbstractStructBase
      * @var string
      */
     protected string $browser;
+
     /**
      * The userAgent
      * Meta information extracted from the WSDL
@@ -48,6 +52,7 @@ class Media extends AbstractStructBase
      * @var string
      */
     protected string $userAgent;
+
     /**
      * The id
      * Meta information extracted from the WSDL
@@ -56,18 +61,19 @@ class Media extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * Constructor method for media
+     * @param string $label
+     * @param string $operatingSystem
+     * @param string $browser
+     * @param string $userAgent
+     * @param string|null $id
      * @uses Media::setLabel()
      * @uses Media::setOperatingSystem()
      * @uses Media::setBrowser()
      * @uses Media::setUserAgent()
      * @uses Media::setId()
-     * @param string $label
-     * @param string $operatingSystem
-     * @param string $browser
-     * @param string $userAgent
-     * @param string $id
      */
     public function __construct(string $label, string $operatingSystem, string $browser, string $userAgent, ?string $id = null)
     {
@@ -78,6 +84,7 @@ class Media extends AbstractStructBase
             ->setUserAgent($userAgent)
             ->setId($id);
     }
+
     /**
      * Get label value
      * @return string
@@ -86,21 +93,20 @@ class Media extends AbstractStructBase
     {
         return $this->label;
     }
+
     /**
      * Set label value
      * @param string $label
-     * @return \StructType\Media
+     * @return Media
      */
     public function setLabel(string $label): self
     {
         // validation for constraint: string
-        if (!is_null($label) && !is_string($label)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($label, true), gettype($label)), __LINE__);
-        }
         $this->label = $label;
 
         return $this;
     }
+
     /**
      * Get operatingSystem value
      * @return string
@@ -109,21 +115,20 @@ class Media extends AbstractStructBase
     {
         return $this->operatingSystem;
     }
+
     /**
      * Set operatingSystem value
      * @param string $operatingSystem
-     * @return \StructType\Media
+     * @return Media
      */
     public function setOperatingSystem(string $operatingSystem): self
     {
         // validation for constraint: string
-        if (!is_null($operatingSystem) && !is_string($operatingSystem)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($operatingSystem, true), gettype($operatingSystem)), __LINE__);
-        }
         $this->operatingSystem = $operatingSystem;
 
         return $this;
     }
+
     /**
      * Get browser value
      * @return string
@@ -132,21 +137,20 @@ class Media extends AbstractStructBase
     {
         return $this->browser;
     }
+
     /**
      * Set browser value
      * @param string $browser
-     * @return \StructType\Media
+     * @return Media
      */
     public function setBrowser(string $browser): self
     {
         // validation for constraint: string
-        if (!is_null($browser) && !is_string($browser)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($browser, true), gettype($browser)), __LINE__);
-        }
         $this->browser = $browser;
 
         return $this;
     }
+
     /**
      * Get userAgent value
      * @return string
@@ -155,21 +159,20 @@ class Media extends AbstractStructBase
     {
         return $this->userAgent;
     }
+
     /**
      * Set userAgent value
      * @param string $userAgent
-     * @return \StructType\Media
+     * @return Media
      */
     public function setUserAgent(string $userAgent): self
     {
         // validation for constraint: string
-        if (!is_null($userAgent) && !is_string($userAgent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userAgent, true), gettype($userAgent)), __LINE__);
-        }
         $this->userAgent = $userAgent;
 
         return $this;
     }
+
     /**
      * Get id value
      * @return string|null
@@ -178,10 +181,11 @@ class Media extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
-     * @param string $id
-     * @return \StructType\Media
+     * @param string|null $id
+     * @return Media
      */
     public function setId(?string $id = null): self
     {

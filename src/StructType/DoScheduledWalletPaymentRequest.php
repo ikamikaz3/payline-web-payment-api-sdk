@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doScheduledWalletPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoScheduledWalletPaymentRequest extends AbstractStructBase
 {
     /**
@@ -23,13 +24,15 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The scheduledDate
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $scheduledDate = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The orderRef
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderRef = null;
+
     /**
      * The orderDate
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderDate = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -65,36 +72,41 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -102,13 +114,15 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -116,8 +130,23 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * Constructor method for doScheduledWalletPaymentRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param string|null $scheduledDate
+     * @param string|null $walletId
+     * @param string|null $orderRef
+     * @param string|null $orderDate
+     * @param string|null $cardInd
+     * @param Order|null $order
+     * @param Recurring|null $recurring
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $media
+     * @param SubMerchant|null $subMerchant
+     * @param string|null $linkedTransactionId
      * @uses DoScheduledWalletPaymentRequest::setVersion()
      * @uses DoScheduledWalletPaymentRequest::setPayment()
      * @uses DoScheduledWalletPaymentRequest::setScheduledDate()
@@ -132,22 +161,8 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
      * @uses DoScheduledWalletPaymentRequest::setMedia()
      * @uses DoScheduledWalletPaymentRequest::setSubMerchant()
      * @uses DoScheduledWalletPaymentRequest::setLinkedTransactionId()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param string $scheduledDate
-     * @param string $walletId
-     * @param string $orderRef
-     * @param string $orderDate
-     * @param string $cardInd
-     * @param \StructType\Order $order
-     * @param \StructType\Recurring $recurring
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $media
-     * @param \StructType\SubMerchant $subMerchant
-     * @param string $linkedTransactionId
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?string $scheduledDate = null, ?string $walletId = null, ?string $orderRef = null, ?string $orderDate = null, ?string $cardInd = null, ?\StructType\Order $order = null, ?\StructType\Recurring $recurring = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $media = null, ?\StructType\SubMerchant $subMerchant = null, ?string $linkedTransactionId = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?string $scheduledDate = null, ?string $walletId = null, ?string $orderRef = null, ?string $orderDate = null, ?string $cardInd = null, ?Order $order = null, ?Recurring $recurring = null, ?Authentication3DSecure $authentication3DSecure = null, ?PrivateDataList $privateDataList = null, ?string $media = null, ?SubMerchant $subMerchant = null, ?string $linkedTransactionId = null)
     {
         $this
             ->setVersion($version)
@@ -165,6 +180,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
             ->setSubMerchant($subMerchant)
             ->setLinkedTransactionId($linkedTransactionId);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -173,10 +189,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $version
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -188,25 +205,28 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param Payment|null $payment
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get scheduledDate value
      * @return string|null
@@ -215,10 +235,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->scheduledDate;
     }
+
     /**
      * Set scheduledDate value
-     * @param string $scheduledDate
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $scheduledDate
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setScheduledDate(?string $scheduledDate = null): self
     {
@@ -230,6 +251,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -238,10 +260,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $walletId
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -253,6 +276,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get orderRef value
      * @return string|null
@@ -261,10 +285,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->orderRef;
     }
+
     /**
      * Set orderRef value
-     * @param string $orderRef
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $orderRef
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setOrderRef(?string $orderRef = null): self
     {
@@ -276,6 +301,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get orderDate value
      * @return string|null
@@ -284,10 +310,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->orderDate;
     }
+
     /**
      * Set orderDate value
-     * @param string $orderDate
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $orderDate
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setOrderDate(?string $orderDate = null): self
     {
@@ -299,6 +326,7 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -307,10 +335,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $cardInd
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -322,46 +351,50 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param Order|null $order
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get recurring value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring ?? null;
     }
+
     /**
      * Set recurring value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param Recurring|null $recurring
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
-        if (is_null($recurring) || (is_array($recurring) && empty($recurring))) {
+        if (is_null($recurring)) {
             unset($this->recurring);
         } else {
             $this->recurring = $recurring;
@@ -369,27 +402,29 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure ?? null;
     }
+
     /**
      * Set authentication3DSecure value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
-        if (is_null($authentication3DSecure) || (is_array($authentication3DSecure) && empty($authentication3DSecure))) {
+        if (is_null($authentication3DSecure)) {
             unset($this->authentication3DSecure);
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
@@ -397,25 +432,28 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -424,10 +462,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $media
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -439,25 +478,28 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoScheduledWalletPaymentRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -466,10 +508,11 @@ class DoScheduledWalletPaymentRequest extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\DoScheduledWalletPaymentRequest
+     * @param string|null $linkedTransactionId
+     * @return DoScheduledWalletPaymentRequest
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {

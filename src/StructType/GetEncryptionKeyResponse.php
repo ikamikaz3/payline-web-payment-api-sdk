@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,72 +14,78 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the getEncryptionKeyResponse method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetEncryptionKeyResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The key
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Key|null
+     * @var Key|null
      */
-    protected ?\StructType\Key $key = null;
+    protected ?Key $key = null;
+
     /**
      * Constructor method for getEncryptionKeyResponse
+     * @param Result|null $result
+     * @param Key|null $key
      * @uses GetEncryptionKeyResponse::setResult()
      * @uses GetEncryptionKeyResponse::setKey()
-     * @param \StructType\Result $result
-     * @param \StructType\Key $key
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Key $key = null)
+    public function __construct(?Result $result = null, ?Key $key = null)
     {
         $this
             ->setResult($result)
             ->setKey($key);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetEncryptionKeyResponse
+     * @param Result|null $result
+     * @return GetEncryptionKeyResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get key value
-     * @return \StructType\Key|null
+     * @return Key|null
      */
-    public function getKey(): ?\StructType\Key
+    public function getKey(): ?Key
     {
         return $this->key;
     }
+
     /**
      * Set key value
-     * @param \StructType\Key $key
-     * @return \StructType\GetEncryptionKeyResponse
+     * @param Key|null $key
+     * @return GetEncryptionKeyResponse
      */
-    public function setKey(?\StructType\Key $key = null): self
+    public function setKey(?Key $key = null): self
     {
         $this->key = $key;
-        
+
         return $this;
     }
 }

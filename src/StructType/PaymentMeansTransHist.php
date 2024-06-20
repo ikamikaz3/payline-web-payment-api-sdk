@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: An array of PaymentMeansTrans
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PaymentMeansTransHist extends AbstractStructBase
 {
     /**
@@ -21,32 +22,35 @@ class PaymentMeansTransHist extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \StructType\PaymentMeansTrans[]
+     * @var PaymentMeansTrans[]
      */
     protected ?array $PaymentMeansTrans = null;
+
     /**
      * Constructor method for PaymentMeansTransHist
+     * @param PaymentMeansTrans[] $paymentMeansTrans
      * @uses PaymentMeansTransHist::setPaymentMeansTrans()
-     * @param \StructType\PaymentMeansTrans[] $paymentMeansTrans
      */
     public function __construct(?array $paymentMeansTrans = null)
     {
         $this
             ->setPaymentMeansTrans($paymentMeansTrans);
     }
+
     /**
      * Get PaymentMeansTrans value
-     * @return \StructType\PaymentMeansTrans[]
+     * @return array|null
      */
     public function getPaymentMeansTrans(): ?array
     {
         return $this->PaymentMeansTrans;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setPaymentMeansTrans method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentMeansTrans method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validatePaymentMeansTransForArrayConstraintFromSetPaymentMeansTrans(?array $values = []): string
@@ -58,22 +62,23 @@ class PaymentMeansTransHist extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $paymentMeansTransHistPaymentMeansTransItem) {
             // validation for constraint: itemType
-            if (!$paymentMeansTransHistPaymentMeansTransItem instanceof \StructType\PaymentMeansTrans) {
+            if (!$paymentMeansTransHistPaymentMeansTransItem instanceof PaymentMeansTrans) {
                 $invalidValues[] = is_object($paymentMeansTransHistPaymentMeansTransItem) ? get_class($paymentMeansTransHistPaymentMeansTransItem) : sprintf('%s(%s)', gettype($paymentMeansTransHistPaymentMeansTransItem), var_export($paymentMeansTransHistPaymentMeansTransItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The PaymentMeansTrans property can only contain items of type \StructType\PaymentMeansTrans, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The PaymentMeansTrans property can only contain items of type PaymentMeansTrans, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set PaymentMeansTrans value
+     * @param PaymentMeansTrans[] $paymentMeansTrans
+     * @return PaymentMeansTransHist
      * @throws InvalidArgumentException
-     * @param \StructType\PaymentMeansTrans[] $paymentMeansTrans
-     * @return \StructType\PaymentMeansTransHist
      */
     public function setPaymentMeansTrans(?array $paymentMeansTrans = null): self
     {
@@ -82,23 +87,21 @@ class PaymentMeansTransHist extends AbstractStructBase
             throw new InvalidArgumentException($paymentMeansTransArrayErrorMessage, __LINE__);
         }
         $this->PaymentMeansTrans = $paymentMeansTrans;
-        
+
         return $this;
     }
+
     /**
      * Add item to PaymentMeansTrans value
+     * @param PaymentMeansTrans $item
+     * @return PaymentMeansTransHist
      * @throws InvalidArgumentException
-     * @param \StructType\PaymentMeansTrans $item
-     * @return \StructType\PaymentMeansTransHist
      */
-    public function addToPaymentMeansTrans(\StructType\PaymentMeansTrans $item): self
+    public function addToPaymentMeansTrans(PaymentMeansTrans $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\PaymentMeansTrans) {
-            throw new InvalidArgumentException(sprintf('The PaymentMeansTrans property can only contain items of type \StructType\PaymentMeansTrans, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         $this->PaymentMeansTrans[] = $item;
-        
+
         return $this;
     }
 }

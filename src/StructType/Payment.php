@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the payment
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Payment extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $currency = null;
+
     /**
      * The action
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $action = null;
+
     /**
      * The mode
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mode = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -52,6 +57,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The differedActionDate
      * Meta information extracted from the WSDL
@@ -60,6 +66,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $differedActionDate = null;
+
     /**
      * The method
      * Meta information extracted from the WSDL
@@ -68,6 +75,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $method = null;
+
     /**
      * The softDescriptor
      * Meta information extracted from the WSDL
@@ -76,6 +84,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $softDescriptor = null;
+
     /**
      * The cardBrand
      * Meta information extracted from the WSDL
@@ -84,6 +93,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardBrand = null;
+
     /**
      * The registrationToken
      * Meta information extracted from the WSDL
@@ -92,6 +102,7 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $registrationToken = null;
+
     /**
      * The cumulatedAmount
      * Meta information extracted from the WSDL
@@ -100,8 +111,20 @@ class Payment extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cumulatedAmount = null;
+
     /**
      * Constructor method for payment
+     * @param string|null $currency
+     * @param string|null $action
+     * @param string|null $mode
+     * @param string|null $amount
+     * @param string|null $contractNumber
+     * @param string|null $differedActionDate
+     * @param string|null $method
+     * @param string|null $softDescriptor
+     * @param string|null $cardBrand
+     * @param string|null $registrationToken
+     * @param string|null $cumulatedAmount
      * @uses Payment::setCurrency()
      * @uses Payment::setAction()
      * @uses Payment::setMode()
@@ -113,17 +136,6 @@ class Payment extends AbstractStructBase
      * @uses Payment::setCardBrand()
      * @uses Payment::setRegistrationToken()
      * @uses Payment::setCumulatedAmount()
-     * @param string $currency
-     * @param string $action
-     * @param string $mode
-     * @param string $amount
-     * @param string $contractNumber
-     * @param string $differedActionDate
-     * @param string $method
-     * @param string $softDescriptor
-     * @param string $cardBrand
-     * @param string $registrationToken
-     * @param string $cumulatedAmount
      */
     public function __construct(?string $currency = null, ?string $action = null, ?string $mode = null, ?string $amount = null, ?string $contractNumber = null, ?string $differedActionDate = null, ?string $method = null, ?string $softDescriptor = null, ?string $cardBrand = null, ?string $registrationToken = null, ?string $cumulatedAmount = null)
     {
@@ -140,6 +152,7 @@ class Payment extends AbstractStructBase
             ->setRegistrationToken($registrationToken)
             ->setCumulatedAmount($cumulatedAmount);
     }
+
     /**
      * Get currency value
      * @return string|null
@@ -148,10 +161,11 @@ class Payment extends AbstractStructBase
     {
         return $this->currency;
     }
+
     /**
      * Set currency value
-     * @param string $currency
-     * @return \StructType\Payment
+     * @param string|null $currency
+     * @return Payment
      */
     public function setCurrency(?string $currency = null): self
     {
@@ -160,9 +174,10 @@ class Payment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
         $this->currency = $currency;
-        
+
         return $this;
     }
+
     /**
      * Get action value
      * @return string|null
@@ -171,10 +186,11 @@ class Payment extends AbstractStructBase
     {
         return $this->action;
     }
+
     /**
      * Set action value
-     * @param string $action
-     * @return \StructType\Payment
+     * @param string|null $action
+     * @return Payment
      */
     public function setAction(?string $action = null): self
     {
@@ -183,9 +199,10 @@ class Payment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($action, true), gettype($action)), __LINE__);
         }
         $this->action = $action;
-        
+
         return $this;
     }
+
     /**
      * Get mode value
      * @return string|null
@@ -194,10 +211,11 @@ class Payment extends AbstractStructBase
     {
         return $this->mode;
     }
+
     /**
      * Set mode value
-     * @param string $mode
-     * @return \StructType\Payment
+     * @param string|null $mode
+     * @return Payment
      */
     public function setMode(?string $mode = null): self
     {
@@ -206,9 +224,10 @@ class Payment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mode, true), gettype($mode)), __LINE__);
         }
         $this->mode = $mode;
-        
+
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -217,10 +236,11 @@ class Payment extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\Payment
+     * @param string|null $amount
+     * @return Payment
      */
     public function setAmount(?string $amount = null): self
     {
@@ -229,9 +249,10 @@ class Payment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
+
     /**
      * Get contractNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -243,12 +264,13 @@ class Payment extends AbstractStructBase
     {
         return $this->contractNumber ?? null;
     }
+
     /**
      * Set contractNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $contractNumber
-     * @return \StructType\Payment
+     * @param string|null $contractNumber
+     * @return Payment
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -256,14 +278,15 @@ class Payment extends AbstractStructBase
         if (!is_null($contractNumber) && !is_string($contractNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
-        if (is_null($contractNumber) || (is_array($contractNumber) && empty($contractNumber))) {
+        if (is_null($contractNumber)) {
             unset($this->contractNumber);
         } else {
             $this->contractNumber = $contractNumber;
         }
-        
+
         return $this;
     }
+
     /**
      * Get differedActionDate value
      * An additional test has been added (isset) before returning the property value as
@@ -275,12 +298,13 @@ class Payment extends AbstractStructBase
     {
         return $this->differedActionDate ?? null;
     }
+
     /**
      * Set differedActionDate value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $differedActionDate
-     * @return \StructType\Payment
+     * @param string|null $differedActionDate
+     * @return Payment
      */
     public function setDifferedActionDate(?string $differedActionDate = null): self
     {
@@ -288,14 +312,15 @@ class Payment extends AbstractStructBase
         if (!is_null($differedActionDate) && !is_string($differedActionDate)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($differedActionDate, true), gettype($differedActionDate)), __LINE__);
         }
-        if (is_null($differedActionDate) || (is_array($differedActionDate) && empty($differedActionDate))) {
+        if (is_null($differedActionDate)) {
             unset($this->differedActionDate);
         } else {
             $this->differedActionDate = $differedActionDate;
         }
-        
+
         return $this;
     }
+
     /**
      * Get method value
      * An additional test has been added (isset) before returning the property value as
@@ -307,12 +332,13 @@ class Payment extends AbstractStructBase
     {
         return $this->method ?? null;
     }
+
     /**
      * Set method value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $method
-     * @return \StructType\Payment
+     * @param string|null $method
+     * @return Payment
      */
     public function setMethod(?string $method = null): self
     {
@@ -320,14 +346,15 @@ class Payment extends AbstractStructBase
         if (!is_null($method) && !is_string($method)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($method, true), gettype($method)), __LINE__);
         }
-        if (is_null($method) || (is_array($method) && empty($method))) {
+        if (is_null($method)) {
             unset($this->method);
         } else {
             $this->method = $method;
         }
-        
+
         return $this;
     }
+
     /**
      * Get softDescriptor value
      * An additional test has been added (isset) before returning the property value as
@@ -339,12 +366,13 @@ class Payment extends AbstractStructBase
     {
         return $this->softDescriptor ?? null;
     }
+
     /**
      * Set softDescriptor value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $softDescriptor
-     * @return \StructType\Payment
+     * @param string|null $softDescriptor
+     * @return Payment
      */
     public function setSoftDescriptor(?string $softDescriptor = null): self
     {
@@ -352,14 +380,15 @@ class Payment extends AbstractStructBase
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
-        if (is_null($softDescriptor) || (is_array($softDescriptor) && empty($softDescriptor))) {
+        if (is_null($softDescriptor)) {
             unset($this->softDescriptor);
         } else {
             $this->softDescriptor = $softDescriptor;
         }
-        
+
         return $this;
     }
+
     /**
      * Get cardBrand value
      * An additional test has been added (isset) before returning the property value as
@@ -371,12 +400,13 @@ class Payment extends AbstractStructBase
     {
         return $this->cardBrand ?? null;
     }
+
     /**
      * Set cardBrand value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $cardBrand
-     * @return \StructType\Payment
+     * @param string|null $cardBrand
+     * @return Payment
      */
     public function setCardBrand(?string $cardBrand = null): self
     {
@@ -384,14 +414,15 @@ class Payment extends AbstractStructBase
         if (!is_null($cardBrand) && !is_string($cardBrand)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardBrand, true), gettype($cardBrand)), __LINE__);
         }
-        if (is_null($cardBrand) || (is_array($cardBrand) && empty($cardBrand))) {
+        if (is_null($cardBrand)) {
             unset($this->cardBrand);
         } else {
             $this->cardBrand = $cardBrand;
         }
-        
+
         return $this;
     }
+
     /**
      * Get registrationToken value
      * An additional test has been added (isset) before returning the property value as
@@ -403,12 +434,13 @@ class Payment extends AbstractStructBase
     {
         return $this->registrationToken ?? null;
     }
+
     /**
      * Set registrationToken value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $registrationToken
-     * @return \StructType\Payment
+     * @param string|null $registrationToken
+     * @return Payment
      */
     public function setRegistrationToken(?string $registrationToken = null): self
     {
@@ -416,14 +448,15 @@ class Payment extends AbstractStructBase
         if (!is_null($registrationToken) && !is_string($registrationToken)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($registrationToken, true), gettype($registrationToken)), __LINE__);
         }
-        if (is_null($registrationToken) || (is_array($registrationToken) && empty($registrationToken))) {
+        if (is_null($registrationToken)) {
             unset($this->registrationToken);
         } else {
             $this->registrationToken = $registrationToken;
         }
-        
+
         return $this;
     }
+
     /**
      * Get cumulatedAmount value
      * An additional test has been added (isset) before returning the property value as
@@ -435,12 +468,13 @@ class Payment extends AbstractStructBase
     {
         return $this->cumulatedAmount ?? null;
     }
+
     /**
      * Set cumulatedAmount value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $cumulatedAmount
-     * @return \StructType\Payment
+     * @param string|null $cumulatedAmount
+     * @return Payment
      */
     public function setCumulatedAmount(?string $cumulatedAmount = null): self
     {
@@ -448,12 +482,12 @@ class Payment extends AbstractStructBase
         if (!is_null($cumulatedAmount) && !is_string($cumulatedAmount)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cumulatedAmount, true), gettype($cumulatedAmount)), __LINE__);
         }
-        if (is_null($cumulatedAmount) || (is_array($cumulatedAmount) && empty($cumulatedAmount))) {
+        if (is_null($cumulatedAmount)) {
             unset($this->cumulatedAmount);
         } else {
             $this->cumulatedAmount = $cumulatedAmount;
         }
-        
+
         return $this;
     }
 }

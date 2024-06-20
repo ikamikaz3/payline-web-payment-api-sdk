@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the disablePaymentRecord method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DisablePaymentRecordRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class DisablePaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class DisablePaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * Constructor method for disablePaymentRecordRequest
+     * @param string|null $contractNumber
+     * @param string|null $paymentRecordId
      * @uses DisablePaymentRecordRequest::setContractNumber()
      * @uses DisablePaymentRecordRequest::setPaymentRecordId()
-     * @param string $contractNumber
-     * @param string $paymentRecordId
      */
     public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null)
     {
@@ -43,6 +46,7 @@ class DisablePaymentRecordRequest extends AbstractStructBase
             ->setContractNumber($contractNumber)
             ->setPaymentRecordId($paymentRecordId);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -51,10 +55,11 @@ class DisablePaymentRecordRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\DisablePaymentRecordRequest
+     * @param string|null $contractNumber
+     * @return DisablePaymentRecordRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -66,6 +71,7 @@ class DisablePaymentRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -74,10 +80,11 @@ class DisablePaymentRecordRequest extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\DisablePaymentRecordRequest
+     * @param string|null $paymentRecordId
+     * @return DisablePaymentRecordRequest
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {

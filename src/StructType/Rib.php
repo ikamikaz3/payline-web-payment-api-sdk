@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains RIB information
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Rib extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Rib extends AbstractStructBase
      * @var string|null
      */
     protected ?string $tellerCode = null;
+
     /**
      * The accountNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Rib extends AbstractStructBase
      * @var string|null
      */
     protected ?string $accountNumber = null;
+
     /**
      * The key
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class Rib extends AbstractStructBase
      * @var string|null
      */
     protected ?string $key = null;
+
     /**
      * Constructor method for rib
+     * @param string|null $tellerCode
+     * @param string|null $accountNumber
+     * @param string|null $key
      * @uses Rib::setTellerCode()
      * @uses Rib::setAccountNumber()
      * @uses Rib::setKey()
-     * @param string $tellerCode
-     * @param string $accountNumber
-     * @param string $key
      */
     public function __construct(?string $tellerCode = null, ?string $accountNumber = null, ?string $key = null)
     {
@@ -53,6 +57,7 @@ class Rib extends AbstractStructBase
             ->setAccountNumber($accountNumber)
             ->setKey($key);
     }
+
     /**
      * Get tellerCode value
      * @return string|null
@@ -61,10 +66,11 @@ class Rib extends AbstractStructBase
     {
         return $this->tellerCode;
     }
+
     /**
      * Set tellerCode value
-     * @param string $tellerCode
-     * @return \StructType\Rib
+     * @param string|null $tellerCode
+     * @return Rib
      */
     public function setTellerCode(?string $tellerCode = null): self
     {
@@ -76,6 +82,7 @@ class Rib extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get accountNumber value
      * @return string|null
@@ -84,10 +91,11 @@ class Rib extends AbstractStructBase
     {
         return $this->accountNumber;
     }
+
     /**
      * Set accountNumber value
-     * @param string $accountNumber
-     * @return \StructType\Rib
+     * @param string|null $accountNumber
+     * @return Rib
      */
     public function setAccountNumber(?string $accountNumber = null): self
     {
@@ -99,6 +107,7 @@ class Rib extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get key value
      * @return string|null
@@ -107,10 +116,11 @@ class Rib extends AbstractStructBase
     {
         return $this->key;
     }
+
     /**
      * Set key value
-     * @param string $key
-     * @return \StructType\Rib
+     * @param string|null $key
+     * @return Rib
      */
     public function setKey(?string $key = null): self
     {

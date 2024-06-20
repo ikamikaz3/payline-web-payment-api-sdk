@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for getTokenRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetTokenRequest extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class GetTokenRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardNumber = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -28,6 +30,7 @@ class GetTokenRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The expirationDate
      * Meta information extracted from the WSDL
@@ -35,14 +38,15 @@ class GetTokenRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $expirationDate = null;
+
     /**
      * Constructor method for getTokenRequest
+     * @param string|null $cardNumber
+     * @param string|null $contractNumber
+     * @param string|null $expirationDate
      * @uses GetTokenRequest::setCardNumber()
      * @uses GetTokenRequest::setContractNumber()
      * @uses GetTokenRequest::setExpirationDate()
-     * @param string $cardNumber
-     * @param string $contractNumber
-     * @param string $expirationDate
      */
     public function __construct(?string $cardNumber = null, ?string $contractNumber = null, ?string $expirationDate = null)
     {
@@ -51,6 +55,7 @@ class GetTokenRequest extends AbstractStructBase
             ->setContractNumber($contractNumber)
             ->setExpirationDate($expirationDate);
     }
+
     /**
      * Get cardNumber value
      * @return string|null
@@ -59,10 +64,11 @@ class GetTokenRequest extends AbstractStructBase
     {
         return $this->cardNumber;
     }
+
     /**
      * Set cardNumber value
-     * @param string $cardNumber
-     * @return \StructType\GetTokenRequest
+     * @param string|null $cardNumber
+     * @return GetTokenRequest
      */
     public function setCardNumber(?string $cardNumber = null): self
     {
@@ -71,9 +77,10 @@ class GetTokenRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNumber, true), gettype($cardNumber)), __LINE__);
         }
         $this->cardNumber = $cardNumber;
-        
+
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -82,10 +89,11 @@ class GetTokenRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetTokenRequest
+     * @param string|null $contractNumber
+     * @return GetTokenRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -94,9 +102,10 @@ class GetTokenRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
+
     /**
      * Get expirationDate value
      * @return string|null
@@ -105,10 +114,11 @@ class GetTokenRequest extends AbstractStructBase
     {
         return $this->expirationDate;
     }
+
     /**
      * Set expirationDate value
-     * @param string $expirationDate
-     * @return \StructType\GetTokenRequest
+     * @param string|null $expirationDate
+     * @return GetTokenRequest
      */
     public function setExpirationDate(?string $expirationDate = null): self
     {
@@ -117,7 +127,7 @@ class GetTokenRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expirationDate, true), gettype($expirationDate)), __LINE__);
         }
         $this->expirationDate = $expirationDate;
-        
+
         return $this;
     }
 }

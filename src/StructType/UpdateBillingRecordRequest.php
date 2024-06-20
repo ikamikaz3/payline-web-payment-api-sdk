@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for updateBillingRecordRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class UpdateBillingRecordRequest extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class UpdateBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -28,6 +30,7 @@ class UpdateBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * The billingRecordId
      * Meta information extracted from the WSDL
@@ -35,25 +38,27 @@ class UpdateBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingRecordId = null;
+
     /**
      * The billingRecordForUpdate
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\BillingRecordForUpdate|null
+     * @var BillingRecordForUpdate|null
      */
-    protected ?\StructType\BillingRecordForUpdate $billingRecordForUpdate = null;
+    protected ?BillingRecordForUpdate $billingRecordForUpdate = null;
+
     /**
      * Constructor method for updateBillingRecordRequest
+     * @param string|null $contractNumber
+     * @param string|null $paymentRecordId
+     * @param string|null $billingRecordId
+     * @param BillingRecordForUpdate|null $billingRecordForUpdate
      * @uses UpdateBillingRecordRequest::setContractNumber()
      * @uses UpdateBillingRecordRequest::setPaymentRecordId()
      * @uses UpdateBillingRecordRequest::setBillingRecordId()
      * @uses UpdateBillingRecordRequest::setBillingRecordForUpdate()
-     * @param string $contractNumber
-     * @param string $paymentRecordId
-     * @param string $billingRecordId
-     * @param \StructType\BillingRecordForUpdate $billingRecordForUpdate
      */
-    public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null, ?string $billingRecordId = null, ?\StructType\BillingRecordForUpdate $billingRecordForUpdate = null)
+    public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null, ?string $billingRecordId = null, ?BillingRecordForUpdate $billingRecordForUpdate = null)
     {
         $this
             ->setContractNumber($contractNumber)
@@ -61,6 +66,7 @@ class UpdateBillingRecordRequest extends AbstractStructBase
             ->setBillingRecordId($billingRecordId)
             ->setBillingRecordForUpdate($billingRecordForUpdate);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -69,10 +75,11 @@ class UpdateBillingRecordRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\UpdateBillingRecordRequest
+     * @param string|null $contractNumber
+     * @return UpdateBillingRecordRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -84,6 +91,7 @@ class UpdateBillingRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -92,10 +100,11 @@ class UpdateBillingRecordRequest extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\UpdateBillingRecordRequest
+     * @param string|null $paymentRecordId
+     * @return UpdateBillingRecordRequest
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {
@@ -107,6 +116,7 @@ class UpdateBillingRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRecordId value
      * @return string|null
@@ -115,10 +125,11 @@ class UpdateBillingRecordRequest extends AbstractStructBase
     {
         return $this->billingRecordId;
     }
+
     /**
      * Set billingRecordId value
-     * @param string $billingRecordId
-     * @return \StructType\UpdateBillingRecordRequest
+     * @param string|null $billingRecordId
+     * @return UpdateBillingRecordRequest
      */
     public function setBillingRecordId(?string $billingRecordId = null): self
     {
@@ -130,20 +141,22 @@ class UpdateBillingRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRecordForUpdate value
-     * @return \StructType\BillingRecordForUpdate|null
+     * @return BillingRecordForUpdate|null
      */
-    public function getBillingRecordForUpdate(): ?\StructType\BillingRecordForUpdate
+    public function getBillingRecordForUpdate(): ?BillingRecordForUpdate
     {
         return $this->billingRecordForUpdate;
     }
+
     /**
      * Set billingRecordForUpdate value
-     * @param \StructType\BillingRecordForUpdate $billingRecordForUpdate
-     * @return \StructType\UpdateBillingRecordRequest
+     * @param BillingRecordForUpdate|null $billingRecordForUpdate
+     * @return UpdateBillingRecordRequest
      */
-    public function setBillingRecordForUpdate(?\StructType\BillingRecordForUpdate $billingRecordForUpdate = null): self
+    public function setBillingRecordForUpdate(?BillingRecordForUpdate $billingRecordForUpdate = null): self
     {
         $this->billingRecordForUpdate = $billingRecordForUpdate;
 

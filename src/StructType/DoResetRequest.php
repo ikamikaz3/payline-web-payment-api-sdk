@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doReset method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoResetRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The comment
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $comment = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The currency
      * Meta information extracted from the WSDL
@@ -58,14 +64,16 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $currency = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The sequenceNumber
      * Meta information extracted from the WSDL
@@ -73,8 +81,17 @@ class DoResetRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sequenceNumber = null;
+
     /**
      * Constructor method for doResetRequest
+     * @param string|null $version
+     * @param string|null $transactionID
+     * @param string|null $comment
+     * @param string|null $media
+     * @param string|null $amount
+     * @param string|null $currency
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $sequenceNumber
      * @uses DoResetRequest::setVersion()
      * @uses DoResetRequest::setTransactionID()
      * @uses DoResetRequest::setComment()
@@ -83,16 +100,8 @@ class DoResetRequest extends AbstractStructBase
      * @uses DoResetRequest::setCurrency()
      * @uses DoResetRequest::setPrivateDataList()
      * @uses DoResetRequest::setSequenceNumber()
-     * @param string $version
-     * @param string $transactionID
-     * @param string $comment
-     * @param string $media
-     * @param string $amount
-     * @param string $currency
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $sequenceNumber
      */
-    public function __construct(?string $version = null, ?string $transactionID = null, ?string $comment = null, ?string $media = null, ?string $amount = null, ?string $currency = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $sequenceNumber = null)
+    public function __construct(?string $version = null, ?string $transactionID = null, ?string $comment = null, ?string $media = null, ?string $amount = null, ?string $currency = null, ?PrivateDataList $privateDataList = null, ?string $sequenceNumber = null)
     {
         $this
             ->setVersion($version)
@@ -104,6 +113,7 @@ class DoResetRequest extends AbstractStructBase
             ->setPrivateDataList($privateDataList)
             ->setSequenceNumber($sequenceNumber);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -112,10 +122,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoResetRequest
+     * @param string|null $version
+     * @return DoResetRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -124,9 +135,10 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -135,10 +147,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\DoResetRequest
+     * @param string|null $transactionID
+     * @return DoResetRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -147,9 +160,10 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
+
     /**
      * Get comment value
      * @return string|null
@@ -158,10 +172,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->comment;
     }
+
     /**
      * Set comment value
-     * @param string $comment
-     * @return \StructType\DoResetRequest
+     * @param string|null $comment
+     * @return DoResetRequest
      */
     public function setComment(?string $comment = null): self
     {
@@ -170,9 +185,10 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
         }
         $this->comment = $comment;
-        
+
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -181,10 +197,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoResetRequest
+     * @param string|null $media
+     * @return DoResetRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -193,9 +210,10 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -204,10 +222,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\DoResetRequest
+     * @param string|null $amount
+     * @return DoResetRequest
      */
     public function setAmount(?string $amount = null): self
     {
@@ -216,9 +235,10 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->amount = $amount;
-        
+
         return $this;
     }
+
     /**
      * Get currency value
      * @return string|null
@@ -227,10 +247,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->currency;
     }
+
     /**
      * Set currency value
-     * @param string $currency
-     * @return \StructType\DoResetRequest
+     * @param string|null $currency
+     * @return DoResetRequest
      */
     public function setCurrency(?string $currency = null): self
     {
@@ -239,37 +260,40 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
         $this->currency = $currency;
-        
+
         return $this;
     }
+
     /**
      * Get privateDataList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList ?? null;
     }
+
     /**
      * Set privateDataList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoResetRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoResetRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
-        if (is_null($privateDataList) || (is_array($privateDataList) && empty($privateDataList))) {
+        if (is_null($privateDataList)) {
             unset($this->privateDataList);
         } else {
             $this->privateDataList = $privateDataList;
         }
-        
+
         return $this;
     }
+
     /**
      * Get sequenceNumber value
      * @return string|null
@@ -278,10 +302,11 @@ class DoResetRequest extends AbstractStructBase
     {
         return $this->sequenceNumber;
     }
+
     /**
      * Set sequenceNumber value
-     * @param string $sequenceNumber
-     * @return \StructType\DoResetRequest
+     * @param string|null $sequenceNumber
+     * @return DoResetRequest
      */
     public function setSequenceNumber(?string $sequenceNumber = null): self
     {
@@ -290,7 +315,7 @@ class DoResetRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sequenceNumber, true), gettype($sequenceNumber)), __LINE__);
         }
         $this->sequenceNumber = $sequenceNumber;
-        
+
         return $this;
     }
 }

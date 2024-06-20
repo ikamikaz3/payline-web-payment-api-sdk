@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for getBillingRecordRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetBillingRecordRequest extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class GetBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -28,6 +30,7 @@ class GetBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * The billingRecordId
      * Meta information extracted from the WSDL
@@ -35,14 +38,15 @@ class GetBillingRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingRecordId = null;
+
     /**
      * Constructor method for getBillingRecordRequest
+     * @param string|null $contractNumber
+     * @param string|null $paymentRecordId
+     * @param string|null $billingRecordId
      * @uses GetBillingRecordRequest::setContractNumber()
      * @uses GetBillingRecordRequest::setPaymentRecordId()
      * @uses GetBillingRecordRequest::setBillingRecordId()
-     * @param string $contractNumber
-     * @param string $paymentRecordId
-     * @param string $billingRecordId
      */
     public function __construct(?string $contractNumber = null, ?string $paymentRecordId = null, ?string $billingRecordId = null)
     {
@@ -51,6 +55,7 @@ class GetBillingRecordRequest extends AbstractStructBase
             ->setPaymentRecordId($paymentRecordId)
             ->setBillingRecordId($billingRecordId);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -59,10 +64,11 @@ class GetBillingRecordRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetBillingRecordRequest
+     * @param string|null $contractNumber
+     * @return GetBillingRecordRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -74,6 +80,7 @@ class GetBillingRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -82,10 +89,11 @@ class GetBillingRecordRequest extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\GetBillingRecordRequest
+     * @param string|null $paymentRecordId
+     * @return GetBillingRecordRequest
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {
@@ -97,6 +105,7 @@ class GetBillingRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRecordId value
      * @return string|null
@@ -105,10 +114,11 @@ class GetBillingRecordRequest extends AbstractStructBase
     {
         return $this->billingRecordId;
     }
+
     /**
      * Set billingRecordId value
-     * @param string $billingRecordId
-     * @return \StructType\GetBillingRecordRequest
+     * @param string|null $billingRecordId
+     * @return GetBillingRecordRequest
      */
     public function setBillingRecordId(?string $billingRecordId = null): self
     {

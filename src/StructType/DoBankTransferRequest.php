@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doBankTransfer method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoBankTransferRequest extends AbstractStructBase
 {
     /**
@@ -23,20 +24,23 @@ class DoBankTransferRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The creditor
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Creditor|null
+     * @var Creditor|null
      */
-    protected ?\StructType\Creditor $creditor = null;
+    protected ?Creditor $creditor = null;
+
     /**
      * The orderID
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class DoBankTransferRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderID = null;
+
     /**
      * The comment
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class DoBankTransferRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $comment = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -58,15 +64,24 @@ class DoBankTransferRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * Constructor method for doBankTransferRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Creditor|null $creditor
+     * @param string|null $orderID
+     * @param string|null $comment
+     * @param string|null $transactionID
+     * @param PrivateDataList|null $privateDataList
      * @uses DoBankTransferRequest::setVersion()
      * @uses DoBankTransferRequest::setPayment()
      * @uses DoBankTransferRequest::setCreditor()
@@ -74,15 +89,8 @@ class DoBankTransferRequest extends AbstractStructBase
      * @uses DoBankTransferRequest::setComment()
      * @uses DoBankTransferRequest::setTransactionID()
      * @uses DoBankTransferRequest::setPrivateDataList()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Creditor $creditor
-     * @param string $orderID
-     * @param string $comment
-     * @param string $transactionID
-     * @param \StructType\PrivateDataList $privateDataList
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Creditor $creditor = null, ?string $orderID = null, ?string $comment = null, ?string $transactionID = null, ?\StructType\PrivateDataList $privateDataList = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Creditor $creditor = null, ?string $orderID = null, ?string $comment = null, ?string $transactionID = null, ?PrivateDataList $privateDataList = null)
     {
         $this
             ->setVersion($version)
@@ -93,6 +101,7 @@ class DoBankTransferRequest extends AbstractStructBase
             ->setTransactionID($transactionID)
             ->setPrivateDataList($privateDataList);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -101,10 +110,11 @@ class DoBankTransferRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoBankTransferRequest
+     * @param string|null $version
+     * @return DoBankTransferRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -116,44 +126,49 @@ class DoBankTransferRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoBankTransferRequest
+     * @param Payment|null $payment
+     * @return DoBankTransferRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get creditor value
-     * @return \StructType\Creditor|null
+     * @return Creditor|null
      */
-    public function getCreditor(): ?\StructType\Creditor
+    public function getCreditor(): ?Creditor
     {
         return $this->creditor;
     }
+
     /**
      * Set creditor value
-     * @param \StructType\Creditor $creditor
-     * @return \StructType\DoBankTransferRequest
+     * @param Creditor|null $creditor
+     * @return DoBankTransferRequest
      */
-    public function setCreditor(?\StructType\Creditor $creditor = null): self
+    public function setCreditor(?Creditor $creditor = null): self
     {
         $this->creditor = $creditor;
 
         return $this;
     }
+
     /**
      * Get orderID value
      * @return string|null
@@ -162,10 +177,11 @@ class DoBankTransferRequest extends AbstractStructBase
     {
         return $this->orderID;
     }
+
     /**
      * Set orderID value
-     * @param string $orderID
-     * @return \StructType\DoBankTransferRequest
+     * @param string|null $orderID
+     * @return DoBankTransferRequest
      */
     public function setOrderID(?string $orderID = null): self
     {
@@ -177,6 +193,7 @@ class DoBankTransferRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get comment value
      * @return string|null
@@ -185,10 +202,11 @@ class DoBankTransferRequest extends AbstractStructBase
     {
         return $this->comment;
     }
+
     /**
      * Set comment value
-     * @param string $comment
-     * @return \StructType\DoBankTransferRequest
+     * @param string|null $comment
+     * @return DoBankTransferRequest
      */
     public function setComment(?string $comment = null): self
     {
@@ -200,6 +218,7 @@ class DoBankTransferRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -208,10 +227,11 @@ class DoBankTransferRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\DoBankTransferRequest
+     * @param string|null $transactionID
+     * @return DoBankTransferRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -223,20 +243,22 @@ class DoBankTransferRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoBankTransferRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoBankTransferRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 

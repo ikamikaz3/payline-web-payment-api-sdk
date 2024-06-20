@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the associated transactions
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class AssociatedTransactions extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionId = null;
+
     /**
      * The type
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $type = null;
+
     /**
      * The date
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The status
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * The originTransactionId
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $originTransactionId = null;
+
     /**
      * The currency
      * Meta information extracted from the WSDL
@@ -66,8 +73,16 @@ class AssociatedTransactions extends AbstractStructBase
      * @var string|null
      */
     protected ?string $currency = null;
+
     /**
      * Constructor method for associatedTransactions
+     * @param string|null $transactionId
+     * @param string|null $type
+     * @param string|null $date
+     * @param string|null $amount
+     * @param string|null $status
+     * @param string|null $originTransactionId
+     * @param string|null $currency
      * @uses AssociatedTransactions::setTransactionId()
      * @uses AssociatedTransactions::setType()
      * @uses AssociatedTransactions::setDate()
@@ -75,13 +90,6 @@ class AssociatedTransactions extends AbstractStructBase
      * @uses AssociatedTransactions::setStatus()
      * @uses AssociatedTransactions::setOriginTransactionId()
      * @uses AssociatedTransactions::setCurrency()
-     * @param string $transactionId
-     * @param string $type
-     * @param string $date
-     * @param string $amount
-     * @param string $status
-     * @param string $originTransactionId
-     * @param string $currency
      */
     public function __construct(?string $transactionId = null, ?string $type = null, ?string $date = null, ?string $amount = null, ?string $status = null, ?string $originTransactionId = null, ?string $currency = null)
     {
@@ -94,6 +102,7 @@ class AssociatedTransactions extends AbstractStructBase
             ->setOriginTransactionId($originTransactionId)
             ->setCurrency($currency);
     }
+
     /**
      * Get transactionId value
      * @return string|null
@@ -102,10 +111,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->transactionId;
     }
+
     /**
      * Set transactionId value
-     * @param string $transactionId
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $transactionId
+     * @return AssociatedTransactions
      */
     public function setTransactionId(?string $transactionId = null): self
     {
@@ -117,6 +127,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get type value
      * @return string|null
@@ -125,10 +136,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->type;
     }
+
     /**
      * Set type value
-     * @param string $type
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $type
+     * @return AssociatedTransactions
      */
     public function setType(?string $type = null): self
     {
@@ -140,6 +152,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get date value
      * @return string|null
@@ -148,10 +161,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $date
+     * @return AssociatedTransactions
      */
     public function setDate(?string $date = null): self
     {
@@ -163,6 +177,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -171,10 +186,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $amount
+     * @return AssociatedTransactions
      */
     public function setAmount(?string $amount = null): self
     {
@@ -186,6 +202,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -194,10 +211,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
-     * @param string $status
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $status
+     * @return AssociatedTransactions
      */
     public function setStatus(?string $status = null): self
     {
@@ -209,6 +227,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get originTransactionId value
      * @return string|null
@@ -217,10 +236,11 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->originTransactionId;
     }
+
     /**
      * Set originTransactionId value
-     * @param string $originTransactionId
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $originTransactionId
+     * @return AssociatedTransactions
      */
     public function setOriginTransactionId(?string $originTransactionId = null): self
     {
@@ -232,6 +252,7 @@ class AssociatedTransactions extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get currency value
      * An additional test has been added (isset) before returning the property value as
@@ -243,12 +264,13 @@ class AssociatedTransactions extends AbstractStructBase
     {
         return $this->currency ?? null;
     }
+
     /**
      * Set currency value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $currency
-     * @return \StructType\AssociatedTransactions
+     * @param string|null $currency
+     * @return AssociatedTransactions
      */
     public function setCurrency(?string $currency = null): self
     {
@@ -256,7 +278,7 @@ class AssociatedTransactions extends AbstractStructBase
         if (!is_null($currency) && !is_string($currency)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
         }
-        if (is_null($currency) || (is_array($currency) && empty($currency))) {
+        if (is_null($currency)) {
             unset($this->currency);
         } else {
             $this->currency = $currency;

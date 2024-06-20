@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains element for a wallet
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Cards extends AbstractStructBase
 {
     /**
@@ -23,13 +24,15 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Card|null
+     * @var Card|null
      */
-    protected ?\StructType\Card $card = null;
+    protected ?Card $card = null;
+
     /**
      * The lastName
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $lastName = null;
+
     /**
      * The firstName
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -51,13 +56,15 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $email = null;
+
     /**
      * The shippingAddress
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Address|null
+     * @var Address|null
      */
-    protected ?\StructType\Address $shippingAddress = null;
+    protected ?Address $shippingAddress = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * The comment
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $comment = null;
+
     /**
      * The isDisabled
      * Meta information extracted from the WSDL
@@ -79,6 +88,7 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isDisabled = null;
+
     /**
      * The disableDate
      * Meta information extracted from the WSDL
@@ -86,13 +96,15 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $disableDate = null;
+
     /**
      * The extendedCard
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * The default
      * Meta information extracted from the WSDL
@@ -100,8 +112,21 @@ class Cards extends AbstractStructBase
      * @var string|null
      */
     protected ?string $default = null;
+
     /**
      * Constructor method for cards
+     * @param string|null $walletId
+     * @param Card|null $card
+     * @param string|null $lastName
+     * @param string|null $firstName
+     * @param string|null $email
+     * @param Address|null $shippingAddress
+     * @param string|null $cardInd
+     * @param string|null $comment
+     * @param string|null $isDisabled
+     * @param string|null $disableDate
+     * @param ExtendedCardType|null $extendedCard
+     * @param string|null $default
      * @uses Cards::setWalletId()
      * @uses Cards::setCard()
      * @uses Cards::setLastName()
@@ -114,20 +139,8 @@ class Cards extends AbstractStructBase
      * @uses Cards::setDisableDate()
      * @uses Cards::setExtendedCard()
      * @uses Cards::setDefault()
-     * @param string $walletId
-     * @param \StructType\Card $card
-     * @param string $lastName
-     * @param string $firstName
-     * @param string $email
-     * @param \StructType\Address $shippingAddress
-     * @param string $cardInd
-     * @param string $comment
-     * @param string $isDisabled
-     * @param string $disableDate
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @param string $default
      */
-    public function __construct(?string $walletId = null, ?\StructType\Card $card = null, ?string $lastName = null, ?string $firstName = null, ?string $email = null, ?\StructType\Address $shippingAddress = null, ?string $cardInd = null, ?string $comment = null, ?string $isDisabled = null, ?string $disableDate = null, ?\StructType\ExtendedCardType $extendedCard = null, ?string $default = null)
+    public function __construct(?string $walletId = null, ?Card $card = null, ?string $lastName = null, ?string $firstName = null, ?string $email = null, ?Address $shippingAddress = null, ?string $cardInd = null, ?string $comment = null, ?string $isDisabled = null, ?string $disableDate = null, ?ExtendedCardType $extendedCard = null, ?string $default = null)
     {
         $this
             ->setWalletId($walletId)
@@ -143,6 +156,7 @@ class Cards extends AbstractStructBase
             ->setExtendedCard($extendedCard)
             ->setDefault($default);
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -151,10 +165,11 @@ class Cards extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\Cards
+     * @param string|null $walletId
+     * @return Cards
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -166,25 +181,28 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\Card|null
+     * @return Card|null
      */
-    public function getCard(): ?\StructType\Card
+    public function getCard(): ?Card
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\Card $card
-     * @return \StructType\Cards
+     * @param Card|null $card
+     * @return Cards
      */
-    public function setCard(?\StructType\Card $card = null): self
+    public function setCard(?Card $card = null): self
     {
         $this->card = $card;
 
         return $this;
     }
+
     /**
      * Get lastName value
      * @return string|null
@@ -193,10 +211,11 @@ class Cards extends AbstractStructBase
     {
         return $this->lastName;
     }
+
     /**
      * Set lastName value
-     * @param string $lastName
-     * @return \StructType\Cards
+     * @param string|null $lastName
+     * @return Cards
      */
     public function setLastName(?string $lastName = null): self
     {
@@ -208,6 +227,7 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -216,10 +236,11 @@ class Cards extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
-     * @param string $firstName
-     * @return \StructType\Cards
+     * @param string|null $firstName
+     * @return Cards
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -231,6 +252,7 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -239,10 +261,11 @@ class Cards extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
-     * @param string $email
-     * @return \StructType\Cards
+     * @param string|null $email
+     * @return Cards
      */
     public function setEmail(?string $email = null): self
     {
@@ -254,25 +277,28 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get shippingAddress value
-     * @return \StructType\Address|null
+     * @return Address|null
      */
-    public function getShippingAddress(): ?\StructType\Address
+    public function getShippingAddress(): ?Address
     {
         return $this->shippingAddress;
     }
+
     /**
      * Set shippingAddress value
-     * @param \StructType\Address $shippingAddress
-     * @return \StructType\Cards
+     * @param Address|null $shippingAddress
+     * @return Cards
      */
-    public function setShippingAddress(?\StructType\Address $shippingAddress = null): self
+    public function setShippingAddress(?Address $shippingAddress = null): self
     {
         $this->shippingAddress = $shippingAddress;
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -281,10 +307,11 @@ class Cards extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\Cards
+     * @param string|null $cardInd
+     * @return Cards
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -296,6 +323,7 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get comment value
      * @return string|null
@@ -304,10 +332,11 @@ class Cards extends AbstractStructBase
     {
         return $this->comment;
     }
+
     /**
      * Set comment value
-     * @param string $comment
-     * @return \StructType\Cards
+     * @param string|null $comment
+     * @return Cards
      */
     public function setComment(?string $comment = null): self
     {
@@ -319,6 +348,7 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get isDisabled value
      * @return string|null
@@ -327,10 +357,11 @@ class Cards extends AbstractStructBase
     {
         return $this->isDisabled;
     }
+
     /**
      * Set isDisabled value
-     * @param string $isDisabled
-     * @return \StructType\Cards
+     * @param string|null $isDisabled
+     * @return Cards
      */
     public function setIsDisabled(?string $isDisabled = null): self
     {
@@ -342,6 +373,7 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get disableDate value
      * @return string|null
@@ -350,10 +382,11 @@ class Cards extends AbstractStructBase
     {
         return $this->disableDate;
     }
+
     /**
      * Set disableDate value
-     * @param string $disableDate
-     * @return \StructType\Cards
+     * @param string|null $disableDate
+     * @return Cards
      */
     public function setDisableDate(?string $disableDate = null): self
     {
@@ -365,25 +398,28 @@ class Cards extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get extendedCard value
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard;
     }
+
     /**
      * Set extendedCard value
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\Cards
+     * @param ExtendedCardType|null $extendedCard
+     * @return Cards
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
 
         return $this;
     }
+
     /**
      * Get default value
      * @return string|null
@@ -392,10 +428,11 @@ class Cards extends AbstractStructBase
     {
         return $this->default;
     }
+
     /**
      * Set default value
-     * @param string $default
-     * @return \StructType\Cards
+     * @param string|null $default
+     * @return Cards
      */
     public function setDefault(?string $default = null): self
     {

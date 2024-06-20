@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for balance StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Balance extends AbstractStructBase
 {
     /**
@@ -22,6 +23,7 @@ class Balance extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The currency
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class Balance extends AbstractStructBase
      * @var string|null
      */
     protected ?string $currency = null;
+
     /**
      * Constructor method for balance
+     * @param string|null $amount
+     * @param string|null $currency
      * @uses Balance::setAmount()
      * @uses Balance::setCurrency()
-     * @param string $amount
-     * @param string $currency
      */
     public function __construct(?string $amount = null, ?string $currency = null)
     {
@@ -43,6 +46,7 @@ class Balance extends AbstractStructBase
             ->setAmount($amount)
             ->setCurrency($currency);
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -51,10 +55,11 @@ class Balance extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\Balance
+     * @param string|null $amount
+     * @return Balance
      */
     public function setAmount(?string $amount = null): self
     {
@@ -66,6 +71,7 @@ class Balance extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get currency value
      * @return string|null
@@ -74,10 +80,11 @@ class Balance extends AbstractStructBase
     {
         return $this->currency;
     }
+
     /**
      * Set currency value
-     * @param string $currency
-     * @return \StructType\Balance
+     * @param string|null $currency
+     * @return Balance
      */
     public function setCurrency(?string $currency = null): self
     {

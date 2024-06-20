@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: Value of parameter
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class FunctionParameter extends AbstractStructBase
 {
     /**
@@ -21,16 +22,18 @@ class FunctionParameter extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * Constructor method for functionParameter
+     * @param string|null $id
      * @uses FunctionParameter::setId()
-     * @param string $id
      */
     public function __construct(?string $id = null)
     {
         $this
             ->setId($id);
     }
+
     /**
      * Get id value
      * @return string|null
@@ -39,10 +42,11 @@ class FunctionParameter extends AbstractStructBase
     {
         return $this->id;
     }
+
     /**
      * Set id value
-     * @param string $id
-     * @return \StructType\FunctionParameter
+     * @param string|null $id
+     * @return FunctionParameter
      */
     public function setId(?string $id = null): self
     {

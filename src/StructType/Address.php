@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the address
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Address extends AbstractStructBase
 {
     /**
@@ -24,6 +25,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $title = null;
+
     /**
      * The name
      * Meta information extracted from the WSDL
@@ -32,6 +34,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $name = null;
+
     /**
      * The firstName
      * Meta information extracted from the WSDL
@@ -40,6 +43,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The lastName
      * Meta information extracted from the WSDL
@@ -48,6 +52,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $lastName = null;
+
     /**
      * The street1
      * Meta information extracted from the WSDL
@@ -56,6 +61,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $street1 = null;
+
     /**
      * The street2
      * Meta information extracted from the WSDL
@@ -64,6 +70,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $street2 = null;
+
     /**
      * The streetNumber
      * Meta information extracted from the WSDL
@@ -72,6 +79,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $streetNumber = null;
+
     /**
      * The cityName
      * Meta information extracted from the WSDL
@@ -80,6 +88,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cityName = null;
+
     /**
      * The zipCode
      * Meta information extracted from the WSDL
@@ -88,6 +97,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $zipCode = null;
+
     /**
      * The country
      * Meta information extracted from the WSDL
@@ -96,6 +106,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $country = null;
+
     /**
      * The phone
      * Meta information extracted from the WSDL
@@ -104,6 +115,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $phone = null;
+
     /**
      * The state
      * Meta information extracted from the WSDL
@@ -112,6 +124,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $state = null;
+
     /**
      * The county
      * Meta information extracted from the WSDL
@@ -120,6 +133,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $county = null;
+
     /**
      * The phoneType
      * Meta information extracted from the WSDL
@@ -128,6 +142,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $phoneType = null;
+
     /**
      * The addressCreateDate
      * Meta information extracted from the WSDL
@@ -136,6 +151,7 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $addressCreateDate = null;
+
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -144,8 +160,25 @@ class Address extends AbstractStructBase
      * @var string|null
      */
     protected ?string $email = null;
+
     /**
      * Constructor method for address
+     * @param string|null $title
+     * @param string|null $name
+     * @param string|null $firstName
+     * @param string|null $lastName
+     * @param string|null $street1
+     * @param string|null $street2
+     * @param string|null $streetNumber
+     * @param string|null $cityName
+     * @param string|null $zipCode
+     * @param string|null $country
+     * @param string|null $phone
+     * @param string|null $state
+     * @param string|null $county
+     * @param string|null $phoneType
+     * @param string|null $addressCreateDate
+     * @param string|null $email
      * @uses Address::setTitle()
      * @uses Address::setName()
      * @uses Address::setFirstName()
@@ -162,22 +195,6 @@ class Address extends AbstractStructBase
      * @uses Address::setPhoneType()
      * @uses Address::setAddressCreateDate()
      * @uses Address::setEmail()
-     * @param string $title
-     * @param string $name
-     * @param string $firstName
-     * @param string $lastName
-     * @param string $street1
-     * @param string $street2
-     * @param string $streetNumber
-     * @param string $cityName
-     * @param string $zipCode
-     * @param string $country
-     * @param string $phone
-     * @param string $state
-     * @param string $county
-     * @param string $phoneType
-     * @param string $addressCreateDate
-     * @param string $email
      */
     public function __construct(?string $title = null, ?string $name = null, ?string $firstName = null, ?string $lastName = null, ?string $street1 = null, ?string $street2 = null, ?string $streetNumber = null, ?string $cityName = null, ?string $zipCode = null, ?string $country = null, ?string $phone = null, ?string $state = null, ?string $county = null, ?string $phoneType = null, ?string $addressCreateDate = null, ?string $email = null)
     {
@@ -199,6 +216,7 @@ class Address extends AbstractStructBase
             ->setAddressCreateDate($addressCreateDate)
             ->setEmail($email);
     }
+
     /**
      * Get title value
      * An additional test has been added (isset) before returning the property value as
@@ -210,12 +228,13 @@ class Address extends AbstractStructBase
     {
         return $this->title ?? null;
     }
+
     /**
      * Set title value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $title
-     * @return \StructType\Address
+     * @param string|null $title
+     * @return Address
      */
     public function setTitle(?string $title = null): self
     {
@@ -223,14 +242,15 @@ class Address extends AbstractStructBase
         if (!is_null($title) && !is_string($title)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
-        if (is_null($title) || (is_array($title) && empty($title))) {
+        if (is_null($title)) {
             unset($this->title);
         } else {
             $this->title = $title;
         }
-        
+
         return $this;
     }
+
     /**
      * Get name value
      * An additional test has been added (isset) before returning the property value as
@@ -242,12 +262,13 @@ class Address extends AbstractStructBase
     {
         return $this->name ?? null;
     }
+
     /**
      * Set name value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $name
-     * @return \StructType\Address
+     * @param string|null $name
+     * @return Address
      */
     public function setName(?string $name = null): self
     {
@@ -255,14 +276,15 @@ class Address extends AbstractStructBase
         if (!is_null($name) && !is_string($name)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
-        if (is_null($name) || (is_array($name) && empty($name))) {
+        if (is_null($name)) {
             unset($this->name);
         } else {
             $this->name = $name;
         }
-        
+
         return $this;
     }
+
     /**
      * Get firstName value
      * An additional test has been added (isset) before returning the property value as
@@ -274,12 +296,13 @@ class Address extends AbstractStructBase
     {
         return $this->firstName ?? null;
     }
+
     /**
      * Set firstName value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $firstName
-     * @return \StructType\Address
+     * @param string|null $firstName
+     * @return Address
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -287,14 +310,15 @@ class Address extends AbstractStructBase
         if (!is_null($firstName) && !is_string($firstName)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
-        if (is_null($firstName) || (is_array($firstName) && empty($firstName))) {
+        if (is_null($firstName)) {
             unset($this->firstName);
         } else {
             $this->firstName = $firstName;
         }
-        
+
         return $this;
     }
+
     /**
      * Get lastName value
      * An additional test has been added (isset) before returning the property value as
@@ -306,12 +330,13 @@ class Address extends AbstractStructBase
     {
         return $this->lastName ?? null;
     }
+
     /**
      * Set lastName value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $lastName
-     * @return \StructType\Address
+     * @param string|null $lastName
+     * @return Address
      */
     public function setLastName(?string $lastName = null): self
     {
@@ -319,14 +344,15 @@ class Address extends AbstractStructBase
         if (!is_null($lastName) && !is_string($lastName)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
-        if (is_null($lastName) || (is_array($lastName) && empty($lastName))) {
+        if (is_null($lastName)) {
             unset($this->lastName);
         } else {
             $this->lastName = $lastName;
         }
-        
+
         return $this;
     }
+
     /**
      * Get street1 value
      * An additional test has been added (isset) before returning the property value as
@@ -338,12 +364,13 @@ class Address extends AbstractStructBase
     {
         return $this->street1 ?? null;
     }
+
     /**
      * Set street1 value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $street1
-     * @return \StructType\Address
+     * @param string|null $street1
+     * @return Address
      */
     public function setStreet1(?string $street1 = null): self
     {
@@ -351,14 +378,15 @@ class Address extends AbstractStructBase
         if (!is_null($street1) && !is_string($street1)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
         }
-        if (is_null($street1) || (is_array($street1) && empty($street1))) {
+        if (is_null($street1)) {
             unset($this->street1);
         } else {
             $this->street1 = $street1;
         }
-        
+
         return $this;
     }
+
     /**
      * Get street2 value
      * An additional test has been added (isset) before returning the property value as
@@ -370,12 +398,13 @@ class Address extends AbstractStructBase
     {
         return $this->street2 ?? null;
     }
+
     /**
      * Set street2 value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $street2
-     * @return \StructType\Address
+     * @param string|null $street2
+     * @return Address
      */
     public function setStreet2(?string $street2 = null): self
     {
@@ -383,14 +412,15 @@ class Address extends AbstractStructBase
         if (!is_null($street2) && !is_string($street2)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
         }
-        if (is_null($street2) || (is_array($street2) && empty($street2))) {
+        if (is_null($street2)) {
             unset($this->street2);
         } else {
             $this->street2 = $street2;
         }
-        
+
         return $this;
     }
+
     /**
      * Get streetNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -402,12 +432,13 @@ class Address extends AbstractStructBase
     {
         return $this->streetNumber ?? null;
     }
+
     /**
      * Set streetNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $streetNumber
-     * @return \StructType\Address
+     * @param string|null $streetNumber
+     * @return Address
      */
     public function setStreetNumber(?string $streetNumber = null): self
     {
@@ -415,14 +446,15 @@ class Address extends AbstractStructBase
         if (!is_null($streetNumber) && !is_string($streetNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($streetNumber, true), gettype($streetNumber)), __LINE__);
         }
-        if (is_null($streetNumber) || (is_array($streetNumber) && empty($streetNumber))) {
+        if (is_null($streetNumber)) {
             unset($this->streetNumber);
         } else {
             $this->streetNumber = $streetNumber;
         }
-        
+
         return $this;
     }
+
     /**
      * Get cityName value
      * An additional test has been added (isset) before returning the property value as
@@ -434,12 +466,13 @@ class Address extends AbstractStructBase
     {
         return $this->cityName ?? null;
     }
+
     /**
      * Set cityName value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $cityName
-     * @return \StructType\Address
+     * @param string|null $cityName
+     * @return Address
      */
     public function setCityName(?string $cityName = null): self
     {
@@ -447,14 +480,15 @@ class Address extends AbstractStructBase
         if (!is_null($cityName) && !is_string($cityName)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityName, true), gettype($cityName)), __LINE__);
         }
-        if (is_null($cityName) || (is_array($cityName) && empty($cityName))) {
+        if (is_null($cityName)) {
             unset($this->cityName);
         } else {
             $this->cityName = $cityName;
         }
-        
+
         return $this;
     }
+
     /**
      * Get zipCode value
      * An additional test has been added (isset) before returning the property value as
@@ -466,12 +500,13 @@ class Address extends AbstractStructBase
     {
         return $this->zipCode ?? null;
     }
+
     /**
      * Set zipCode value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $zipCode
-     * @return \StructType\Address
+     * @param string|null $zipCode
+     * @return Address
      */
     public function setZipCode(?string $zipCode = null): self
     {
@@ -479,14 +514,15 @@ class Address extends AbstractStructBase
         if (!is_null($zipCode) && !is_string($zipCode)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
         }
-        if (is_null($zipCode) || (is_array($zipCode) && empty($zipCode))) {
+        if (is_null($zipCode)) {
             unset($this->zipCode);
         } else {
             $this->zipCode = $zipCode;
         }
-        
+
         return $this;
     }
+
     /**
      * Get country value
      * An additional test has been added (isset) before returning the property value as
@@ -498,12 +534,13 @@ class Address extends AbstractStructBase
     {
         return $this->country ?? null;
     }
+
     /**
      * Set country value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $country
-     * @return \StructType\Address
+     * @param string|null $country
+     * @return Address
      */
     public function setCountry(?string $country = null): self
     {
@@ -511,14 +548,15 @@ class Address extends AbstractStructBase
         if (!is_null($country) && !is_string($country)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
         }
-        if (is_null($country) || (is_array($country) && empty($country))) {
+        if (is_null($country)) {
             unset($this->country);
         } else {
             $this->country = $country;
         }
-        
+
         return $this;
     }
+
     /**
      * Get phone value
      * An additional test has been added (isset) before returning the property value as
@@ -530,12 +568,13 @@ class Address extends AbstractStructBase
     {
         return $this->phone ?? null;
     }
+
     /**
      * Set phone value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $phone
-     * @return \StructType\Address
+     * @param string|null $phone
+     * @return Address
      */
     public function setPhone(?string $phone = null): self
     {
@@ -543,14 +582,15 @@ class Address extends AbstractStructBase
         if (!is_null($phone) && !is_string($phone)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phone, true), gettype($phone)), __LINE__);
         }
-        if (is_null($phone) || (is_array($phone) && empty($phone))) {
+        if (is_null($phone)) {
             unset($this->phone);
         } else {
             $this->phone = $phone;
         }
-        
+
         return $this;
     }
+
     /**
      * Get state value
      * An additional test has been added (isset) before returning the property value as
@@ -562,12 +602,13 @@ class Address extends AbstractStructBase
     {
         return $this->state ?? null;
     }
+
     /**
      * Set state value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $state
-     * @return \StructType\Address
+     * @param string|null $state
+     * @return Address
      */
     public function setState(?string $state = null): self
     {
@@ -575,14 +616,15 @@ class Address extends AbstractStructBase
         if (!is_null($state) && !is_string($state)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($state, true), gettype($state)), __LINE__);
         }
-        if (is_null($state) || (is_array($state) && empty($state))) {
+        if (is_null($state)) {
             unset($this->state);
         } else {
             $this->state = $state;
         }
-        
+
         return $this;
     }
+
     /**
      * Get county value
      * An additional test has been added (isset) before returning the property value as
@@ -594,12 +636,13 @@ class Address extends AbstractStructBase
     {
         return $this->county ?? null;
     }
+
     /**
      * Set county value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $county
-     * @return \StructType\Address
+     * @param string|null $county
+     * @return Address
      */
     public function setCounty(?string $county = null): self
     {
@@ -607,14 +650,15 @@ class Address extends AbstractStructBase
         if (!is_null($county) && !is_string($county)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($county, true), gettype($county)), __LINE__);
         }
-        if (is_null($county) || (is_array($county) && empty($county))) {
+        if (is_null($county)) {
             unset($this->county);
         } else {
             $this->county = $county;
         }
-        
+
         return $this;
     }
+
     /**
      * Get phoneType value
      * An additional test has been added (isset) before returning the property value as
@@ -626,12 +670,13 @@ class Address extends AbstractStructBase
     {
         return $this->phoneType ?? null;
     }
+
     /**
      * Set phoneType value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $phoneType
-     * @return \StructType\Address
+     * @param string|null $phoneType
+     * @return Address
      */
     public function setPhoneType(?string $phoneType = null): self
     {
@@ -639,14 +684,15 @@ class Address extends AbstractStructBase
         if (!is_null($phoneType) && !is_string($phoneType)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneType, true), gettype($phoneType)), __LINE__);
         }
-        if (is_null($phoneType) || (is_array($phoneType) && empty($phoneType))) {
+        if (is_null($phoneType)) {
             unset($this->phoneType);
         } else {
             $this->phoneType = $phoneType;
         }
-        
+
         return $this;
     }
+
     /**
      * Get addressCreateDate value
      * An additional test has been added (isset) before returning the property value as
@@ -658,12 +704,13 @@ class Address extends AbstractStructBase
     {
         return $this->addressCreateDate ?? null;
     }
+
     /**
      * Set addressCreateDate value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $addressCreateDate
-     * @return \StructType\Address
+     * @param string|null $addressCreateDate
+     * @return Address
      */
     public function setAddressCreateDate(?string $addressCreateDate = null): self
     {
@@ -671,14 +718,15 @@ class Address extends AbstractStructBase
         if (!is_null($addressCreateDate) && !is_string($addressCreateDate)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($addressCreateDate, true), gettype($addressCreateDate)), __LINE__);
         }
-        if (is_null($addressCreateDate) || (is_array($addressCreateDate) && empty($addressCreateDate))) {
+        if (is_null($addressCreateDate)) {
             unset($this->addressCreateDate);
         } else {
             $this->addressCreateDate = $addressCreateDate;
         }
-        
+
         return $this;
     }
+
     /**
      * Get email value
      * An additional test has been added (isset) before returning the property value as
@@ -690,12 +738,13 @@ class Address extends AbstractStructBase
     {
         return $this->email ?? null;
     }
+
     /**
      * Set email value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $email
-     * @return \StructType\Address
+     * @param string|null $email
+     * @return Address
      */
     public function setEmail(?string $email = null): self
     {
@@ -703,12 +752,12 @@ class Address extends AbstractStructBase
         if (!is_null($email) && !is_string($email)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
-        if (is_null($email) || (is_array($email) && empty($email))) {
+        if (is_null($email)) {
             unset($this->email);
         } else {
             $this->email = $email;
         }
-        
+
         return $this;
     }
 }

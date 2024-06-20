@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains failedObject
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class FailedObject extends AbstractStructBase
 {
     /**
@@ -23,26 +24,29 @@ class FailedObject extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * Constructor method for failedObject
+     * @param string|null $transactionID
+     * @param Result|null $result
      * @uses FailedObject::setTransactionID()
      * @uses FailedObject::setResult()
-     * @param string $transactionID
-     * @param \StructType\Result $result
      */
-    public function __construct(?string $transactionID = null, ?\StructType\Result $result = null)
+    public function __construct(?string $transactionID = null, ?Result $result = null)
     {
         $this
             ->setTransactionID($transactionID)
             ->setResult($result);
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -51,10 +55,11 @@ class FailedObject extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\FailedObject
+     * @param string|null $transactionID
+     * @return FailedObject
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -63,26 +68,28 @@ class FailedObject extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\FailedObject
+     * @param Result|null $result
+     * @return FailedObject
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
 }

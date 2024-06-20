@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\ServiceType;
+namespace PaylineWebPayment\ServiceType;
 
+use PaylineWebPayment\StructType\ManageWebWalletRequest;
+use PaylineWebPayment\StructType\ManageWebWalletResponse;
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,13 +17,13 @@ class Manage extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named manageWebWallet
+     * @param ManageWebWalletRequest $parameters
+     * @return ManageWebWalletResponse|bool
+     * @uses AbstractSoapClientBase::saveLastError()
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\ManageWebWalletRequest $parameters
-     * @return \StructType\ManageWebWalletResponse|bool
      */
-    public function manageWebWallet(\StructType\ManageWebWalletRequest $parameters)
+    public function manageWebWallet(ManageWebWalletRequest $parameters): ManageWebWalletResponse|bool
     {
         try {
             $this->setResult($resultManageWebWallet = $this->getSoapClient()->__soapCall('manageWebWallet', [
@@ -35,12 +37,13 @@ class Manage extends AbstractSoapClientBase
             return false;
         }
     }
+
     /**
      * Returns the result
+     * @return ManageWebWalletResponse
      * @see AbstractSoapClientBase::getResult()
-     * @return \StructType\ManageWebWalletResponse
      */
-    public function getResult()
+    public function getResult(): ManageWebWalletResponse
     {
         return parent::getResult();
     }

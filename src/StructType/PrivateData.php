@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the merchant private data
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PrivateData extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class PrivateData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $key = null;
+
     /**
      * The value
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class PrivateData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $value = null;
+
     /**
      * Constructor method for privateData
+     * @param string|null $key
+     * @param string|null $value
      * @uses PrivateData::setKey()
      * @uses PrivateData::setValue()
-     * @param string $key
-     * @param string $value
      */
     public function __construct(?string $key = null, ?string $value = null)
     {
@@ -43,6 +46,7 @@ class PrivateData extends AbstractStructBase
             ->setKey($key)
             ->setValue($value);
     }
+
     /**
      * Get key value
      * @return string|null
@@ -51,10 +55,11 @@ class PrivateData extends AbstractStructBase
     {
         return $this->key;
     }
+
     /**
      * Set key value
-     * @param string $key
-     * @return \StructType\PrivateData
+     * @param string|null $key
+     * @return PrivateData
      */
     public function setKey(?string $key = null): self
     {
@@ -66,6 +71,7 @@ class PrivateData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get value value
      * @return string|null
@@ -74,10 +80,11 @@ class PrivateData extends AbstractStructBase
     {
         return $this->value;
     }
+
     /**
      * Set value value
-     * @param string $value
-     * @return \StructType\PrivateData
+     * @param string|null $value
+     * @return PrivateData
      */
     public function setValue(?string $value = null): self
     {

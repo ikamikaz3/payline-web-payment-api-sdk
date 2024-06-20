@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about SDK.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Sdk extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $deviceRenderingOptionsIF = null;
+
     /**
      * The deviceRenderOptionsUI
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $deviceRenderOptionsUI = null;
+
     /**
      * The appID
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $appID = null;
+
     /**
      * The ephemPubKey
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $ephemPubKey = null;
+
     /**
      * The maxTimeout
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $maxTimeout = null;
+
     /**
      * The referenceNumber
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $referenceNumber = null;
+
     /**
      * The transID
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transID = null;
+
     /**
      * The encData
      * Meta information extracted from the WSDL
@@ -72,8 +80,17 @@ class Sdk extends AbstractStructBase
      * @var string|null
      */
     protected ?string $encData = null;
+
     /**
      * Constructor method for sdk
+     * @param string|null $deviceRenderingOptionsIF
+     * @param string|null $deviceRenderOptionsUI
+     * @param string|null $appID
+     * @param string|null $ephemPubKey
+     * @param string|null $maxTimeout
+     * @param string|null $referenceNumber
+     * @param string|null $transID
+     * @param string|null $encData
      * @uses Sdk::setDeviceRenderingOptionsIF()
      * @uses Sdk::setDeviceRenderOptionsUI()
      * @uses Sdk::setAppID()
@@ -82,14 +99,6 @@ class Sdk extends AbstractStructBase
      * @uses Sdk::setReferenceNumber()
      * @uses Sdk::setTransID()
      * @uses Sdk::setEncData()
-     * @param string $deviceRenderingOptionsIF
-     * @param string $deviceRenderOptionsUI
-     * @param string $appID
-     * @param string $ephemPubKey
-     * @param string $maxTimeout
-     * @param string $referenceNumber
-     * @param string $transID
-     * @param string $encData
      */
     public function __construct(?string $deviceRenderingOptionsIF = null, ?string $deviceRenderOptionsUI = null, ?string $appID = null, ?string $ephemPubKey = null, ?string $maxTimeout = null, ?string $referenceNumber = null, ?string $transID = null, ?string $encData = null)
     {
@@ -103,6 +112,7 @@ class Sdk extends AbstractStructBase
             ->setTransID($transID)
             ->setEncData($encData);
     }
+
     /**
      * Get deviceRenderingOptionsIF value
      * @return string|null
@@ -111,10 +121,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->deviceRenderingOptionsIF;
     }
+
     /**
      * Set deviceRenderingOptionsIF value
-     * @param string $deviceRenderingOptionsIF
-     * @return \StructType\Sdk
+     * @param string|null $deviceRenderingOptionsIF
+     * @return Sdk
      */
     public function setDeviceRenderingOptionsIF(?string $deviceRenderingOptionsIF = null): self
     {
@@ -126,6 +137,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get deviceRenderOptionsUI value
      * @return string|null
@@ -134,10 +146,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->deviceRenderOptionsUI;
     }
+
     /**
      * Set deviceRenderOptionsUI value
-     * @param string $deviceRenderOptionsUI
-     * @return \StructType\Sdk
+     * @param string|null $deviceRenderOptionsUI
+     * @return Sdk
      */
     public function setDeviceRenderOptionsUI(?string $deviceRenderOptionsUI = null): self
     {
@@ -149,6 +162,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get appID value
      * @return string|null
@@ -157,10 +171,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->appID;
     }
+
     /**
      * Set appID value
-     * @param string $appID
-     * @return \StructType\Sdk
+     * @param string|null $appID
+     * @return Sdk
      */
     public function setAppID(?string $appID = null): self
     {
@@ -172,6 +187,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get ephemPubKey value
      * @return string|null
@@ -180,10 +196,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->ephemPubKey;
     }
+
     /**
      * Set ephemPubKey value
-     * @param string $ephemPubKey
-     * @return \StructType\Sdk
+     * @param string|null $ephemPubKey
+     * @return Sdk
      */
     public function setEphemPubKey(?string $ephemPubKey = null): self
     {
@@ -195,6 +212,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get maxTimeout value
      * @return string|null
@@ -203,10 +221,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->maxTimeout;
     }
+
     /**
      * Set maxTimeout value
-     * @param string $maxTimeout
-     * @return \StructType\Sdk
+     * @param string|null $maxTimeout
+     * @return Sdk
      */
     public function setMaxTimeout(?string $maxTimeout = null): self
     {
@@ -218,6 +237,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get referenceNumber value
      * @return string|null
@@ -226,10 +246,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->referenceNumber;
     }
+
     /**
      * Set referenceNumber value
-     * @param string $referenceNumber
-     * @return \StructType\Sdk
+     * @param string|null $referenceNumber
+     * @return Sdk
      */
     public function setReferenceNumber(?string $referenceNumber = null): self
     {
@@ -241,6 +262,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transID value
      * @return string|null
@@ -249,10 +271,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->transID;
     }
+
     /**
      * Set transID value
-     * @param string $transID
-     * @return \StructType\Sdk
+     * @param string|null $transID
+     * @return Sdk
      */
     public function setTransID(?string $transID = null): self
     {
@@ -264,6 +287,7 @@ class Sdk extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get encData value
      * @return string|null
@@ -272,10 +296,11 @@ class Sdk extends AbstractStructBase
     {
         return $this->encData;
     }
+
     /**
      * Set encData value
-     * @param string $encData
-     * @return \StructType\Sdk
+     * @param string|null $encData
+     * @return Sdk
      */
     public function setEncData(?string $encData = null): self
     {

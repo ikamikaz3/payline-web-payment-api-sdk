@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doAuthorizationRedirect method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoAuthorizationRedirectRequest extends AbstractStructBase
 {
     /**
@@ -23,20 +24,23 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Card|null
+     * @var Card|null
      */
-    protected ?\StructType\Card $card = null;
+    protected ?Card $card = null;
+
     /**
      * The returnURL
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $returnURL = null;
+
     /**
      * The cancelURL
      * Meta information extracted from the WSDL
@@ -51,13 +56,15 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cancelURL = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The notificationURL
      * Meta information extracted from the WSDL
@@ -65,13 +72,15 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $notificationURL = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The languageCode
      * Meta information extracted from the WSDL
@@ -79,21 +88,24 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $languageCode = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The securityMode
      * Meta information extracted from the WSDL
@@ -101,13 +113,15 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $securityMode = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The merchantName
      * Meta information extracted from the WSDL
@@ -115,13 +129,15 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantName = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -129,6 +145,7 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * The asynchronousRetryTimeout
      * Meta information extracted from the WSDL
@@ -136,8 +153,26 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $asynchronousRetryTimeout = null;
+
     /**
      * Constructor method for doAuthorizationRedirectRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Card|null $card
+     * @param string|null $returnURL
+     * @param string|null $cancelURL
+     * @param Order|null $order
+     * @param string|null $notificationURL
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $languageCode
+     * @param Buyer|null $buyer
+     * @param Owner|null $owner
+     * @param string|null $securityMode
+     * @param Recurring|null $recurring
+     * @param string|null $merchantName
+     * @param SubMerchant|null $subMerchant
+     * @param string|null $miscData
+     * @param string|null $asynchronousRetryTimeout
      * @uses DoAuthorizationRedirectRequest::setVersion()
      * @uses DoAuthorizationRedirectRequest::setPayment()
      * @uses DoAuthorizationRedirectRequest::setCard()
@@ -155,25 +190,8 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
      * @uses DoAuthorizationRedirectRequest::setSubMerchant()
      * @uses DoAuthorizationRedirectRequest::setMiscData()
      * @uses DoAuthorizationRedirectRequest::setAsynchronousRetryTimeout()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Card $card
-     * @param string $returnURL
-     * @param string $cancelURL
-     * @param \StructType\Order $order
-     * @param string $notificationURL
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $languageCode
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\Owner $owner
-     * @param string $securityMode
-     * @param \StructType\Recurring $recurring
-     * @param string $merchantName
-     * @param \StructType\SubMerchant $subMerchant
-     * @param string $miscData
-     * @param string $asynchronousRetryTimeout
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Card $card = null, ?string $returnURL = null, ?string $cancelURL = null, ?\StructType\Order $order = null, ?string $notificationURL = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $languageCode = null, ?\StructType\Buyer $buyer = null, ?\StructType\Owner $owner = null, ?string $securityMode = null, ?\StructType\Recurring $recurring = null, ?string $merchantName = null, ?\StructType\SubMerchant $subMerchant = null, ?string $miscData = null, ?string $asynchronousRetryTimeout = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Card $card = null, ?string $returnURL = null, ?string $cancelURL = null, ?Order $order = null, ?string $notificationURL = null, ?PrivateDataList $privateDataList = null, ?string $languageCode = null, ?Buyer $buyer = null, ?Owner $owner = null, ?string $securityMode = null, ?Recurring $recurring = null, ?string $merchantName = null, ?SubMerchant $subMerchant = null, ?string $miscData = null, ?string $asynchronousRetryTimeout = null)
     {
         $this
             ->setVersion($version)
@@ -194,6 +212,7 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
             ->setMiscData($miscData)
             ->setAsynchronousRetryTimeout($asynchronousRetryTimeout);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -202,10 +221,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $version
+     * @return DoAuthorizationRedirectRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -217,44 +237,49 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Payment|null $payment
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\Card|null
+     * @return Card|null
      */
-    public function getCard(): ?\StructType\Card
+    public function getCard(): ?Card
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\Card $card
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Card|null $card
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setCard(?\StructType\Card $card = null): self
+    public function setCard(?Card $card = null): self
     {
         $this->card = $card;
 
         return $this;
     }
+
     /**
      * Get returnURL value
      * @return string|null
@@ -263,10 +288,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->returnURL;
     }
+
     /**
      * Set returnURL value
-     * @param string $returnURL
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $returnURL
+     * @return DoAuthorizationRedirectRequest
      */
     public function setReturnURL(?string $returnURL = null): self
     {
@@ -278,6 +304,7 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cancelURL value
      * @return string|null
@@ -286,10 +313,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->cancelURL;
     }
+
     /**
      * Set cancelURL value
-     * @param string $cancelURL
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $cancelURL
+     * @return DoAuthorizationRedirectRequest
      */
     public function setCancelURL(?string $cancelURL = null): self
     {
@@ -301,25 +329,28 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Order|null $order
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get notificationURL value
      * @return string|null
@@ -328,10 +359,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->notificationURL;
     }
+
     /**
      * Set notificationURL value
-     * @param string $notificationURL
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $notificationURL
+     * @return DoAuthorizationRedirectRequest
      */
     public function setNotificationURL(?string $notificationURL = null): self
     {
@@ -343,25 +375,28 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get languageCode value
      * @return string|null
@@ -370,10 +405,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->languageCode;
     }
+
     /**
      * Set languageCode value
-     * @param string $languageCode
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $languageCode
+     * @return DoAuthorizationRedirectRequest
      */
     public function setLanguageCode(?string $languageCode = null): self
     {
@@ -385,27 +421,29 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get buyer value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer ?? null;
     }
+
     /**
      * Set buyer value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Buyer|null $buyer
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
-        if (is_null($buyer) || (is_array($buyer) && empty($buyer))) {
+        if (is_null($buyer)) {
             unset($this->buyer);
         } else {
             $this->buyer = $buyer;
@@ -413,25 +451,28 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Owner|null $owner
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
 
         return $this;
     }
+
     /**
      * Get securityMode value
      * @return string|null
@@ -440,10 +481,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->securityMode;
     }
+
     /**
      * Set securityMode value
-     * @param string $securityMode
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $securityMode
+     * @return DoAuthorizationRedirectRequest
      */
     public function setSecurityMode(?string $securityMode = null): self
     {
@@ -455,25 +497,28 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param Recurring|null $recurring
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
 
         return $this;
     }
+
     /**
      * Get merchantName value
      * @return string|null
@@ -482,10 +527,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->merchantName;
     }
+
     /**
      * Set merchantName value
-     * @param string $merchantName
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $merchantName
+     * @return DoAuthorizationRedirectRequest
      */
     public function setMerchantName(?string $merchantName = null): self
     {
@@ -497,25 +543,28 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoAuthorizationRedirectRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -524,10 +573,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $miscData
+     * @return DoAuthorizationRedirectRequest
      */
     public function setMiscData(?string $miscData = null): self
     {
@@ -539,6 +589,7 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get asynchronousRetryTimeout value
      * @return string|null
@@ -547,10 +598,11 @@ class DoAuthorizationRedirectRequest extends AbstractStructBase
     {
         return $this->asynchronousRetryTimeout;
     }
+
     /**
      * Set asynchronousRetryTimeout value
-     * @param string $asynchronousRetryTimeout
-     * @return \StructType\DoAuthorizationRedirectRequest
+     * @param string|null $asynchronousRetryTimeout
+     * @return DoAuthorizationRedirectRequest
      */
     public function setAsynchronousRetryTimeout(?string $asynchronousRetryTimeout = null): self
     {

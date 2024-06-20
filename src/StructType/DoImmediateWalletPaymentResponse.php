@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,37 +14,41 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doImmediateWalletPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoImmediateWalletPaymentResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -51,20 +56,21 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * Constructor method for doImmediateWalletPaymentResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param Authorization|null $authorization
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $linkedTransactionId
      * @uses DoImmediateWalletPaymentResponse::setResult()
      * @uses DoImmediateWalletPaymentResponse::setTransaction()
      * @uses DoImmediateWalletPaymentResponse::setAuthorization()
      * @uses DoImmediateWalletPaymentResponse::setAuthentication3DSecure()
      * @uses DoImmediateWalletPaymentResponse::setLinkedTransactionId()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\Authorization $authorization
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $linkedTransactionId
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\Authorization $authorization = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $linkedTransactionId = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?Authorization $authorization = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $linkedTransactionId = null)
     {
         $this
             ->setResult($result)
@@ -73,82 +79,91 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
             ->setAuthentication3DSecure($authentication3DSecure)
             ->setLinkedTransactionId($linkedTransactionId);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoImmediateWalletPaymentResponse
+     * @param Result|null $result
+     * @return DoImmediateWalletPaymentResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoImmediateWalletPaymentResponse
+     * @param Transaction|null $transaction
+     * @return DoImmediateWalletPaymentResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get authorization value
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization;
     }
+
     /**
      * Set authorization value
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\DoImmediateWalletPaymentResponse
+     * @param Authorization|null $authorization
+     * @return DoImmediateWalletPaymentResponse
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\DoImmediateWalletPaymentResponse
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return DoImmediateWalletPaymentResponse
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
 
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -157,10 +172,11 @@ class DoImmediateWalletPaymentResponse extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\DoImmediateWalletPaymentResponse
+     * @param string|null $linkedTransactionId
+     * @return DoImmediateWalletPaymentResponse
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {

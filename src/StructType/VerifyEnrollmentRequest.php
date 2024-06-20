@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the verifyEnrollment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class VerifyEnrollmentRequest extends AbstractStructBase
 {
     /**
@@ -23,20 +24,23 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Card|null
+     * @var Card|null
      */
-    protected ?\StructType\Card $card = null;
+    protected ?Card $card = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The orderRef
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderRef = null;
+
     /**
      * The transient
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transient = null;
+
     /**
      * The mdFieldValue
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mdFieldValue = null;
+
     /**
      * The userAgent
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $userAgent = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The walletCardInd
      * Meta information extracted from the WSDL
@@ -79,6 +88,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletCardInd = null;
+
     /**
      * The generateVirtualCvx
      * Meta information extracted from the WSDL
@@ -87,6 +97,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $generateVirtualCvx = null;
+
     /**
      * The merchantName
      * Meta information extracted from the WSDL
@@ -94,6 +105,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantName = null;
+
     /**
      * The merchantURL
      * Meta information extracted from the WSDL
@@ -102,6 +114,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantURL = null;
+
     /**
      * The merchantCountryCode
      * Meta information extracted from the WSDL
@@ -110,6 +123,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantCountryCode = null;
+
     /**
      * The returnURL
      * Meta information extracted from the WSDL
@@ -117,43 +131,49 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $returnURL = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The threeDSInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ThreeDSInfo|null
+     * @var ThreeDSInfo|null
      */
-    protected ?\StructType\ThreeDSInfo $threeDSInfo = null;
+    protected ?ThreeDSInfo $threeDSInfo = null;
+
     /**
      * The merchantScore
      * Meta information extracted from the WSDL
@@ -161,15 +181,38 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantScore = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * Constructor method for verifyEnrollmentRequest
+     * @param string|null $version
+     * @param Card|null $card
+     * @param Payment|null $payment
+     * @param string|null $orderRef
+     * @param string|null $transient
+     * @param string|null $mdFieldValue
+     * @param string|null $userAgent
+     * @param string|null $walletId
+     * @param string|null $walletCardInd
+     * @param string|null $generateVirtualCvx
+     * @param string|null $merchantName
+     * @param string|null $merchantURL
+     * @param string|null $merchantCountryCode
+     * @param string|null $returnURL
+     * @param Order|null $order
+     * @param Buyer|null $buyer
+     * @param SubMerchant|null $subMerchant
+     * @param Recurring|null $recurring
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @param string|null $merchantScore
+     * @param PrivateDataList|null $privateDataList
      * @uses VerifyEnrollmentRequest::setVersion()
      * @uses VerifyEnrollmentRequest::setCard()
      * @uses VerifyEnrollmentRequest::setPayment()
@@ -191,29 +234,8 @@ class VerifyEnrollmentRequest extends AbstractStructBase
      * @uses VerifyEnrollmentRequest::setThreeDSInfo()
      * @uses VerifyEnrollmentRequest::setMerchantScore()
      * @uses VerifyEnrollmentRequest::setPrivateDataList()
-     * @param string $version
-     * @param \StructType\Card $card
-     * @param \StructType\Payment $payment
-     * @param string $orderRef
-     * @param string $transient
-     * @param string $mdFieldValue
-     * @param string $userAgent
-     * @param string $walletId
-     * @param string $walletCardInd
-     * @param string $generateVirtualCvx
-     * @param string $merchantName
-     * @param string $merchantURL
-     * @param string $merchantCountryCode
-     * @param string $returnURL
-     * @param \StructType\Order $order
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\SubMerchant $subMerchant
-     * @param \StructType\Recurring $recurring
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @param string $merchantScore
-     * @param \StructType\PrivateDataList $privateDataList
      */
-    public function __construct(?string $version = null, ?\StructType\Card $card = null, ?\StructType\Payment $payment = null, ?string $orderRef = null, ?string $transient = null, ?string $mdFieldValue = null, ?string $userAgent = null, ?string $walletId = null, ?string $walletCardInd = null, ?string $generateVirtualCvx = null, ?string $merchantName = null, ?string $merchantURL = null, ?string $merchantCountryCode = null, ?string $returnURL = null, ?\StructType\Order $order = null, ?\StructType\Buyer $buyer = null, ?\StructType\SubMerchant $subMerchant = null, ?\StructType\Recurring $recurring = null, ?\StructType\ThreeDSInfo $threeDSInfo = null, ?string $merchantScore = null, ?\StructType\PrivateDataList $privateDataList = null)
+    public function __construct(?string $version = null, ?Card $card = null, ?Payment $payment = null, ?string $orderRef = null, ?string $transient = null, ?string $mdFieldValue = null, ?string $userAgent = null, ?string $walletId = null, ?string $walletCardInd = null, ?string $generateVirtualCvx = null, ?string $merchantName = null, ?string $merchantURL = null, ?string $merchantCountryCode = null, ?string $returnURL = null, ?Order $order = null, ?Buyer $buyer = null, ?SubMerchant $subMerchant = null, ?Recurring $recurring = null, ?ThreeDSInfo $threeDSInfo = null, ?string $merchantScore = null, ?PrivateDataList $privateDataList = null)
     {
         $this
             ->setVersion($version)
@@ -238,6 +260,7 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             ->setMerchantScore($merchantScore)
             ->setPrivateDataList($privateDataList);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -246,10 +269,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $version
+     * @return VerifyEnrollmentRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -258,47 +282,52 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\Card|null
+     * @return Card|null
      */
-    public function getCard(): ?\StructType\Card
+    public function getCard(): ?Card
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\Card $card
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param Card|null $card
+     * @return VerifyEnrollmentRequest
      */
-    public function setCard(?\StructType\Card $card = null): self
+    public function setCard(?Card $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param Payment|null $payment
+     * @return VerifyEnrollmentRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
+
     /**
      * Get orderRef value
      * @return string|null
@@ -307,10 +336,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->orderRef;
     }
+
     /**
      * Set orderRef value
-     * @param string $orderRef
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $orderRef
+     * @return VerifyEnrollmentRequest
      */
     public function setOrderRef(?string $orderRef = null): self
     {
@@ -319,9 +349,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderRef, true), gettype($orderRef)), __LINE__);
         }
         $this->orderRef = $orderRef;
-        
+
         return $this;
     }
+
     /**
      * Get transient value
      * @return string|null
@@ -330,10 +361,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->transient;
     }
+
     /**
      * Set transient value
-     * @param string $transient
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $transient
+     * @return VerifyEnrollmentRequest
      */
     public function setTransient(?string $transient = null): self
     {
@@ -342,9 +374,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transient, true), gettype($transient)), __LINE__);
         }
         $this->transient = $transient;
-        
+
         return $this;
     }
+
     /**
      * Get mdFieldValue value
      * @return string|null
@@ -353,10 +386,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->mdFieldValue;
     }
+
     /**
      * Set mdFieldValue value
-     * @param string $mdFieldValue
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $mdFieldValue
+     * @return VerifyEnrollmentRequest
      */
     public function setMdFieldValue(?string $mdFieldValue = null): self
     {
@@ -365,9 +399,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mdFieldValue, true), gettype($mdFieldValue)), __LINE__);
         }
         $this->mdFieldValue = $mdFieldValue;
-        
+
         return $this;
     }
+
     /**
      * Get userAgent value
      * @return string|null
@@ -376,10 +411,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->userAgent;
     }
+
     /**
      * Set userAgent value
-     * @param string $userAgent
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $userAgent
+     * @return VerifyEnrollmentRequest
      */
     public function setUserAgent(?string $userAgent = null): self
     {
@@ -388,9 +424,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userAgent, true), gettype($userAgent)), __LINE__);
         }
         $this->userAgent = $userAgent;
-        
+
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -399,10 +436,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $walletId
+     * @return VerifyEnrollmentRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -411,9 +449,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
+
     /**
      * Get walletCardInd value
      * @return string|null
@@ -422,10 +461,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->walletCardInd;
     }
+
     /**
      * Set walletCardInd value
-     * @param string $walletCardInd
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $walletCardInd
+     * @return VerifyEnrollmentRequest
      */
     public function setWalletCardInd(?string $walletCardInd = null): self
     {
@@ -434,9 +474,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletCardInd, true), gettype($walletCardInd)), __LINE__);
         }
         $this->walletCardInd = $walletCardInd;
-        
+
         return $this;
     }
+
     /**
      * Get generateVirtualCvx value
      * An additional test has been added (isset) before returning the property value as
@@ -448,12 +489,13 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->generateVirtualCvx ?? null;
     }
+
     /**
      * Set generateVirtualCvx value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $generateVirtualCvx
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $generateVirtualCvx
+     * @return VerifyEnrollmentRequest
      */
     public function setGenerateVirtualCvx(?string $generateVirtualCvx = null): self
     {
@@ -461,14 +503,15 @@ class VerifyEnrollmentRequest extends AbstractStructBase
         if (!is_null($generateVirtualCvx) && !is_string($generateVirtualCvx)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($generateVirtualCvx, true), gettype($generateVirtualCvx)), __LINE__);
         }
-        if (is_null($generateVirtualCvx) || (is_array($generateVirtualCvx) && empty($generateVirtualCvx))) {
+        if (is_null($generateVirtualCvx)) {
             unset($this->generateVirtualCvx);
         } else {
             $this->generateVirtualCvx = $generateVirtualCvx;
         }
-        
+
         return $this;
     }
+
     /**
      * Get merchantName value
      * @return string|null
@@ -477,10 +520,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->merchantName;
     }
+
     /**
      * Set merchantName value
-     * @param string $merchantName
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $merchantName
+     * @return VerifyEnrollmentRequest
      */
     public function setMerchantName(?string $merchantName = null): self
     {
@@ -489,9 +533,10 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantName, true), gettype($merchantName)), __LINE__);
         }
         $this->merchantName = $merchantName;
-        
+
         return $this;
     }
+
     /**
      * Get merchantURL value
      * An additional test has been added (isset) before returning the property value as
@@ -503,12 +548,13 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->merchantURL ?? null;
     }
+
     /**
      * Set merchantURL value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $merchantURL
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $merchantURL
+     * @return VerifyEnrollmentRequest
      */
     public function setMerchantURL(?string $merchantURL = null): self
     {
@@ -516,14 +562,15 @@ class VerifyEnrollmentRequest extends AbstractStructBase
         if (!is_null($merchantURL) && !is_string($merchantURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantURL, true), gettype($merchantURL)), __LINE__);
         }
-        if (is_null($merchantURL) || (is_array($merchantURL) && empty($merchantURL))) {
+        if (is_null($merchantURL)) {
             unset($this->merchantURL);
         } else {
             $this->merchantURL = $merchantURL;
         }
-        
+
         return $this;
     }
+
     /**
      * Get merchantCountryCode value
      * An additional test has been added (isset) before returning the property value as
@@ -535,12 +582,13 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->merchantCountryCode ?? null;
     }
+
     /**
      * Set merchantCountryCode value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $merchantCountryCode
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $merchantCountryCode
+     * @return VerifyEnrollmentRequest
      */
     public function setMerchantCountryCode(?string $merchantCountryCode = null): self
     {
@@ -548,14 +596,15 @@ class VerifyEnrollmentRequest extends AbstractStructBase
         if (!is_null($merchantCountryCode) && !is_string($merchantCountryCode)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantCountryCode, true), gettype($merchantCountryCode)), __LINE__);
         }
-        if (is_null($merchantCountryCode) || (is_array($merchantCountryCode) && empty($merchantCountryCode))) {
+        if (is_null($merchantCountryCode)) {
             unset($this->merchantCountryCode);
         } else {
             $this->merchantCountryCode = $merchantCountryCode;
         }
-        
+
         return $this;
     }
+
     /**
      * Get returnURL value
      * @return string|null
@@ -564,10 +613,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->returnURL;
     }
+
     /**
      * Set returnURL value
-     * @param string $returnURL
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $returnURL
+     * @return VerifyEnrollmentRequest
      */
     public function setReturnURL(?string $returnURL = null): self
     {
@@ -576,122 +626,133 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->returnURL = $returnURL;
-        
+
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param Order|null $order
+     * @return VerifyEnrollmentRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
+
     /**
      * Get buyer value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer ?? null;
     }
+
     /**
      * Set buyer value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param Buyer|null $buyer
+     * @return VerifyEnrollmentRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
-        if (is_null($buyer) || (is_array($buyer) && empty($buyer))) {
+        if (is_null($buyer)) {
             unset($this->buyer);
         } else {
             $this->buyer = $buyer;
         }
-        
+
         return $this;
     }
+
     /**
      * Get subMerchant value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant ?? null;
     }
+
     /**
      * Set subMerchant value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param SubMerchant|null $subMerchant
+     * @return VerifyEnrollmentRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
-        if (is_null($subMerchant) || (is_array($subMerchant) && empty($subMerchant))) {
+        if (is_null($subMerchant)) {
             unset($this->subMerchant);
         } else {
             $this->subMerchant = $subMerchant;
         }
-        
+
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param Recurring|null $recurring
+     * @return VerifyEnrollmentRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSInfo value
-     * @return \StructType\ThreeDSInfo|null
+     * @return ThreeDSInfo|null
      */
-    public function getThreeDSInfo(): ?\StructType\ThreeDSInfo
+    public function getThreeDSInfo(): ?ThreeDSInfo
     {
         return $this->threeDSInfo;
     }
+
     /**
      * Set threeDSInfo value
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @return VerifyEnrollmentRequest
      */
-    public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
+    public function setThreeDSInfo(?ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
-        
+
         return $this;
     }
+
     /**
      * Get merchantScore value
      * @return string|null
@@ -700,10 +761,11 @@ class VerifyEnrollmentRequest extends AbstractStructBase
     {
         return $this->merchantScore;
     }
+
     /**
      * Set merchantScore value
-     * @param string $merchantScore
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param string|null $merchantScore
+     * @return VerifyEnrollmentRequest
      */
     public function setMerchantScore(?string $merchantScore = null): self
     {
@@ -712,26 +774,28 @@ class VerifyEnrollmentRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantScore, true), gettype($merchantScore)), __LINE__);
         }
         $this->merchantScore = $merchantScore;
-        
+
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\VerifyEnrollmentRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return VerifyEnrollmentRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
 }

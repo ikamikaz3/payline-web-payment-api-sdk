@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the encryptionKey
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Key extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Key extends AbstractStructBase
      * @var int|null
      */
     protected ?int $keyId = null;
+
     /**
      * The modulus
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $modulus = null;
+
     /**
      * The merchantKeyName
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantKeyName = null;
+
     /**
      * The publicExponent
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $publicExponent = null;
+
     /**
      * The expirationDate
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $expirationDate = null;
+
     /**
      * The cipher
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cipher = null;
+
     /**
      * The algo
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Key extends AbstractStructBase
      * @var string|null
      */
     protected ?string $algo = null;
+
     /**
      * The size
      * Meta information extracted from the WSDL
@@ -72,8 +80,17 @@ class Key extends AbstractStructBase
      * @var int|null
      */
     protected ?int $size = null;
+
     /**
      * Constructor method for key
+     * @param int|null $keyId
+     * @param string|null $modulus
+     * @param string|null $merchantKeyName
+     * @param string|null $publicExponent
+     * @param string|null $expirationDate
+     * @param string|null $cipher
+     * @param string|null $algo
+     * @param int|null $size
      * @uses Key::setKeyId()
      * @uses Key::setModulus()
      * @uses Key::setMerchantKeyName()
@@ -82,14 +99,6 @@ class Key extends AbstractStructBase
      * @uses Key::setCipher()
      * @uses Key::setAlgo()
      * @uses Key::setSize()
-     * @param int $keyId
-     * @param string $modulus
-     * @param string $merchantKeyName
-     * @param string $publicExponent
-     * @param string $expirationDate
-     * @param string $cipher
-     * @param string $algo
-     * @param int $size
      */
     public function __construct(?int $keyId = null, ?string $modulus = null, ?string $merchantKeyName = null, ?string $publicExponent = null, ?string $expirationDate = null, ?string $cipher = null, ?string $algo = null, ?int $size = null)
     {
@@ -103,6 +112,7 @@ class Key extends AbstractStructBase
             ->setAlgo($algo)
             ->setSize($size);
     }
+
     /**
      * Get keyId value
      * @return int|null
@@ -111,21 +121,20 @@ class Key extends AbstractStructBase
     {
         return $this->keyId;
     }
+
     /**
      * Set keyId value
-     * @param int $keyId
-     * @return \StructType\Key
+     * @param int|null $keyId
+     * @return Key
      */
     public function setKeyId(?int $keyId = null): self
     {
         // validation for constraint: int
-        if (!is_null($keyId) && !(is_int($keyId) || ctype_digit($keyId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($keyId, true), gettype($keyId)), __LINE__);
-        }
         $this->keyId = $keyId;
 
         return $this;
     }
+
     /**
      * Get modulus value
      * @return string|null
@@ -134,10 +143,11 @@ class Key extends AbstractStructBase
     {
         return $this->modulus;
     }
+
     /**
      * Set modulus value
-     * @param string $modulus
-     * @return \StructType\Key
+     * @param string|null $modulus
+     * @return Key
      */
     public function setModulus(?string $modulus = null): self
     {
@@ -149,6 +159,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get merchantKeyName value
      * @return string|null
@@ -157,10 +168,11 @@ class Key extends AbstractStructBase
     {
         return $this->merchantKeyName;
     }
+
     /**
      * Set merchantKeyName value
-     * @param string $merchantKeyName
-     * @return \StructType\Key
+     * @param string|null $merchantKeyName
+     * @return Key
      */
     public function setMerchantKeyName(?string $merchantKeyName = null): self
     {
@@ -172,6 +184,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get publicExponent value
      * @return string|null
@@ -180,10 +193,11 @@ class Key extends AbstractStructBase
     {
         return $this->publicExponent;
     }
+
     /**
      * Set publicExponent value
-     * @param string $publicExponent
-     * @return \StructType\Key
+     * @param string|null $publicExponent
+     * @return Key
      */
     public function setPublicExponent(?string $publicExponent = null): self
     {
@@ -195,6 +209,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get expirationDate value
      * @return string|null
@@ -203,10 +218,11 @@ class Key extends AbstractStructBase
     {
         return $this->expirationDate;
     }
+
     /**
      * Set expirationDate value
-     * @param string $expirationDate
-     * @return \StructType\Key
+     * @param string|null $expirationDate
+     * @return Key
      */
     public function setExpirationDate(?string $expirationDate = null): self
     {
@@ -218,6 +234,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cipher value
      * @return string|null
@@ -226,10 +243,11 @@ class Key extends AbstractStructBase
     {
         return $this->cipher;
     }
+
     /**
      * Set cipher value
-     * @param string $cipher
-     * @return \StructType\Key
+     * @param string|null $cipher
+     * @return Key
      */
     public function setCipher(?string $cipher = null): self
     {
@@ -241,6 +259,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get algo value
      * @return string|null
@@ -249,10 +268,11 @@ class Key extends AbstractStructBase
     {
         return $this->algo;
     }
+
     /**
      * Set algo value
-     * @param string $algo
-     * @return \StructType\Key
+     * @param string|null $algo
+     * @return Key
      */
     public function setAlgo(?string $algo = null): self
     {
@@ -264,6 +284,7 @@ class Key extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get size value
      * @return int|null
@@ -272,17 +293,15 @@ class Key extends AbstractStructBase
     {
         return $this->size;
     }
+
     /**
      * Set size value
-     * @param int $size
-     * @return \StructType\Key
+     * @param int|null $size
+     * @return Key
      */
     public function setSize(?int $size = null): self
     {
         // validation for constraint: int
-        if (!is_null($size) && !(is_int($size) || ctype_digit($size))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($size, true), gettype($size)), __LINE__);
-        }
         $this->size = $size;
 
         return $this;

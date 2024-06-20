@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains bank Account information
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class BankAccountData extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class BankAccountData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $countryCode = null;
+
     /**
      * The bankCode
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class BankAccountData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $bankCode = null;
+
     /**
      * The accountNumber
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class BankAccountData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $accountNumber = null;
+
     /**
      * The key
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class BankAccountData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $key = null;
+
     /**
      * Constructor method for bankAccountData
+     * @param string|null $countryCode
+     * @param string|null $bankCode
+     * @param string|null $accountNumber
+     * @param string|null $key
      * @uses BankAccountData::setCountryCode()
      * @uses BankAccountData::setBankCode()
      * @uses BankAccountData::setAccountNumber()
      * @uses BankAccountData::setKey()
-     * @param string $countryCode
-     * @param string $bankCode
-     * @param string $accountNumber
-     * @param string $key
      */
     public function __construct(?string $countryCode = null, ?string $bankCode = null, ?string $accountNumber = null, ?string $key = null)
     {
@@ -63,6 +68,7 @@ class BankAccountData extends AbstractStructBase
             ->setAccountNumber($accountNumber)
             ->setKey($key);
     }
+
     /**
      * Get countryCode value
      * @return string|null
@@ -71,10 +77,11 @@ class BankAccountData extends AbstractStructBase
     {
         return $this->countryCode;
     }
+
     /**
      * Set countryCode value
-     * @param string $countryCode
-     * @return \StructType\BankAccountData
+     * @param string|null $countryCode
+     * @return BankAccountData
      */
     public function setCountryCode(?string $countryCode = null): self
     {
@@ -86,6 +93,7 @@ class BankAccountData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get bankCode value
      * @return string|null
@@ -94,10 +102,11 @@ class BankAccountData extends AbstractStructBase
     {
         return $this->bankCode;
     }
+
     /**
      * Set bankCode value
-     * @param string $bankCode
-     * @return \StructType\BankAccountData
+     * @param string|null $bankCode
+     * @return BankAccountData
      */
     public function setBankCode(?string $bankCode = null): self
     {
@@ -109,6 +118,7 @@ class BankAccountData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get accountNumber value
      * @return string|null
@@ -117,10 +127,11 @@ class BankAccountData extends AbstractStructBase
     {
         return $this->accountNumber;
     }
+
     /**
      * Set accountNumber value
-     * @param string $accountNumber
-     * @return \StructType\BankAccountData
+     * @param string|null $accountNumber
+     * @return BankAccountData
      */
     public function setAccountNumber(?string $accountNumber = null): self
     {
@@ -132,6 +143,7 @@ class BankAccountData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get key value
      * @return string|null
@@ -140,10 +152,11 @@ class BankAccountData extends AbstractStructBase
     {
         return $this->key;
     }
+
     /**
      * Set key value
-     * @param string $key
-     * @return \StructType\BankAccountData
+     * @param string|null $key
+     * @return BankAccountData
      */
     public function setKey(?string $key = null): self
     {

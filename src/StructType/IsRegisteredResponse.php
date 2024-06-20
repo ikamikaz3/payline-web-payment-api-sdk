@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the isRegistered method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class IsRegisteredResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class IsRegisteredResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The data
      * Meta information extracted from the WSDL
@@ -37,41 +40,45 @@ class IsRegisteredResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $data = null;
+
     /**
      * Constructor method for isRegisteredResponse
+     * @param Result|null $result
+     * @param string|null $token
+     * @param string|null $data
      * @uses IsRegisteredResponse::setResult()
      * @uses IsRegisteredResponse::setToken()
      * @uses IsRegisteredResponse::setData()
-     * @param \StructType\Result $result
-     * @param string $token
-     * @param string $data
      */
-    public function __construct(?\StructType\Result $result = null, ?string $token = null, ?string $data = null)
+    public function __construct(?Result $result = null, ?string $token = null, ?string $data = null)
     {
         $this
             ->setResult($result)
             ->setToken($token)
             ->setData($data);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\IsRegisteredResponse
+     * @param Result|null $result
+     * @return IsRegisteredResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -80,10 +87,11 @@ class IsRegisteredResponse extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\IsRegisteredResponse
+     * @param string|null $token
+     * @return IsRegisteredResponse
      */
     public function setToken(?string $token = null): self
     {
@@ -95,6 +103,7 @@ class IsRegisteredResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get data value
      * @return string|null
@@ -103,10 +112,11 @@ class IsRegisteredResponse extends AbstractStructBase
     {
         return $this->data;
     }
+
     /**
      * Set data value
-     * @param string $data
-     * @return \StructType\IsRegisteredResponse
+     * @param string|null $data
+     * @return IsRegisteredResponse
      */
     public function setData(?string $data = null): self
     {

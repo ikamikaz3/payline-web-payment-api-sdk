@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getPaymentRecord method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetPaymentRecordRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetPaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class GetPaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class GetPaymentRecordRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * Constructor method for getPaymentRecordRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param string|null $paymentRecordId
      * @uses GetPaymentRecordRequest::setVersion()
      * @uses GetPaymentRecordRequest::setContractNumber()
      * @uses GetPaymentRecordRequest::setPaymentRecordId()
-     * @param string $version
-     * @param string $contractNumber
-     * @param string $paymentRecordId
      */
     public function __construct(?string $version = null, ?string $contractNumber = null, ?string $paymentRecordId = null)
     {
@@ -53,6 +57,7 @@ class GetPaymentRecordRequest extends AbstractStructBase
             ->setContractNumber($contractNumber)
             ->setPaymentRecordId($paymentRecordId);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -61,10 +66,11 @@ class GetPaymentRecordRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetPaymentRecordRequest
+     * @param string|null $version
+     * @return GetPaymentRecordRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -76,6 +82,7 @@ class GetPaymentRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -84,10 +91,11 @@ class GetPaymentRecordRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetPaymentRecordRequest
+     * @param string|null $contractNumber
+     * @return GetPaymentRecordRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -99,6 +107,7 @@ class GetPaymentRecordRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -107,10 +116,11 @@ class GetPaymentRecordRequest extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\GetPaymentRecordRequest
+     * @param string|null $paymentRecordId
+     * @return GetPaymentRecordRequest
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {

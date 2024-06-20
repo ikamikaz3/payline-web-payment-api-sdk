@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getWebWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetWebWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class GetWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * Constructor method for getWebWalletRequest
+     * @param string|null $version
+     * @param string|null $token
      * @uses GetWebWalletRequest::setVersion()
      * @uses GetWebWalletRequest::setToken()
-     * @param string $version
-     * @param string $token
      */
     public function __construct(?string $version = null, ?string $token = null)
     {
@@ -43,6 +46,7 @@ class GetWebWalletRequest extends AbstractStructBase
             ->setVersion($version)
             ->setToken($token);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -51,10 +55,11 @@ class GetWebWalletRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetWebWalletRequest
+     * @param string|null $version
+     * @return GetWebWalletRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -66,6 +71,7 @@ class GetWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -74,10 +80,11 @@ class GetWebWalletRequest extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\GetWebWalletRequest
+     * @param string|null $token
+     * @return GetWebWalletRequest
      */
     public function setToken(?string $token = null): self
     {

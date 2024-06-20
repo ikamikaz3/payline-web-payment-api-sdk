@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getMerchantSettings method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetMerchantSettingsRequest extends AbstractStructBase
 {
     /**
@@ -23,16 +24,18 @@ class GetMerchantSettingsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * Constructor method for getMerchantSettingsRequest
+     * @param string|null $version
      * @uses GetMerchantSettingsRequest::setVersion()
-     * @param string $version
      */
     public function __construct(?string $version = null)
     {
         $this
             ->setVersion($version);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -41,10 +44,11 @@ class GetMerchantSettingsRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetMerchantSettingsRequest
+     * @param string|null $version
+     * @return GetMerchantSettingsRequest
      */
     public function setVersion(?string $version = null): self
     {

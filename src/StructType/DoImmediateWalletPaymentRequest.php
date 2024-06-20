@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doImmediateWalletPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoImmediateWalletPaymentRequest extends AbstractStructBase
 {
     /**
@@ -23,20 +24,23 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -44,13 +48,15 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * The cvx
      * Meta information extracted from the WSDL
@@ -65,21 +72,24 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cvx = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -87,20 +97,23 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * The linkedTransactionId
      * Meta information extracted from the WSDL
@@ -108,13 +121,15 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $linkedTransactionId = null;
+
     /**
      * The threeDSInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ThreeDSInfo|null
+     * @var ThreeDSInfo|null
      */
-    protected ?\StructType\ThreeDSInfo $threeDSInfo = null;
+    protected ?ThreeDSInfo $threeDSInfo = null;
+
     /**
      * The travelFileNumber
      * Meta information extracted from the WSDL
@@ -123,8 +138,24 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $travelFileNumber = null;
+
     /**
      * Constructor method for doImmediateWalletPaymentRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Order|null $order
+     * @param string|null $walletId
+     * @param Buyer|null $buyer
+     * @param string|null $cardInd
+     * @param string|null $cvx
+     * @param Recurring|null $recurring
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $media
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param SubMerchant|null $subMerchant
+     * @param string|null $linkedTransactionId
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @param string|null $travelFileNumber
      * @uses DoImmediateWalletPaymentRequest::setVersion()
      * @uses DoImmediateWalletPaymentRequest::setPayment()
      * @uses DoImmediateWalletPaymentRequest::setOrder()
@@ -140,23 +171,8 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
      * @uses DoImmediateWalletPaymentRequest::setLinkedTransactionId()
      * @uses DoImmediateWalletPaymentRequest::setThreeDSInfo()
      * @uses DoImmediateWalletPaymentRequest::setTravelFileNumber()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Order $order
-     * @param string $walletId
-     * @param \StructType\Buyer $buyer
-     * @param string $cardInd
-     * @param string $cvx
-     * @param \StructType\Recurring $recurring
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $media
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param \StructType\SubMerchant $subMerchant
-     * @param string $linkedTransactionId
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @param string $travelFileNumber
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Order $order = null, ?string $walletId = null, ?\StructType\Buyer $buyer = null, ?string $cardInd = null, ?string $cvx = null, ?\StructType\Recurring $recurring = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $media = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?\StructType\SubMerchant $subMerchant = null, ?string $linkedTransactionId = null, ?\StructType\ThreeDSInfo $threeDSInfo = null, ?string $travelFileNumber = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Order $order = null, ?string $walletId = null, ?Buyer $buyer = null, ?string $cardInd = null, ?string $cvx = null, ?Recurring $recurring = null, ?PrivateDataList $privateDataList = null, ?string $media = null, ?Authentication3DSecure $authentication3DSecure = null, ?SubMerchant $subMerchant = null, ?string $linkedTransactionId = null, ?ThreeDSInfo $threeDSInfo = null, ?string $travelFileNumber = null)
     {
         $this
             ->setVersion($version)
@@ -175,6 +191,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
             ->setThreeDSInfo($threeDSInfo)
             ->setTravelFileNumber($travelFileNumber);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -183,10 +200,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $version
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -198,44 +216,49 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param Payment|null $payment
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param Order|null $order
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -244,10 +267,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $walletId
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -259,25 +283,28 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param Buyer|null $buyer
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -286,10 +313,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $cardInd
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -301,6 +329,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cvx value
      * @return string|null
@@ -309,10 +338,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->cvx;
     }
+
     /**
      * Set cvx value
-     * @param string $cvx
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $cvx
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setCvx(?string $cvx = null): self
     {
@@ -324,27 +354,29 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get recurring value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring ?? null;
     }
+
     /**
      * Set recurring value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param Recurring|null $recurring
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
-        if (is_null($recurring) || (is_array($recurring) && empty($recurring))) {
+        if (is_null($recurring)) {
             unset($this->recurring);
         } else {
             $this->recurring = $recurring;
@@ -352,25 +384,28 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -379,10 +414,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $media
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -394,44 +430,49 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 
         return $this;
     }
+
     /**
      * Get linkedTransactionId value
      * @return string|null
@@ -440,10 +481,11 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->linkedTransactionId;
     }
+
     /**
      * Set linkedTransactionId value
-     * @param string $linkedTransactionId
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $linkedTransactionId
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setLinkedTransactionId(?string $linkedTransactionId = null): self
     {
@@ -455,25 +497,28 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSInfo value
-     * @return \StructType\ThreeDSInfo|null
+     * @return ThreeDSInfo|null
      */
-    public function getThreeDSInfo(): ?\StructType\ThreeDSInfo
+    public function getThreeDSInfo(): ?ThreeDSInfo
     {
         return $this->threeDSInfo;
     }
+
     /**
      * Set threeDSInfo value
-     * @param \StructType\ThreeDSInfo $threeDSInfo
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param ThreeDSInfo|null $threeDSInfo
+     * @return DoImmediateWalletPaymentRequest
      */
-    public function setThreeDSInfo(?\StructType\ThreeDSInfo $threeDSInfo = null): self
+    public function setThreeDSInfo(?ThreeDSInfo $threeDSInfo = null): self
     {
         $this->threeDSInfo = $threeDSInfo;
 
         return $this;
     }
+
     /**
      * Get travelFileNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -485,12 +530,13 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
     {
         return $this->travelFileNumber ?? null;
     }
+
     /**
      * Set travelFileNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $travelFileNumber
-     * @return \StructType\DoImmediateWalletPaymentRequest
+     * @param string|null $travelFileNumber
+     * @return DoImmediateWalletPaymentRequest
      */
     public function setTravelFileNumber(?string $travelFileNumber = null): self
     {
@@ -498,7 +544,7 @@ class DoImmediateWalletPaymentRequest extends AbstractStructBase
         if (!is_null($travelFileNumber) && !is_string($travelFileNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelFileNumber, true), gettype($travelFileNumber)), __LINE__);
         }
-        if (is_null($travelFileNumber) || (is_array($travelFileNumber) && empty($travelFileNumber))) {
+        if (is_null($travelFileNumber)) {
             unset($this->travelFileNumber);
         } else {
             $this->travelFileNumber = $travelFileNumber;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doScheduledWalletPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoScheduledWalletPaymentResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -30,38 +32,42 @@ class DoScheduledWalletPaymentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * Constructor method for doScheduledWalletPaymentResponse
+     * @param Result|null $result
+     * @param string|null $paymentRecordId
      * @uses DoScheduledWalletPaymentResponse::setResult()
      * @uses DoScheduledWalletPaymentResponse::setPaymentRecordId()
-     * @param \StructType\Result $result
-     * @param string $paymentRecordId
      */
-    public function __construct(?\StructType\Result $result = null, ?string $paymentRecordId = null)
+    public function __construct(?Result $result = null, ?string $paymentRecordId = null)
     {
         $this
             ->setResult($result)
             ->setPaymentRecordId($paymentRecordId);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoScheduledWalletPaymentResponse
+     * @param Result|null $result
+     * @return DoScheduledWalletPaymentResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -70,10 +76,11 @@ class DoScheduledWalletPaymentResponse extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\DoScheduledWalletPaymentResponse
+     * @param string|null $paymentRecordId
+     * @return DoScheduledWalletPaymentResponse
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {

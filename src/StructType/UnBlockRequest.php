@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for unBlockRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class UnBlockRequest extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class UnBlockRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The transactionDate
      * Meta information extracted from the WSDL
@@ -28,6 +30,7 @@ class UnBlockRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionDate = null;
+
     /**
      * The version
      * Meta information extracted from the WSDL
@@ -35,14 +38,15 @@ class UnBlockRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * Constructor method for unBlockRequest
+     * @param string|null $transactionID
+     * @param string|null $transactionDate
+     * @param string|null $version
      * @uses UnBlockRequest::setTransactionID()
      * @uses UnBlockRequest::setTransactionDate()
      * @uses UnBlockRequest::setVersion()
-     * @param string $transactionID
-     * @param string $transactionDate
-     * @param string $version
      */
     public function __construct(?string $transactionID = null, ?string $transactionDate = null, ?string $version = null)
     {
@@ -51,6 +55,7 @@ class UnBlockRequest extends AbstractStructBase
             ->setTransactionDate($transactionDate)
             ->setVersion($version);
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -59,10 +64,11 @@ class UnBlockRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\UnBlockRequest
+     * @param string|null $transactionID
+     * @return UnBlockRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -74,6 +80,7 @@ class UnBlockRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionDate value
      * @return string|null
@@ -82,10 +89,11 @@ class UnBlockRequest extends AbstractStructBase
     {
         return $this->transactionDate;
     }
+
     /**
      * Set transactionDate value
-     * @param string $transactionDate
-     * @return \StructType\UnBlockRequest
+     * @param string|null $transactionDate
+     * @return UnBlockRequest
      */
     public function setTransactionDate(?string $transactionDate = null): self
     {
@@ -97,6 +105,7 @@ class UnBlockRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get version value
      * @return string|null
@@ -105,10 +114,11 @@ class UnBlockRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\UnBlockRequest
+     * @param string|null $version
+     * @return UnBlockRequest
      */
     public function setVersion(?string $version = null): self
     {

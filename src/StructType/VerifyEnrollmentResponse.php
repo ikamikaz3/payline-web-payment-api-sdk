@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the verifyEnrollment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class VerifyEnrollmentResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transient
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transient = null;
+
     /**
      * The actionUrl
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $actionUrl = null;
+
     /**
      * The actionMethod
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $actionMethod = null;
+
     /**
      * The pareqFieldName
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $pareqFieldName = null;
+
     /**
      * The pareqFieldValue
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $pareqFieldValue = null;
+
     /**
      * The termUrlName
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $termUrlName = null;
+
     /**
      * The termUrlValue
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $termUrlValue = null;
+
     /**
      * The mdFieldName
      * Meta information extracted from the WSDL
@@ -79,6 +88,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mdFieldName = null;
+
     /**
      * The mdFieldValue
      * Meta information extracted from the WSDL
@@ -86,6 +96,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mdFieldValue = null;
+
     /**
      * The mpiResult
      * Meta information extracted from the WSDL
@@ -93,13 +104,15 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mpiResult = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The virtualCvx
      * Meta information extracted from the WSDL
@@ -108,6 +121,7 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $virtualCvx = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -116,23 +130,42 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The sdkChallenge
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\SdkChallenge|null
+     * @var SdkChallenge|null
      */
-    protected ?\StructType\SdkChallenge $sdkChallenge = null;
+    protected ?SdkChallenge $sdkChallenge = null;
+
     /**
      * Constructor method for verifyEnrollmentResponse
+     * @param Result|null $result
+     * @param string|null $transient
+     * @param string|null $actionUrl
+     * @param string|null $actionMethod
+     * @param string|null $pareqFieldName
+     * @param string|null $pareqFieldValue
+     * @param string|null $termUrlName
+     * @param string|null $termUrlValue
+     * @param string|null $mdFieldName
+     * @param string|null $mdFieldValue
+     * @param string|null $mpiResult
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $virtualCvx
+     * @param string|null $token
+     * @param PrivateDataList|null $privateDataList
+     * @param SdkChallenge|null $sdkChallenge
      * @uses VerifyEnrollmentResponse::setResult()
      * @uses VerifyEnrollmentResponse::setTransient()
      * @uses VerifyEnrollmentResponse::setActionUrl()
@@ -149,24 +182,8 @@ class VerifyEnrollmentResponse extends AbstractStructBase
      * @uses VerifyEnrollmentResponse::setToken()
      * @uses VerifyEnrollmentResponse::setPrivateDataList()
      * @uses VerifyEnrollmentResponse::setSdkChallenge()
-     * @param \StructType\Result $result
-     * @param string $transient
-     * @param string $actionUrl
-     * @param string $actionMethod
-     * @param string $pareqFieldName
-     * @param string $pareqFieldValue
-     * @param string $termUrlName
-     * @param string $termUrlValue
-     * @param string $mdFieldName
-     * @param string $mdFieldValue
-     * @param string $mpiResult
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $virtualCvx
-     * @param string $token
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\SdkChallenge $sdkChallenge
      */
-    public function __construct(?\StructType\Result $result = null, ?string $transient = null, ?string $actionUrl = null, ?string $actionMethod = null, ?string $pareqFieldName = null, ?string $pareqFieldValue = null, ?string $termUrlName = null, ?string $termUrlValue = null, ?string $mdFieldName = null, ?string $mdFieldValue = null, ?string $mpiResult = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $virtualCvx = null, ?string $token = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\SdkChallenge $sdkChallenge = null)
+    public function __construct(?Result $result = null, ?string $transient = null, ?string $actionUrl = null, ?string $actionMethod = null, ?string $pareqFieldName = null, ?string $pareqFieldValue = null, ?string $termUrlName = null, ?string $termUrlValue = null, ?string $mdFieldName = null, ?string $mdFieldValue = null, ?string $mpiResult = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $virtualCvx = null, ?string $token = null, ?PrivateDataList $privateDataList = null, ?SdkChallenge $sdkChallenge = null)
     {
         $this
             ->setResult($result)
@@ -186,25 +203,28 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             ->setPrivateDataList($privateDataList)
             ->setSdkChallenge($sdkChallenge);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param Result|null $result
+     * @return VerifyEnrollmentResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get transient value
      * @return string|null
@@ -213,10 +233,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->transient;
     }
+
     /**
      * Set transient value
-     * @param string $transient
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $transient
+     * @return VerifyEnrollmentResponse
      */
     public function setTransient(?string $transient = null): self
     {
@@ -225,9 +246,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transient, true), gettype($transient)), __LINE__);
         }
         $this->transient = $transient;
-        
+
         return $this;
     }
+
     /**
      * Get actionUrl value
      * @return string|null
@@ -236,10 +258,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->actionUrl;
     }
+
     /**
      * Set actionUrl value
-     * @param string $actionUrl
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $actionUrl
+     * @return VerifyEnrollmentResponse
      */
     public function setActionUrl(?string $actionUrl = null): self
     {
@@ -248,9 +271,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($actionUrl, true), gettype($actionUrl)), __LINE__);
         }
         $this->actionUrl = $actionUrl;
-        
+
         return $this;
     }
+
     /**
      * Get actionMethod value
      * @return string|null
@@ -259,10 +283,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->actionMethod;
     }
+
     /**
      * Set actionMethod value
-     * @param string $actionMethod
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $actionMethod
+     * @return VerifyEnrollmentResponse
      */
     public function setActionMethod(?string $actionMethod = null): self
     {
@@ -271,9 +296,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($actionMethod, true), gettype($actionMethod)), __LINE__);
         }
         $this->actionMethod = $actionMethod;
-        
+
         return $this;
     }
+
     /**
      * Get pareqFieldName value
      * @return string|null
@@ -282,10 +308,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->pareqFieldName;
     }
+
     /**
      * Set pareqFieldName value
-     * @param string $pareqFieldName
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $pareqFieldName
+     * @return VerifyEnrollmentResponse
      */
     public function setPareqFieldName(?string $pareqFieldName = null): self
     {
@@ -294,9 +321,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pareqFieldName, true), gettype($pareqFieldName)), __LINE__);
         }
         $this->pareqFieldName = $pareqFieldName;
-        
+
         return $this;
     }
+
     /**
      * Get pareqFieldValue value
      * @return string|null
@@ -305,10 +333,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->pareqFieldValue;
     }
+
     /**
      * Set pareqFieldValue value
-     * @param string $pareqFieldValue
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $pareqFieldValue
+     * @return VerifyEnrollmentResponse
      */
     public function setPareqFieldValue(?string $pareqFieldValue = null): self
     {
@@ -317,9 +346,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pareqFieldValue, true), gettype($pareqFieldValue)), __LINE__);
         }
         $this->pareqFieldValue = $pareqFieldValue;
-        
+
         return $this;
     }
+
     /**
      * Get termUrlName value
      * @return string|null
@@ -328,10 +358,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->termUrlName;
     }
+
     /**
      * Set termUrlName value
-     * @param string $termUrlName
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $termUrlName
+     * @return VerifyEnrollmentResponse
      */
     public function setTermUrlName(?string $termUrlName = null): self
     {
@@ -340,9 +371,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($termUrlName, true), gettype($termUrlName)), __LINE__);
         }
         $this->termUrlName = $termUrlName;
-        
+
         return $this;
     }
+
     /**
      * Get termUrlValue value
      * @return string|null
@@ -351,10 +383,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->termUrlValue;
     }
+
     /**
      * Set termUrlValue value
-     * @param string $termUrlValue
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $termUrlValue
+     * @return VerifyEnrollmentResponse
      */
     public function setTermUrlValue(?string $termUrlValue = null): self
     {
@@ -363,9 +396,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($termUrlValue, true), gettype($termUrlValue)), __LINE__);
         }
         $this->termUrlValue = $termUrlValue;
-        
+
         return $this;
     }
+
     /**
      * Get mdFieldName value
      * @return string|null
@@ -374,10 +408,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->mdFieldName;
     }
+
     /**
      * Set mdFieldName value
-     * @param string $mdFieldName
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $mdFieldName
+     * @return VerifyEnrollmentResponse
      */
     public function setMdFieldName(?string $mdFieldName = null): self
     {
@@ -386,9 +421,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mdFieldName, true), gettype($mdFieldName)), __LINE__);
         }
         $this->mdFieldName = $mdFieldName;
-        
+
         return $this;
     }
+
     /**
      * Get mdFieldValue value
      * @return string|null
@@ -397,10 +433,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->mdFieldValue;
     }
+
     /**
      * Set mdFieldValue value
-     * @param string $mdFieldValue
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $mdFieldValue
+     * @return VerifyEnrollmentResponse
      */
     public function setMdFieldValue(?string $mdFieldValue = null): self
     {
@@ -409,9 +446,10 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mdFieldValue, true), gettype($mdFieldValue)), __LINE__);
         }
         $this->mdFieldValue = $mdFieldValue;
-        
+
         return $this;
     }
+
     /**
      * Get mpiResult value
      * @return string|null
@@ -420,10 +458,11 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->mpiResult;
     }
+
     /**
      * Set mpiResult value
-     * @param string $mpiResult
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $mpiResult
+     * @return VerifyEnrollmentResponse
      */
     public function setMpiResult(?string $mpiResult = null): self
     {
@@ -432,28 +471,31 @@ class VerifyEnrollmentResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpiResult, true), gettype($mpiResult)), __LINE__);
         }
         $this->mpiResult = $mpiResult;
-        
+
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return VerifyEnrollmentResponse
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
-        
+
         return $this;
     }
+
     /**
      * Get virtualCvx value
      * An additional test has been added (isset) before returning the property value as
@@ -465,12 +507,13 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->virtualCvx ?? null;
     }
+
     /**
      * Set virtualCvx value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $virtualCvx
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $virtualCvx
+     * @return VerifyEnrollmentResponse
      */
     public function setVirtualCvx(?string $virtualCvx = null): self
     {
@@ -478,14 +521,15 @@ class VerifyEnrollmentResponse extends AbstractStructBase
         if (!is_null($virtualCvx) && !is_string($virtualCvx)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($virtualCvx, true), gettype($virtualCvx)), __LINE__);
         }
-        if (is_null($virtualCvx) || (is_array($virtualCvx) && empty($virtualCvx))) {
+        if (is_null($virtualCvx)) {
             unset($this->virtualCvx);
         } else {
             $this->virtualCvx = $virtualCvx;
         }
-        
+
         return $this;
     }
+
     /**
      * Get token value
      * An additional test has been added (isset) before returning the property value as
@@ -497,12 +541,13 @@ class VerifyEnrollmentResponse extends AbstractStructBase
     {
         return $this->token ?? null;
     }
+
     /**
      * Set token value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $token
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param string|null $token
+     * @return VerifyEnrollmentResponse
      */
     public function setToken(?string $token = null): self
     {
@@ -510,59 +555,63 @@ class VerifyEnrollmentResponse extends AbstractStructBase
         if (!is_null($token) && !is_string($token)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
-        if (is_null($token) || (is_array($token) && empty($token))) {
+        if (is_null($token)) {
             unset($this->token);
         } else {
             $this->token = $token;
         }
-        
+
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return VerifyEnrollmentResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
+
     /**
      * Get sdkChallenge value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\SdkChallenge|null
+     * @return SdkChallenge|null
      */
-    public function getSdkChallenge(): ?\StructType\SdkChallenge
+    public function getSdkChallenge(): ?SdkChallenge
     {
         return $this->sdkChallenge ?? null;
     }
+
     /**
      * Set sdkChallenge value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\SdkChallenge $sdkChallenge
-     * @return \StructType\VerifyEnrollmentResponse
+     * @param SdkChallenge|null $sdkChallenge
+     * @return VerifyEnrollmentResponse
      */
-    public function setSdkChallenge(?\StructType\SdkChallenge $sdkChallenge = null): self
+    public function setSdkChallenge(?SdkChallenge $sdkChallenge = null): self
     {
-        if (is_null($sdkChallenge) || (is_array($sdkChallenge) && empty($sdkChallenge))) {
+        if (is_null($sdkChallenge)) {
             unset($this->sdkChallenge);
         } else {
             $this->sdkChallenge = $sdkChallenge;
         }
-        
+
         return $this;
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the isRegistered method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class IsRegisteredRequest extends AbstractStructBase
 {
     /**
@@ -23,35 +24,40 @@ class IsRegisteredRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -59,22 +65,23 @@ class IsRegisteredRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * Constructor method for isRegisteredRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Order|null $order
+     * @param PrivateDataList|null $privateDataList
+     * @param Buyer|null $buyer
+     * @param string|null $miscData
      * @uses IsRegisteredRequest::setVersion()
      * @uses IsRegisteredRequest::setPayment()
      * @uses IsRegisteredRequest::setOrder()
      * @uses IsRegisteredRequest::setPrivateDataList()
      * @uses IsRegisteredRequest::setBuyer()
      * @uses IsRegisteredRequest::setMiscData()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Order $order
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\Buyer $buyer
-     * @param string $miscData
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Order $order = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\Buyer $buyer = null, ?string $miscData = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Order $order = null, ?PrivateDataList $privateDataList = null, ?Buyer $buyer = null, ?string $miscData = null)
     {
         $this
             ->setVersion($version)
@@ -84,6 +91,7 @@ class IsRegisteredRequest extends AbstractStructBase
             ->setBuyer($buyer)
             ->setMiscData($miscData);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -92,10 +100,11 @@ class IsRegisteredRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\IsRegisteredRequest
+     * @param string|null $version
+     * @return IsRegisteredRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -104,94 +113,103 @@ class IsRegisteredRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\IsRegisteredRequest
+     * @param Payment|null $payment
+     * @return IsRegisteredRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\IsRegisteredRequest
+     * @param Order|null $order
+     * @return IsRegisteredRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
-        
+
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\IsRegisteredRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return IsRegisteredRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
-        
+
         return $this;
     }
+
     /**
      * Get buyer value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer ?? null;
     }
+
     /**
      * Set buyer value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\IsRegisteredRequest
+     * @param Buyer|null $buyer
+     * @return IsRegisteredRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
-        if (is_null($buyer) || (is_array($buyer) && empty($buyer))) {
+        if (is_null($buyer)) {
             unset($this->buyer);
         } else {
             $this->buyer = $buyer;
         }
-        
+
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -200,10 +218,11 @@ class IsRegisteredRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\IsRegisteredRequest
+     * @param string|null $miscData
+     * @return IsRegisteredRequest
      */
     public function setMiscData(?string $miscData = null): self
     {
@@ -212,7 +231,7 @@ class IsRegisteredRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($miscData, true), gettype($miscData)), __LINE__);
         }
         $this->miscData = $miscData;
-        
+
         return $this;
     }
 }

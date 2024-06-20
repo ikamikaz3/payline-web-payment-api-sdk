@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: An array of statusHistory
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class StatusHistoryList extends AbstractStructBase
 {
     /**
@@ -21,32 +22,35 @@ class StatusHistoryList extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 100
      * - minOccurs: 0
-     * @var \StructType\StatusHistory[]
+     * @var StatusHistory[]
      */
     protected ?array $statusHistory = null;
+
     /**
      * Constructor method for statusHistoryList
+     * @param StatusHistory[] $statusHistory
      * @uses StatusHistoryList::setStatusHistory()
-     * @param \StructType\StatusHistory[] $statusHistory
      */
     public function __construct(?array $statusHistory = null)
     {
         $this
             ->setStatusHistory($statusHistory);
     }
+
     /**
      * Get statusHistory value
-     * @return \StructType\StatusHistory[]
+     * @return array|null
      */
     public function getStatusHistory(): ?array
     {
         return $this->statusHistory;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setStatusHistory method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStatusHistory method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateStatusHistoryForArrayConstraintFromSetStatusHistory(?array $values = []): string
@@ -58,22 +62,23 @@ class StatusHistoryList extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $statusHistoryListStatusHistoryItem) {
             // validation for constraint: itemType
-            if (!$statusHistoryListStatusHistoryItem instanceof \StructType\StatusHistory) {
+            if (!$statusHistoryListStatusHistoryItem instanceof StatusHistory) {
                 $invalidValues[] = is_object($statusHistoryListStatusHistoryItem) ? get_class($statusHistoryListStatusHistoryItem) : sprintf('%s(%s)', gettype($statusHistoryListStatusHistoryItem), var_export($statusHistoryListStatusHistoryItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The statusHistory property can only contain items of type \StructType\StatusHistory, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The statusHistory property can only contain items of type StatusHistory, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set statusHistory value
+     * @param StatusHistory[] $statusHistory
+     * @return StatusHistoryList
      * @throws InvalidArgumentException
-     * @param \StructType\StatusHistory[] $statusHistory
-     * @return \StructType\StatusHistoryList
      */
     public function setStatusHistory(?array $statusHistory = null): self
     {
@@ -86,27 +91,25 @@ class StatusHistoryList extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 100', count($statusHistory)), __LINE__);
         }
         $this->statusHistory = $statusHistory;
-        
+
         return $this;
     }
+
     /**
      * Add item to statusHistory value
+     * @param StatusHistory $item
+     * @return StatusHistoryList
      * @throws InvalidArgumentException
-     * @param \StructType\StatusHistory $item
-     * @return \StructType\StatusHistoryList
      */
-    public function addToStatusHistory(\StructType\StatusHistory $item): self
+    public function addToStatusHistory(StatusHistory $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\StatusHistory) {
-            throw new InvalidArgumentException(sprintf('The statusHistory property can only contain items of type \StructType\StatusHistory, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         // validation for constraint: maxOccurs(100)
         if (is_array($this->statusHistory) && count($this->statusHistory) >= 100) {
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 100', count($this->statusHistory)), __LINE__);
         }
         $this->statusHistory[] = $item;
-        
+
         return $this;
     }
 }

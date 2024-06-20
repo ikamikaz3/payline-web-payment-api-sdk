@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about SDK 3DS Challenge.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class SdkChallenge extends AbstractStructBase
 {
     /**
@@ -21,68 +22,94 @@ class SdkChallenge extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardType = null;
+
     /**
      * The threeDSServerTransID
      * @var string|null
      */
     protected ?string $threeDSServerTransID = null;
+
     /**
      * The threeDSVersion
      * @var string|null
      */
     protected ?string $threeDSVersion = null;
+
     /**
      * The authenticationType
      * @var string|null
      */
     protected ?string $authenticationType = null;
+
     /**
      * The transStatus
      * @var string|null
      */
     protected ?string $transStatus = null;
+
     /**
      * The sdkTransID
      * @var string|null
      */
     protected ?string $sdkTransID = null;
+
     /**
      * The dsTransID
      * @var string|null
      */
     protected ?string $dsTransID = null;
+
     /**
      * The acsTransID
      * @var string|null
      */
     protected ?string $acsTransID = null;
+
     /**
      * The acsRenderingType
      * @var string|null
      */
     protected ?string $acsRenderingType = null;
+
     /**
      * The acsReferenceNumber
      * @var string|null
      */
     protected ?string $acsReferenceNumber = null;
+
     /**
      * The acsSignedContent
      * @var string|null
      */
     protected ?string $acsSignedContent = null;
+
     /**
      * The acsOperatorID
      * @var string|null
      */
     protected ?string $acsOperatorID = null;
+
     /**
      * The acsChallengeMandated
      * @var string|null
      */
     protected ?string $acsChallengeMandated = null;
+
     /**
      * Constructor method for sdkChallenge
+     * @param string|null $cardType
+     * @param string|null $threeDSServerTransID
+     * @param string|null $threeDSVersion
+     * @param string|null $authenticationType
+     * @param string|null $transStatus
+     * @param string|null $sdkTransID
+     * @param string|null $dsTransID
+     * @param string|null $acsTransID
+     * @param string|null $acsRenderingType
+     * @param string|null $acsReferenceNumber
+     * @param string|null $acsSignedContent
+     * @param string|null $acsOperatorID
+     * @param string|null $acsChallengeMandated
      * @uses SdkChallenge::setCardType()
      * @uses SdkChallenge::setThreeDSServerTransID()
      * @uses SdkChallenge::setThreeDSVersion()
@@ -96,19 +123,6 @@ class SdkChallenge extends AbstractStructBase
      * @uses SdkChallenge::setAcsSignedContent()
      * @uses SdkChallenge::setAcsOperatorID()
      * @uses SdkChallenge::setAcsChallengeMandated()
-     * @param string $cardType
-     * @param string $threeDSServerTransID
-     * @param string $threeDSVersion
-     * @param string $authenticationType
-     * @param string $transStatus
-     * @param string $sdkTransID
-     * @param string $dsTransID
-     * @param string $acsTransID
-     * @param string $acsRenderingType
-     * @param string $acsReferenceNumber
-     * @param string $acsSignedContent
-     * @param string $acsOperatorID
-     * @param string $acsChallengeMandated
      */
     public function __construct(?string $cardType = null, ?string $threeDSServerTransID = null, ?string $threeDSVersion = null, ?string $authenticationType = null, ?string $transStatus = null, ?string $sdkTransID = null, ?string $dsTransID = null, ?string $acsTransID = null, ?string $acsRenderingType = null, ?string $acsReferenceNumber = null, ?string $acsSignedContent = null, ?string $acsOperatorID = null, ?string $acsChallengeMandated = null)
     {
@@ -127,6 +141,7 @@ class SdkChallenge extends AbstractStructBase
             ->setAcsOperatorID($acsOperatorID)
             ->setAcsChallengeMandated($acsChallengeMandated);
     }
+
     /**
      * Get cardType value
      * @return string|null
@@ -135,10 +150,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->cardType;
     }
+
     /**
      * Set cardType value
-     * @param string $cardType
-     * @return \StructType\SdkChallenge
+     * @param string|null $cardType
+     * @return SdkChallenge
      */
     public function setCardType(?string $cardType = null): self
     {
@@ -150,6 +166,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSServerTransID value
      * @return string|null
@@ -158,10 +175,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->threeDSServerTransID;
     }
+
     /**
      * Set threeDSServerTransID value
-     * @param string $threeDSServerTransID
-     * @return \StructType\SdkChallenge
+     * @param string|null $threeDSServerTransID
+     * @return SdkChallenge
      */
     public function setThreeDSServerTransID(?string $threeDSServerTransID = null): self
     {
@@ -173,6 +191,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSVersion value
      * @return string|null
@@ -181,10 +200,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->threeDSVersion;
     }
+
     /**
      * Set threeDSVersion value
-     * @param string $threeDSVersion
-     * @return \StructType\SdkChallenge
+     * @param string|null $threeDSVersion
+     * @return SdkChallenge
      */
     public function setThreeDSVersion(?string $threeDSVersion = null): self
     {
@@ -196,6 +216,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authenticationType value
      * @return string|null
@@ -204,10 +225,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->authenticationType;
     }
+
     /**
      * Set authenticationType value
-     * @param string $authenticationType
-     * @return \StructType\SdkChallenge
+     * @param string|null $authenticationType
+     * @return SdkChallenge
      */
     public function setAuthenticationType(?string $authenticationType = null): self
     {
@@ -219,6 +241,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transStatus value
      * @return string|null
@@ -227,10 +250,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->transStatus;
     }
+
     /**
      * Set transStatus value
-     * @param string $transStatus
-     * @return \StructType\SdkChallenge
+     * @param string|null $transStatus
+     * @return SdkChallenge
      */
     public function setTransStatus(?string $transStatus = null): self
     {
@@ -242,6 +266,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get sdkTransID value
      * @return string|null
@@ -250,10 +275,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->sdkTransID;
     }
+
     /**
      * Set sdkTransID value
-     * @param string $sdkTransID
-     * @return \StructType\SdkChallenge
+     * @param string|null $sdkTransID
+     * @return SdkChallenge
      */
     public function setSdkTransID(?string $sdkTransID = null): self
     {
@@ -265,6 +291,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get dsTransID value
      * @return string|null
@@ -273,10 +300,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->dsTransID;
     }
+
     /**
      * Set dsTransID value
-     * @param string $dsTransID
-     * @return \StructType\SdkChallenge
+     * @param string|null $dsTransID
+     * @return SdkChallenge
      */
     public function setDsTransID(?string $dsTransID = null): self
     {
@@ -288,6 +316,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsTransID value
      * @return string|null
@@ -296,10 +325,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsTransID;
     }
+
     /**
      * Set acsTransID value
-     * @param string $acsTransID
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsTransID
+     * @return SdkChallenge
      */
     public function setAcsTransID(?string $acsTransID = null): self
     {
@@ -311,6 +341,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsRenderingType value
      * @return string|null
@@ -319,10 +350,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsRenderingType;
     }
+
     /**
      * Set acsRenderingType value
-     * @param string $acsRenderingType
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsRenderingType
+     * @return SdkChallenge
      */
     public function setAcsRenderingType(?string $acsRenderingType = null): self
     {
@@ -334,6 +366,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsReferenceNumber value
      * @return string|null
@@ -342,10 +375,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsReferenceNumber;
     }
+
     /**
      * Set acsReferenceNumber value
-     * @param string $acsReferenceNumber
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsReferenceNumber
+     * @return SdkChallenge
      */
     public function setAcsReferenceNumber(?string $acsReferenceNumber = null): self
     {
@@ -357,6 +391,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsSignedContent value
      * @return string|null
@@ -365,10 +400,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsSignedContent;
     }
+
     /**
      * Set acsSignedContent value
-     * @param string $acsSignedContent
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsSignedContent
+     * @return SdkChallenge
      */
     public function setAcsSignedContent(?string $acsSignedContent = null): self
     {
@@ -380,6 +416,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsOperatorID value
      * @return string|null
@@ -388,10 +425,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsOperatorID;
     }
+
     /**
      * Set acsOperatorID value
-     * @param string $acsOperatorID
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsOperatorID
+     * @return SdkChallenge
      */
     public function setAcsOperatorID(?string $acsOperatorID = null): self
     {
@@ -403,6 +441,7 @@ class SdkChallenge extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get acsChallengeMandated value
      * @return string|null
@@ -411,10 +450,11 @@ class SdkChallenge extends AbstractStructBase
     {
         return $this->acsChallengeMandated;
     }
+
     /**
      * Set acsChallengeMandated value
-     * @param string $acsChallengeMandated
-     * @return \StructType\SdkChallenge
+     * @param string|null $acsChallengeMandated
+     * @return SdkChallenge
      */
     public function setAcsChallengeMandated(?string $acsChallengeMandated = null): self
     {

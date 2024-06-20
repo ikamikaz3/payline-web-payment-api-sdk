@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about Reattempt.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Reattempt extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Reattempt extends AbstractStructBase
      * @var string|null
      */
     protected ?string $indicator = null;
+
     /**
      * The frozenPeriod
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Reattempt extends AbstractStructBase
      * @var string|null
      */
     protected ?string $frozenPeriod = null;
+
     /**
      * The allowedDuration
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Reattempt extends AbstractStructBase
      * @var string|null
      */
     protected ?string $allowedDuration = null;
+
     /**
      * The maxAllowed
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class Reattempt extends AbstractStructBase
      * @var string|null
      */
     protected ?string $maxAllowed = null;
+
     /**
      * Constructor method for reattempt
+     * @param string|null $indicator
+     * @param string|null $frozenPeriod
+     * @param string|null $allowedDuration
+     * @param string|null $maxAllowed
      * @uses Reattempt::setIndicator()
      * @uses Reattempt::setFrozenPeriod()
      * @uses Reattempt::setAllowedDuration()
      * @uses Reattempt::setMaxAllowed()
-     * @param string $indicator
-     * @param string $frozenPeriod
-     * @param string $allowedDuration
-     * @param string $maxAllowed
      */
     public function __construct(?string $indicator = null, ?string $frozenPeriod = null, ?string $allowedDuration = null, ?string $maxAllowed = null)
     {
@@ -63,6 +68,7 @@ class Reattempt extends AbstractStructBase
             ->setAllowedDuration($allowedDuration)
             ->setMaxAllowed($maxAllowed);
     }
+
     /**
      * Get indicator value
      * @return string|null
@@ -71,10 +77,11 @@ class Reattempt extends AbstractStructBase
     {
         return $this->indicator;
     }
+
     /**
      * Set indicator value
-     * @param string $indicator
-     * @return \StructType\Reattempt
+     * @param string|null $indicator
+     * @return Reattempt
      */
     public function setIndicator(?string $indicator = null): self
     {
@@ -86,6 +93,7 @@ class Reattempt extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get frozenPeriod value
      * @return string|null
@@ -94,10 +102,11 @@ class Reattempt extends AbstractStructBase
     {
         return $this->frozenPeriod;
     }
+
     /**
      * Set frozenPeriod value
-     * @param string $frozenPeriod
-     * @return \StructType\Reattempt
+     * @param string|null $frozenPeriod
+     * @return Reattempt
      */
     public function setFrozenPeriod(?string $frozenPeriod = null): self
     {
@@ -109,6 +118,7 @@ class Reattempt extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get allowedDuration value
      * @return string|null
@@ -117,10 +127,11 @@ class Reattempt extends AbstractStructBase
     {
         return $this->allowedDuration;
     }
+
     /**
      * Set allowedDuration value
-     * @param string $allowedDuration
-     * @return \StructType\Reattempt
+     * @param string|null $allowedDuration
+     * @return Reattempt
      */
     public function setAllowedDuration(?string $allowedDuration = null): self
     {
@@ -132,6 +143,7 @@ class Reattempt extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get maxAllowed value
      * @return string|null
@@ -140,10 +152,11 @@ class Reattempt extends AbstractStructBase
     {
         return $this->maxAllowed;
     }
+
     /**
      * Set maxAllowed value
-     * @param string $maxAllowed
-     * @return \StructType\Reattempt
+     * @param string|null $maxAllowed
+     * @return Reattempt
      */
     public function setMaxAllowed(?string $maxAllowed = null): self
     {

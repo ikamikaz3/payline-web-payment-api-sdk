@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,49 +14,53 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the getCards method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetCardsResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The cardsList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\CardsList|null
+     * @var CardsList|null
      */
-    protected ?\StructType\CardsList $cardsList = null;
+    protected ?CardsList $cardsList = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * Constructor method for getCardsResponse
+     * @param Result|null $result
+     * @param CardsList|null $cardsList
+     * @param Owner|null $owner
+     * @param PrivateDataList|null $privateDataList
      * @uses GetCardsResponse::setResult()
      * @uses GetCardsResponse::setCardsList()
      * @uses GetCardsResponse::setOwner()
      * @uses GetCardsResponse::setPrivateDataList()
-     * @param \StructType\Result $result
-     * @param \StructType\CardsList $cardsList
-     * @param \StructType\Owner $owner
-     * @param \StructType\PrivateDataList $privateDataList
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\CardsList $cardsList = null, ?\StructType\Owner $owner = null, ?\StructType\PrivateDataList $privateDataList = null)
+    public function __construct(?Result $result = null, ?CardsList $cardsList = null, ?Owner $owner = null, ?PrivateDataList $privateDataList = null)
     {
         $this
             ->setResult($result)
@@ -63,77 +68,85 @@ class GetCardsResponse extends AbstractStructBase
             ->setOwner($owner)
             ->setPrivateDataList($privateDataList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetCardsResponse
+     * @param Result|null $result
+     * @return GetCardsResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get cardsList value
-     * @return \StructType\CardsList|null
+     * @return CardsList|null
      */
-    public function getCardsList(): ?\StructType\CardsList
+    public function getCardsList(): ?CardsList
     {
         return $this->cardsList;
     }
+
     /**
      * Set cardsList value
-     * @param \StructType\CardsList $cardsList
-     * @return \StructType\GetCardsResponse
+     * @param CardsList|null $cardsList
+     * @return GetCardsResponse
      */
-    public function setCardsList(?\StructType\CardsList $cardsList = null): self
+    public function setCardsList(?CardsList $cardsList = null): self
     {
         $this->cardsList = $cardsList;
 
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\GetCardsResponse
+     * @param Owner|null $owner
+     * @return GetCardsResponse
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\GetCardsResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return GetCardsResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 

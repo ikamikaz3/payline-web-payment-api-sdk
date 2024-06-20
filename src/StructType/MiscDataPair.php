@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains map data formatted as key/value
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class MiscDataPair extends AbstractStructBase
 {
     /**
@@ -21,6 +22,7 @@ class MiscDataPair extends AbstractStructBase
      * @var string|null
      */
     protected ?string $key = null;
+
     /**
      * The value
      * Meta information extracted from the WSDL
@@ -28,12 +30,13 @@ class MiscDataPair extends AbstractStructBase
      * @var string|null
      */
     protected ?string $value = null;
+
     /**
      * Constructor method for miscDataPair
+     * @param string|null $key
+     * @param string|null $value
      * @uses MiscDataPair::setKey()
      * @uses MiscDataPair::setValue()
-     * @param string $key
-     * @param string $value
      */
     public function __construct(?string $key = null, ?string $value = null)
     {
@@ -41,6 +44,7 @@ class MiscDataPair extends AbstractStructBase
             ->setKey($key)
             ->setValue($value);
     }
+
     /**
      * Get key value
      * @return string|null
@@ -49,10 +53,11 @@ class MiscDataPair extends AbstractStructBase
     {
         return $this->key;
     }
+
     /**
      * Set key value
-     * @param string $key
-     * @return \StructType\MiscDataPair
+     * @param string|null $key
+     * @return MiscDataPair
      */
     public function setKey(?string $key = null): self
     {
@@ -64,6 +69,7 @@ class MiscDataPair extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get value value
      * @return string|null
@@ -72,10 +78,11 @@ class MiscDataPair extends AbstractStructBase
     {
         return $this->value;
     }
+
     /**
      * Set value value
-     * @param string $value
-     * @return \StructType\MiscDataPair
+     * @param string|null $value
+     * @return MiscDataPair
      */
     public function setValue(?string $value = null): self
     {

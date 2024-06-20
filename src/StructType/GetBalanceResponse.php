@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,23 +14,25 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the getBalance method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetBalanceResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The balance
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Balance|null
+     * @var Balance|null
      */
-    protected ?\StructType\Balance $balance = null;
+    protected ?Balance $balance = null;
+
     /**
      * The crdproduct
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class GetBalanceResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $crdproduct = null;
+
     /**
      * The crdprogram
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class GetBalanceResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $crdprogram = null;
+
     /**
      * The crddesign
      * Meta information extracted from the WSDL
@@ -51,20 +56,21 @@ class GetBalanceResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $crddesign = null;
+
     /**
      * Constructor method for getBalanceResponse
+     * @param Result|null $result
+     * @param Balance|null $balance
+     * @param string|null $crdproduct
+     * @param string|null $crdprogram
+     * @param string|null $crddesign
      * @uses GetBalanceResponse::setResult()
      * @uses GetBalanceResponse::setBalance()
      * @uses GetBalanceResponse::setCrdproduct()
      * @uses GetBalanceResponse::setCrdprogram()
      * @uses GetBalanceResponse::setCrddesign()
-     * @param \StructType\Result $result
-     * @param \StructType\Balance $balance
-     * @param string $crdproduct
-     * @param string $crdprogram
-     * @param string $crddesign
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Balance $balance = null, ?string $crdproduct = null, ?string $crdprogram = null, ?string $crddesign = null)
+    public function __construct(?Result $result = null, ?Balance $balance = null, ?string $crdproduct = null, ?string $crdprogram = null, ?string $crddesign = null)
     {
         $this
             ->setResult($result)
@@ -73,44 +79,49 @@ class GetBalanceResponse extends AbstractStructBase
             ->setCrdprogram($crdprogram)
             ->setCrddesign($crddesign);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetBalanceResponse
+     * @param Result|null $result
+     * @return GetBalanceResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get balance value
-     * @return \StructType\Balance|null
+     * @return Balance|null
      */
-    public function getBalance(): ?\StructType\Balance
+    public function getBalance(): ?Balance
     {
         return $this->balance;
     }
+
     /**
      * Set balance value
-     * @param \StructType\Balance $balance
-     * @return \StructType\GetBalanceResponse
+     * @param Balance|null $balance
+     * @return GetBalanceResponse
      */
-    public function setBalance(?\StructType\Balance $balance = null): self
+    public function setBalance(?Balance $balance = null): self
     {
         $this->balance = $balance;
 
         return $this;
     }
+
     /**
      * Get crdproduct value
      * @return string|null
@@ -119,10 +130,11 @@ class GetBalanceResponse extends AbstractStructBase
     {
         return $this->crdproduct;
     }
+
     /**
      * Set crdproduct value
-     * @param string $crdproduct
-     * @return \StructType\GetBalanceResponse
+     * @param string|null $crdproduct
+     * @return GetBalanceResponse
      */
     public function setCrdproduct(?string $crdproduct = null): self
     {
@@ -134,6 +146,7 @@ class GetBalanceResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get crdprogram value
      * @return string|null
@@ -142,10 +155,11 @@ class GetBalanceResponse extends AbstractStructBase
     {
         return $this->crdprogram;
     }
+
     /**
      * Set crdprogram value
-     * @param string $crdprogram
-     * @return \StructType\GetBalanceResponse
+     * @param string|null $crdprogram
+     * @return GetBalanceResponse
      */
     public function setCrdprogram(?string $crdprogram = null): self
     {
@@ -157,6 +171,7 @@ class GetBalanceResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get crddesign value
      * @return string|null
@@ -165,10 +180,11 @@ class GetBalanceResponse extends AbstractStructBase
     {
         return $this->crddesign;
     }
+
     /**
      * Set crddesign value
-     * @param string $crddesign
-     * @return \StructType\GetBalanceResponse
+     * @param string|null $crddesign
+     * @return GetBalanceResponse
      */
     public function setCrddesign(?string $crddesign = null): self
     {

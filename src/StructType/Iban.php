@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains IBAN information
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Iban extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Iban extends AbstractStructBase
      * @var string|null
      */
     protected ?string $CountryCode = null;
+
     /**
      * The checkKey
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Iban extends AbstractStructBase
      * @var string|null
      */
     protected ?string $checkKey = null;
+
     /**
      * The BBAN
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Iban extends AbstractStructBase
      * @var string|null
      */
     protected ?string $BBAN = null;
+
     /**
      * The BIC
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class Iban extends AbstractStructBase
      * @var string|null
      */
     protected ?string $BIC = null;
+
     /**
      * Constructor method for iban
+     * @param string|null $countryCode
+     * @param string|null $checkKey
+     * @param string|null $bBAN
+     * @param string|null $bIC
      * @uses Iban::setCountryCode()
      * @uses Iban::setCheckKey()
      * @uses Iban::setBBAN()
      * @uses Iban::setBIC()
-     * @param string $countryCode
-     * @param string $checkKey
-     * @param string $bBAN
-     * @param string $bIC
      */
     public function __construct(?string $countryCode = null, ?string $checkKey = null, ?string $bBAN = null, ?string $bIC = null)
     {
@@ -63,6 +68,7 @@ class Iban extends AbstractStructBase
             ->setBBAN($bBAN)
             ->setBIC($bIC);
     }
+
     /**
      * Get CountryCode value
      * @return string|null
@@ -71,10 +77,11 @@ class Iban extends AbstractStructBase
     {
         return $this->CountryCode;
     }
+
     /**
      * Set CountryCode value
-     * @param string $countryCode
-     * @return \StructType\Iban
+     * @param string|null $countryCode
+     * @return Iban
      */
     public function setCountryCode(?string $countryCode = null): self
     {
@@ -86,6 +93,7 @@ class Iban extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get checkKey value
      * @return string|null
@@ -94,10 +102,11 @@ class Iban extends AbstractStructBase
     {
         return $this->checkKey;
     }
+
     /**
      * Set checkKey value
-     * @param string $checkKey
-     * @return \StructType\Iban
+     * @param string|null $checkKey
+     * @return Iban
      */
     public function setCheckKey(?string $checkKey = null): self
     {
@@ -109,6 +118,7 @@ class Iban extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get BBAN value
      * @return string|null
@@ -117,10 +127,11 @@ class Iban extends AbstractStructBase
     {
         return $this->BBAN;
     }
+
     /**
      * Set BBAN value
-     * @param string $bBAN
-     * @return \StructType\Iban
+     * @param string|null $bBAN
+     * @return Iban
      */
     public function setBBAN(?string $bBAN = null): self
     {
@@ -132,6 +143,7 @@ class Iban extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get BIC value
      * @return string|null
@@ -140,10 +152,11 @@ class Iban extends AbstractStructBase
     {
         return $this->BIC;
     }
+
     /**
      * Set BIC value
-     * @param string $bIC
-     * @return \StructType\Iban
+     * @param string|null $bIC
+     * @return Iban
      */
     public function setBIC(?string $bIC = null): self
     {

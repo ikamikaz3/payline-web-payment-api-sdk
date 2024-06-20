@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about Browser.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Browser extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $acceptHeader = null;
+
     /**
      * The javaEnabled
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $javaEnabled = null;
+
     /**
      * The javascriptEnabled
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $javascriptEnabled = null;
+
     /**
      * The language
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $language = null;
+
     /**
      * The colorDepth
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $colorDepth = null;
+
     /**
      * The screenHeight
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $screenHeight = null;
+
     /**
      * The screenWidth
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $screenWidth = null;
+
     /**
      * The timeZoneOffset
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $timeZoneOffset = null;
+
     /**
      * The userAgent
      * Meta information extracted from the WSDL
@@ -79,8 +88,18 @@ class Browser extends AbstractStructBase
      * @var string|null
      */
     protected ?string $userAgent = null;
+
     /**
      * Constructor method for browser
+     * @param string|null $acceptHeader
+     * @param string|null $javaEnabled
+     * @param string|null $javascriptEnabled
+     * @param string|null $language
+     * @param string|null $colorDepth
+     * @param string|null $screenHeight
+     * @param string|null $screenWidth
+     * @param string|null $timeZoneOffset
+     * @param string|null $userAgent
      * @uses Browser::setAcceptHeader()
      * @uses Browser::setJavaEnabled()
      * @uses Browser::setJavascriptEnabled()
@@ -90,15 +109,6 @@ class Browser extends AbstractStructBase
      * @uses Browser::setScreenWidth()
      * @uses Browser::setTimeZoneOffset()
      * @uses Browser::setUserAgent()
-     * @param string $acceptHeader
-     * @param string $javaEnabled
-     * @param string $javascriptEnabled
-     * @param string $language
-     * @param string $colorDepth
-     * @param string $screenHeight
-     * @param string $screenWidth
-     * @param string $timeZoneOffset
-     * @param string $userAgent
      */
     public function __construct(?string $acceptHeader = null, ?string $javaEnabled = null, ?string $javascriptEnabled = null, ?string $language = null, ?string $colorDepth = null, ?string $screenHeight = null, ?string $screenWidth = null, ?string $timeZoneOffset = null, ?string $userAgent = null)
     {
@@ -113,6 +123,7 @@ class Browser extends AbstractStructBase
             ->setTimeZoneOffset($timeZoneOffset)
             ->setUserAgent($userAgent);
     }
+
     /**
      * Get acceptHeader value
      * @return string|null
@@ -121,10 +132,11 @@ class Browser extends AbstractStructBase
     {
         return $this->acceptHeader;
     }
+
     /**
      * Set acceptHeader value
-     * @param string $acceptHeader
-     * @return \StructType\Browser
+     * @param string|null $acceptHeader
+     * @return Browser
      */
     public function setAcceptHeader(?string $acceptHeader = null): self
     {
@@ -136,6 +148,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get javaEnabled value
      * @return string|null
@@ -144,10 +157,11 @@ class Browser extends AbstractStructBase
     {
         return $this->javaEnabled;
     }
+
     /**
      * Set javaEnabled value
-     * @param string $javaEnabled
-     * @return \StructType\Browser
+     * @param string|null $javaEnabled
+     * @return Browser
      */
     public function setJavaEnabled(?string $javaEnabled = null): self
     {
@@ -159,6 +173,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get javascriptEnabled value
      * @return string|null
@@ -167,10 +182,11 @@ class Browser extends AbstractStructBase
     {
         return $this->javascriptEnabled;
     }
+
     /**
      * Set javascriptEnabled value
-     * @param string $javascriptEnabled
-     * @return \StructType\Browser
+     * @param string|null $javascriptEnabled
+     * @return Browser
      */
     public function setJavascriptEnabled(?string $javascriptEnabled = null): self
     {
@@ -182,6 +198,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get language value
      * @return string|null
@@ -190,10 +207,11 @@ class Browser extends AbstractStructBase
     {
         return $this->language;
     }
+
     /**
      * Set language value
-     * @param string $language
-     * @return \StructType\Browser
+     * @param string|null $language
+     * @return Browser
      */
     public function setLanguage(?string $language = null): self
     {
@@ -205,6 +223,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get colorDepth value
      * @return string|null
@@ -213,10 +232,11 @@ class Browser extends AbstractStructBase
     {
         return $this->colorDepth;
     }
+
     /**
      * Set colorDepth value
-     * @param string $colorDepth
-     * @return \StructType\Browser
+     * @param string|null $colorDepth
+     * @return Browser
      */
     public function setColorDepth(?string $colorDepth = null): self
     {
@@ -228,6 +248,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get screenHeight value
      * @return string|null
@@ -236,10 +257,11 @@ class Browser extends AbstractStructBase
     {
         return $this->screenHeight;
     }
+
     /**
      * Set screenHeight value
-     * @param string $screenHeight
-     * @return \StructType\Browser
+     * @param string|null $screenHeight
+     * @return Browser
      */
     public function setScreenHeight(?string $screenHeight = null): self
     {
@@ -251,6 +273,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get screenWidth value
      * @return string|null
@@ -259,10 +282,11 @@ class Browser extends AbstractStructBase
     {
         return $this->screenWidth;
     }
+
     /**
      * Set screenWidth value
-     * @param string $screenWidth
-     * @return \StructType\Browser
+     * @param string|null $screenWidth
+     * @return Browser
      */
     public function setScreenWidth(?string $screenWidth = null): self
     {
@@ -274,6 +298,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get timeZoneOffset value
      * @return string|null
@@ -282,10 +307,11 @@ class Browser extends AbstractStructBase
     {
         return $this->timeZoneOffset;
     }
+
     /**
      * Set timeZoneOffset value
-     * @param string $timeZoneOffset
-     * @return \StructType\Browser
+     * @param string|null $timeZoneOffset
+     * @return Browser
      */
     public function setTimeZoneOffset(?string $timeZoneOffset = null): self
     {
@@ -297,6 +323,7 @@ class Browser extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get userAgent value
      * @return string|null
@@ -305,10 +332,11 @@ class Browser extends AbstractStructBase
     {
         return $this->userAgent;
     }
+
     /**
      * Set userAgent value
-     * @param string $userAgent
-     * @return \StructType\Browser
+     * @param string|null $userAgent
+     * @return Browser
      */
     public function setUserAgent(?string $userAgent = null): self
     {

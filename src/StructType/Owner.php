@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the owner
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Owner extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Owner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $lastName = null;
+
     /**
      * The firstName
      * Meta information extracted from the WSDL
@@ -30,13 +32,15 @@ class Owner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The billingAddress
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\AddressOwner|null
+     * @var AddressOwner|null
      */
-    protected ?\StructType\AddressOwner $billingAddress = null;
+    protected ?AddressOwner $billingAddress = null;
+
     /**
      * The issueCardDate
      * Meta information extracted from the WSDL
@@ -44,18 +48,19 @@ class Owner extends AbstractStructBase
      * @var string|null
      */
     protected ?string $issueCardDate = null;
+
     /**
      * Constructor method for owner
+     * @param string|null $lastName
+     * @param string|null $firstName
+     * @param AddressOwner|null $billingAddress
+     * @param string|null $issueCardDate
      * @uses Owner::setLastName()
      * @uses Owner::setFirstName()
      * @uses Owner::setBillingAddress()
      * @uses Owner::setIssueCardDate()
-     * @param string $lastName
-     * @param string $firstName
-     * @param \StructType\AddressOwner $billingAddress
-     * @param string $issueCardDate
      */
-    public function __construct(?string $lastName = null, ?string $firstName = null, ?\StructType\AddressOwner $billingAddress = null, ?string $issueCardDate = null)
+    public function __construct(?string $lastName = null, ?string $firstName = null, ?AddressOwner $billingAddress = null, ?string $issueCardDate = null)
     {
         $this
             ->setLastName($lastName)
@@ -63,6 +68,7 @@ class Owner extends AbstractStructBase
             ->setBillingAddress($billingAddress)
             ->setIssueCardDate($issueCardDate);
     }
+
     /**
      * Get lastName value
      * @return string|null
@@ -71,10 +77,11 @@ class Owner extends AbstractStructBase
     {
         return $this->lastName;
     }
+
     /**
      * Set lastName value
-     * @param string $lastName
-     * @return \StructType\Owner
+     * @param string|null $lastName
+     * @return Owner
      */
     public function setLastName(?string $lastName = null): self
     {
@@ -86,6 +93,7 @@ class Owner extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -94,10 +102,11 @@ class Owner extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
-     * @param string $firstName
-     * @return \StructType\Owner
+     * @param string|null $firstName
+     * @return Owner
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -109,25 +118,28 @@ class Owner extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingAddress value
-     * @return \StructType\AddressOwner|null
+     * @return AddressOwner|null
      */
-    public function getBillingAddress(): ?\StructType\AddressOwner
+    public function getBillingAddress(): ?AddressOwner
     {
         return $this->billingAddress;
     }
+
     /**
      * Set billingAddress value
-     * @param \StructType\AddressOwner $billingAddress
-     * @return \StructType\Owner
+     * @param AddressOwner|null $billingAddress
+     * @return Owner
      */
-    public function setBillingAddress(?\StructType\AddressOwner $billingAddress = null): self
+    public function setBillingAddress(?AddressOwner $billingAddress = null): self
     {
         $this->billingAddress = $billingAddress;
 
         return $this;
     }
+
     /**
      * Get issueCardDate value
      * @return string|null
@@ -136,10 +148,11 @@ class Owner extends AbstractStructBase
     {
         return $this->issueCardDate;
     }
+
     /**
      * Set issueCardDate value
-     * @param string $issueCardDate
-     * @return \StructType\Owner
+     * @param string|null $issueCardDate
+     * @return Owner
      */
     public function setIssueCardDate(?string $issueCardDate = null): self
     {

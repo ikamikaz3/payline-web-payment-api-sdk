@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doCapture method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoCaptureRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class DoCaptureRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -30,20 +32,23 @@ class DoCaptureRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The sequenceNumber
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class DoCaptureRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sequenceNumber = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class DoCaptureRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -65,8 +72,16 @@ class DoCaptureRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * Constructor method for doCaptureRequest
+     * @param string|null $version
+     * @param string|null $transactionID
+     * @param Payment|null $payment
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $sequenceNumber
+     * @param string|null $media
+     * @param string|null $miscData
      * @uses DoCaptureRequest::setVersion()
      * @uses DoCaptureRequest::setTransactionID()
      * @uses DoCaptureRequest::setPayment()
@@ -74,15 +89,8 @@ class DoCaptureRequest extends AbstractStructBase
      * @uses DoCaptureRequest::setSequenceNumber()
      * @uses DoCaptureRequest::setMedia()
      * @uses DoCaptureRequest::setMiscData()
-     * @param string $version
-     * @param string $transactionID
-     * @param \StructType\Payment $payment
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $sequenceNumber
-     * @param string $media
-     * @param string $miscData
      */
-    public function __construct(?string $version = null, ?string $transactionID = null, ?\StructType\Payment $payment = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $sequenceNumber = null, ?string $media = null, ?string $miscData = null)
+    public function __construct(?string $version = null, ?string $transactionID = null, ?Payment $payment = null, ?PrivateDataList $privateDataList = null, ?string $sequenceNumber = null, ?string $media = null, ?string $miscData = null)
     {
         $this
             ->setVersion($version)
@@ -93,6 +101,7 @@ class DoCaptureRequest extends AbstractStructBase
             ->setMedia($media)
             ->setMiscData($miscData);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -101,10 +110,11 @@ class DoCaptureRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoCaptureRequest
+     * @param string|null $version
+     * @return DoCaptureRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -116,6 +126,7 @@ class DoCaptureRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -124,10 +135,11 @@ class DoCaptureRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\DoCaptureRequest
+     * @param string|null $transactionID
+     * @return DoCaptureRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -139,44 +151,49 @@ class DoCaptureRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoCaptureRequest
+     * @param Payment|null $payment
+     * @return DoCaptureRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoCaptureRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoCaptureRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get sequenceNumber value
      * @return string|null
@@ -185,10 +202,11 @@ class DoCaptureRequest extends AbstractStructBase
     {
         return $this->sequenceNumber;
     }
+
     /**
      * Set sequenceNumber value
-     * @param string $sequenceNumber
-     * @return \StructType\DoCaptureRequest
+     * @param string|null $sequenceNumber
+     * @return DoCaptureRequest
      */
     public function setSequenceNumber(?string $sequenceNumber = null): self
     {
@@ -200,6 +218,7 @@ class DoCaptureRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -208,10 +227,11 @@ class DoCaptureRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoCaptureRequest
+     * @param string|null $media
+     * @return DoCaptureRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -223,6 +243,7 @@ class DoCaptureRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -231,10 +252,11 @@ class DoCaptureRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\DoCaptureRequest
+     * @param string|null $miscData
+     * @return DoCaptureRequest
      */
     public function setMiscData(?string $miscData = null): self
     {

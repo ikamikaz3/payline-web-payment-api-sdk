@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about SDK.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class MerchantAuthentication extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class MerchantAuthentication extends AbstractStructBase
      * @var string|null
      */
     protected ?string $method = null;
+
     /**
      * The date
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class MerchantAuthentication extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * Constructor method for merchantAuthentication
+     * @param string|null $method
+     * @param string|null $date
      * @uses MerchantAuthentication::setMethod()
      * @uses MerchantAuthentication::setDate()
-     * @param string $method
-     * @param string $date
      */
     public function __construct(?string $method = null, ?string $date = null)
     {
@@ -43,6 +46,7 @@ class MerchantAuthentication extends AbstractStructBase
             ->setMethod($method)
             ->setDate($date);
     }
+
     /**
      * Get method value
      * @return string|null
@@ -51,10 +55,11 @@ class MerchantAuthentication extends AbstractStructBase
     {
         return $this->method;
     }
+
     /**
      * Set method value
-     * @param string $method
-     * @return \StructType\MerchantAuthentication
+     * @param string|null $method
+     * @return MerchantAuthentication
      */
     public function setMethod(?string $method = null): self
     {
@@ -63,9 +68,10 @@ class MerchantAuthentication extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($method, true), gettype($method)), __LINE__);
         }
         $this->method = $method;
-        
+
         return $this;
     }
+
     /**
      * Get date value
      * @return string|null
@@ -74,10 +80,11 @@ class MerchantAuthentication extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\MerchantAuthentication
+     * @param string|null $date
+     * @return MerchantAuthentication
      */
     public function setDate(?string $date = null): self
     {
@@ -86,7 +93,7 @@ class MerchantAuthentication extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
-        
+
         return $this;
     }
 }

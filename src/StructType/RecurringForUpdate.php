@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains element for update a recurring operation
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class RecurringForUpdate extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class RecurringForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingLeft = null;
+
     /**
      * The billingDay
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class RecurringForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingDay = null;
+
     /**
      * The endDate
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class RecurringForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * The newAmount
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class RecurringForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $newAmount = null;
+
     /**
      * The amountModificationDate
      * Meta information extracted from the WSDL
@@ -51,18 +56,19 @@ class RecurringForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amountModificationDate = null;
+
     /**
      * Constructor method for recurringForUpdate
+     * @param string|null $billingLeft
+     * @param string|null $billingDay
+     * @param string|null $endDate
+     * @param string|null $newAmount
+     * @param string|null $amountModificationDate
      * @uses RecurringForUpdate::setBillingLeft()
      * @uses RecurringForUpdate::setBillingDay()
      * @uses RecurringForUpdate::setEndDate()
      * @uses RecurringForUpdate::setNewAmount()
      * @uses RecurringForUpdate::setAmountModificationDate()
-     * @param string $billingLeft
-     * @param string $billingDay
-     * @param string $endDate
-     * @param string $newAmount
-     * @param string $amountModificationDate
      */
     public function __construct(?string $billingLeft = null, ?string $billingDay = null, ?string $endDate = null, ?string $newAmount = null, ?string $amountModificationDate = null)
     {
@@ -73,6 +79,7 @@ class RecurringForUpdate extends AbstractStructBase
             ->setNewAmount($newAmount)
             ->setAmountModificationDate($amountModificationDate);
     }
+
     /**
      * Get billingLeft value
      * @return string|null
@@ -81,10 +88,11 @@ class RecurringForUpdate extends AbstractStructBase
     {
         return $this->billingLeft;
     }
+
     /**
      * Set billingLeft value
-     * @param string $billingLeft
-     * @return \StructType\RecurringForUpdate
+     * @param string|null $billingLeft
+     * @return RecurringForUpdate
      */
     public function setBillingLeft(?string $billingLeft = null): self
     {
@@ -93,9 +101,10 @@ class RecurringForUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingLeft, true), gettype($billingLeft)), __LINE__);
         }
         $this->billingLeft = $billingLeft;
-        
+
         return $this;
     }
+
     /**
      * Get billingDay value
      * @return string|null
@@ -104,10 +113,11 @@ class RecurringForUpdate extends AbstractStructBase
     {
         return $this->billingDay;
     }
+
     /**
      * Set billingDay value
-     * @param string $billingDay
-     * @return \StructType\RecurringForUpdate
+     * @param string|null $billingDay
+     * @return RecurringForUpdate
      */
     public function setBillingDay(?string $billingDay = null): self
     {
@@ -116,9 +126,10 @@ class RecurringForUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingDay, true), gettype($billingDay)), __LINE__);
         }
         $this->billingDay = $billingDay;
-        
+
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -127,10 +138,11 @@ class RecurringForUpdate extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
-     * @param string $endDate
-     * @return \StructType\RecurringForUpdate
+     * @param string|null $endDate
+     * @return RecurringForUpdate
      */
     public function setEndDate(?string $endDate = null): self
     {
@@ -139,9 +151,10 @@ class RecurringForUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->endDate = $endDate;
-        
+
         return $this;
     }
+
     /**
      * Get newAmount value
      * @return string|null
@@ -150,10 +163,11 @@ class RecurringForUpdate extends AbstractStructBase
     {
         return $this->newAmount;
     }
+
     /**
      * Set newAmount value
-     * @param string $newAmount
-     * @return \StructType\RecurringForUpdate
+     * @param string|null $newAmount
+     * @return RecurringForUpdate
      */
     public function setNewAmount(?string $newAmount = null): self
     {
@@ -162,9 +176,10 @@ class RecurringForUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($newAmount, true), gettype($newAmount)), __LINE__);
         }
         $this->newAmount = $newAmount;
-        
+
         return $this;
     }
+
     /**
      * Get amountModificationDate value
      * @return string|null
@@ -173,10 +188,11 @@ class RecurringForUpdate extends AbstractStructBase
     {
         return $this->amountModificationDate;
     }
+
     /**
      * Set amountModificationDate value
-     * @param string $amountModificationDate
-     * @return \StructType\RecurringForUpdate
+     * @param string|null $amountModificationDate
+     * @return RecurringForUpdate
      */
     public function setAmountModificationDate(?string $amountModificationDate = null): self
     {
@@ -185,7 +201,7 @@ class RecurringForUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountModificationDate, true), gettype($amountModificationDate)), __LINE__);
         }
         $this->amountModificationDate = $amountModificationDate;
-        
+
         return $this;
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains element for update a recurring operation
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class BillingRecordForUpdate extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class BillingRecordForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class BillingRecordForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The status
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class BillingRecordForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * The executionDate
      * Meta information extracted from the WSDL
@@ -44,16 +48,17 @@ class BillingRecordForUpdate extends AbstractStructBase
      * @var string|null
      */
     protected ?string $executionDate = null;
+
     /**
      * Constructor method for billingRecordForUpdate
+     * @param string|null $date
+     * @param string|null $amount
+     * @param string|null $status
+     * @param string|null $executionDate
      * @uses BillingRecordForUpdate::setDate()
      * @uses BillingRecordForUpdate::setAmount()
      * @uses BillingRecordForUpdate::setStatus()
      * @uses BillingRecordForUpdate::setExecutionDate()
-     * @param string $date
-     * @param string $amount
-     * @param string $status
-     * @param string $executionDate
      */
     public function __construct(?string $date = null, ?string $amount = null, ?string $status = null, ?string $executionDate = null)
     {
@@ -63,6 +68,7 @@ class BillingRecordForUpdate extends AbstractStructBase
             ->setStatus($status)
             ->setExecutionDate($executionDate);
     }
+
     /**
      * Get date value
      * @return string|null
@@ -71,10 +77,11 @@ class BillingRecordForUpdate extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\BillingRecordForUpdate
+     * @param string|null $date
+     * @return BillingRecordForUpdate
      */
     public function setDate(?string $date = null): self
     {
@@ -86,6 +93,7 @@ class BillingRecordForUpdate extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -94,10 +102,11 @@ class BillingRecordForUpdate extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\BillingRecordForUpdate
+     * @param string|null $amount
+     * @return BillingRecordForUpdate
      */
     public function setAmount(?string $amount = null): self
     {
@@ -109,6 +118,7 @@ class BillingRecordForUpdate extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -117,10 +127,11 @@ class BillingRecordForUpdate extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
-     * @param string $status
-     * @return \StructType\BillingRecordForUpdate
+     * @param string|null $status
+     * @return BillingRecordForUpdate
      */
     public function setStatus(?string $status = null): self
     {
@@ -132,6 +143,7 @@ class BillingRecordForUpdate extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get executionDate value
      * @return string|null
@@ -140,10 +152,11 @@ class BillingRecordForUpdate extends AbstractStructBase
     {
         return $this->executionDate;
     }
+
     /**
      * Set executionDate value
-     * @param string $executionDate
-     * @return \StructType\BillingRecordForUpdate
+     * @param string|null $executionDate
+     * @return BillingRecordForUpdate
      */
     public function setExecutionDate(?string $executionDate = null): self
     {

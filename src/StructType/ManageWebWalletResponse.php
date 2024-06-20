@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the manageWebWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class ManageWebWalletResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class ManageWebWalletResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The redirectURL
      * Meta information extracted from the WSDL
@@ -37,41 +40,45 @@ class ManageWebWalletResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $redirectURL = null;
+
     /**
      * Constructor method for manageWebWalletResponse
+     * @param Result|null $result
+     * @param string|null $token
+     * @param string|null $redirectURL
      * @uses ManageWebWalletResponse::setResult()
      * @uses ManageWebWalletResponse::setToken()
      * @uses ManageWebWalletResponse::setRedirectURL()
-     * @param \StructType\Result $result
-     * @param string $token
-     * @param string $redirectURL
      */
-    public function __construct(?\StructType\Result $result = null, ?string $token = null, ?string $redirectURL = null)
+    public function __construct(?Result $result = null, ?string $token = null, ?string $redirectURL = null)
     {
         $this
             ->setResult($result)
             ->setToken($token)
             ->setRedirectURL($redirectURL);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\ManageWebWalletResponse
+     * @param Result|null $result
+     * @return ManageWebWalletResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -80,10 +87,11 @@ class ManageWebWalletResponse extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\ManageWebWalletResponse
+     * @param string|null $token
+     * @return ManageWebWalletResponse
      */
     public function setToken(?string $token = null): self
     {
@@ -92,9 +100,10 @@ class ManageWebWalletResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
+
     /**
      * Get redirectURL value
      * @return string|null
@@ -103,10 +112,11 @@ class ManageWebWalletResponse extends AbstractStructBase
     {
         return $this->redirectURL;
     }
+
     /**
      * Set redirectURL value
-     * @param string $redirectURL
-     * @return \StructType\ManageWebWalletResponse
+     * @param string|null $redirectURL
+     * @return ManageWebWalletResponse
      */
     public function setRedirectURL(?string $redirectURL = null): self
     {
@@ -115,7 +125,7 @@ class ManageWebWalletResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($redirectURL, true), gettype($redirectURL)), __LINE__);
         }
         $this->redirectURL = $redirectURL;
-        
+
         return $this;
     }
 }

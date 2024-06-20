@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about a routingRule associated with a Payment Facilitator
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class RoutingRule extends AbstractStructBase
 {
     /**
@@ -24,6 +25,7 @@ class RoutingRule extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * The sourceContractNumber
      * Meta information extracted from the WSDL
@@ -32,6 +34,7 @@ class RoutingRule extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sourceContractNumber = null;
+
     /**
      * The targetContractNumber
      * Meta information extracted from the WSDL
@@ -40,14 +43,15 @@ class RoutingRule extends AbstractStructBase
      * @var string|null
      */
     protected ?string $targetContractNumber = null;
+
     /**
      * Constructor method for routingRule
+     * @param string|null $id
+     * @param string|null $sourceContractNumber
+     * @param string|null $targetContractNumber
      * @uses RoutingRule::setId()
      * @uses RoutingRule::setSourceContractNumber()
      * @uses RoutingRule::setTargetContractNumber()
-     * @param string $id
-     * @param string $sourceContractNumber
-     * @param string $targetContractNumber
      */
     public function __construct(?string $id = null, ?string $sourceContractNumber = null, ?string $targetContractNumber = null)
     {
@@ -56,6 +60,7 @@ class RoutingRule extends AbstractStructBase
             ->setSourceContractNumber($sourceContractNumber)
             ->setTargetContractNumber($targetContractNumber);
     }
+
     /**
      * Get id value
      * An additional test has been added (isset) before returning the property value as
@@ -67,12 +72,13 @@ class RoutingRule extends AbstractStructBase
     {
         return $this->id ?? null;
     }
+
     /**
      * Set id value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $id
-     * @return \StructType\RoutingRule
+     * @param string|null $id
+     * @return RoutingRule
      */
     public function setId(?string $id = null): self
     {
@@ -80,7 +86,7 @@ class RoutingRule extends AbstractStructBase
         if (!is_null($id) && !is_string($id)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
-        if (is_null($id) || (is_array($id) && empty($id))) {
+        if (is_null($id)) {
             unset($this->id);
         } else {
             $this->id = $id;
@@ -88,6 +94,7 @@ class RoutingRule extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get sourceContractNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -99,12 +106,13 @@ class RoutingRule extends AbstractStructBase
     {
         return $this->sourceContractNumber ?? null;
     }
+
     /**
      * Set sourceContractNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $sourceContractNumber
-     * @return \StructType\RoutingRule
+     * @param string|null $sourceContractNumber
+     * @return RoutingRule
      */
     public function setSourceContractNumber(?string $sourceContractNumber = null): self
     {
@@ -112,7 +120,7 @@ class RoutingRule extends AbstractStructBase
         if (!is_null($sourceContractNumber) && !is_string($sourceContractNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sourceContractNumber, true), gettype($sourceContractNumber)), __LINE__);
         }
-        if (is_null($sourceContractNumber) || (is_array($sourceContractNumber) && empty($sourceContractNumber))) {
+        if (is_null($sourceContractNumber)) {
             unset($this->sourceContractNumber);
         } else {
             $this->sourceContractNumber = $sourceContractNumber;
@@ -120,6 +128,7 @@ class RoutingRule extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get targetContractNumber value
      * An additional test has been added (isset) before returning the property value as
@@ -131,12 +140,13 @@ class RoutingRule extends AbstractStructBase
     {
         return $this->targetContractNumber ?? null;
     }
+
     /**
      * Set targetContractNumber value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $targetContractNumber
-     * @return \StructType\RoutingRule
+     * @param string|null $targetContractNumber
+     * @return RoutingRule
      */
     public function setTargetContractNumber(?string $targetContractNumber = null): self
     {
@@ -144,7 +154,7 @@ class RoutingRule extends AbstractStructBase
         if (!is_null($targetContractNumber) && !is_string($targetContractNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($targetContractNumber, true), gettype($targetContractNumber)), __LINE__);
         }
-        if (is_null($targetContractNumber) || (is_array($targetContractNumber) && empty($targetContractNumber))) {
+        if (is_null($targetContractNumber)) {
             unset($this->targetContractNumber);
         } else {
             $this->targetContractNumber = $targetContractNumber;

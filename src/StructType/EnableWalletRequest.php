@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the enableWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class EnableWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class EnableWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class EnableWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class EnableWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * Constructor method for enableWalletRequest
+     * @param string|null $contractNumber
+     * @param string|null $walletId
+     * @param string|null $cardInd
      * @uses EnableWalletRequest::setContractNumber()
      * @uses EnableWalletRequest::setWalletId()
      * @uses EnableWalletRequest::setCardInd()
-     * @param string $contractNumber
-     * @param string $walletId
-     * @param string $cardInd
      */
     public function __construct(?string $contractNumber = null, ?string $walletId = null, ?string $cardInd = null)
     {
@@ -53,6 +57,7 @@ class EnableWalletRequest extends AbstractStructBase
             ->setWalletId($walletId)
             ->setCardInd($cardInd);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -61,10 +66,11 @@ class EnableWalletRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\EnableWalletRequest
+     * @param string|null $contractNumber
+     * @return EnableWalletRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -76,6 +82,7 @@ class EnableWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -84,10 +91,11 @@ class EnableWalletRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\EnableWalletRequest
+     * @param string|null $walletId
+     * @return EnableWalletRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -99,6 +107,7 @@ class EnableWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -107,10 +116,11 @@ class EnableWalletRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\EnableWalletRequest
+     * @param string|null $cardInd
+     * @return EnableWalletRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {

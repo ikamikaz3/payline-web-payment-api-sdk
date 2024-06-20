@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the getWebPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetWebPaymentDetailsRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * Constructor method for getWebPaymentDetailsRequest
+     * @param string|null $version
+     * @param string|null $token
      * @uses GetWebPaymentDetailsRequest::setVersion()
      * @uses GetWebPaymentDetailsRequest::setToken()
-     * @param string $version
-     * @param string $token
      */
     public function __construct(?string $version = null, ?string $token = null)
     {
@@ -43,6 +46,7 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
             ->setVersion($version)
             ->setToken($token);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -51,10 +55,11 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetWebPaymentDetailsRequest
+     * @param string|null $version
+     * @return GetWebPaymentDetailsRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -63,9 +68,10 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -74,10 +80,11 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\GetWebPaymentDetailsRequest
+     * @param string|null $token
+     * @return GetWebPaymentDetailsRequest
      */
     public function setToken(?string $token = null): self
     {
@@ -86,7 +93,7 @@ class GetWebPaymentDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->token = $token;
-        
+
         return $this;
     }
 }

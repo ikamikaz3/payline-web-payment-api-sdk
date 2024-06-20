@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains bankAccount information
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class BankAccount extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class BankAccount extends AbstractStructBase
      * @var string|null
      */
     protected ?string $bankCode = null;
+
     /**
      * The bankNumber
      * Meta information extracted from the WSDL
@@ -30,32 +32,35 @@ class BankAccount extends AbstractStructBase
      * @var string|null
      */
     protected ?string $bankNumber = null;
+
     /**
      * The iban
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Iban|null
+     * @var Iban|null
      */
-    protected ?\StructType\Iban $iban = null;
+    protected ?Iban $iban = null;
+
     /**
      * The rib
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Rib|null
+     * @var Rib|null
      */
-    protected ?\StructType\Rib $rib = null;
+    protected ?Rib $rib = null;
+
     /**
      * Constructor method for bankAccount
+     * @param string|null $bankCode
+     * @param string|null $bankNumber
+     * @param Iban|null $iban
+     * @param Rib|null $rib
      * @uses BankAccount::setBankCode()
      * @uses BankAccount::setBankNumber()
      * @uses BankAccount::setIban()
      * @uses BankAccount::setRib()
-     * @param string $bankCode
-     * @param string $bankNumber
-     * @param \StructType\Iban $iban
-     * @param \StructType\Rib $rib
      */
-    public function __construct(?string $bankCode = null, ?string $bankNumber = null, ?\StructType\Iban $iban = null, ?\StructType\Rib $rib = null)
+    public function __construct(?string $bankCode = null, ?string $bankNumber = null, ?Iban $iban = null, ?Rib $rib = null)
     {
         $this
             ->setBankCode($bankCode)
@@ -63,6 +68,7 @@ class BankAccount extends AbstractStructBase
             ->setIban($iban)
             ->setRib($rib);
     }
+
     /**
      * Get bankCode value
      * @return string|null
@@ -71,10 +77,11 @@ class BankAccount extends AbstractStructBase
     {
         return $this->bankCode;
     }
+
     /**
      * Set bankCode value
-     * @param string $bankCode
-     * @return \StructType\BankAccount
+     * @param string|null $bankCode
+     * @return BankAccount
      */
     public function setBankCode(?string $bankCode = null): self
     {
@@ -86,6 +93,7 @@ class BankAccount extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get bankNumber value
      * @return string|null
@@ -94,10 +102,11 @@ class BankAccount extends AbstractStructBase
     {
         return $this->bankNumber;
     }
+
     /**
      * Set bankNumber value
-     * @param string $bankNumber
-     * @return \StructType\BankAccount
+     * @param string|null $bankNumber
+     * @return BankAccount
      */
     public function setBankNumber(?string $bankNumber = null): self
     {
@@ -109,39 +118,43 @@ class BankAccount extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get iban value
-     * @return \StructType\Iban|null
+     * @return Iban|null
      */
-    public function getIban(): ?\StructType\Iban
+    public function getIban(): ?Iban
     {
         return $this->iban;
     }
+
     /**
      * Set iban value
-     * @param \StructType\Iban $iban
-     * @return \StructType\BankAccount
+     * @param Iban|null $iban
+     * @return BankAccount
      */
-    public function setIban(?\StructType\Iban $iban = null): self
+    public function setIban(?Iban $iban = null): self
     {
         $this->iban = $iban;
 
         return $this;
     }
+
     /**
      * Get rib value
-     * @return \StructType\Rib|null
+     * @return Rib|null
      */
-    public function getRib(): ?\StructType\Rib
+    public function getRib(): ?Rib
     {
         return $this->rib;
     }
+
     /**
      * Set rib value
-     * @param \StructType\Rib $rib
-     * @return \StructType\BankAccount
+     * @param Rib|null $rib
+     * @return BankAccount
      */
-    public function setRib(?\StructType\Rib $rib = null): self
+    public function setRib(?Rib $rib = null): self
     {
         $this->rib = $rib;
 

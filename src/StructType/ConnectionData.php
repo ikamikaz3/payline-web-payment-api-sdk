@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains the merchant connection parameters
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class ConnectionData extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class ConnectionData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantId = null;
+
     /**
      * The userId
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class ConnectionData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $userId = null;
+
     /**
      * The password
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class ConnectionData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $password = null;
+
     /**
      * The secretQuestion
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class ConnectionData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $secretQuestion = null;
+
     /**
      * The secretAnswer
      * Meta information extracted from the WSDL
@@ -51,18 +56,19 @@ class ConnectionData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $secretAnswer = null;
+
     /**
      * Constructor method for connectionData
+     * @param string|null $merchantId
+     * @param string|null $userId
+     * @param string|null $password
+     * @param string|null $secretQuestion
+     * @param string|null $secretAnswer
      * @uses ConnectionData::setMerchantId()
      * @uses ConnectionData::setUserId()
      * @uses ConnectionData::setPassword()
      * @uses ConnectionData::setSecretQuestion()
      * @uses ConnectionData::setSecretAnswer()
-     * @param string $merchantId
-     * @param string $userId
-     * @param string $password
-     * @param string $secretQuestion
-     * @param string $secretAnswer
      */
     public function __construct(?string $merchantId = null, ?string $userId = null, ?string $password = null, ?string $secretQuestion = null, ?string $secretAnswer = null)
     {
@@ -73,6 +79,7 @@ class ConnectionData extends AbstractStructBase
             ->setSecretQuestion($secretQuestion)
             ->setSecretAnswer($secretAnswer);
     }
+
     /**
      * Get merchantId value
      * @return string|null
@@ -81,10 +88,11 @@ class ConnectionData extends AbstractStructBase
     {
         return $this->merchantId;
     }
+
     /**
      * Set merchantId value
-     * @param string $merchantId
-     * @return \StructType\ConnectionData
+     * @param string|null $merchantId
+     * @return ConnectionData
      */
     public function setMerchantId(?string $merchantId = null): self
     {
@@ -96,6 +104,7 @@ class ConnectionData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get userId value
      * @return string|null
@@ -104,10 +113,11 @@ class ConnectionData extends AbstractStructBase
     {
         return $this->userId;
     }
+
     /**
      * Set userId value
-     * @param string $userId
-     * @return \StructType\ConnectionData
+     * @param string|null $userId
+     * @return ConnectionData
      */
     public function setUserId(?string $userId = null): self
     {
@@ -119,6 +129,7 @@ class ConnectionData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get password value
      * @return string|null
@@ -127,10 +138,11 @@ class ConnectionData extends AbstractStructBase
     {
         return $this->password;
     }
+
     /**
      * Set password value
-     * @param string $password
-     * @return \StructType\ConnectionData
+     * @param string|null $password
+     * @return ConnectionData
      */
     public function setPassword(?string $password = null): self
     {
@@ -142,6 +154,7 @@ class ConnectionData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get secretQuestion value
      * @return string|null
@@ -150,10 +163,11 @@ class ConnectionData extends AbstractStructBase
     {
         return $this->secretQuestion;
     }
+
     /**
      * Set secretQuestion value
-     * @param string $secretQuestion
-     * @return \StructType\ConnectionData
+     * @param string|null $secretQuestion
+     * @return ConnectionData
      */
     public function setSecretQuestion(?string $secretQuestion = null): self
     {
@@ -165,6 +179,7 @@ class ConnectionData extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get secretAnswer value
      * @return string|null
@@ -173,10 +188,11 @@ class ConnectionData extends AbstractStructBase
     {
         return $this->secretAnswer;
     }
+
     /**
      * Set secretAnswer value
-     * @param string $secretAnswer
-     * @return \StructType\ConnectionData
+     * @param string|null $secretAnswer
+     * @return ConnectionData
      */
     public function setSecretAnswer(?string $secretAnswer = null): self
     {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,19 +14,21 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains all information about point of sell
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PointOfSell extends AbstractStructBase
 {
     /**
      * The contracts
-     * @var \StructType\Contracts|null
+     * @var Contracts|null
      */
-    protected ?\StructType\Contracts $contracts = null;
+    protected ?Contracts $contracts = null;
+
     /**
      * The customPaymentPageCodeList
-     * @var \StructType\CustomPaymentPageCodeList|null
+     * @var CustomPaymentPageCodeList|null
      */
-    protected ?\StructType\CustomPaymentPageCodeList $customPaymentPageCodeList = null;
+    protected ?CustomPaymentPageCodeList $customPaymentPageCodeList = null;
+
     /**
      * The id
      * Meta information extracted from the WSDL
@@ -34,6 +37,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $id = null;
+
     /**
      * The siret
      * Meta information extracted from the WSDL
@@ -41,6 +45,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $siret = null;
+
     /**
      * The codeMcc
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $codeMcc = null;
+
     /**
      * The label
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $label = null;
+
     /**
      * The webmasterEmail
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $webmasterEmail = null;
+
     /**
      * The comments
      * Meta information extracted from the WSDL
@@ -73,6 +81,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $comments = null;
+
     /**
      * The webstoreURL
      * Meta information extracted from the WSDL
@@ -80,6 +89,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $webstoreURL = null;
+
     /**
      * The notificationURL
      * Meta information extracted from the WSDL
@@ -87,6 +97,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $notificationURL = null;
+
     /**
      * The privateLifeURL
      * Meta information extracted from the WSDL
@@ -95,6 +106,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $privateLifeURL = null;
+
     /**
      * The saleCondURL
      * Meta information extracted from the WSDL
@@ -103,6 +115,7 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $saleCondURL = null;
+
     /**
      * The buyerMustAcceptSaleCond
      * Meta information extracted from the WSDL
@@ -111,6 +124,7 @@ class PointOfSell extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $buyerMustAcceptSaleCond = null;
+
     /**
      * The endOfPaymentRedirection
      * Meta information extracted from the WSDL
@@ -119,20 +133,23 @@ class PointOfSell extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $endOfPaymentRedirection = null;
+
     /**
      * The ticketSend
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\TicketSend|null
+     * @var TicketSend|null
      */
-    protected ?\StructType\TicketSend $ticketSend = null;
+    protected ?TicketSend $ticketSend = null;
+
     /**
      * The virtualTerminal
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\VirtualTerminal|null
+     * @var VirtualTerminal|null
      */
-    protected ?\StructType\VirtualTerminal $virtualTerminal = null;
+    protected ?VirtualTerminal $virtualTerminal = null;
+
     /**
      * The reference
      * Meta information extracted from the WSDL
@@ -141,8 +158,26 @@ class PointOfSell extends AbstractStructBase
      * @var string|null
      */
     protected ?string $reference = null;
+
     /**
      * Constructor method for pointOfSell
+     * @param Contracts|null $contracts
+     * @param CustomPaymentPageCodeList|null $customPaymentPageCodeList
+     * @param string|null $id
+     * @param string|null $siret
+     * @param string|null $codeMcc
+     * @param string|null $label
+     * @param string|null $webmasterEmail
+     * @param string|null $comments
+     * @param string|null $webstoreURL
+     * @param string|null $notificationURL
+     * @param string|null $privateLifeURL
+     * @param string|null $saleCondURL
+     * @param bool $buyerMustAcceptSaleCond
+     * @param bool $endOfPaymentRedirection
+     * @param TicketSend|null $ticketSend
+     * @param VirtualTerminal|null $virtualTerminal
+     * @param string|null $reference
      * @uses PointOfSell::setContracts()
      * @uses PointOfSell::setCustomPaymentPageCodeList()
      * @uses PointOfSell::setId()
@@ -160,25 +195,8 @@ class PointOfSell extends AbstractStructBase
      * @uses PointOfSell::setTicketSend()
      * @uses PointOfSell::setVirtualTerminal()
      * @uses PointOfSell::setReference()
-     * @param \StructType\Contracts $contracts
-     * @param \StructType\CustomPaymentPageCodeList $customPaymentPageCodeList
-     * @param string $id
-     * @param string $siret
-     * @param string $codeMcc
-     * @param string $label
-     * @param string $webmasterEmail
-     * @param string $comments
-     * @param string $webstoreURL
-     * @param string $notificationURL
-     * @param string $privateLifeURL
-     * @param string $saleCondURL
-     * @param bool $buyerMustAcceptSaleCond
-     * @param bool $endOfPaymentRedirection
-     * @param \StructType\TicketSend $ticketSend
-     * @param \StructType\VirtualTerminal $virtualTerminal
-     * @param string $reference
      */
-    public function __construct(?\StructType\Contracts $contracts = null, ?\StructType\CustomPaymentPageCodeList $customPaymentPageCodeList = null, ?string $id = null, ?string $siret = null, ?string $codeMcc = null, ?string $label = null, ?string $webmasterEmail = null, ?string $comments = null, ?string $webstoreURL = null, ?string $notificationURL = null, ?string $privateLifeURL = null, ?string $saleCondURL = null, ?bool $buyerMustAcceptSaleCond = null, ?bool $endOfPaymentRedirection = null, ?\StructType\TicketSend $ticketSend = null, ?\StructType\VirtualTerminal $virtualTerminal = null, ?string $reference = null)
+    public function __construct(?Contracts $contracts = null, ?CustomPaymentPageCodeList $customPaymentPageCodeList = null, ?string $id = null, ?string $siret = null, ?string $codeMcc = null, ?string $label = null, ?string $webmasterEmail = null, ?string $comments = null, ?string $webstoreURL = null, ?string $notificationURL = null, ?string $privateLifeURL = null, ?string $saleCondURL = null, ?bool $buyerMustAcceptSaleCond = null, ?bool $endOfPaymentRedirection = null, ?TicketSend $ticketSend = null, ?VirtualTerminal $virtualTerminal = null, ?string $reference = null)
     {
         $this
             ->setContracts($contracts)
@@ -199,44 +217,49 @@ class PointOfSell extends AbstractStructBase
             ->setVirtualTerminal($virtualTerminal)
             ->setReference($reference);
     }
+
     /**
      * Get contracts value
-     * @return \StructType\Contracts|null
+     * @return Contracts|null
      */
-    public function getContracts(): ?\StructType\Contracts
+    public function getContracts(): ?Contracts
     {
         return $this->contracts;
     }
+
     /**
      * Set contracts value
-     * @param \StructType\Contracts $contracts
-     * @return \StructType\PointOfSell
+     * @param Contracts|null $contracts
+     * @return PointOfSell
      */
-    public function setContracts(?\StructType\Contracts $contracts = null): self
+    public function setContracts(?Contracts $contracts = null): self
     {
         $this->contracts = $contracts;
-        
+
         return $this;
     }
+
     /**
      * Get customPaymentPageCodeList value
-     * @return \StructType\CustomPaymentPageCodeList|null
+     * @return CustomPaymentPageCodeList|null
      */
-    public function getCustomPaymentPageCodeList(): ?\StructType\CustomPaymentPageCodeList
+    public function getCustomPaymentPageCodeList(): ?CustomPaymentPageCodeList
     {
         return $this->customPaymentPageCodeList;
     }
+
     /**
      * Set customPaymentPageCodeList value
-     * @param \StructType\CustomPaymentPageCodeList $customPaymentPageCodeList
-     * @return \StructType\PointOfSell
+     * @param CustomPaymentPageCodeList|null $customPaymentPageCodeList
+     * @return PointOfSell
      */
-    public function setCustomPaymentPageCodeList(?\StructType\CustomPaymentPageCodeList $customPaymentPageCodeList = null): self
+    public function setCustomPaymentPageCodeList(?CustomPaymentPageCodeList $customPaymentPageCodeList = null): self
     {
         $this->customPaymentPageCodeList = $customPaymentPageCodeList;
-        
+
         return $this;
     }
+
     /**
      * Get id value
      * An additional test has been added (isset) before returning the property value as
@@ -248,12 +271,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->id ?? null;
     }
+
     /**
      * Set id value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $id
-     * @return \StructType\PointOfSell
+     * @param string|null $id
+     * @return PointOfSell
      */
     public function setId(?string $id = null): self
     {
@@ -261,14 +285,15 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($id) && !is_string($id)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
-        if (is_null($id) || (is_array($id) && empty($id))) {
+        if (is_null($id)) {
             unset($this->id);
         } else {
             $this->id = $id;
         }
-        
+
         return $this;
     }
+
     /**
      * Get siret value
      * @return string|null
@@ -277,10 +302,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->siret;
     }
+
     /**
      * Set siret value
-     * @param string $siret
-     * @return \StructType\PointOfSell
+     * @param string|null $siret
+     * @return PointOfSell
      */
     public function setSiret(?string $siret = null): self
     {
@@ -289,9 +315,10 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($siret, true), gettype($siret)), __LINE__);
         }
         $this->siret = $siret;
-        
+
         return $this;
     }
+
     /**
      * Get codeMcc value
      * @return string|null
@@ -300,10 +327,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->codeMcc;
     }
+
     /**
      * Set codeMcc value
-     * @param string $codeMcc
-     * @return \StructType\PointOfSell
+     * @param string|null $codeMcc
+     * @return PointOfSell
      */
     public function setCodeMcc(?string $codeMcc = null): self
     {
@@ -312,13 +340,14 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codeMcc, true), gettype($codeMcc)), __LINE__);
         }
         // validation for constraint: length(4)
-        if (!is_null($codeMcc) && mb_strlen((string) $codeMcc) !== 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen((string) $codeMcc)), __LINE__);
+        if (!is_null($codeMcc) && mb_strlen($codeMcc) !== 4) {
+            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 4', mb_strlen($codeMcc)), __LINE__);
         }
         $this->codeMcc = $codeMcc;
-        
+
         return $this;
     }
+
     /**
      * Get label value
      * @return string|null
@@ -327,10 +356,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->label;
     }
+
     /**
      * Set label value
-     * @param string $label
-     * @return \StructType\PointOfSell
+     * @param string|null $label
+     * @return PointOfSell
      */
     public function setLabel(?string $label = null): self
     {
@@ -339,9 +369,10 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($label, true), gettype($label)), __LINE__);
         }
         $this->label = $label;
-        
+
         return $this;
     }
+
     /**
      * Get webmasterEmail value
      * @return string|null
@@ -350,10 +381,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->webmasterEmail;
     }
+
     /**
      * Set webmasterEmail value
-     * @param string $webmasterEmail
-     * @return \StructType\PointOfSell
+     * @param string|null $webmasterEmail
+     * @return PointOfSell
      */
     public function setWebmasterEmail(?string $webmasterEmail = null): self
     {
@@ -362,9 +394,10 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($webmasterEmail, true), gettype($webmasterEmail)), __LINE__);
         }
         $this->webmasterEmail = $webmasterEmail;
-        
+
         return $this;
     }
+
     /**
      * Get comments value
      * An additional test has been added (isset) before returning the property value as
@@ -376,12 +409,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->comments ?? null;
     }
+
     /**
      * Set comments value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $comments
-     * @return \StructType\PointOfSell
+     * @param string|null $comments
+     * @return PointOfSell
      */
     public function setComments(?string $comments = null): self
     {
@@ -389,14 +423,15 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($comments) && !is_string($comments)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comments, true), gettype($comments)), __LINE__);
         }
-        if (is_null($comments) || (is_array($comments) && empty($comments))) {
+        if (is_null($comments)) {
             unset($this->comments);
         } else {
             $this->comments = $comments;
         }
-        
+
         return $this;
     }
+
     /**
      * Get webstoreURL value
      * @return string|null
@@ -405,10 +440,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->webstoreURL;
     }
+
     /**
      * Set webstoreURL value
-     * @param string $webstoreURL
-     * @return \StructType\PointOfSell
+     * @param string|null $webstoreURL
+     * @return PointOfSell
      */
     public function setWebstoreURL(?string $webstoreURL = null): self
     {
@@ -417,9 +453,10 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($webstoreURL, true), gettype($webstoreURL)), __LINE__);
         }
         $this->webstoreURL = $webstoreURL;
-        
+
         return $this;
     }
+
     /**
      * Get notificationURL value
      * @return string|null
@@ -428,10 +465,11 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->notificationURL;
     }
+
     /**
      * Set notificationURL value
-     * @param string $notificationURL
-     * @return \StructType\PointOfSell
+     * @param string|null $notificationURL
+     * @return PointOfSell
      */
     public function setNotificationURL(?string $notificationURL = null): self
     {
@@ -440,9 +478,10 @@ class PointOfSell extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notificationURL, true), gettype($notificationURL)), __LINE__);
         }
         $this->notificationURL = $notificationURL;
-        
+
         return $this;
     }
+
     /**
      * Get privateLifeURL value
      * An additional test has been added (isset) before returning the property value as
@@ -454,12 +493,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->privateLifeURL ?? null;
     }
+
     /**
      * Set privateLifeURL value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $privateLifeURL
-     * @return \StructType\PointOfSell
+     * @param string|null $privateLifeURL
+     * @return PointOfSell
      */
     public function setPrivateLifeURL(?string $privateLifeURL = null): self
     {
@@ -467,14 +507,15 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($privateLifeURL) && !is_string($privateLifeURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privateLifeURL, true), gettype($privateLifeURL)), __LINE__);
         }
-        if (is_null($privateLifeURL) || (is_array($privateLifeURL) && empty($privateLifeURL))) {
+        if (is_null($privateLifeURL)) {
             unset($this->privateLifeURL);
         } else {
             $this->privateLifeURL = $privateLifeURL;
         }
-        
+
         return $this;
     }
+
     /**
      * Get saleCondURL value
      * An additional test has been added (isset) before returning the property value as
@@ -486,12 +527,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->saleCondURL ?? null;
     }
+
     /**
      * Set saleCondURL value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $saleCondURL
-     * @return \StructType\PointOfSell
+     * @param string|null $saleCondURL
+     * @return PointOfSell
      */
     public function setSaleCondURL(?string $saleCondURL = null): self
     {
@@ -499,14 +541,15 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($saleCondURL) && !is_string($saleCondURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($saleCondURL, true), gettype($saleCondURL)), __LINE__);
         }
-        if (is_null($saleCondURL) || (is_array($saleCondURL) && empty($saleCondURL))) {
+        if (is_null($saleCondURL)) {
             unset($this->saleCondURL);
         } else {
             $this->saleCondURL = $saleCondURL;
         }
-        
+
         return $this;
     }
+
     /**
      * Get buyerMustAcceptSaleCond value
      * An additional test has been added (isset) before returning the property value as
@@ -518,12 +561,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->buyerMustAcceptSaleCond ?? null;
     }
+
     /**
      * Set buyerMustAcceptSaleCond value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      * @param bool $buyerMustAcceptSaleCond
-     * @return \StructType\PointOfSell
+     * @return PointOfSell
      */
     public function setBuyerMustAcceptSaleCond(?bool $buyerMustAcceptSaleCond = null): self
     {
@@ -531,14 +575,15 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($buyerMustAcceptSaleCond) && !is_bool($buyerMustAcceptSaleCond)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($buyerMustAcceptSaleCond, true), gettype($buyerMustAcceptSaleCond)), __LINE__);
         }
-        if (is_null($buyerMustAcceptSaleCond) || (is_array($buyerMustAcceptSaleCond) && empty($buyerMustAcceptSaleCond))) {
+        if (is_null($buyerMustAcceptSaleCond)) {
             unset($this->buyerMustAcceptSaleCond);
         } else {
             $this->buyerMustAcceptSaleCond = $buyerMustAcceptSaleCond;
         }
-        
+
         return $this;
     }
+
     /**
      * Get endOfPaymentRedirection value
      * An additional test has been added (isset) before returning the property value as
@@ -550,12 +595,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->endOfPaymentRedirection ?? null;
     }
+
     /**
      * Set endOfPaymentRedirection value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      * @param bool $endOfPaymentRedirection
-     * @return \StructType\PointOfSell
+     * @return PointOfSell
      */
     public function setEndOfPaymentRedirection(?bool $endOfPaymentRedirection = null): self
     {
@@ -563,52 +609,57 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($endOfPaymentRedirection) && !is_bool($endOfPaymentRedirection)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($endOfPaymentRedirection, true), gettype($endOfPaymentRedirection)), __LINE__);
         }
-        if (is_null($endOfPaymentRedirection) || (is_array($endOfPaymentRedirection) && empty($endOfPaymentRedirection))) {
+        if (is_null($endOfPaymentRedirection)) {
             unset($this->endOfPaymentRedirection);
         } else {
             $this->endOfPaymentRedirection = $endOfPaymentRedirection;
         }
-        
+
         return $this;
     }
+
     /**
      * Get ticketSend value
-     * @return \StructType\TicketSend|null
+     * @return TicketSend|null
      */
-    public function getTicketSend(): ?\StructType\TicketSend
+    public function getTicketSend(): ?TicketSend
     {
         return $this->ticketSend;
     }
+
     /**
      * Set ticketSend value
-     * @param \StructType\TicketSend $ticketSend
-     * @return \StructType\PointOfSell
+     * @param TicketSend|null $ticketSend
+     * @return PointOfSell
      */
-    public function setTicketSend(?\StructType\TicketSend $ticketSend = null): self
+    public function setTicketSend(?TicketSend $ticketSend = null): self
     {
         $this->ticketSend = $ticketSend;
-        
+
         return $this;
     }
+
     /**
      * Get virtualTerminal value
-     * @return \StructType\VirtualTerminal|null
+     * @return VirtualTerminal|null
      */
-    public function getVirtualTerminal(): ?\StructType\VirtualTerminal
+    public function getVirtualTerminal(): ?VirtualTerminal
     {
         return $this->virtualTerminal;
     }
+
     /**
      * Set virtualTerminal value
-     * @param \StructType\VirtualTerminal $virtualTerminal
-     * @return \StructType\PointOfSell
+     * @param VirtualTerminal|null $virtualTerminal
+     * @return PointOfSell
      */
-    public function setVirtualTerminal(?\StructType\VirtualTerminal $virtualTerminal = null): self
+    public function setVirtualTerminal(?VirtualTerminal $virtualTerminal = null): self
     {
         $this->virtualTerminal = $virtualTerminal;
-        
+
         return $this;
     }
+
     /**
      * Get reference value
      * An additional test has been added (isset) before returning the property value as
@@ -620,12 +671,13 @@ class PointOfSell extends AbstractStructBase
     {
         return $this->reference ?? null;
     }
+
     /**
      * Set reference value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $reference
-     * @return \StructType\PointOfSell
+     * @param string|null $reference
+     * @return PointOfSell
      */
     public function setReference(?string $reference = null): self
     {
@@ -633,12 +685,12 @@ class PointOfSell extends AbstractStructBase
         if (!is_null($reference) && !is_string($reference)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reference, true), gettype($reference)), __LINE__);
         }
-        if (is_null($reference) || (is_array($reference) && empty($reference))) {
+        if (is_null($reference)) {
             unset($this->reference);
         } else {
             $this->reference = $reference;
         }
-        
+
         return $this;
     }
 }

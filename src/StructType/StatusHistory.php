@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the status History
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class StatusHistory extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionId = null;
+
     /**
      * The date
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The fees
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $fees = null;
+
     /**
      * The status
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * The originTransactionId
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $originTransactionId = null;
+
     /**
      * The amountValue
      * Meta information extracted from the WSDL
@@ -66,6 +73,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amountValue = null;
+
     /**
      * The amountCurrency
      * Meta information extracted from the WSDL
@@ -74,6 +82,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amountCurrency = null;
+
     /**
      * The feesValue
      * Meta information extracted from the WSDL
@@ -82,6 +91,7 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $feesValue = null;
+
     /**
      * The feesCurrency
      * Meta information extracted from the WSDL
@@ -90,8 +100,19 @@ class StatusHistory extends AbstractStructBase
      * @var string|null
      */
     protected ?string $feesCurrency = null;
+
     /**
      * Constructor method for statusHistory
+     * @param string|null $transactionId
+     * @param string|null $date
+     * @param string|null $amount
+     * @param string|null $fees
+     * @param string|null $status
+     * @param string|null $originTransactionId
+     * @param string|null $amountValue
+     * @param string|null $amountCurrency
+     * @param string|null $feesValue
+     * @param string|null $feesCurrency
      * @uses StatusHistory::setTransactionId()
      * @uses StatusHistory::setDate()
      * @uses StatusHistory::setAmount()
@@ -102,16 +123,6 @@ class StatusHistory extends AbstractStructBase
      * @uses StatusHistory::setAmountCurrency()
      * @uses StatusHistory::setFeesValue()
      * @uses StatusHistory::setFeesCurrency()
-     * @param string $transactionId
-     * @param string $date
-     * @param string $amount
-     * @param string $fees
-     * @param string $status
-     * @param string $originTransactionId
-     * @param string $amountValue
-     * @param string $amountCurrency
-     * @param string $feesValue
-     * @param string $feesCurrency
      */
     public function __construct(?string $transactionId = null, ?string $date = null, ?string $amount = null, ?string $fees = null, ?string $status = null, ?string $originTransactionId = null, ?string $amountValue = null, ?string $amountCurrency = null, ?string $feesValue = null, ?string $feesCurrency = null)
     {
@@ -127,6 +138,7 @@ class StatusHistory extends AbstractStructBase
             ->setFeesValue($feesValue)
             ->setFeesCurrency($feesCurrency);
     }
+
     /**
      * Get transactionId value
      * @return string|null
@@ -135,10 +147,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->transactionId;
     }
+
     /**
      * Set transactionId value
-     * @param string $transactionId
-     * @return \StructType\StatusHistory
+     * @param string|null $transactionId
+     * @return StatusHistory
      */
     public function setTransactionId(?string $transactionId = null): self
     {
@@ -150,6 +163,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get date value
      * @return string|null
@@ -158,10 +172,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\StatusHistory
+     * @param string|null $date
+     * @return StatusHistory
      */
     public function setDate(?string $date = null): self
     {
@@ -173,6 +188,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -181,10 +197,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\StatusHistory
+     * @param string|null $amount
+     * @return StatusHistory
      */
     public function setAmount(?string $amount = null): self
     {
@@ -196,6 +213,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get fees value
      * @return string|null
@@ -204,10 +222,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->fees;
     }
+
     /**
      * Set fees value
-     * @param string $fees
-     * @return \StructType\StatusHistory
+     * @param string|null $fees
+     * @return StatusHistory
      */
     public function setFees(?string $fees = null): self
     {
@@ -219,6 +238,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -227,10 +247,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
-     * @param string $status
-     * @return \StructType\StatusHistory
+     * @param string|null $status
+     * @return StatusHistory
      */
     public function setStatus(?string $status = null): self
     {
@@ -242,6 +263,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get originTransactionId value
      * @return string|null
@@ -250,10 +272,11 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->originTransactionId;
     }
+
     /**
      * Set originTransactionId value
-     * @param string $originTransactionId
-     * @return \StructType\StatusHistory
+     * @param string|null $originTransactionId
+     * @return StatusHistory
      */
     public function setOriginTransactionId(?string $originTransactionId = null): self
     {
@@ -265,6 +288,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amountValue value
      * An additional test has been added (isset) before returning the property value as
@@ -276,12 +300,13 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->amountValue ?? null;
     }
+
     /**
      * Set amountValue value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $amountValue
-     * @return \StructType\StatusHistory
+     * @param string|null $amountValue
+     * @return StatusHistory
      */
     public function setAmountValue(?string $amountValue = null): self
     {
@@ -289,7 +314,7 @@ class StatusHistory extends AbstractStructBase
         if (!is_null($amountValue) && !is_string($amountValue)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountValue, true), gettype($amountValue)), __LINE__);
         }
-        if (is_null($amountValue) || (is_array($amountValue) && empty($amountValue))) {
+        if (is_null($amountValue)) {
             unset($this->amountValue);
         } else {
             $this->amountValue = $amountValue;
@@ -297,6 +322,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amountCurrency value
      * An additional test has been added (isset) before returning the property value as
@@ -308,12 +334,13 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->amountCurrency ?? null;
     }
+
     /**
      * Set amountCurrency value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $amountCurrency
-     * @return \StructType\StatusHistory
+     * @param string|null $amountCurrency
+     * @return StatusHistory
      */
     public function setAmountCurrency(?string $amountCurrency = null): self
     {
@@ -321,7 +348,7 @@ class StatusHistory extends AbstractStructBase
         if (!is_null($amountCurrency) && !is_string($amountCurrency)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountCurrency, true), gettype($amountCurrency)), __LINE__);
         }
-        if (is_null($amountCurrency) || (is_array($amountCurrency) && empty($amountCurrency))) {
+        if (is_null($amountCurrency)) {
             unset($this->amountCurrency);
         } else {
             $this->amountCurrency = $amountCurrency;
@@ -329,6 +356,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get feesValue value
      * An additional test has been added (isset) before returning the property value as
@@ -340,12 +368,13 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->feesValue ?? null;
     }
+
     /**
      * Set feesValue value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $feesValue
-     * @return \StructType\StatusHistory
+     * @param string|null $feesValue
+     * @return StatusHistory
      */
     public function setFeesValue(?string $feesValue = null): self
     {
@@ -353,7 +382,7 @@ class StatusHistory extends AbstractStructBase
         if (!is_null($feesValue) && !is_string($feesValue)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($feesValue, true), gettype($feesValue)), __LINE__);
         }
-        if (is_null($feesValue) || (is_array($feesValue) && empty($feesValue))) {
+        if (is_null($feesValue)) {
             unset($this->feesValue);
         } else {
             $this->feesValue = $feesValue;
@@ -361,6 +390,7 @@ class StatusHistory extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get feesCurrency value
      * An additional test has been added (isset) before returning the property value as
@@ -372,12 +402,13 @@ class StatusHistory extends AbstractStructBase
     {
         return $this->feesCurrency ?? null;
     }
+
     /**
      * Set feesCurrency value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $feesCurrency
-     * @return \StructType\StatusHistory
+     * @param string|null $feesCurrency
+     * @return StatusHistory
      */
     public function setFeesCurrency(?string $feesCurrency = null): self
     {
@@ -385,7 +416,7 @@ class StatusHistory extends AbstractStructBase
         if (!is_null($feesCurrency) && !is_string($feesCurrency)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($feesCurrency, true), gettype($feesCurrency)), __LINE__);
         }
-        if (is_null($feesCurrency) || (is_array($feesCurrency) && empty($feesCurrency))) {
+        if (is_null($feesCurrency)) {
             unset($this->feesCurrency);
         } else {
             $this->feesCurrency = $feesCurrency;

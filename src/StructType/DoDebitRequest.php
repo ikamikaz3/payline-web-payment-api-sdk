@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for doDebitRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoDebitRequest extends AbstractStructBase
 {
     /**
@@ -21,55 +22,63 @@ class DoDebitRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Card|null
+     * @var Card|null
      */
-    protected ?\StructType\Card $card = null;
+    protected ?Card $card = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The owner
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Owner|null
+     * @var Owner|null
      */
-    protected ?\StructType\Owner $owner = null;
+    protected ?Owner $owner = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -77,13 +86,15 @@ class DoDebitRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -91,15 +102,29 @@ class DoDebitRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The subMerchant
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\SubMerchant|null
+     * @var SubMerchant|null
      */
-    protected ?\StructType\SubMerchant $subMerchant = null;
+    protected ?SubMerchant $subMerchant = null;
+
     /**
      * Constructor method for doDebitRequest
+     * @param string|null $version
+     * @param Payment|null $payment
+     * @param Card|null $card
+     * @param Order|null $order
+     * @param Authorization|null $authorization
+     * @param Buyer|null $buyer
+     * @param Owner|null $owner
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $miscData
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $media
+     * @param SubMerchant|null $subMerchant
      * @uses DoDebitRequest::setVersion()
      * @uses DoDebitRequest::setPayment()
      * @uses DoDebitRequest::setCard()
@@ -112,20 +137,8 @@ class DoDebitRequest extends AbstractStructBase
      * @uses DoDebitRequest::setAuthentication3DSecure()
      * @uses DoDebitRequest::setMedia()
      * @uses DoDebitRequest::setSubMerchant()
-     * @param string $version
-     * @param \StructType\Payment $payment
-     * @param \StructType\Card $card
-     * @param \StructType\Order $order
-     * @param \StructType\Authorization $authorization
-     * @param \StructType\Buyer $buyer
-     * @param \StructType\Owner $owner
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $miscData
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $media
-     * @param \StructType\SubMerchant $subMerchant
      */
-    public function __construct(?string $version = null, ?\StructType\Payment $payment = null, ?\StructType\Card $card = null, ?\StructType\Order $order = null, ?\StructType\Authorization $authorization = null, ?\StructType\Buyer $buyer = null, ?\StructType\Owner $owner = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $miscData = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?\StructType\SubMerchant $subMerchant = null)
+    public function __construct(?string $version = null, ?Payment $payment = null, ?Card $card = null, ?Order $order = null, ?Authorization $authorization = null, ?Buyer $buyer = null, ?Owner $owner = null, ?PrivateDataList $privateDataList = null, ?string $miscData = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $media = null, ?SubMerchant $subMerchant = null)
     {
         $this
             ->setVersion($version)
@@ -141,6 +154,7 @@ class DoDebitRequest extends AbstractStructBase
             ->setMedia($media)
             ->setSubMerchant($subMerchant);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -149,10 +163,11 @@ class DoDebitRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoDebitRequest
+     * @param string|null $version
+     * @return DoDebitRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -164,139 +179,154 @@ class DoDebitRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoDebitRequest
+     * @param Payment|null $payment
+     * @return DoDebitRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\Card|null
+     * @return Card|null
      */
-    public function getCard(): ?\StructType\Card
+    public function getCard(): ?Card
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\Card $card
-     * @return \StructType\DoDebitRequest
+     * @param Card|null $card
+     * @return DoDebitRequest
      */
-    public function setCard(?\StructType\Card $card = null): self
+    public function setCard(?Card $card = null): self
     {
         $this->card = $card;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoDebitRequest
+     * @param Order|null $order
+     * @return DoDebitRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get authorization value
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization;
     }
+
     /**
      * Set authorization value
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\DoDebitRequest
+     * @param Authorization|null $authorization
+     * @return DoDebitRequest
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\DoDebitRequest
+     * @param Buyer|null $buyer
+     * @return DoDebitRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get owner value
-     * @return \StructType\Owner|null
+     * @return Owner|null
      */
-    public function getOwner(): ?\StructType\Owner
+    public function getOwner(): ?Owner
     {
         return $this->owner;
     }
+
     /**
      * Set owner value
-     * @param \StructType\Owner $owner
-     * @return \StructType\DoDebitRequest
+     * @param Owner|null $owner
+     * @return DoDebitRequest
      */
-    public function setOwner(?\StructType\Owner $owner = null): self
+    public function setOwner(?Owner $owner = null): self
     {
         $this->owner = $owner;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoDebitRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoDebitRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -305,10 +335,11 @@ class DoDebitRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\DoDebitRequest
+     * @param string|null $miscData
+     * @return DoDebitRequest
      */
     public function setMiscData(?string $miscData = null): self
     {
@@ -320,25 +351,28 @@ class DoDebitRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\DoDebitRequest
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return DoDebitRequest
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -347,10 +381,11 @@ class DoDebitRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoDebitRequest
+     * @param string|null $media
+     * @return DoDebitRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -362,20 +397,22 @@ class DoDebitRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get subMerchant value
-     * @return \StructType\SubMerchant|null
+     * @return SubMerchant|null
      */
-    public function getSubMerchant(): ?\StructType\SubMerchant
+    public function getSubMerchant(): ?SubMerchant
     {
         return $this->subMerchant;
     }
+
     /**
      * Set subMerchant value
-     * @param \StructType\SubMerchant $subMerchant
-     * @return \StructType\DoDebitRequest
+     * @param SubMerchant|null $subMerchant
+     * @return DoDebitRequest
      */
-    public function setSubMerchant(?\StructType\SubMerchant $subMerchant = null): self
+    public function setSubMerchant(?SubMerchant $subMerchant = null): self
     {
         $this->subMerchant = $subMerchant;
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the cheque
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Cheque extends AbstractStructBase
 {
     /**
@@ -23,16 +24,18 @@ class Cheque extends AbstractStructBase
      * @var string|null
      */
     protected ?string $number = null;
+
     /**
      * Constructor method for cheque
+     * @param string|null $number
      * @uses Cheque::setNumber()
-     * @param string $number
      */
     public function __construct(?string $number = null)
     {
         $this
             ->setNumber($number);
     }
+
     /**
      * Get number value
      * @return string|null
@@ -41,10 +44,11 @@ class Cheque extends AbstractStructBase
     {
         return $this->number;
     }
+
     /**
      * Set number value
-     * @param string $number
-     * @return \StructType\Cheque
+     * @param string|null $number
+     * @return Cheque
      */
     public function setNumber(?string $number = null): self
     {
@@ -53,7 +57,7 @@ class Cheque extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
         $this->number = $number;
-        
+
         return $this;
     }
 }

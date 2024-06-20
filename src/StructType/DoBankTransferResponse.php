@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,98 +14,107 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doBankTransfer method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoBankTransferResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * Constructor method for doBankTransferResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param PrivateDataList|null $privateDataList
      * @uses DoBankTransferResponse::setResult()
      * @uses DoBankTransferResponse::setTransaction()
      * @uses DoBankTransferResponse::setPrivateDataList()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\PrivateDataList $privateDataList
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\PrivateDataList $privateDataList = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?PrivateDataList $privateDataList = null)
     {
         $this
             ->setResult($result)
             ->setTransaction($transaction)
             ->setPrivateDataList($privateDataList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoBankTransferResponse
+     * @param Result|null $result
+     * @return DoBankTransferResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoBankTransferResponse
+     * @param Transaction|null $transaction
+     * @return DoBankTransferResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoBankTransferResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return DoBankTransferResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 

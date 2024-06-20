@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\ServiceType;
+namespace PaylineWebPayment\ServiceType;
 
+use PaylineWebPayment\StructType\DoWebPaymentRequest;
+use PaylineWebPayment\StructType\DoWebPaymentResponse;
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,13 +17,13 @@ class _Do extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named doWebPayment
+     * @param DoWebPaymentRequest $parameters
+     * @return DoWebPaymentResponse|bool
+     * @uses AbstractSoapClientBase::saveLastError()
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\DoWebPaymentRequest $parameters
-     * @return \StructType\DoWebPaymentResponse|bool
      */
-    public function doWebPayment(\StructType\DoWebPaymentRequest $parameters)
+    public function doWebPayment(DoWebPaymentRequest $parameters): bool|DoWebPaymentResponse
     {
         try {
             $this->setResult($resultDoWebPayment = $this->getSoapClient()->__soapCall('doWebPayment', [
@@ -35,12 +37,13 @@ class _Do extends AbstractSoapClientBase
             return false;
         }
     }
+
     /**
      * Returns the result
+     * @return DoWebPaymentResponse
      * @see AbstractSoapClientBase::getResult()
-     * @return \StructType\DoWebPaymentResponse
      */
-    public function getResult()
+    public function getResult(): DoWebPaymentResponse
     {
         return parent::getResult();
     }

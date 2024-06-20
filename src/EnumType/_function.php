@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\EnumType;
+namespace PaylineWebPayment\EnumType;
 
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
@@ -29,12 +29,13 @@ class _function extends AbstractStructEnumBase
      * @return string 'nXPayment'
      */
     const VALUE_N_XPAYMENT = 'nXPayment';
+
     /**
      * Return allowed values
-     * @uses self::VALUE_SIMPLE_PAYMENT
+     * @return string[]
      * @uses self::VALUE_WALLET_CREATION
      * @uses self::VALUE_N_XPAYMENT
-     * @return string[]
+     * @uses self::VALUE_SIMPLE_PAYMENT
      */
     public static function getValidValues(): array
     {

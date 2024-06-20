@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -11,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for getAlertDetailsRequest StructType
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetAlertDetailsRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetAlertDetailsRequest extends AbstractStructBase
      * @var string
      */
     protected string $AlertId;
+
     /**
      * The TransactionId
      * Meta information extracted from the WSDL
@@ -32,34 +34,37 @@ class GetAlertDetailsRequest extends AbstractStructBase
      * @var string
      */
     protected string $TransactionId;
+
     /**
      * The version
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - nillable: true
-     * @var string
+     * @var string|null
      */
     protected ?string $version;
+
     /**
      * The TransactionDate
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - nillable: true
-     * @var string
+     * @var string|null
      */
     protected ?string $TransactionDate;
+
     /**
      * Constructor method for getAlertDetailsRequest
+     * @param string $alertId
+     * @param string $transactionId
+     * @param string|null $version
+     * @param string|null $transactionDate
      * @uses GetAlertDetailsRequest::setAlertId()
      * @uses GetAlertDetailsRequest::setTransactionId()
      * @uses GetAlertDetailsRequest::setVersion()
      * @uses GetAlertDetailsRequest::setTransactionDate()
-     * @param string $alertId
-     * @param string $transactionId
-     * @param string $version
-     * @param string $transactionDate
      */
     public function __construct(string $alertId, string $transactionId, ?string $version, ?string $transactionDate)
     {
@@ -69,6 +74,7 @@ class GetAlertDetailsRequest extends AbstractStructBase
             ->setVersion($version)
             ->setTransactionDate($transactionDate);
     }
+
     /**
      * Get AlertId value
      * @return string
@@ -77,21 +83,20 @@ class GetAlertDetailsRequest extends AbstractStructBase
     {
         return $this->AlertId;
     }
+
     /**
      * Set AlertId value
      * @param string $alertId
-     * @return \StructType\GetAlertDetailsRequest
+     * @return GetAlertDetailsRequest
      */
     public function setAlertId(string $alertId): self
     {
         // validation for constraint: string
-        if (!is_null($alertId) && !is_string($alertId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alertId, true), gettype($alertId)), __LINE__);
-        }
         $this->AlertId = $alertId;
-        
+
         return $this;
     }
+
     /**
      * Get TransactionId value
      * @return string
@@ -100,21 +105,20 @@ class GetAlertDetailsRequest extends AbstractStructBase
     {
         return $this->TransactionId;
     }
+
     /**
      * Set TransactionId value
      * @param string $transactionId
-     * @return \StructType\GetAlertDetailsRequest
+     * @return GetAlertDetailsRequest
      */
     public function setTransactionId(string $transactionId): self
     {
         // validation for constraint: string
-        if (!is_null($transactionId) && !is_string($transactionId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
-        }
         $this->TransactionId = $transactionId;
-        
+
         return $this;
     }
+
     /**
      * Get version value
      * @return string
@@ -123,10 +127,11 @@ class GetAlertDetailsRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetAlertDetailsRequest
+     * @param string|null $version
+     * @return GetAlertDetailsRequest
      */
     public function setVersion(?string $version): self
     {
@@ -135,9 +140,10 @@ class GetAlertDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get TransactionDate value
      * @return string
@@ -146,10 +152,11 @@ class GetAlertDetailsRequest extends AbstractStructBase
     {
         return $this->TransactionDate;
     }
+
     /**
      * Set TransactionDate value
-     * @param string $transactionDate
-     * @return \StructType\GetAlertDetailsRequest
+     * @param string|null $transactionDate
+     * @return GetAlertDetailsRequest
      */
     public function setTransactionDate(?string $transactionDate): self
     {
@@ -158,7 +165,7 @@ class GetAlertDetailsRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionDate, true), gettype($transactionDate)), __LINE__);
         }
         $this->TransactionDate = $transactionDate;
-        
+
         return $this;
     }
 }

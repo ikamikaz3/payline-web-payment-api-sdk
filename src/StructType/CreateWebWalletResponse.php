@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the createWebWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class CreateWebWalletResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class CreateWebWalletResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The redirectURL
      * Meta information extracted from the WSDL
@@ -37,41 +40,45 @@ class CreateWebWalletResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $redirectURL = null;
+
     /**
      * Constructor method for createWebWalletResponse
+     * @param Result|null $result
+     * @param string|null $token
+     * @param string|null $redirectURL
      * @uses CreateWebWalletResponse::setResult()
      * @uses CreateWebWalletResponse::setToken()
      * @uses CreateWebWalletResponse::setRedirectURL()
-     * @param \StructType\Result $result
-     * @param string $token
-     * @param string $redirectURL
      */
-    public function __construct(?\StructType\Result $result = null, ?string $token = null, ?string $redirectURL = null)
+    public function __construct(?Result $result = null, ?string $token = null, ?string $redirectURL = null)
     {
         $this
             ->setResult($result)
             ->setToken($token)
             ->setRedirectURL($redirectURL);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\CreateWebWalletResponse
+     * @param Result|null $result
+     * @return CreateWebWalletResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -80,10 +87,11 @@ class CreateWebWalletResponse extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\CreateWebWalletResponse
+     * @param string|null $token
+     * @return CreateWebWalletResponse
      */
     public function setToken(?string $token = null): self
     {
@@ -95,6 +103,7 @@ class CreateWebWalletResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get redirectURL value
      * @return string|null
@@ -103,10 +112,11 @@ class CreateWebWalletResponse extends AbstractStructBase
     {
         return $this->redirectURL;
     }
+
     /**
      * Set redirectURL value
-     * @param string $redirectURL
-     * @return \StructType\CreateWebWalletResponse
+     * @param string|null $redirectURL
+     * @return CreateWebWalletResponse
      */
     public function setRedirectURL(?string $redirectURL = null): self
     {

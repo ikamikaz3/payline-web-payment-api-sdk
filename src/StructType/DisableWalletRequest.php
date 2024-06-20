@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the disableWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DisableWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,13 +24,15 @@ class DisableWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The walletIdList
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\WalletIdList|null
+     * @var WalletIdList|null
      */
-    protected ?\StructType\WalletIdList $walletIdList = null;
+    protected ?WalletIdList $walletIdList = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -37,22 +40,24 @@ class DisableWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * Constructor method for disableWalletRequest
+     * @param string|null $contractNumber
+     * @param WalletIdList|null $walletIdList
+     * @param string|null $cardInd
      * @uses DisableWalletRequest::setContractNumber()
      * @uses DisableWalletRequest::setWalletIdList()
      * @uses DisableWalletRequest::setCardInd()
-     * @param string $contractNumber
-     * @param \StructType\WalletIdList $walletIdList
-     * @param string $cardInd
      */
-    public function __construct(?string $contractNumber = null, ?\StructType\WalletIdList $walletIdList = null, ?string $cardInd = null)
+    public function __construct(?string $contractNumber = null, ?WalletIdList $walletIdList = null, ?string $cardInd = null)
     {
         $this
             ->setContractNumber($contractNumber)
             ->setWalletIdList($walletIdList)
             ->setCardInd($cardInd);
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -61,10 +66,11 @@ class DisableWalletRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\DisableWalletRequest
+     * @param string|null $contractNumber
+     * @return DisableWalletRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -73,28 +79,31 @@ class DisableWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
+
     /**
      * Get walletIdList value
-     * @return \StructType\WalletIdList|null
+     * @return WalletIdList|null
      */
-    public function getWalletIdList(): ?\StructType\WalletIdList
+    public function getWalletIdList(): ?WalletIdList
     {
         return $this->walletIdList;
     }
+
     /**
      * Set walletIdList value
-     * @param \StructType\WalletIdList $walletIdList
-     * @return \StructType\DisableWalletRequest
+     * @param WalletIdList|null $walletIdList
+     * @return DisableWalletRequest
      */
-    public function setWalletIdList(?\StructType\WalletIdList $walletIdList = null): self
+    public function setWalletIdList(?WalletIdList $walletIdList = null): self
     {
         $this->walletIdList = $walletIdList;
-        
+
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -103,10 +112,11 @@ class DisableWalletRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\DisableWalletRequest
+     * @param string|null $cardInd
+     * @return DisableWalletRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -115,7 +125,7 @@ class DisableWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardInd, true), gettype($cardInd)), __LINE__);
         }
         $this->cardInd = $cardInd;
-        
+
         return $this;
     }
 }

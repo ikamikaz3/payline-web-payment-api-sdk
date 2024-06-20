@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\ServiceType;
+namespace PaylineWebPayment\ServiceType;
 
+use PaylineWebPayment\StructType\UpdateWebWalletRequest;
+use PaylineWebPayment\StructType\UpdateWebWalletResponse;
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,13 +17,13 @@ class Update extends AbstractSoapClientBase
 {
     /**
      * Method to call the operation originally named updateWebWallet
+     * @param UpdateWebWalletRequest $parameters
+     * @return UpdateWebWalletResponse|bool
+     * @uses AbstractSoapClientBase::saveLastError()
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
-     * @uses AbstractSoapClientBase::saveLastError()
-     * @param \StructType\UpdateWebWalletRequest $parameters
-     * @return \StructType\UpdateWebWalletResponse|bool
      */
-    public function updateWebWallet(\StructType\UpdateWebWalletRequest $parameters)
+    public function updateWebWallet(UpdateWebWalletRequest $parameters): UpdateWebWalletResponse|bool
     {
         try {
             $this->setResult($resultUpdateWebWallet = $this->getSoapClient()->__soapCall('updateWebWallet', [
@@ -35,12 +37,13 @@ class Update extends AbstractSoapClientBase
             return false;
         }
     }
+
     /**
      * Returns the result
+     * @return UpdateWebWalletResponse
      * @see AbstractSoapClientBase::getResult()
-     * @return \StructType\UpdateWebWalletResponse
      */
-    public function getResult()
+    public function getResult(): UpdateWebWalletResponse
     {
         return parent::getResult();
     }

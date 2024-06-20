@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doRecurrentWalletPayment method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoRecurrentWalletPaymentResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The paymentRecordId
      * Meta information extracted from the WSDL
@@ -30,48 +32,53 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentRecordId = null;
+
     /**
      * The billingRecordList
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\BillingRecordList|null
+     * @var BillingRecordList|null
      */
-    protected ?\StructType\BillingRecordList $billingRecordList = null;
+    protected ?BillingRecordList $billingRecordList = null;
+
     /**
      * Constructor method for doRecurrentWalletPaymentResponse
+     * @param Result|null $result
+     * @param string|null $paymentRecordId
+     * @param BillingRecordList|null $billingRecordList
      * @uses DoRecurrentWalletPaymentResponse::setResult()
      * @uses DoRecurrentWalletPaymentResponse::setPaymentRecordId()
      * @uses DoRecurrentWalletPaymentResponse::setBillingRecordList()
-     * @param \StructType\Result $result
-     * @param string $paymentRecordId
-     * @param \StructType\BillingRecordList $billingRecordList
      */
-    public function __construct(?\StructType\Result $result = null, ?string $paymentRecordId = null, ?\StructType\BillingRecordList $billingRecordList = null)
+    public function __construct(?Result $result = null, ?string $paymentRecordId = null, ?BillingRecordList $billingRecordList = null)
     {
         $this
             ->setResult($result)
             ->setPaymentRecordId($paymentRecordId)
             ->setBillingRecordList($billingRecordList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoRecurrentWalletPaymentResponse
+     * @param Result|null $result
+     * @return DoRecurrentWalletPaymentResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get paymentRecordId value
      * @return string|null
@@ -80,10 +87,11 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
     {
         return $this->paymentRecordId;
     }
+
     /**
      * Set paymentRecordId value
-     * @param string $paymentRecordId
-     * @return \StructType\DoRecurrentWalletPaymentResponse
+     * @param string|null $paymentRecordId
+     * @return DoRecurrentWalletPaymentResponse
      */
     public function setPaymentRecordId(?string $paymentRecordId = null): self
     {
@@ -95,20 +103,22 @@ class DoRecurrentWalletPaymentResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRecordList value
-     * @return \StructType\BillingRecordList|null
+     * @return BillingRecordList|null
      */
-    public function getBillingRecordList(): ?\StructType\BillingRecordList
+    public function getBillingRecordList(): ?BillingRecordList
     {
         return $this->billingRecordList;
     }
+
     /**
      * Set billingRecordList value
-     * @param \StructType\BillingRecordList $billingRecordList
-     * @return \StructType\DoRecurrentWalletPaymentResponse
+     * @param BillingRecordList|null $billingRecordList
+     * @return DoRecurrentWalletPaymentResponse
      */
-    public function setBillingRecordList(?\StructType\BillingRecordList $billingRecordList = null): self
+    public function setBillingRecordList(?BillingRecordList $billingRecordList = null): self
     {
         $this->billingRecordList = $billingRecordList;
 

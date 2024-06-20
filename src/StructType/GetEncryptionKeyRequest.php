@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getEncryptionKeyRequest method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetEncryptionKeyRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetEncryptionKeyRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The merchantKeyName
      * Meta information extracted from the WSDL
@@ -30,12 +32,13 @@ class GetEncryptionKeyRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $merchantKeyName = null;
+
     /**
      * Constructor method for getEncryptionKeyRequest
+     * @param string|null $version
+     * @param string|null $merchantKeyName
      * @uses GetEncryptionKeyRequest::setVersion()
      * @uses GetEncryptionKeyRequest::setMerchantKeyName()
-     * @param string $version
-     * @param string $merchantKeyName
      */
     public function __construct(?string $version = null, ?string $merchantKeyName = null)
     {
@@ -43,6 +46,7 @@ class GetEncryptionKeyRequest extends AbstractStructBase
             ->setVersion($version)
             ->setMerchantKeyName($merchantKeyName);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -51,10 +55,11 @@ class GetEncryptionKeyRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetEncryptionKeyRequest
+     * @param string|null $version
+     * @return GetEncryptionKeyRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -66,6 +71,7 @@ class GetEncryptionKeyRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get merchantKeyName value
      * @return string|null
@@ -74,10 +80,11 @@ class GetEncryptionKeyRequest extends AbstractStructBase
     {
         return $this->merchantKeyName;
     }
+
     /**
      * Set merchantKeyName value
-     * @param string $merchantKeyName
-     * @return \StructType\GetEncryptionKeyRequest
+     * @param string|null $merchantKeyName
+     * @return GetEncryptionKeyRequest
      */
     public function setMerchantKeyName(?string $merchantKeyName = null): self
     {

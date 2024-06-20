@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,70 +14,76 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the paymentAdditional
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class PaymentAdditional extends AbstractStructBase
 {
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The card
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\CardOut|null
+     * @var CardOut|null
      */
-    protected ?\StructType\CardOut $card = null;
+    protected ?CardOut $card = null;
+
     /**
      * The extendedCard
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * Constructor method for paymentAdditional
+     * @param Transaction|null $transaction
+     * @param Payment|null $payment
+     * @param Authorization|null $authorization
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param CardOut|null $card
+     * @param ExtendedCardType|null $extendedCard
      * @uses PaymentAdditional::setTransaction()
      * @uses PaymentAdditional::setPayment()
      * @uses PaymentAdditional::setAuthorization()
      * @uses PaymentAdditional::setAuthentication3DSecure()
      * @uses PaymentAdditional::setCard()
      * @uses PaymentAdditional::setExtendedCard()
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\Payment $payment
-     * @param \StructType\Authorization $authorization
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param \StructType\CardOut $card
-     * @param \StructType\ExtendedCardType $extendedCard
      */
-    public function __construct(?\StructType\Transaction $transaction = null, ?\StructType\Payment $payment = null, ?\StructType\Authorization $authorization = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?\StructType\CardOut $card = null, ?\StructType\ExtendedCardType $extendedCard = null)
+    public function __construct(?Transaction $transaction = null, ?Payment $payment = null, ?Authorization $authorization = null, ?Authentication3DSecure $authentication3DSecure = null, ?CardOut $card = null, ?ExtendedCardType $extendedCard = null)
     {
         $this
             ->setTransaction($transaction)
@@ -86,84 +93,92 @@ class PaymentAdditional extends AbstractStructBase
             ->setCard($card)
             ->setExtendedCard($extendedCard);
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\PaymentAdditional
+     * @param Transaction|null $transaction
+     * @return PaymentAdditional
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\PaymentAdditional
+     * @param Payment|null $payment
+     * @return PaymentAdditional
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get authorization value
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization;
     }
+
     /**
      * Set authorization value
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\PaymentAdditional
+     * @param Authorization|null $authorization
+     * @return PaymentAdditional
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
         $this->authorization = $authorization;
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure ?? null;
     }
+
     /**
      * Set authentication3DSecure value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\PaymentAdditional
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return PaymentAdditional
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
-        if (is_null($authentication3DSecure) || (is_array($authentication3DSecure) && empty($authentication3DSecure))) {
+        if (is_null($authentication3DSecure)) {
             unset($this->authentication3DSecure);
         } else {
             $this->authentication3DSecure = $authentication3DSecure;
@@ -171,27 +186,29 @@ class PaymentAdditional extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get card value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\CardOut|null
+     * @return CardOut|null
      */
-    public function getCard(): ?\StructType\CardOut
+    public function getCard(): ?CardOut
     {
         return $this->card ?? null;
     }
+
     /**
      * Set card value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\CardOut $card
-     * @return \StructType\PaymentAdditional
+     * @param CardOut|null $card
+     * @return PaymentAdditional
      */
-    public function setCard(?\StructType\CardOut $card = null): self
+    public function setCard(?CardOut $card = null): self
     {
-        if (is_null($card) || (is_array($card) && empty($card))) {
+        if (is_null($card)) {
             unset($this->card);
         } else {
             $this->card = $card;
@@ -199,27 +216,29 @@ class PaymentAdditional extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get extendedCard value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard ?? null;
     }
+
     /**
      * Set extendedCard value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\PaymentAdditional
+     * @param ExtendedCardType|null $extendedCard
+     * @return PaymentAdditional
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
-        if (is_null($extendedCard) || (is_array($extendedCard) && empty($extendedCard))) {
+        if (is_null($extendedCard)) {
             unset($this->extendedCard);
         } else {
             $this->extendedCard = $extendedCard;

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,23 +14,25 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doCapture method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoCaptureResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The reAuthorization
      * Meta information extracted from the WSDL
@@ -37,60 +40,66 @@ class DoCaptureResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $reAuthorization = null;
+
     /**
      * Constructor method for doCaptureResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param string|null $reAuthorization
      * @uses DoCaptureResponse::setResult()
      * @uses DoCaptureResponse::setTransaction()
      * @uses DoCaptureResponse::setReAuthorization()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param string $reAuthorization
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?string $reAuthorization = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?string $reAuthorization = null)
     {
         $this
             ->setResult($result)
             ->setTransaction($transaction)
             ->setReAuthorization($reAuthorization);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoCaptureResponse
+     * @param Result|null $result
+     * @return DoCaptureResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoCaptureResponse
+     * @param Transaction|null $transaction
+     * @return DoCaptureResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get reAuthorization value
      * @return string|null
@@ -99,10 +108,11 @@ class DoCaptureResponse extends AbstractStructBase
     {
         return $this->reAuthorization;
     }
+
     /**
      * Set reAuthorization value
-     * @param string $reAuthorization
-     * @return \StructType\DoCaptureResponse
+     * @param string|null $reAuthorization
+     * @return DoCaptureResponse
      */
     public function setReAuthorization(?string $reAuthorization = null): self
     {

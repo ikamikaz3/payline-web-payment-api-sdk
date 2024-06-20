@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,101 +14,110 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doScoringCheque method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoScoringChequeResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The scoringCheque
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\ScoringCheque|null
+     * @var ScoringCheque|null
      */
-    protected ?\StructType\ScoringCheque $scoringCheque = null;
+    protected ?ScoringCheque $scoringCheque = null;
+
     /**
      * Constructor method for doScoringChequeResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param ScoringCheque|null $scoringCheque
      * @uses DoScoringChequeResponse::setResult()
      * @uses DoScoringChequeResponse::setTransaction()
      * @uses DoScoringChequeResponse::setScoringCheque()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\ScoringCheque $scoringCheque
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\ScoringCheque $scoringCheque = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?ScoringCheque $scoringCheque = null)
     {
         $this
             ->setResult($result)
             ->setTransaction($transaction)
             ->setScoringCheque($scoringCheque);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoScoringChequeResponse
+     * @param Result|null $result
+     * @return DoScoringChequeResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoScoringChequeResponse
+     * @param Transaction|null $transaction
+     * @return DoScoringChequeResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
+
     /**
      * Get scoringCheque value
-     * @return \StructType\ScoringCheque|null
+     * @return ScoringCheque|null
      */
-    public function getScoringCheque(): ?\StructType\ScoringCheque
+    public function getScoringCheque(): ?ScoringCheque
     {
         return $this->scoringCheque;
     }
+
     /**
      * Set scoringCheque value
-     * @param \StructType\ScoringCheque $scoringCheque
-     * @return \StructType\DoScoringChequeResponse
+     * @param ScoringCheque|null $scoringCheque
+     * @return DoScoringChequeResponse
      */
-    public function setScoringCheque(?\StructType\ScoringCheque $scoringCheque = null): self
+    public function setScoringCheque(?ScoringCheque $scoringCheque = null): self
     {
         $this->scoringCheque = $scoringCheque;
-        
+
         return $this;
     }
 }

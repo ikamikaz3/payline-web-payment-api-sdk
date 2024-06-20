@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the refund
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Refund extends AbstractStructBase
 {
     /**
@@ -23,26 +24,29 @@ class Refund extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * Constructor method for refund
+     * @param string|null $transactionID
+     * @param Payment|null $payment
      * @uses Refund::setTransactionID()
      * @uses Refund::setPayment()
-     * @param string $transactionID
-     * @param \StructType\Payment $payment
      */
-    public function __construct(?string $transactionID = null, ?\StructType\Payment $payment = null)
+    public function __construct(?string $transactionID = null, ?Payment $payment = null)
     {
         $this
             ->setTransactionID($transactionID)
             ->setPayment($payment);
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -51,10 +55,11 @@ class Refund extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\Refund
+     * @param string|null $transactionID
+     * @return Refund
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -63,26 +68,28 @@ class Refund extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->transactionID = $transactionID;
-        
+
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\Refund
+     * @param Payment|null $payment
+     * @return Refund
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
-        
+
         return $this;
     }
 }

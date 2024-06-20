@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,30 +14,33 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the getPaymentRecord method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetPaymentRecordResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The recurring
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Recurring|null
+     * @var Recurring|null
      */
-    protected ?\StructType\Recurring $recurring = null;
+    protected ?Recurring $recurring = null;
+
     /**
      * The billingRecordList
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\BillingRecordList|null
+     * @var BillingRecordList|null
      */
-    protected ?\StructType\BillingRecordList $billingRecordList = null;
+    protected ?BillingRecordList $billingRecordList = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class GetPaymentRecordResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The isDisabled
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class GetPaymentRecordResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $isDisabled = null;
+
     /**
      * The disableDate
      * Meta information extracted from the WSDL
@@ -58,22 +64,33 @@ class GetPaymentRecordResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $disableDate = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * Constructor method for getPaymentRecordResponse
+     * @param Result|null $result
+     * @param Recurring|null $recurring
+     * @param BillingRecordList|null $billingRecordList
+     * @param string|null $walletId
+     * @param string|null $isDisabled
+     * @param string|null $disableDate
+     * @param PrivateDataList|null $privateDataList
+     * @param Order|null $order
      * @uses GetPaymentRecordResponse::setResult()
      * @uses GetPaymentRecordResponse::setRecurring()
      * @uses GetPaymentRecordResponse::setBillingRecordList()
@@ -82,16 +99,8 @@ class GetPaymentRecordResponse extends AbstractStructBase
      * @uses GetPaymentRecordResponse::setDisableDate()
      * @uses GetPaymentRecordResponse::setPrivateDataList()
      * @uses GetPaymentRecordResponse::setOrder()
-     * @param \StructType\Result $result
-     * @param \StructType\Recurring $recurring
-     * @param \StructType\BillingRecordList $billingRecordList
-     * @param string $walletId
-     * @param string $isDisabled
-     * @param string $disableDate
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param \StructType\Order $order
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Recurring $recurring = null, ?\StructType\BillingRecordList $billingRecordList = null, ?string $walletId = null, ?string $isDisabled = null, ?string $disableDate = null, ?\StructType\PrivateDataList $privateDataList = null, ?\StructType\Order $order = null)
+    public function __construct(?Result $result = null, ?Recurring $recurring = null, ?BillingRecordList $billingRecordList = null, ?string $walletId = null, ?string $isDisabled = null, ?string $disableDate = null, ?PrivateDataList $privateDataList = null, ?Order $order = null)
     {
         $this
             ->setResult($result)
@@ -103,63 +112,70 @@ class GetPaymentRecordResponse extends AbstractStructBase
             ->setPrivateDataList($privateDataList)
             ->setOrder($order);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetPaymentRecordResponse
+     * @param Result|null $result
+     * @return GetPaymentRecordResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get recurring value
-     * @return \StructType\Recurring|null
+     * @return Recurring|null
      */
-    public function getRecurring(): ?\StructType\Recurring
+    public function getRecurring(): ?Recurring
     {
         return $this->recurring;
     }
+
     /**
      * Set recurring value
-     * @param \StructType\Recurring $recurring
-     * @return \StructType\GetPaymentRecordResponse
+     * @param Recurring|null $recurring
+     * @return GetPaymentRecordResponse
      */
-    public function setRecurring(?\StructType\Recurring $recurring = null): self
+    public function setRecurring(?Recurring $recurring = null): self
     {
         $this->recurring = $recurring;
 
         return $this;
     }
+
     /**
      * Get billingRecordList value
-     * @return \StructType\BillingRecordList|null
+     * @return BillingRecordList|null
      */
-    public function getBillingRecordList(): ?\StructType\BillingRecordList
+    public function getBillingRecordList(): ?BillingRecordList
     {
         return $this->billingRecordList;
     }
+
     /**
      * Set billingRecordList value
-     * @param \StructType\BillingRecordList $billingRecordList
-     * @return \StructType\GetPaymentRecordResponse
+     * @param BillingRecordList|null $billingRecordList
+     * @return GetPaymentRecordResponse
      */
-    public function setBillingRecordList(?\StructType\BillingRecordList $billingRecordList = null): self
+    public function setBillingRecordList(?BillingRecordList $billingRecordList = null): self
     {
         $this->billingRecordList = $billingRecordList;
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -168,10 +184,11 @@ class GetPaymentRecordResponse extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\GetPaymentRecordResponse
+     * @param string|null $walletId
+     * @return GetPaymentRecordResponse
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -183,6 +200,7 @@ class GetPaymentRecordResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get isDisabled value
      * @return string|null
@@ -191,10 +209,11 @@ class GetPaymentRecordResponse extends AbstractStructBase
     {
         return $this->isDisabled;
     }
+
     /**
      * Set isDisabled value
-     * @param string $isDisabled
-     * @return \StructType\GetPaymentRecordResponse
+     * @param string|null $isDisabled
+     * @return GetPaymentRecordResponse
      */
     public function setIsDisabled(?string $isDisabled = null): self
     {
@@ -206,6 +225,7 @@ class GetPaymentRecordResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get disableDate value
      * @return string|null
@@ -214,10 +234,11 @@ class GetPaymentRecordResponse extends AbstractStructBase
     {
         return $this->disableDate;
     }
+
     /**
      * Set disableDate value
-     * @param string $disableDate
-     * @return \StructType\GetPaymentRecordResponse
+     * @param string|null $disableDate
+     * @return GetPaymentRecordResponse
      */
     public function setDisableDate(?string $disableDate = null): self
     {
@@ -229,39 +250,43 @@ class GetPaymentRecordResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\GetPaymentRecordResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return GetPaymentRecordResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\GetPaymentRecordResponse
+     * @param Order|null $order
+     * @return GetPaymentRecordResponse
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getBalance method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetBalanceRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetBalanceRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The cardID
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class GetBalanceRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardID = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class GetBalanceRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * Constructor method for getBalanceRequest
+     * @param string|null $version
+     * @param string|null $cardID
+     * @param string|null $contractNumber
      * @uses GetBalanceRequest::setVersion()
      * @uses GetBalanceRequest::setCardID()
      * @uses GetBalanceRequest::setContractNumber()
-     * @param string $version
-     * @param string $cardID
-     * @param string $contractNumber
      */
     public function __construct(?string $version = null, ?string $cardID = null, ?string $contractNumber = null)
     {
@@ -53,6 +57,7 @@ class GetBalanceRequest extends AbstractStructBase
             ->setCardID($cardID)
             ->setContractNumber($contractNumber);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -61,10 +66,11 @@ class GetBalanceRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetBalanceRequest
+     * @param string|null $version
+     * @return GetBalanceRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -73,9 +79,10 @@ class GetBalanceRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get cardID value
      * @return string|null
@@ -84,10 +91,11 @@ class GetBalanceRequest extends AbstractStructBase
     {
         return $this->cardID;
     }
+
     /**
      * Set cardID value
-     * @param string $cardID
-     * @return \StructType\GetBalanceRequest
+     * @param string|null $cardID
+     * @return GetBalanceRequest
      */
     public function setCardID(?string $cardID = null): self
     {
@@ -96,9 +104,10 @@ class GetBalanceRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardID, true), gettype($cardID)), __LINE__);
         }
         $this->cardID = $cardID;
-        
+
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -107,10 +116,11 @@ class GetBalanceRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetBalanceRequest
+     * @param string|null $contractNumber
+     * @return GetBalanceRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -119,7 +129,7 @@ class GetBalanceRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
 }

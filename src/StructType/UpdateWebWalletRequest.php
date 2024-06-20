@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the updateWebWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class UpdateWebWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The returnURL
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $returnURL = null;
+
     /**
      * The cancelURL
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cancelURL = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * The updatePersonalDetails
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $updatePersonalDetails = null;
+
     /**
      * The updateOwnerDetails
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $updateOwnerDetails = null;
+
     /**
      * The updatePaymentDetails
      * Meta information extracted from the WSDL
@@ -79,13 +88,15 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $updatePaymentDetails = null;
+
     /**
      * The buyer
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Buyer|null
+     * @var Buyer|null
      */
-    protected ?\StructType\Buyer $buyer = null;
+    protected ?Buyer $buyer = null;
+
     /**
      * The languageCode
      * Meta information extracted from the WSDL
@@ -93,6 +104,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $languageCode = null;
+
     /**
      * The customPaymentPageCode
      * Meta information extracted from the WSDL
@@ -100,6 +112,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customPaymentPageCode = null;
+
     /**
      * The securityMode
      * Meta information extracted from the WSDL
@@ -107,6 +120,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $securityMode = null;
+
     /**
      * The notificationURL
      * Meta information extracted from the WSDL
@@ -114,13 +128,15 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $notificationURL = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The customPaymentTemplateURL
      * Meta information extracted from the WSDL
@@ -128,15 +144,34 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customPaymentTemplateURL = null;
+
     /**
      * The contractNumberWalletList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\ContractNumberWalletList|null
+     * @var ContractNumberWalletList|null
      */
-    protected ?\StructType\ContractNumberWalletList $contractNumberWalletList = null;
+    protected ?ContractNumberWalletList $contractNumberWalletList = null;
+
     /**
      * Constructor method for updateWebWalletRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param string|null $walletId
+     * @param string|null $returnURL
+     * @param string|null $cancelURL
+     * @param string|null $cardInd
+     * @param string|null $updatePersonalDetails
+     * @param string|null $updateOwnerDetails
+     * @param string|null $updatePaymentDetails
+     * @param Buyer|null $buyer
+     * @param string|null $languageCode
+     * @param string|null $customPaymentPageCode
+     * @param string|null $securityMode
+     * @param string|null $notificationURL
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $customPaymentTemplateURL
+     * @param ContractNumberWalletList|null $contractNumberWalletList
      * @uses UpdateWebWalletRequest::setVersion()
      * @uses UpdateWebWalletRequest::setContractNumber()
      * @uses UpdateWebWalletRequest::setWalletId()
@@ -154,25 +189,8 @@ class UpdateWebWalletRequest extends AbstractStructBase
      * @uses UpdateWebWalletRequest::setPrivateDataList()
      * @uses UpdateWebWalletRequest::setCustomPaymentTemplateURL()
      * @uses UpdateWebWalletRequest::setContractNumberWalletList()
-     * @param string $version
-     * @param string $contractNumber
-     * @param string $walletId
-     * @param string $returnURL
-     * @param string $cancelURL
-     * @param string $cardInd
-     * @param string $updatePersonalDetails
-     * @param string $updateOwnerDetails
-     * @param string $updatePaymentDetails
-     * @param \StructType\Buyer $buyer
-     * @param string $languageCode
-     * @param string $customPaymentPageCode
-     * @param string $securityMode
-     * @param string $notificationURL
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $customPaymentTemplateURL
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
      */
-    public function __construct(?string $version = null, ?string $contractNumber = null, ?string $walletId = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $cardInd = null, ?string $updatePersonalDetails = null, ?string $updateOwnerDetails = null, ?string $updatePaymentDetails = null, ?\StructType\Buyer $buyer = null, ?string $languageCode = null, ?string $customPaymentPageCode = null, ?string $securityMode = null, ?string $notificationURL = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $customPaymentTemplateURL = null, ?\StructType\ContractNumberWalletList $contractNumberWalletList = null)
+    public function __construct(?string $version = null, ?string $contractNumber = null, ?string $walletId = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $cardInd = null, ?string $updatePersonalDetails = null, ?string $updateOwnerDetails = null, ?string $updatePaymentDetails = null, ?Buyer $buyer = null, ?string $languageCode = null, ?string $customPaymentPageCode = null, ?string $securityMode = null, ?string $notificationURL = null, ?PrivateDataList $privateDataList = null, ?string $customPaymentTemplateURL = null, ?ContractNumberWalletList $contractNumberWalletList = null)
     {
         $this
             ->setVersion($version)
@@ -193,6 +211,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
             ->setCustomPaymentTemplateURL($customPaymentTemplateURL)
             ->setContractNumberWalletList($contractNumberWalletList);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -201,10 +220,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $version
+     * @return UpdateWebWalletRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -216,6 +236,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -224,10 +245,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $contractNumber
+     * @return UpdateWebWalletRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -239,6 +261,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -247,10 +270,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $walletId
+     * @return UpdateWebWalletRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -262,6 +286,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get returnURL value
      * @return string|null
@@ -270,10 +295,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->returnURL;
     }
+
     /**
      * Set returnURL value
-     * @param string $returnURL
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $returnURL
+     * @return UpdateWebWalletRequest
      */
     public function setReturnURL(?string $returnURL = null): self
     {
@@ -285,6 +311,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cancelURL value
      * @return string|null
@@ -293,10 +320,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->cancelURL;
     }
+
     /**
      * Set cancelURL value
-     * @param string $cancelURL
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $cancelURL
+     * @return UpdateWebWalletRequest
      */
     public function setCancelURL(?string $cancelURL = null): self
     {
@@ -308,6 +336,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -316,10 +345,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $cardInd
+     * @return UpdateWebWalletRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -331,6 +361,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get updatePersonalDetails value
      * @return string|null
@@ -339,10 +370,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->updatePersonalDetails;
     }
+
     /**
      * Set updatePersonalDetails value
-     * @param string $updatePersonalDetails
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $updatePersonalDetails
+     * @return UpdateWebWalletRequest
      */
     public function setUpdatePersonalDetails(?string $updatePersonalDetails = null): self
     {
@@ -354,6 +386,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get updateOwnerDetails value
      * @return string|null
@@ -362,10 +395,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->updateOwnerDetails;
     }
+
     /**
      * Set updateOwnerDetails value
-     * @param string $updateOwnerDetails
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $updateOwnerDetails
+     * @return UpdateWebWalletRequest
      */
     public function setUpdateOwnerDetails(?string $updateOwnerDetails = null): self
     {
@@ -377,6 +411,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get updatePaymentDetails value
      * @return string|null
@@ -385,10 +420,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->updatePaymentDetails;
     }
+
     /**
      * Set updatePaymentDetails value
-     * @param string $updatePaymentDetails
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $updatePaymentDetails
+     * @return UpdateWebWalletRequest
      */
     public function setUpdatePaymentDetails(?string $updatePaymentDetails = null): self
     {
@@ -400,25 +436,28 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get buyer value
-     * @return \StructType\Buyer|null
+     * @return Buyer|null
      */
-    public function getBuyer(): ?\StructType\Buyer
+    public function getBuyer(): ?Buyer
     {
         return $this->buyer;
     }
+
     /**
      * Set buyer value
-     * @param \StructType\Buyer $buyer
-     * @return \StructType\UpdateWebWalletRequest
+     * @param Buyer|null $buyer
+     * @return UpdateWebWalletRequest
      */
-    public function setBuyer(?\StructType\Buyer $buyer = null): self
+    public function setBuyer(?Buyer $buyer = null): self
     {
         $this->buyer = $buyer;
 
         return $this;
     }
+
     /**
      * Get languageCode value
      * @return string|null
@@ -427,10 +466,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->languageCode;
     }
+
     /**
      * Set languageCode value
-     * @param string $languageCode
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $languageCode
+     * @return UpdateWebWalletRequest
      */
     public function setLanguageCode(?string $languageCode = null): self
     {
@@ -442,6 +482,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get customPaymentPageCode value
      * @return string|null
@@ -450,10 +491,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->customPaymentPageCode;
     }
+
     /**
      * Set customPaymentPageCode value
-     * @param string $customPaymentPageCode
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $customPaymentPageCode
+     * @return UpdateWebWalletRequest
      */
     public function setCustomPaymentPageCode(?string $customPaymentPageCode = null): self
     {
@@ -465,6 +507,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get securityMode value
      * @return string|null
@@ -473,10 +516,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->securityMode;
     }
+
     /**
      * Set securityMode value
-     * @param string $securityMode
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $securityMode
+     * @return UpdateWebWalletRequest
      */
     public function setSecurityMode(?string $securityMode = null): self
     {
@@ -488,6 +532,7 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get notificationURL value
      * @return string|null
@@ -496,10 +541,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->notificationURL;
     }
+
     /**
      * Set notificationURL value
-     * @param string $notificationURL
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $notificationURL
+     * @return UpdateWebWalletRequest
      */
     public function setNotificationURL(?string $notificationURL = null): self
     {
@@ -511,25 +557,28 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\UpdateWebWalletRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return UpdateWebWalletRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get customPaymentTemplateURL value
      * @return string|null
@@ -538,10 +587,11 @@ class UpdateWebWalletRequest extends AbstractStructBase
     {
         return $this->customPaymentTemplateURL;
     }
+
     /**
      * Set customPaymentTemplateURL value
-     * @param string $customPaymentTemplateURL
-     * @return \StructType\UpdateWebWalletRequest
+     * @param string|null $customPaymentTemplateURL
+     * @return UpdateWebWalletRequest
      */
     public function setCustomPaymentTemplateURL(?string $customPaymentTemplateURL = null): self
     {
@@ -553,20 +603,22 @@ class UpdateWebWalletRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumberWalletList value
-     * @return \StructType\ContractNumberWalletList|null
+     * @return ContractNumberWalletList|null
      */
-    public function getContractNumberWalletList(): ?\StructType\ContractNumberWalletList
+    public function getContractNumberWalletList(): ?ContractNumberWalletList
     {
         return $this->contractNumberWalletList;
     }
+
     /**
      * Set contractNumberWalletList value
-     * @param \StructType\ContractNumberWalletList $contractNumberWalletList
-     * @return \StructType\UpdateWebWalletRequest
+     * @param ContractNumberWalletList|null $contractNumberWalletList
+     * @return UpdateWebWalletRequest
      */
-    public function setContractNumberWalletList(?\StructType\ContractNumberWalletList $contractNumberWalletList = null): self
+    public function setContractNumberWalletList(?ContractNumberWalletList $contractNumberWalletList = null): self
     {
         $this->contractNumberWalletList = $contractNumberWalletList;
 

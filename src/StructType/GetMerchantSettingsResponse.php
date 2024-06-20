@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,69 +14,75 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the response from the getMerchantSettings method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetMerchantSettingsResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The listPointOfSell
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\ListPointOfSell|null
+     * @var ListPointOfSell|null
      */
-    protected ?\StructType\ListPointOfSell $listPointOfSell = null;
+    protected ?ListPointOfSell $listPointOfSell = null;
+
     /**
      * Constructor method for getMerchantSettingsResponse
+     * @param Result|null $result
+     * @param ListPointOfSell|null $listPointOfSell
      * @uses GetMerchantSettingsResponse::setResult()
      * @uses GetMerchantSettingsResponse::setListPointOfSell()
-     * @param \StructType\Result $result
-     * @param \StructType\ListPointOfSell $listPointOfSell
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\ListPointOfSell $listPointOfSell = null)
+    public function __construct(?Result $result = null, ?ListPointOfSell $listPointOfSell = null)
     {
         $this
             ->setResult($result)
             ->setListPointOfSell($listPointOfSell);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\GetMerchantSettingsResponse
+     * @param Result|null $result
+     * @return GetMerchantSettingsResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get listPointOfSell value
-     * @return \StructType\ListPointOfSell|null
+     * @return ListPointOfSell|null
      */
-    public function getListPointOfSell(): ?\StructType\ListPointOfSell
+    public function getListPointOfSell(): ?ListPointOfSell
     {
         return $this->listPointOfSell;
     }
+
     /**
      * Set listPointOfSell value
-     * @param \StructType\ListPointOfSell $listPointOfSell
-     * @return \StructType\GetMerchantSettingsResponse
+     * @param ListPointOfSell|null $listPointOfSell
+     * @return GetMerchantSettingsResponse
      */
-    public function setListPointOfSell(?\StructType\ListPointOfSell $listPointOfSell = null): self
+    public function setListPointOfSell(?ListPointOfSell $listPointOfSell = null): self
     {
         $this->listPointOfSell = $listPointOfSell;
 

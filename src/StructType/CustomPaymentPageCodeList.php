@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: list of custom payment page code
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class CustomPaymentPageCodeList extends AbstractStructBase
 {
     /**
@@ -21,32 +22,35 @@ class CustomPaymentPageCodeList extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \StructType\CustomPaymentPageCode[]
+     * @var CustomPaymentPageCode[]
      */
     protected ?array $customPaymentPageCode = null;
+
     /**
      * Constructor method for customPaymentPageCodeList
+     * @param CustomPaymentPageCode[] $customPaymentPageCode
      * @uses CustomPaymentPageCodeList::setCustomPaymentPageCode()
-     * @param \StructType\CustomPaymentPageCode[] $customPaymentPageCode
      */
     public function __construct(?array $customPaymentPageCode = null)
     {
         $this
             ->setCustomPaymentPageCode($customPaymentPageCode);
     }
+
     /**
      * Get customPaymentPageCode value
-     * @return \StructType\CustomPaymentPageCode[]
+     * @return array|null
      */
     public function getCustomPaymentPageCode(): ?array
     {
         return $this->customPaymentPageCode;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setCustomPaymentPageCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCustomPaymentPageCode method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateCustomPaymentPageCodeForArrayConstraintFromSetCustomPaymentPageCode(?array $values = []): string
@@ -58,22 +62,23 @@ class CustomPaymentPageCodeList extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $customPaymentPageCodeListCustomPaymentPageCodeItem) {
             // validation for constraint: itemType
-            if (!$customPaymentPageCodeListCustomPaymentPageCodeItem instanceof \StructType\CustomPaymentPageCode) {
+            if (!$customPaymentPageCodeListCustomPaymentPageCodeItem instanceof CustomPaymentPageCode) {
                 $invalidValues[] = is_object($customPaymentPageCodeListCustomPaymentPageCodeItem) ? get_class($customPaymentPageCodeListCustomPaymentPageCodeItem) : sprintf('%s(%s)', gettype($customPaymentPageCodeListCustomPaymentPageCodeItem), var_export($customPaymentPageCodeListCustomPaymentPageCodeItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The customPaymentPageCode property can only contain items of type \StructType\CustomPaymentPageCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The customPaymentPageCode property can only contain items of type CustomPaymentPageCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set customPaymentPageCode value
+     * @param CustomPaymentPageCode[] $customPaymentPageCode
+     * @return CustomPaymentPageCodeList
      * @throws InvalidArgumentException
-     * @param \StructType\CustomPaymentPageCode[] $customPaymentPageCode
-     * @return \StructType\CustomPaymentPageCodeList
      */
     public function setCustomPaymentPageCode(?array $customPaymentPageCode = null): self
     {
@@ -82,23 +87,21 @@ class CustomPaymentPageCodeList extends AbstractStructBase
             throw new InvalidArgumentException($customPaymentPageCodeArrayErrorMessage, __LINE__);
         }
         $this->customPaymentPageCode = $customPaymentPageCode;
-        
+
         return $this;
     }
+
     /**
      * Add item to customPaymentPageCode value
+     * @param CustomPaymentPageCode $item
+     * @return CustomPaymentPageCodeList
      * @throws InvalidArgumentException
-     * @param \StructType\CustomPaymentPageCode $item
-     * @return \StructType\CustomPaymentPageCodeList
      */
-    public function addToCustomPaymentPageCode(\StructType\CustomPaymentPageCode $item): self
+    public function addToCustomPaymentPageCode(CustomPaymentPageCode $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\CustomPaymentPageCode) {
-            throw new InvalidArgumentException(sprintf('The customPaymentPageCode property can only contain items of type \StructType\CustomPaymentPageCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         $this->customPaymentPageCode[] = $item;
-        
+
         return $this;
     }
 }

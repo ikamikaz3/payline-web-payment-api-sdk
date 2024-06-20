@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doRefund method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoRefundRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -30,13 +32,15 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The comment
      * Meta information extracted from the WSDL
@@ -44,13 +48,15 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $comment = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The sequenceNumber
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sequenceNumber = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -65,14 +72,16 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * The details
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Details|null
+     * @var Details|null
      */
-    protected ?\StructType\Details $details = null;
+    protected ?Details $details = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
@@ -80,8 +89,18 @@ class DoRefundRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $miscData = null;
+
     /**
      * Constructor method for doRefundRequest
+     * @param string|null $version
+     * @param string|null $transactionID
+     * @param Payment|null $payment
+     * @param string|null $comment
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $sequenceNumber
+     * @param string|null $media
+     * @param Details|null $details
+     * @param string|null $miscData
      * @uses DoRefundRequest::setVersion()
      * @uses DoRefundRequest::setTransactionID()
      * @uses DoRefundRequest::setPayment()
@@ -91,17 +110,8 @@ class DoRefundRequest extends AbstractStructBase
      * @uses DoRefundRequest::setMedia()
      * @uses DoRefundRequest::setDetails()
      * @uses DoRefundRequest::setMiscData()
-     * @param string $version
-     * @param string $transactionID
-     * @param \StructType\Payment $payment
-     * @param string $comment
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $sequenceNumber
-     * @param string $media
-     * @param \StructType\Details $details
-     * @param string $miscData
      */
-    public function __construct(?string $version = null, ?string $transactionID = null, ?\StructType\Payment $payment = null, ?string $comment = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $sequenceNumber = null, ?string $media = null, ?\StructType\Details $details = null, ?string $miscData = null)
+    public function __construct(?string $version = null, ?string $transactionID = null, ?Payment $payment = null, ?string $comment = null, ?PrivateDataList $privateDataList = null, ?string $sequenceNumber = null, ?string $media = null, ?Details $details = null, ?string $miscData = null)
     {
         $this
             ->setVersion($version)
@@ -114,6 +124,7 @@ class DoRefundRequest extends AbstractStructBase
             ->setDetails($details)
             ->setMiscData($miscData);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -122,10 +133,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoRefundRequest
+     * @param string|null $version
+     * @return DoRefundRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -137,6 +149,7 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -145,10 +158,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\DoRefundRequest
+     * @param string|null $transactionID
+     * @return DoRefundRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -160,25 +174,28 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoRefundRequest
+     * @param Payment|null $payment
+     * @return DoRefundRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get comment value
      * @return string|null
@@ -187,10 +204,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->comment;
     }
+
     /**
      * Set comment value
-     * @param string $comment
-     * @return \StructType\DoRefundRequest
+     * @param string|null $comment
+     * @return DoRefundRequest
      */
     public function setComment(?string $comment = null): self
     {
@@ -202,25 +220,28 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoRefundRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoRefundRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get sequenceNumber value
      * @return string|null
@@ -229,10 +250,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->sequenceNumber;
     }
+
     /**
      * Set sequenceNumber value
-     * @param string $sequenceNumber
-     * @return \StructType\DoRefundRequest
+     * @param string|null $sequenceNumber
+     * @return DoRefundRequest
      */
     public function setSequenceNumber(?string $sequenceNumber = null): self
     {
@@ -244,6 +266,7 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -252,10 +275,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoRefundRequest
+     * @param string|null $media
+     * @return DoRefundRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -267,27 +291,29 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get details value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Details|null
+     * @return Details|null
      */
-    public function getDetails(): ?\StructType\Details
+    public function getDetails(): ?Details
     {
         return $this->details ?? null;
     }
+
     /**
      * Set details value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Details $details
-     * @return \StructType\DoRefundRequest
+     * @param Details|null $details
+     * @return DoRefundRequest
      */
-    public function setDetails(?\StructType\Details $details = null): self
+    public function setDetails(?Details $details = null): self
     {
-        if (is_null($details) || (is_array($details) && empty($details))) {
+        if (is_null($details)) {
             unset($this->details);
         } else {
             $this->details = $details;
@@ -295,6 +321,7 @@ class DoRefundRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get miscData value
      * @return string|null
@@ -303,10 +330,11 @@ class DoRefundRequest extends AbstractStructBase
     {
         return $this->miscData;
     }
+
     /**
      * Set miscData value
-     * @param string $miscData
-     * @return \StructType\DoRefundRequest
+     * @param string|null $miscData
+     * @return DoRefundRequest
      */
     public function setMiscData(?string $miscData = null): self
     {

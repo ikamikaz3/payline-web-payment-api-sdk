@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,39 +14,42 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: list of functions
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Functions extends AbstractStructBase
 {
     /**
      * The function
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
-     * @var \StructType\VirtualTerminalFunction[]
+     * @var VirtualTerminalFunction[]
      */
     protected ?array $function = null;
+
     /**
      * Constructor method for functions
+     * @param VirtualTerminalFunction[] $function
      * @uses Functions::setFunction()
-     * @param \StructType\VirtualTerminalFunction[] $function
      */
     public function __construct(?array $function = null)
     {
         $this
             ->setFunction($function);
     }
+
     /**
      * Get function value
-     * @return \StructType\VirtualTerminalFunction[]
+     * @return array|null
      */
     public function getFunction(): ?array
     {
         return $this->function;
     }
+
     /**
      * This method is responsible for validating the value(s) passed to the setFunction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFunction method
      * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
+     * @param array|null $values
      * @return string A non-empty message if the values does not match the validation rules
      */
     public static function validateFunctionForArrayConstraintFromSetFunction(?array $values = []): string
@@ -57,22 +61,23 @@ class Functions extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $functionsFunctionItem) {
             // validation for constraint: itemType
-            if (!$functionsFunctionItem instanceof \StructType\VirtualTerminalFunction) {
+            if (!$functionsFunctionItem instanceof VirtualTerminalFunction) {
                 $invalidValues[] = is_object($functionsFunctionItem) ? get_class($functionsFunctionItem) : sprintf('%s(%s)', gettype($functionsFunctionItem), var_export($functionsFunctionItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The function property can only contain items of type \StructType\VirtualTerminalFunction, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The function property can only contain items of type VirtualTerminalFunction, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-        
+
         return $message;
     }
+
     /**
      * Set function value
+     * @param VirtualTerminalFunction[] $function
+     * @return Functions
      * @throws InvalidArgumentException
-     * @param \StructType\VirtualTerminalFunction[] $function
-     * @return \StructType\Functions
      */
     public function setFunction(?array $function = null): self
     {
@@ -81,23 +86,21 @@ class Functions extends AbstractStructBase
             throw new InvalidArgumentException($functionArrayErrorMessage, __LINE__);
         }
         $this->function = $function;
-        
+
         return $this;
     }
+
     /**
      * Add item to function value
+     * @param VirtualTerminalFunction $item
+     * @return Functions
      * @throws InvalidArgumentException
-     * @param \StructType\VirtualTerminalFunction $item
-     * @return \StructType\Functions
      */
-    public function addToFunction(\StructType\VirtualTerminalFunction $item): self
+    public function addToFunction(VirtualTerminalFunction $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \StructType\VirtualTerminalFunction) {
-            throw new InvalidArgumentException(sprintf('The function property can only contain items of type \StructType\VirtualTerminalFunction, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
         $this->function[] = $item;
-        
+
         return $this;
     }
 }

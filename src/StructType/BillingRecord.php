@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains element for a billing record
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class BillingRecord extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class BillingRecord extends AbstractStructBase
      * @var string|null
      */
     protected ?string $date = null;
+
     /**
      * The amount
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class BillingRecord extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The status
      * Meta information extracted from the WSDL
@@ -37,30 +40,34 @@ class BillingRecord extends AbstractStructBase
      * @var string|null
      */
     protected ?string $status = null;
+
     /**
      * The result
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The authorization
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\Authorization|null
+     * @var Authorization|null
      */
-    protected ?\StructType\Authorization $authorization = null;
+    protected ?Authorization $authorization = null;
+
     /**
      * The nbTry
      * Meta information extracted from the WSDL
@@ -69,6 +76,7 @@ class BillingRecord extends AbstractStructBase
      * @var string|null
      */
     protected ?string $nbTry = null;
+
     /**
      * The rank
      * Meta information extracted from the WSDL
@@ -77,8 +85,17 @@ class BillingRecord extends AbstractStructBase
      * @var string|null
      */
     protected ?string $rank = null;
+
     /**
      * Constructor method for billingRecord
+     * @param string|null $date
+     * @param string|null $amount
+     * @param string|null $status
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param Authorization|null $authorization
+     * @param string|null $nbTry
+     * @param string|null $rank
      * @uses BillingRecord::setDate()
      * @uses BillingRecord::setAmount()
      * @uses BillingRecord::setStatus()
@@ -87,16 +104,8 @@ class BillingRecord extends AbstractStructBase
      * @uses BillingRecord::setAuthorization()
      * @uses BillingRecord::setNbTry()
      * @uses BillingRecord::setRank()
-     * @param string $date
-     * @param string $amount
-     * @param string $status
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\Authorization $authorization
-     * @param string $nbTry
-     * @param string $rank
      */
-    public function __construct(?string $date = null, ?string $amount = null, ?string $status = null, ?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\Authorization $authorization = null, ?string $nbTry = null, ?string $rank = null)
+    public function __construct(?string $date = null, ?string $amount = null, ?string $status = null, ?Result $result = null, ?Transaction $transaction = null, ?Authorization $authorization = null, ?string $nbTry = null, ?string $rank = null)
     {
         $this
             ->setDate($date)
@@ -108,6 +117,7 @@ class BillingRecord extends AbstractStructBase
             ->setNbTry($nbTry)
             ->setRank($rank);
     }
+
     /**
      * Get date value
      * @return string|null
@@ -116,10 +126,11 @@ class BillingRecord extends AbstractStructBase
     {
         return $this->date;
     }
+
     /**
      * Set date value
-     * @param string $date
-     * @return \StructType\BillingRecord
+     * @param string|null $date
+     * @return BillingRecord
      */
     public function setDate(?string $date = null): self
     {
@@ -131,6 +142,7 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -139,10 +151,11 @@ class BillingRecord extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\BillingRecord
+     * @param string|null $amount
+     * @return BillingRecord
      */
     public function setAmount(?string $amount = null): self
     {
@@ -154,6 +167,7 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get status value
      * @return string|null
@@ -162,10 +176,11 @@ class BillingRecord extends AbstractStructBase
     {
         return $this->status;
     }
+
     /**
      * Set status value
-     * @param string $status
-     * @return \StructType\BillingRecord
+     * @param string|null $status
+     * @return BillingRecord
      */
     public function setStatus(?string $status = null): self
     {
@@ -177,27 +192,29 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get result value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result ?? null;
     }
+
     /**
      * Set result value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Result $result
-     * @return \StructType\BillingRecord
+     * @param Result|null $result
+     * @return BillingRecord
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
-        if (is_null($result) || (is_array($result) && empty($result))) {
+        if (is_null($result)) {
             unset($this->result);
         } else {
             $this->result = $result;
@@ -205,27 +222,29 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transaction value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction ?? null;
     }
+
     /**
      * Set transaction value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\BillingRecord
+     * @param Transaction|null $transaction
+     * @return BillingRecord
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
-        if (is_null($transaction) || (is_array($transaction) && empty($transaction))) {
+        if (is_null($transaction)) {
             unset($this->transaction);
         } else {
             $this->transaction = $transaction;
@@ -233,27 +252,29 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authorization value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\Authorization|null
+     * @return Authorization|null
      */
-    public function getAuthorization(): ?\StructType\Authorization
+    public function getAuthorization(): ?Authorization
     {
         return $this->authorization ?? null;
     }
+
     /**
      * Set authorization value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\Authorization $authorization
-     * @return \StructType\BillingRecord
+     * @param Authorization|null $authorization
+     * @return BillingRecord
      */
-    public function setAuthorization(?\StructType\Authorization $authorization = null): self
+    public function setAuthorization(?Authorization $authorization = null): self
     {
-        if (is_null($authorization) || (is_array($authorization) && empty($authorization))) {
+        if (is_null($authorization)) {
             unset($this->authorization);
         } else {
             $this->authorization = $authorization;
@@ -261,6 +282,7 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get nbTry value
      * An additional test has been added (isset) before returning the property value as
@@ -272,12 +294,13 @@ class BillingRecord extends AbstractStructBase
     {
         return $this->nbTry ?? null;
     }
+
     /**
      * Set nbTry value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $nbTry
-     * @return \StructType\BillingRecord
+     * @param string|null $nbTry
+     * @return BillingRecord
      */
     public function setNbTry(?string $nbTry = null): self
     {
@@ -285,7 +308,7 @@ class BillingRecord extends AbstractStructBase
         if (!is_null($nbTry) && !is_string($nbTry)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nbTry, true), gettype($nbTry)), __LINE__);
         }
-        if (is_null($nbTry) || (is_array($nbTry) && empty($nbTry))) {
+        if (is_null($nbTry)) {
             unset($this->nbTry);
         } else {
             $this->nbTry = $nbTry;
@@ -293,6 +316,7 @@ class BillingRecord extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get rank value
      * An additional test has been added (isset) before returning the property value as
@@ -304,12 +328,13 @@ class BillingRecord extends AbstractStructBase
     {
         return $this->rank ?? null;
     }
+
     /**
      * Set rank value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param string $rank
-     * @return \StructType\BillingRecord
+     * @param string|null $rank
+     * @return BillingRecord
      */
     public function setRank(?string $rank = null): self
     {
@@ -317,7 +342,7 @@ class BillingRecord extends AbstractStructBase
         if (!is_null($rank) && !is_string($rank)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rank, true), gettype($rank)), __LINE__);
         }
-        if (is_null($rank) || (is_array($rank) && empty($rank))) {
+        if (is_null($rank)) {
             unset($this->rank);
         } else {
             $this->rank = $rank;

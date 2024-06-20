@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the doReAuthorization method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoReAuthorizationRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The transactionID
      * Meta information extracted from the WSDL
@@ -30,27 +32,31 @@ class DoReAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionID = null;
+
     /**
      * The payment
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Payment|null
+     * @var Payment|null
      */
-    protected ?\StructType\Payment $payment = null;
+    protected ?Payment $payment = null;
+
     /**
      * The order
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Order|null
+     * @var Order|null
      */
-    protected ?\StructType\Order $order = null;
+    protected ?Order $order = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -58,22 +64,23 @@ class DoReAuthorizationRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * Constructor method for doReAuthorizationRequest
+     * @param string|null $version
+     * @param string|null $transactionID
+     * @param Payment|null $payment
+     * @param Order|null $order
+     * @param PrivateDataList|null $privateDataList
+     * @param string|null $media
      * @uses DoReAuthorizationRequest::setVersion()
      * @uses DoReAuthorizationRequest::setTransactionID()
      * @uses DoReAuthorizationRequest::setPayment()
      * @uses DoReAuthorizationRequest::setOrder()
      * @uses DoReAuthorizationRequest::setPrivateDataList()
      * @uses DoReAuthorizationRequest::setMedia()
-     * @param string $version
-     * @param string $transactionID
-     * @param \StructType\Payment $payment
-     * @param \StructType\Order $order
-     * @param \StructType\PrivateDataList $privateDataList
-     * @param string $media
      */
-    public function __construct(?string $version = null, ?string $transactionID = null, ?\StructType\Payment $payment = null, ?\StructType\Order $order = null, ?\StructType\PrivateDataList $privateDataList = null, ?string $media = null)
+    public function __construct(?string $version = null, ?string $transactionID = null, ?Payment $payment = null, ?Order $order = null, ?PrivateDataList $privateDataList = null, ?string $media = null)
     {
         $this
             ->setVersion($version)
@@ -83,6 +90,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
             ->setPrivateDataList($privateDataList)
             ->setMedia($media);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -91,10 +99,11 @@ class DoReAuthorizationRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\DoReAuthorizationRequest
+     * @param string|null $version
+     * @return DoReAuthorizationRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -106,6 +115,7 @@ class DoReAuthorizationRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionID value
      * @return string|null
@@ -114,10 +124,11 @@ class DoReAuthorizationRequest extends AbstractStructBase
     {
         return $this->transactionID;
     }
+
     /**
      * Set transactionID value
-     * @param string $transactionID
-     * @return \StructType\DoReAuthorizationRequest
+     * @param string|null $transactionID
+     * @return DoReAuthorizationRequest
      */
     public function setTransactionID(?string $transactionID = null): self
     {
@@ -129,63 +140,70 @@ class DoReAuthorizationRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get payment value
-     * @return \StructType\Payment|null
+     * @return Payment|null
      */
-    public function getPayment(): ?\StructType\Payment
+    public function getPayment(): ?Payment
     {
         return $this->payment;
     }
+
     /**
      * Set payment value
-     * @param \StructType\Payment $payment
-     * @return \StructType\DoReAuthorizationRequest
+     * @param Payment|null $payment
+     * @return DoReAuthorizationRequest
      */
-    public function setPayment(?\StructType\Payment $payment = null): self
+    public function setPayment(?Payment $payment = null): self
     {
         $this->payment = $payment;
 
         return $this;
     }
+
     /**
      * Get order value
-     * @return \StructType\Order|null
+     * @return Order|null
      */
-    public function getOrder(): ?\StructType\Order
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
+
     /**
      * Set order value
-     * @param \StructType\Order $order
-     * @return \StructType\DoReAuthorizationRequest
+     * @param Order|null $order
+     * @return DoReAuthorizationRequest
      */
-    public function setOrder(?\StructType\Order $order = null): self
+    public function setOrder(?Order $order = null): self
     {
         $this->order = $order;
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\DoReAuthorizationRequest
+     * @param PrivateDataList|null $privateDataList
+     * @return DoReAuthorizationRequest
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -194,10 +212,11 @@ class DoReAuthorizationRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\DoReAuthorizationRequest
+     * @param string|null $media
+     * @return DoReAuthorizationRequest
      */
     public function setMedia(?string $media = null): self
     {

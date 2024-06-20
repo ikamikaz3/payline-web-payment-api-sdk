@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,45 +14,49 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doCredit method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoCreditResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The card
-     * @var \StructType\CardOut|null
+     * @var CardOut|null
      */
-    protected ?\StructType\CardOut $card = null;
+    protected ?CardOut $card = null;
+
     /**
      * The extendedCard
-     * @var \StructType\ExtendedCardType|null
+     * @var ExtendedCardType|null
      */
-    protected ?\StructType\ExtendedCardType $extendedCard = null;
+    protected ?ExtendedCardType $extendedCard = null;
+
     /**
      * Constructor method for doCreditResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param CardOut|null $card
+     * @param ExtendedCardType|null $extendedCard
      * @uses DoCreditResponse::setResult()
      * @uses DoCreditResponse::setTransaction()
      * @uses DoCreditResponse::setCard()
      * @uses DoCreditResponse::setExtendedCard()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\CardOut $card
-     * @param \StructType\ExtendedCardType $extendedCard
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\CardOut $card = null, ?\StructType\ExtendedCardType $extendedCard = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?CardOut $card = null, ?ExtendedCardType $extendedCard = null)
     {
         $this
             ->setResult($result)
@@ -59,80 +64,88 @@ class DoCreditResponse extends AbstractStructBase
             ->setCard($card)
             ->setExtendedCard($extendedCard);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoCreditResponse
+     * @param Result|null $result
+     * @return DoCreditResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
-        
+
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoCreditResponse
+     * @param Transaction|null $transaction
+     * @return DoCreditResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
-        
+
         return $this;
     }
+
     /**
      * Get card value
-     * @return \StructType\CardOut|null
+     * @return CardOut|null
      */
-    public function getCard(): ?\StructType\CardOut
+    public function getCard(): ?CardOut
     {
         return $this->card;
     }
+
     /**
      * Set card value
-     * @param \StructType\CardOut $card
-     * @return \StructType\DoCreditResponse
+     * @param CardOut|null $card
+     * @return DoCreditResponse
      */
-    public function setCard(?\StructType\CardOut $card = null): self
+    public function setCard(?CardOut $card = null): self
     {
         $this->card = $card;
-        
+
         return $this;
     }
+
     /**
      * Get extendedCard value
-     * @return \StructType\ExtendedCardType|null
+     * @return ExtendedCardType|null
      */
-    public function getExtendedCard(): ?\StructType\ExtendedCardType
+    public function getExtendedCard(): ?ExtendedCardType
     {
         return $this->extendedCard;
     }
+
     /**
      * Set extendedCard value
-     * @param \StructType\ExtendedCardType $extendedCard
-     * @return \StructType\DoCreditResponse
+     * @param ExtendedCardType|null $extendedCard
+     * @return DoCreditResponse
      */
-    public function setExtendedCard(?\StructType\ExtendedCardType $extendedCard = null): self
+    public function setExtendedCard(?ExtendedCardType $extendedCard = null): self
     {
         $this->extendedCard = $extendedCard;
-        
+
         return $this;
     }
 }

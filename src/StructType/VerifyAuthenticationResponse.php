@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,16 +14,17 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doAuthentication method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class VerifyAuthenticationResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transient
      * Meta information extracted from the WSDL
@@ -30,13 +32,15 @@ class VerifyAuthenticationResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transient = null;
+
     /**
      * The authentication3DSecure
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Authentication3DSecure|null
+     * @var Authentication3DSecure|null
      */
-    protected ?\StructType\Authentication3DSecure $authentication3DSecure = null;
+    protected ?Authentication3DSecure $authentication3DSecure = null;
+
     /**
      * The mpiResult
      * Meta information extracted from the WSDL
@@ -44,27 +48,29 @@ class VerifyAuthenticationResponse extends AbstractStructBase
      * @var string|null
      */
     protected ?string $mpiResult = null;
+
     /**
      * The privateDataList
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\PrivateDataList|null
+     * @var PrivateDataList|null
      */
-    protected ?\StructType\PrivateDataList $privateDataList = null;
+    protected ?PrivateDataList $privateDataList = null;
+
     /**
      * Constructor method for verifyAuthenticationResponse
+     * @param Result|null $result
+     * @param string|null $transient
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @param string|null $mpiResult
+     * @param PrivateDataList|null $privateDataList
      * @uses VerifyAuthenticationResponse::setResult()
      * @uses VerifyAuthenticationResponse::setTransient()
      * @uses VerifyAuthenticationResponse::setAuthentication3DSecure()
      * @uses VerifyAuthenticationResponse::setMpiResult()
      * @uses VerifyAuthenticationResponse::setPrivateDataList()
-     * @param \StructType\Result $result
-     * @param string $transient
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @param string $mpiResult
-     * @param \StructType\PrivateDataList $privateDataList
      */
-    public function __construct(?\StructType\Result $result = null, ?string $transient = null, ?\StructType\Authentication3DSecure $authentication3DSecure = null, ?string $mpiResult = null, ?\StructType\PrivateDataList $privateDataList = null)
+    public function __construct(?Result $result = null, ?string $transient = null, ?Authentication3DSecure $authentication3DSecure = null, ?string $mpiResult = null, ?PrivateDataList $privateDataList = null)
     {
         $this
             ->setResult($result)
@@ -73,25 +79,28 @@ class VerifyAuthenticationResponse extends AbstractStructBase
             ->setMpiResult($mpiResult)
             ->setPrivateDataList($privateDataList);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\VerifyAuthenticationResponse
+     * @param Result|null $result
+     * @return VerifyAuthenticationResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transient value
      * @return string|null
@@ -100,10 +109,11 @@ class VerifyAuthenticationResponse extends AbstractStructBase
     {
         return $this->transient;
     }
+
     /**
      * Set transient value
-     * @param string $transient
-     * @return \StructType\VerifyAuthenticationResponse
+     * @param string|null $transient
+     * @return VerifyAuthenticationResponse
      */
     public function setTransient(?string $transient = null): self
     {
@@ -115,25 +125,28 @@ class VerifyAuthenticationResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authentication3DSecure value
-     * @return \StructType\Authentication3DSecure|null
+     * @return Authentication3DSecure|null
      */
-    public function getAuthentication3DSecure(): ?\StructType\Authentication3DSecure
+    public function getAuthentication3DSecure(): ?Authentication3DSecure
     {
         return $this->authentication3DSecure;
     }
+
     /**
      * Set authentication3DSecure value
-     * @param \StructType\Authentication3DSecure $authentication3DSecure
-     * @return \StructType\VerifyAuthenticationResponse
+     * @param Authentication3DSecure|null $authentication3DSecure
+     * @return VerifyAuthenticationResponse
      */
-    public function setAuthentication3DSecure(?\StructType\Authentication3DSecure $authentication3DSecure = null): self
+    public function setAuthentication3DSecure(?Authentication3DSecure $authentication3DSecure = null): self
     {
         $this->authentication3DSecure = $authentication3DSecure;
 
         return $this;
     }
+
     /**
      * Get mpiResult value
      * @return string|null
@@ -142,10 +155,11 @@ class VerifyAuthenticationResponse extends AbstractStructBase
     {
         return $this->mpiResult;
     }
+
     /**
      * Set mpiResult value
-     * @param string $mpiResult
-     * @return \StructType\VerifyAuthenticationResponse
+     * @param string|null $mpiResult
+     * @return VerifyAuthenticationResponse
      */
     public function setMpiResult(?string $mpiResult = null): self
     {
@@ -157,20 +171,22 @@ class VerifyAuthenticationResponse extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get privateDataList value
-     * @return \StructType\PrivateDataList|null
+     * @return PrivateDataList|null
      */
-    public function getPrivateDataList(): ?\StructType\PrivateDataList
+    public function getPrivateDataList(): ?PrivateDataList
     {
         return $this->privateDataList;
     }
+
     /**
      * Set privateDataList value
-     * @param \StructType\PrivateDataList $privateDataList
-     * @return \StructType\VerifyAuthenticationResponse
+     * @param PrivateDataList|null $privateDataList
+     * @return VerifyAuthenticationResponse
      */
-    public function setPrivateDataList(?\StructType\PrivateDataList $privateDataList = null): self
+    public function setPrivateDataList(?PrivateDataList $privateDataList = null): self
     {
         $this->privateDataList = $privateDataList;
 

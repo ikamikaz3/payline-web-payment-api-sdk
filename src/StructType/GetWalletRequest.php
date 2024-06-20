@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the getWallet method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class GetWalletRequest extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class GetWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class GetWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class GetWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The cardInd
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class GetWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardInd = null;
+
     /**
      * The media
      * Meta information extracted from the WSDL
@@ -51,18 +56,19 @@ class GetWalletRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $media = null;
+
     /**
      * Constructor method for getWalletRequest
+     * @param string|null $version
+     * @param string|null $contractNumber
+     * @param string|null $walletId
+     * @param string|null $cardInd
+     * @param string|null $media
      * @uses GetWalletRequest::setVersion()
      * @uses GetWalletRequest::setContractNumber()
      * @uses GetWalletRequest::setWalletId()
      * @uses GetWalletRequest::setCardInd()
      * @uses GetWalletRequest::setMedia()
-     * @param string $version
-     * @param string $contractNumber
-     * @param string $walletId
-     * @param string $cardInd
-     * @param string $media
      */
     public function __construct(?string $version = null, ?string $contractNumber = null, ?string $walletId = null, ?string $cardInd = null, ?string $media = null)
     {
@@ -73,6 +79,7 @@ class GetWalletRequest extends AbstractStructBase
             ->setCardInd($cardInd)
             ->setMedia($media);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -81,10 +88,11 @@ class GetWalletRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\GetWalletRequest
+     * @param string|null $version
+     * @return GetWalletRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -93,9 +101,10 @@ class GetWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->version = $version;
-        
+
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -104,10 +113,11 @@ class GetWalletRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\GetWalletRequest
+     * @param string|null $contractNumber
+     * @return GetWalletRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -116,9 +126,10 @@ class GetWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractNumber, true), gettype($contractNumber)), __LINE__);
         }
         $this->contractNumber = $contractNumber;
-        
+
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -127,10 +138,11 @@ class GetWalletRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\GetWalletRequest
+     * @param string|null $walletId
+     * @return GetWalletRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -139,9 +151,10 @@ class GetWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($walletId, true), gettype($walletId)), __LINE__);
         }
         $this->walletId = $walletId;
-        
+
         return $this;
     }
+
     /**
      * Get cardInd value
      * @return string|null
@@ -150,10 +163,11 @@ class GetWalletRequest extends AbstractStructBase
     {
         return $this->cardInd;
     }
+
     /**
      * Set cardInd value
-     * @param string $cardInd
-     * @return \StructType\GetWalletRequest
+     * @param string|null $cardInd
+     * @return GetWalletRequest
      */
     public function setCardInd(?string $cardInd = null): self
     {
@@ -162,9 +176,10 @@ class GetWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardInd, true), gettype($cardInd)), __LINE__);
         }
         $this->cardInd = $cardInd;
-        
+
         return $this;
     }
+
     /**
      * Get media value
      * @return string|null
@@ -173,10 +188,11 @@ class GetWalletRequest extends AbstractStructBase
     {
         return $this->media;
     }
+
     /**
      * Set media value
-     * @param string $media
-     * @return \StructType\GetWalletRequest
+     * @param string|null $media
+     * @return GetWalletRequest
      */
     public function setMedia(?string $media = null): self
     {
@@ -185,7 +201,7 @@ class GetWalletRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($media, true), gettype($media)), __LINE__);
         }
         $this->media = $media;
-        
+
         return $this;
     }
 }

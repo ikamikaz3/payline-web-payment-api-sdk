@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about 3DS.
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class ThreeDSInfo extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $challengeInd = null;
+
     /**
      * The threeDSReqPriorAuthData
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSReqPriorAuthData = null;
+
     /**
      * The threeDSReqPriorAuthMethod
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSReqPriorAuthMethod = null;
+
     /**
      * The threeDSReqPriorAuthTimestamp
      * Meta information extracted from the WSDL
@@ -44,20 +48,23 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSReqPriorAuthTimestamp = null;
+
     /**
      * The browser
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Browser|null
+     * @var Browser|null
      */
-    protected ?\StructType\Browser $browser = null;
+    protected ?Browser $browser = null;
+
     /**
      * The sdk
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \StructType\Sdk|null
+     * @var Sdk|null
      */
-    protected ?\StructType\Sdk $sdk = null;
+    protected ?Sdk $sdk = null;
+
     /**
      * The threeDSMethodNotificationURL
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSMethodNotificationURL = null;
+
     /**
      * The threeDSMethodResult
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSMethodResult = null;
+
     /**
      * The challengeWindowSize
      * Meta information extracted from the WSDL
@@ -79,8 +88,18 @@ class ThreeDSInfo extends AbstractStructBase
      * @var string|null
      */
     protected ?string $challengeWindowSize = null;
+
     /**
      * Constructor method for threeDSInfo
+     * @param string|null $challengeInd
+     * @param string|null $threeDSReqPriorAuthData
+     * @param string|null $threeDSReqPriorAuthMethod
+     * @param string|null $threeDSReqPriorAuthTimestamp
+     * @param Browser|null $browser
+     * @param Sdk|null $sdk
+     * @param string|null $threeDSMethodNotificationURL
+     * @param string|null $threeDSMethodResult
+     * @param string|null $challengeWindowSize
      * @uses ThreeDSInfo::setChallengeInd()
      * @uses ThreeDSInfo::setThreeDSReqPriorAuthData()
      * @uses ThreeDSInfo::setThreeDSReqPriorAuthMethod()
@@ -90,17 +109,8 @@ class ThreeDSInfo extends AbstractStructBase
      * @uses ThreeDSInfo::setThreeDSMethodNotificationURL()
      * @uses ThreeDSInfo::setThreeDSMethodResult()
      * @uses ThreeDSInfo::setChallengeWindowSize()
-     * @param string $challengeInd
-     * @param string $threeDSReqPriorAuthData
-     * @param string $threeDSReqPriorAuthMethod
-     * @param string $threeDSReqPriorAuthTimestamp
-     * @param \StructType\Browser $browser
-     * @param \StructType\Sdk $sdk
-     * @param string $threeDSMethodNotificationURL
-     * @param string $threeDSMethodResult
-     * @param string $challengeWindowSize
      */
-    public function __construct(?string $challengeInd = null, ?string $threeDSReqPriorAuthData = null, ?string $threeDSReqPriorAuthMethod = null, ?string $threeDSReqPriorAuthTimestamp = null, ?\StructType\Browser $browser = null, ?\StructType\Sdk $sdk = null, ?string $threeDSMethodNotificationURL = null, ?string $threeDSMethodResult = null, ?string $challengeWindowSize = null)
+    public function __construct(?string $challengeInd = null, ?string $threeDSReqPriorAuthData = null, ?string $threeDSReqPriorAuthMethod = null, ?string $threeDSReqPriorAuthTimestamp = null, ?Browser $browser = null, ?Sdk $sdk = null, ?string $threeDSMethodNotificationURL = null, ?string $threeDSMethodResult = null, ?string $challengeWindowSize = null)
     {
         $this
             ->setChallengeInd($challengeInd)
@@ -113,6 +123,7 @@ class ThreeDSInfo extends AbstractStructBase
             ->setThreeDSMethodResult($threeDSMethodResult)
             ->setChallengeWindowSize($challengeWindowSize);
     }
+
     /**
      * Get challengeInd value
      * @return string|null
@@ -121,10 +132,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->challengeInd;
     }
+
     /**
      * Set challengeInd value
-     * @param string $challengeInd
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $challengeInd
+     * @return ThreeDSInfo
      */
     public function setChallengeInd(?string $challengeInd = null): self
     {
@@ -133,9 +145,10 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($challengeInd, true), gettype($challengeInd)), __LINE__);
         }
         $this->challengeInd = $challengeInd;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSReqPriorAuthData value
      * @return string|null
@@ -144,10 +157,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->threeDSReqPriorAuthData;
     }
+
     /**
      * Set threeDSReqPriorAuthData value
-     * @param string $threeDSReqPriorAuthData
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $threeDSReqPriorAuthData
+     * @return ThreeDSInfo
      */
     public function setThreeDSReqPriorAuthData(?string $threeDSReqPriorAuthData = null): self
     {
@@ -156,9 +170,10 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSReqPriorAuthData, true), gettype($threeDSReqPriorAuthData)), __LINE__);
         }
         $this->threeDSReqPriorAuthData = $threeDSReqPriorAuthData;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSReqPriorAuthMethod value
      * @return string|null
@@ -167,10 +182,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->threeDSReqPriorAuthMethod;
     }
+
     /**
      * Set threeDSReqPriorAuthMethod value
-     * @param string $threeDSReqPriorAuthMethod
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $threeDSReqPriorAuthMethod
+     * @return ThreeDSInfo
      */
     public function setThreeDSReqPriorAuthMethod(?string $threeDSReqPriorAuthMethod = null): self
     {
@@ -179,9 +195,10 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSReqPriorAuthMethod, true), gettype($threeDSReqPriorAuthMethod)), __LINE__);
         }
         $this->threeDSReqPriorAuthMethod = $threeDSReqPriorAuthMethod;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSReqPriorAuthTimestamp value
      * @return string|null
@@ -190,10 +207,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->threeDSReqPriorAuthTimestamp;
     }
+
     /**
      * Set threeDSReqPriorAuthTimestamp value
-     * @param string $threeDSReqPriorAuthTimestamp
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $threeDSReqPriorAuthTimestamp
+     * @return ThreeDSInfo
      */
     public function setThreeDSReqPriorAuthTimestamp(?string $threeDSReqPriorAuthTimestamp = null): self
     {
@@ -202,47 +220,52 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSReqPriorAuthTimestamp, true), gettype($threeDSReqPriorAuthTimestamp)), __LINE__);
         }
         $this->threeDSReqPriorAuthTimestamp = $threeDSReqPriorAuthTimestamp;
-        
+
         return $this;
     }
+
     /**
      * Get browser value
-     * @return \StructType\Browser|null
+     * @return Browser|null
      */
-    public function getBrowser(): ?\StructType\Browser
+    public function getBrowser(): ?Browser
     {
         return $this->browser;
     }
+
     /**
      * Set browser value
-     * @param \StructType\Browser $browser
-     * @return \StructType\ThreeDSInfo
+     * @param Browser|null $browser
+     * @return ThreeDSInfo
      */
-    public function setBrowser(?\StructType\Browser $browser = null): self
+    public function setBrowser(?Browser $browser = null): self
     {
         $this->browser = $browser;
-        
+
         return $this;
     }
+
     /**
      * Get sdk value
-     * @return \StructType\Sdk|null
+     * @return Sdk|null
      */
-    public function getSdk(): ?\StructType\Sdk
+    public function getSdk(): ?Sdk
     {
         return $this->sdk;
     }
+
     /**
      * Set sdk value
-     * @param \StructType\Sdk $sdk
-     * @return \StructType\ThreeDSInfo
+     * @param Sdk|null $sdk
+     * @return ThreeDSInfo
      */
-    public function setSdk(?\StructType\Sdk $sdk = null): self
+    public function setSdk(?Sdk $sdk = null): self
     {
         $this->sdk = $sdk;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSMethodNotificationURL value
      * @return string|null
@@ -251,10 +274,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->threeDSMethodNotificationURL;
     }
+
     /**
      * Set threeDSMethodNotificationURL value
-     * @param string $threeDSMethodNotificationURL
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $threeDSMethodNotificationURL
+     * @return ThreeDSInfo
      */
     public function setThreeDSMethodNotificationURL(?string $threeDSMethodNotificationURL = null): self
     {
@@ -263,9 +287,10 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSMethodNotificationURL, true), gettype($threeDSMethodNotificationURL)), __LINE__);
         }
         $this->threeDSMethodNotificationURL = $threeDSMethodNotificationURL;
-        
+
         return $this;
     }
+
     /**
      * Get threeDSMethodResult value
      * @return string|null
@@ -274,10 +299,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->threeDSMethodResult;
     }
+
     /**
      * Set threeDSMethodResult value
-     * @param string $threeDSMethodResult
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $threeDSMethodResult
+     * @return ThreeDSInfo
      */
     public function setThreeDSMethodResult(?string $threeDSMethodResult = null): self
     {
@@ -286,9 +312,10 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($threeDSMethodResult, true), gettype($threeDSMethodResult)), __LINE__);
         }
         $this->threeDSMethodResult = $threeDSMethodResult;
-        
+
         return $this;
     }
+
     /**
      * Get challengeWindowSize value
      * @return string|null
@@ -297,10 +324,11 @@ class ThreeDSInfo extends AbstractStructBase
     {
         return $this->challengeWindowSize;
     }
+
     /**
      * Set challengeWindowSize value
-     * @param string $challengeWindowSize
-     * @return \StructType\ThreeDSInfo
+     * @param string|null $challengeWindowSize
+     * @return ThreeDSInfo
      */
     public function setChallengeWindowSize(?string $challengeWindowSize = null): self
     {
@@ -309,7 +337,7 @@ class ThreeDSInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($challengeWindowSize, true), gettype($challengeWindowSize)), __LINE__);
         }
         $this->challengeWindowSize = $challengeWindowSize;
-        
+
         return $this;
     }
 }

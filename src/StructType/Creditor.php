@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains information about the creditor
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Creditor extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Creditor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $bic = null;
+
     /**
      * The iban
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Creditor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $iban = null;
+
     /**
      * The name
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class Creditor extends AbstractStructBase
      * @var string|null
      */
     protected ?string $name = null;
+
     /**
      * Constructor method for creditor
+     * @param string|null $bic
+     * @param string|null $iban
+     * @param string|null $name
      * @uses Creditor::setBic()
      * @uses Creditor::setIban()
      * @uses Creditor::setName()
-     * @param string $bic
-     * @param string $iban
-     * @param string $name
      */
     public function __construct(?string $bic = null, ?string $iban = null, ?string $name = null)
     {
@@ -53,6 +57,7 @@ class Creditor extends AbstractStructBase
             ->setIban($iban)
             ->setName($name);
     }
+
     /**
      * Get bic value
      * @return string|null
@@ -61,10 +66,11 @@ class Creditor extends AbstractStructBase
     {
         return $this->bic;
     }
+
     /**
      * Set bic value
-     * @param string $bic
-     * @return \StructType\Creditor
+     * @param string|null $bic
+     * @return Creditor
      */
     public function setBic(?string $bic = null): self
     {
@@ -76,6 +82,7 @@ class Creditor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get iban value
      * @return string|null
@@ -84,10 +91,11 @@ class Creditor extends AbstractStructBase
     {
         return $this->iban;
     }
+
     /**
      * Set iban value
-     * @param string $iban
-     * @return \StructType\Creditor
+     * @param string|null $iban
+     * @return Creditor
      */
     public function setIban(?string $iban = null): self
     {
@@ -99,6 +107,7 @@ class Creditor extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -107,10 +116,11 @@ class Creditor extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
-     * @param string $name
-     * @return \StructType\Creditor
+     * @param string|null $name
+     * @return Creditor
      */
     public function setName(?string $name = null): self
     {

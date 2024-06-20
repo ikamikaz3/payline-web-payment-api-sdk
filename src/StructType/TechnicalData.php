@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains technical data used to define acquirer service
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class TechnicalData extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class TechnicalData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $terminalNumber = null;
+
     /**
      * The GTInstance
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class TechnicalData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $GTInstance = null;
+
     /**
      * The paymentProfil
      * Meta information extracted from the WSDL
@@ -37,14 +40,15 @@ class TechnicalData extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentProfil = null;
+
     /**
      * Constructor method for technicalData
+     * @param string|null $terminalNumber
+     * @param string|null $gTInstance
+     * @param string|null $paymentProfil
      * @uses TechnicalData::setTerminalNumber()
      * @uses TechnicalData::setGTInstance()
      * @uses TechnicalData::setPaymentProfil()
-     * @param string $terminalNumber
-     * @param string $gTInstance
-     * @param string $paymentProfil
      */
     public function __construct(?string $terminalNumber = null, ?string $gTInstance = null, ?string $paymentProfil = null)
     {
@@ -53,6 +57,7 @@ class TechnicalData extends AbstractStructBase
             ->setGTInstance($gTInstance)
             ->setPaymentProfil($paymentProfil);
     }
+
     /**
      * Get terminalNumber value
      * @return string|null
@@ -61,10 +66,11 @@ class TechnicalData extends AbstractStructBase
     {
         return $this->terminalNumber;
     }
+
     /**
      * Set terminalNumber value
-     * @param string $terminalNumber
-     * @return \StructType\TechnicalData
+     * @param string|null $terminalNumber
+     * @return TechnicalData
      */
     public function setTerminalNumber(?string $terminalNumber = null): self
     {
@@ -73,9 +79,10 @@ class TechnicalData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminalNumber, true), gettype($terminalNumber)), __LINE__);
         }
         $this->terminalNumber = $terminalNumber;
-        
+
         return $this;
     }
+
     /**
      * Get GTInstance value
      * @return string|null
@@ -84,10 +91,11 @@ class TechnicalData extends AbstractStructBase
     {
         return $this->GTInstance;
     }
+
     /**
      * Set GTInstance value
-     * @param string $gTInstance
-     * @return \StructType\TechnicalData
+     * @param string|null $gTInstance
+     * @return TechnicalData
      */
     public function setGTInstance(?string $gTInstance = null): self
     {
@@ -96,9 +104,10 @@ class TechnicalData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($gTInstance, true), gettype($gTInstance)), __LINE__);
         }
         $this->GTInstance = $gTInstance;
-        
+
         return $this;
     }
+
     /**
      * Get paymentProfil value
      * @return string|null
@@ -107,10 +116,11 @@ class TechnicalData extends AbstractStructBase
     {
         return $this->paymentProfil;
     }
+
     /**
      * Set paymentProfil value
-     * @param string $paymentProfil
-     * @return \StructType\TechnicalData
+     * @param string|null $paymentProfil
+     * @return TechnicalData
      */
     public function setPaymentProfil(?string $paymentProfil = null): self
     {
@@ -119,7 +129,7 @@ class TechnicalData extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentProfil, true), gettype($paymentProfil)), __LINE__);
         }
         $this->paymentProfil = $paymentProfil;
-        
+
         return $this;
     }
 }

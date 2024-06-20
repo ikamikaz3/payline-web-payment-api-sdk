@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,106 +14,115 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the reponse from the doRefund method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class DoRefundResponse extends AbstractStructBase
 {
     /**
      * The result
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Result|null
+     * @var Result|null
      */
-    protected ?\StructType\Result $result = null;
+    protected ?Result $result = null;
+
     /**
      * The transaction
      * Meta information extracted from the WSDL
      * - nillable: false
-     * @var \StructType\Transaction|null
+     * @var Transaction|null
      */
-    protected ?\StructType\Transaction $transaction = null;
+    protected ?Transaction $transaction = null;
+
     /**
      * The miscData
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \StructType\MiscData|null
+     * @var MiscData|null
      */
-    protected ?\StructType\MiscData $miscData = null;
+    protected ?MiscData $miscData = null;
+
     /**
      * Constructor method for doRefundResponse
+     * @param Result|null $result
+     * @param Transaction|null $transaction
+     * @param MiscData|null $miscData
      * @uses DoRefundResponse::setResult()
      * @uses DoRefundResponse::setTransaction()
      * @uses DoRefundResponse::setMiscData()
-     * @param \StructType\Result $result
-     * @param \StructType\Transaction $transaction
-     * @param \StructType\MiscData $miscData
      */
-    public function __construct(?\StructType\Result $result = null, ?\StructType\Transaction $transaction = null, ?\StructType\MiscData $miscData = null)
+    public function __construct(?Result $result = null, ?Transaction $transaction = null, ?MiscData $miscData = null)
     {
         $this
             ->setResult($result)
             ->setTransaction($transaction)
             ->setMiscData($miscData);
     }
+
     /**
      * Get result value
-     * @return \StructType\Result|null
+     * @return Result|null
      */
-    public function getResult(): ?\StructType\Result
+    public function getResult(): ?Result
     {
         return $this->result;
     }
+
     /**
      * Set result value
-     * @param \StructType\Result $result
-     * @return \StructType\DoRefundResponse
+     * @param Result|null $result
+     * @return DoRefundResponse
      */
-    public function setResult(?\StructType\Result $result = null): self
+    public function setResult(?Result $result = null): self
     {
         $this->result = $result;
 
         return $this;
     }
+
     /**
      * Get transaction value
-     * @return \StructType\Transaction|null
+     * @return Transaction|null
      */
-    public function getTransaction(): ?\StructType\Transaction
+    public function getTransaction(): ?Transaction
     {
         return $this->transaction;
     }
+
     /**
      * Set transaction value
-     * @param \StructType\Transaction $transaction
-     * @return \StructType\DoRefundResponse
+     * @param Transaction|null $transaction
+     * @return DoRefundResponse
      */
-    public function setTransaction(?\StructType\Transaction $transaction = null): self
+    public function setTransaction(?Transaction $transaction = null): self
     {
         $this->transaction = $transaction;
 
         return $this;
     }
+
     /**
      * Get miscData value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \StructType\MiscData|null
+     * @return MiscData|null
      */
-    public function getMiscData(): ?\StructType\MiscData
+    public function getMiscData(): ?MiscData
     {
         return $this->miscData ?? null;
     }
+
     /**
      * Set miscData value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \StructType\MiscData $miscData
-     * @return \StructType\DoRefundResponse
+     * @param MiscData|null $miscData
+     * @return DoRefundResponse
      */
-    public function setMiscData(?\StructType\MiscData $miscData = null): self
+    public function setMiscData(?MiscData $miscData = null): self
     {
-        if (is_null($miscData) || (is_array($miscData) && empty($miscData))) {
+        if (is_null($miscData)) {
             unset($this->miscData);
         } else {
             $this->miscData = $miscData;

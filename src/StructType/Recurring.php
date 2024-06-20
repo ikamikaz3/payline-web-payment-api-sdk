@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains element for recurring operation
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class Recurring extends AbstractStructBase
 {
     /**
@@ -23,6 +24,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amount = null;
+
     /**
      * The billingCycle
      * Meta information extracted from the WSDL
@@ -30,6 +32,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingCycle = null;
+
     /**
      * The billingLeft
      * Meta information extracted from the WSDL
@@ -37,6 +40,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingLeft = null;
+
     /**
      * The firstAmount
      * Meta information extracted from the WSDL
@@ -44,6 +48,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstAmount = null;
+
     /**
      * The billingDay
      * Meta information extracted from the WSDL
@@ -51,6 +56,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingDay = null;
+
     /**
      * The startDate
      * Meta information extracted from the WSDL
@@ -58,6 +64,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $startDate = null;
+
     /**
      * The endDate
      * Meta information extracted from the WSDL
@@ -65,6 +72,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * The newAmount
      * Meta information extracted from the WSDL
@@ -72,6 +80,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $newAmount = null;
+
     /**
      * The amountModificationDate
      * Meta information extracted from the WSDL
@@ -79,6 +88,7 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $amountModificationDate = null;
+
     /**
      * The billingRank
      * Meta information extracted from the WSDL
@@ -86,8 +96,19 @@ class Recurring extends AbstractStructBase
      * @var string|null
      */
     protected ?string $billingRank = null;
+
     /**
      * Constructor method for recurring
+     * @param string|null $amount
+     * @param string|null $billingCycle
+     * @param string|null $billingLeft
+     * @param string|null $firstAmount
+     * @param string|null $billingDay
+     * @param string|null $startDate
+     * @param string|null $endDate
+     * @param string|null $newAmount
+     * @param string|null $amountModificationDate
+     * @param string|null $billingRank
      * @uses Recurring::setAmount()
      * @uses Recurring::setBillingCycle()
      * @uses Recurring::setBillingLeft()
@@ -98,16 +119,6 @@ class Recurring extends AbstractStructBase
      * @uses Recurring::setNewAmount()
      * @uses Recurring::setAmountModificationDate()
      * @uses Recurring::setBillingRank()
-     * @param string $amount
-     * @param string $billingCycle
-     * @param string $billingLeft
-     * @param string $firstAmount
-     * @param string $billingDay
-     * @param string $startDate
-     * @param string $endDate
-     * @param string $newAmount
-     * @param string $amountModificationDate
-     * @param string $billingRank
      */
     public function __construct(?string $amount = null, ?string $billingCycle = null, ?string $billingLeft = null, ?string $firstAmount = null, ?string $billingDay = null, ?string $startDate = null, ?string $endDate = null, ?string $newAmount = null, ?string $amountModificationDate = null, ?string $billingRank = null)
     {
@@ -123,6 +134,7 @@ class Recurring extends AbstractStructBase
             ->setAmountModificationDate($amountModificationDate)
             ->setBillingRank($billingRank);
     }
+
     /**
      * Get amount value
      * @return string|null
@@ -131,10 +143,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->amount;
     }
+
     /**
      * Set amount value
-     * @param string $amount
-     * @return \StructType\Recurring
+     * @param string|null $amount
+     * @return Recurring
      */
     public function setAmount(?string $amount = null): self
     {
@@ -146,6 +159,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingCycle value
      * @return string|null
@@ -154,10 +168,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->billingCycle;
     }
+
     /**
      * Set billingCycle value
-     * @param string $billingCycle
-     * @return \StructType\Recurring
+     * @param string|null $billingCycle
+     * @return Recurring
      */
     public function setBillingCycle(?string $billingCycle = null): self
     {
@@ -169,6 +184,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingLeft value
      * @return string|null
@@ -177,10 +193,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->billingLeft;
     }
+
     /**
      * Set billingLeft value
-     * @param string $billingLeft
-     * @return \StructType\Recurring
+     * @param string|null $billingLeft
+     * @return Recurring
      */
     public function setBillingLeft(?string $billingLeft = null): self
     {
@@ -192,6 +209,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get firstAmount value
      * @return string|null
@@ -200,10 +218,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->firstAmount;
     }
+
     /**
      * Set firstAmount value
-     * @param string $firstAmount
-     * @return \StructType\Recurring
+     * @param string|null $firstAmount
+     * @return Recurring
      */
     public function setFirstAmount(?string $firstAmount = null): self
     {
@@ -215,6 +234,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingDay value
      * @return string|null
@@ -223,10 +243,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->billingDay;
     }
+
     /**
      * Set billingDay value
-     * @param string $billingDay
-     * @return \StructType\Recurring
+     * @param string|null $billingDay
+     * @return Recurring
      */
     public function setBillingDay(?string $billingDay = null): self
     {
@@ -238,6 +259,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get startDate value
      * @return string|null
@@ -246,10 +268,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->startDate;
     }
+
     /**
      * Set startDate value
-     * @param string $startDate
-     * @return \StructType\Recurring
+     * @param string|null $startDate
+     * @return Recurring
      */
     public function setStartDate(?string $startDate = null): self
     {
@@ -261,6 +284,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -269,10 +293,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
-     * @param string $endDate
-     * @return \StructType\Recurring
+     * @param string|null $endDate
+     * @return Recurring
      */
     public function setEndDate(?string $endDate = null): self
     {
@@ -284,6 +309,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get newAmount value
      * @return string|null
@@ -292,10 +318,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->newAmount;
     }
+
     /**
      * Set newAmount value
-     * @param string $newAmount
-     * @return \StructType\Recurring
+     * @param string|null $newAmount
+     * @return Recurring
      */
     public function setNewAmount(?string $newAmount = null): self
     {
@@ -307,6 +334,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get amountModificationDate value
      * @return string|null
@@ -315,10 +343,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->amountModificationDate;
     }
+
     /**
      * Set amountModificationDate value
-     * @param string $amountModificationDate
-     * @return \StructType\Recurring
+     * @param string|null $amountModificationDate
+     * @return Recurring
      */
     public function setAmountModificationDate(?string $amountModificationDate = null): self
     {
@@ -330,6 +359,7 @@ class Recurring extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get billingRank value
      * @return string|null
@@ -338,10 +368,11 @@ class Recurring extends AbstractStructBase
     {
         return $this->billingRank;
     }
+
     /**
      * Set billingRank value
-     * @param string $billingRank
-     * @return \StructType\Recurring
+     * @param string|null $billingRank
+     * @return Recurring
      */
     public function setBillingRank(?string $billingRank = null): self
     {

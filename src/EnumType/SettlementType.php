@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Motherbrain\PaylineWebPayment\EnumType;
+namespace PaylineWebPayment\EnumType;
 
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 
@@ -57,8 +57,10 @@ class SettlementType extends AbstractStructEnumBase
      * @return string '7Day'
      */
     const VALUE_7_DAY = '7Day';
+
     /**
      * Return allowed values
+     * @return string[]
      * @uses self::VALUE_MANUAL
      * @uses self::VALUE_NOW
      * @uses self::VALUE_1_DAY
@@ -68,7 +70,6 @@ class SettlementType extends AbstractStructEnumBase
      * @uses self::VALUE_5_DAY
      * @uses self::VALUE_6_DAY
      * @uses self::VALUE_7_DAY
-     * @return string[]
      */
     public static function getValidValues(): array
     {

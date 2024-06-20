@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
+use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -13,7 +14,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the transactionsSearch method
  * @subpackage Structs
  */
-#[\AllowDynamicProperties]
+#[AllowDynamicProperties]
 class TransactionsSearchRequest extends AbstractStructBase
 {
     /**
@@ -23,16 +24,19 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $version = null;
+
     /**
      * The startDate
      * @var string|null
      */
     protected ?string $startDate = null;
+
     /**
      * The endDate
      * @var string|null
      */
     protected ?string $endDate = null;
+
     /**
      * The transactionId
      * Meta information extracted from the WSDL
@@ -40,6 +44,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionId = null;
+
     /**
      * The orderRef
      * Meta information extracted from the WSDL
@@ -47,6 +52,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $orderRef = null;
+
     /**
      * The contractNumber
      * Meta information extracted from the WSDL
@@ -54,6 +60,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $contractNumber = null;
+
     /**
      * The authorizationNumber
      * Meta information extracted from the WSDL
@@ -61,6 +68,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $authorizationNumber = null;
+
     /**
      * The returnCode
      * Meta information extracted from the WSDL
@@ -68,6 +76,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $returnCode = null;
+
     /**
      * The paymentMean
      * Meta information extracted from the WSDL
@@ -75,6 +84,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $paymentMean = null;
+
     /**
      * The transactionType
      * Meta information extracted from the WSDL
@@ -82,6 +92,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $transactionType = null;
+
     /**
      * The name
      * Meta information extracted from the WSDL
@@ -89,6 +100,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $name = null;
+
     /**
      * The firstName
      * Meta information extracted from the WSDL
@@ -96,6 +108,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $firstName = null;
+
     /**
      * The email
      * Meta information extracted from the WSDL
@@ -103,6 +116,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $email = null;
+
     /**
      * The cardNumber
      * Meta information extracted from the WSDL
@@ -110,6 +124,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardNumber = null;
+
     /**
      * The currency
      * Meta information extracted from the WSDL
@@ -117,6 +132,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $currency = null;
+
     /**
      * The minAmount
      * Meta information extracted from the WSDL
@@ -124,6 +140,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $minAmount = null;
+
     /**
      * The maxAmount
      * Meta information extracted from the WSDL
@@ -131,6 +148,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $maxAmount = null;
+
     /**
      * The walletId
      * Meta information extracted from the WSDL
@@ -138,6 +156,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $walletId = null;
+
     /**
      * The sequenceNumber
      * Meta information extracted from the WSDL
@@ -145,6 +164,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $sequenceNumber = null;
+
     /**
      * The token
      * Meta information extracted from the WSDL
@@ -152,6 +172,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $token = null;
+
     /**
      * The pointOfSellId
      * Meta information extracted from the WSDL
@@ -159,6 +180,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $pointOfSellId = null;
+
     /**
      * The cardNetwork
      * Meta information extracted from the WSDL
@@ -166,6 +188,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $cardNetwork = null;
+
     /**
      * The threeDSecured
      * Meta information extracted from the WSDL
@@ -173,6 +196,7 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $threeDSecured = null;
+
     /**
      * The customerMediaId
      * Meta information extracted from the WSDL
@@ -180,8 +204,33 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @var string|null
      */
     protected ?string $customerMediaId = null;
+
     /**
      * Constructor method for transactionsSearchRequest
+     * @param string|null $version
+     * @param string|null $startDate
+     * @param string|null $endDate
+     * @param string|null $transactionId
+     * @param string|null $orderRef
+     * @param string|null $contractNumber
+     * @param string|null $authorizationNumber
+     * @param string|null $returnCode
+     * @param string|null $paymentMean
+     * @param string|null $transactionType
+     * @param string|null $name
+     * @param string|null $firstName
+     * @param string|null $email
+     * @param string|null $cardNumber
+     * @param string|null $currency
+     * @param string|null $minAmount
+     * @param string|null $maxAmount
+     * @param string|null $walletId
+     * @param string|null $sequenceNumber
+     * @param string|null $token
+     * @param string|null $pointOfSellId
+     * @param string|null $cardNetwork
+     * @param string|null $threeDSecured
+     * @param string|null $customerMediaId
      * @uses TransactionsSearchRequest::setVersion()
      * @uses TransactionsSearchRequest::setStartDate()
      * @uses TransactionsSearchRequest::setEndDate()
@@ -206,30 +255,6 @@ class TransactionsSearchRequest extends AbstractStructBase
      * @uses TransactionsSearchRequest::setCardNetwork()
      * @uses TransactionsSearchRequest::setThreeDSecured()
      * @uses TransactionsSearchRequest::setCustomerMediaId()
-     * @param string $version
-     * @param string $startDate
-     * @param string $endDate
-     * @param string $transactionId
-     * @param string $orderRef
-     * @param string $contractNumber
-     * @param string $authorizationNumber
-     * @param string $returnCode
-     * @param string $paymentMean
-     * @param string $transactionType
-     * @param string $name
-     * @param string $firstName
-     * @param string $email
-     * @param string $cardNumber
-     * @param string $currency
-     * @param string $minAmount
-     * @param string $maxAmount
-     * @param string $walletId
-     * @param string $sequenceNumber
-     * @param string $token
-     * @param string $pointOfSellId
-     * @param string $cardNetwork
-     * @param string $threeDSecured
-     * @param string $customerMediaId
      */
     public function __construct(?string $version = null, ?string $startDate = null, ?string $endDate = null, ?string $transactionId = null, ?string $orderRef = null, ?string $contractNumber = null, ?string $authorizationNumber = null, ?string $returnCode = null, ?string $paymentMean = null, ?string $transactionType = null, ?string $name = null, ?string $firstName = null, ?string $email = null, ?string $cardNumber = null, ?string $currency = null, ?string $minAmount = null, ?string $maxAmount = null, ?string $walletId = null, ?string $sequenceNumber = null, ?string $token = null, ?string $pointOfSellId = null, ?string $cardNetwork = null, ?string $threeDSecured = null, ?string $customerMediaId = null)
     {
@@ -259,6 +284,7 @@ class TransactionsSearchRequest extends AbstractStructBase
             ->setThreeDSecured($threeDSecured)
             ->setCustomerMediaId($customerMediaId);
     }
+
     /**
      * Get version value
      * @return string|null
@@ -267,10 +293,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->version;
     }
+
     /**
      * Set version value
-     * @param string $version
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $version
+     * @return TransactionsSearchRequest
      */
     public function setVersion(?string $version = null): self
     {
@@ -282,6 +309,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get startDate value
      * @return string|null
@@ -290,10 +318,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->startDate;
     }
+
     /**
      * Set startDate value
-     * @param string $startDate
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $startDate
+     * @return TransactionsSearchRequest
      */
     public function setStartDate(?string $startDate = null): self
     {
@@ -305,6 +334,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get endDate value
      * @return string|null
@@ -313,10 +343,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->endDate;
     }
+
     /**
      * Set endDate value
-     * @param string $endDate
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $endDate
+     * @return TransactionsSearchRequest
      */
     public function setEndDate(?string $endDate = null): self
     {
@@ -328,6 +359,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionId value
      * @return string|null
@@ -336,10 +368,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->transactionId;
     }
+
     /**
      * Set transactionId value
-     * @param string $transactionId
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $transactionId
+     * @return TransactionsSearchRequest
      */
     public function setTransactionId(?string $transactionId = null): self
     {
@@ -351,6 +384,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get orderRef value
      * @return string|null
@@ -359,10 +393,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->orderRef;
     }
+
     /**
      * Set orderRef value
-     * @param string $orderRef
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $orderRef
+     * @return TransactionsSearchRequest
      */
     public function setOrderRef(?string $orderRef = null): self
     {
@@ -374,6 +409,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get contractNumber value
      * @return string|null
@@ -382,10 +418,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->contractNumber;
     }
+
     /**
      * Set contractNumber value
-     * @param string $contractNumber
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $contractNumber
+     * @return TransactionsSearchRequest
      */
     public function setContractNumber(?string $contractNumber = null): self
     {
@@ -397,6 +434,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get authorizationNumber value
      * @return string|null
@@ -405,10 +443,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->authorizationNumber;
     }
+
     /**
      * Set authorizationNumber value
-     * @param string $authorizationNumber
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $authorizationNumber
+     * @return TransactionsSearchRequest
      */
     public function setAuthorizationNumber(?string $authorizationNumber = null): self
     {
@@ -420,6 +459,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get returnCode value
      * @return string|null
@@ -428,10 +468,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->returnCode;
     }
+
     /**
      * Set returnCode value
-     * @param string $returnCode
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $returnCode
+     * @return TransactionsSearchRequest
      */
     public function setReturnCode(?string $returnCode = null): self
     {
@@ -443,6 +484,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get paymentMean value
      * @return string|null
@@ -451,10 +493,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->paymentMean;
     }
+
     /**
      * Set paymentMean value
-     * @param string $paymentMean
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $paymentMean
+     * @return TransactionsSearchRequest
      */
     public function setPaymentMean(?string $paymentMean = null): self
     {
@@ -466,6 +509,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get transactionType value
      * @return string|null
@@ -474,10 +518,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->transactionType;
     }
+
     /**
      * Set transactionType value
-     * @param string $transactionType
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $transactionType
+     * @return TransactionsSearchRequest
      */
     public function setTransactionType(?string $transactionType = null): self
     {
@@ -489,6 +534,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get name value
      * @return string|null
@@ -497,10 +543,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->name;
     }
+
     /**
      * Set name value
-     * @param string $name
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $name
+     * @return TransactionsSearchRequest
      */
     public function setName(?string $name = null): self
     {
@@ -512,6 +559,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get firstName value
      * @return string|null
@@ -520,10 +568,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->firstName;
     }
+
     /**
      * Set firstName value
-     * @param string $firstName
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $firstName
+     * @return TransactionsSearchRequest
      */
     public function setFirstName(?string $firstName = null): self
     {
@@ -535,6 +584,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get email value
      * @return string|null
@@ -543,10 +593,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->email;
     }
+
     /**
      * Set email value
-     * @param string $email
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $email
+     * @return TransactionsSearchRequest
      */
     public function setEmail(?string $email = null): self
     {
@@ -558,6 +609,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardNumber value
      * @return string|null
@@ -566,10 +618,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->cardNumber;
     }
+
     /**
      * Set cardNumber value
-     * @param string $cardNumber
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $cardNumber
+     * @return TransactionsSearchRequest
      */
     public function setCardNumber(?string $cardNumber = null): self
     {
@@ -581,6 +634,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get currency value
      * @return string|null
@@ -589,10 +643,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->currency;
     }
+
     /**
      * Set currency value
-     * @param string $currency
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $currency
+     * @return TransactionsSearchRequest
      */
     public function setCurrency(?string $currency = null): self
     {
@@ -604,6 +659,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get minAmount value
      * @return string|null
@@ -612,10 +668,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->minAmount;
     }
+
     /**
      * Set minAmount value
-     * @param string $minAmount
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $minAmount
+     * @return TransactionsSearchRequest
      */
     public function setMinAmount(?string $minAmount = null): self
     {
@@ -627,6 +684,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get maxAmount value
      * @return string|null
@@ -635,10 +693,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->maxAmount;
     }
+
     /**
      * Set maxAmount value
-     * @param string $maxAmount
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $maxAmount
+     * @return TransactionsSearchRequest
      */
     public function setMaxAmount(?string $maxAmount = null): self
     {
@@ -650,6 +709,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get walletId value
      * @return string|null
@@ -658,10 +718,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->walletId;
     }
+
     /**
      * Set walletId value
-     * @param string $walletId
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $walletId
+     * @return TransactionsSearchRequest
      */
     public function setWalletId(?string $walletId = null): self
     {
@@ -673,6 +734,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get sequenceNumber value
      * @return string|null
@@ -681,10 +743,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->sequenceNumber;
     }
+
     /**
      * Set sequenceNumber value
-     * @param string $sequenceNumber
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $sequenceNumber
+     * @return TransactionsSearchRequest
      */
     public function setSequenceNumber(?string $sequenceNumber = null): self
     {
@@ -696,6 +759,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get token value
      * @return string|null
@@ -704,10 +768,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->token;
     }
+
     /**
      * Set token value
-     * @param string $token
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $token
+     * @return TransactionsSearchRequest
      */
     public function setToken(?string $token = null): self
     {
@@ -719,6 +784,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get pointOfSellId value
      * @return string|null
@@ -727,10 +793,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->pointOfSellId;
     }
+
     /**
      * Set pointOfSellId value
-     * @param string $pointOfSellId
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $pointOfSellId
+     * @return TransactionsSearchRequest
      */
     public function setPointOfSellId(?string $pointOfSellId = null): self
     {
@@ -742,6 +809,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get cardNetwork value
      * @return string|null
@@ -750,10 +818,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->cardNetwork;
     }
+
     /**
      * Set cardNetwork value
-     * @param string $cardNetwork
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $cardNetwork
+     * @return TransactionsSearchRequest
      */
     public function setCardNetwork(?string $cardNetwork = null): self
     {
@@ -765,6 +834,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get threeDSecured value
      * @return string|null
@@ -773,10 +843,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->threeDSecured;
     }
+
     /**
      * Set threeDSecured value
-     * @param string $threeDSecured
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $threeDSecured
+     * @return TransactionsSearchRequest
      */
     public function setThreeDSecured(?string $threeDSecured = null): self
     {
@@ -788,6 +859,7 @@ class TransactionsSearchRequest extends AbstractStructBase
 
         return $this;
     }
+
     /**
      * Get customerMediaId value
      * @return string|null
@@ -796,10 +868,11 @@ class TransactionsSearchRequest extends AbstractStructBase
     {
         return $this->customerMediaId;
     }
+
     /**
      * Set customerMediaId value
-     * @param string $customerMediaId
-     * @return \StructType\TransactionsSearchRequest
+     * @param string|null $customerMediaId
+     * @return TransactionsSearchRequest
      */
     public function setCustomerMediaId(?string $customerMediaId = null): self
     {
