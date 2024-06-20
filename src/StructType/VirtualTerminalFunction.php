@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
-use AllowDynamicProperties;
 use InvalidArgumentException;
 use PaylineWebPayment\EnumType\_function;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -15,7 +14,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: functions availbe in virtual terminal
  * @subpackage Structs
  */
-#[AllowDynamicProperties]
 class VirtualTerminalFunction extends AbstractStructBase
 {
     /**

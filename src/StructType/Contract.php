@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
-use AllowDynamicProperties;
 use PaylineWebPayment\EnumType\SettlementType;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -15,7 +14,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains all information about contract
  * @subpackage Structs
  */
-#[AllowDynamicProperties]
 class Contract extends AbstractStructBase
 {
     /**

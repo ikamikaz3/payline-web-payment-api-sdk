@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
-use AllowDynamicProperties;
+
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -14,7 +14,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element contains the result of the address verification service
  * @subpackage Structs
  */
-#[AllowDynamicProperties]
 class Avs extends AbstractStructBase
 {
     /**

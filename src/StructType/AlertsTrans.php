@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
-use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -12,7 +11,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for AlertsTrans StructType
  * @subpackage Structs
  */
-#[AllowDynamicProperties]
 class AlertsTrans extends AbstractStructBase
 {
     /**

@@ -3,7 +3,7 @@
     "description": "Package generated from https://homologation.payline.com/V4/services/WebPaymentAPI?wsdl using wsdltophp/packagegenerator",
     "license": "MIT",
     "require": {
-        "php": ">=8.2",
+        "php": ">=7.4",
         "ext-dom": "*",
         "ext-mbstring": "*",
         "ext-soap": "*",

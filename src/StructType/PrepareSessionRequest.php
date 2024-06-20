@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PaylineWebPayment\StructType;
 
-use AllowDynamicProperties;
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -14,7 +13,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: This element is the request for the prepareSession method
  * @subpackage Structs
  */
-#[AllowDynamicProperties]
 class PrepareSessionRequest extends AbstractStructBase
 {
     /**
