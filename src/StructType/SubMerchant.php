@@ -22,7 +22,7 @@ class SubMerchant extends AbstractStructBase
      * - nillable: false
      * @var string
      */
-    protected string $subMerchantMCC;
+    protected ?string $subMerchantMCC = null;
 
     /**
      * The subMerchantId
@@ -140,7 +140,7 @@ class SubMerchant extends AbstractStructBase
      * @uses SubMerchant::setSubMerchantEmailAddress()
      * @uses SubMerchant::setSubMerchantPhoneNumber()
      */
-    public function __construct(string $subMerchantMCC, ?string $subMerchantId = null, ?string $subMerchantName = null, ?string $subMerchantSIRET = null, ?string $subMerchantTaxCode = null, ?string $subMerchantStreet = null, ?string $subMerchantCity = null, ?string $subMerchantZipCode = null, ?string $subMerchantCountry = null, ?string $subMerchantState = null, ?string $subMerchantEmailAddress = null, ?string $subMerchantPhoneNumber = null)
+    public function __construct(?string $subMerchantMCC = null, ?string $subMerchantId = null, ?string $subMerchantName = null, ?string $subMerchantSIRET = null, ?string $subMerchantTaxCode = null, ?string $subMerchantStreet = null, ?string $subMerchantCity = null, ?string $subMerchantZipCode = null, ?string $subMerchantCountry = null, ?string $subMerchantState = null, ?string $subMerchantEmailAddress = null, ?string $subMerchantPhoneNumber = null)
     {
         $this
             ->setSubMerchantMCC($subMerchantMCC)
@@ -161,7 +161,7 @@ class SubMerchant extends AbstractStructBase
      * Get subMerchantMCC value
      * @return string
      */
-    public function getSubMerchantMCC(): string
+    public function getSubMerchantMCC(): ?string
     {
         return $this->subMerchantMCC;
     }
@@ -171,7 +171,7 @@ class SubMerchant extends AbstractStructBase
      * @param string $subMerchantMCC
      * @return SubMerchant
      */
-    public function setSubMerchantMCC(string $subMerchantMCC): self
+    public function setSubMerchantMCC(?string $subMerchantMCC): self
     {
         // validation for constraint: string
         $this->subMerchantMCC = $subMerchantMCC;
